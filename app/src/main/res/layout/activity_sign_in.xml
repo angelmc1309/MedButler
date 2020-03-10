@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginBackground"
+    android:background="@drawable/loginback"
     tools:context=".Sign_in">
 
     <TextView
@@ -30,16 +30,16 @@
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="35dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="45dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/passwordRegist1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -48,12 +48,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Repeat Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/birthdayRegist"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -69,7 +70,10 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/passwordRegist2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameRegist"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -77,12 +81,11 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="135dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="136dp"
-        android:layout_marginBottom="25dp"
-        android:text="Enregistrar"
-        app:layout_constraintBottom_toTopOf="@+id/labelFerLog"
+        android:text="@string/butRegist"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthdayRegist"
         tools:ignore="MissingConstraints" />
@@ -92,14 +95,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
-        android:layout_marginTop="25dp"
         android:layout_marginEnd="103dp"
+        android:layout_marginBottom="107dp"
         android:onClick="actionGoToLogin"
-        android:text="Ja estic enregistrat, vull fer login"
+        android:text="@string/labelFerLog"
         android:textColor="#0E0E0E"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/butRegist"
+        app:layout_constraintVertical_bias="0.903"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -111,7 +117,8 @@
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="448dp" />
+        tools:layout_editor_absoluteY="441dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
