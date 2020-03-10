@@ -14,7 +14,7 @@ class login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
     }
     fun actionLog(view: View){
-        var stat= usernameLogin.text.toString().equals("angeljaja@gmail.com") && passwordLogin.text.toString().equals("123456")
+        var stat= usernameLogin.text.toString().equals("admin@gmail.com") && passwordLogin.text.toString().equals("admin")
         if(stat==true){
             Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
             val intent= Intent(this, MainActivity::class.java)
