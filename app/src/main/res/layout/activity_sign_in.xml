@@ -4,81 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sign_in"
-    android:background="@drawable/loginbackground">
+    android:background="@drawable/loginBackground"
+    tools:context=".Sign_in">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="85dp"
         android:text="Crear un nou usuari"
         android:textColor="#D6C1C1"
         android:textColorHighlight="#E85252"
         android:textSize="28dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="116dp" />
+        app:layout_constraintBottom_toTopOf="@+id/usernameRegist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/usernameRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="45dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="239dp" />
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegist1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/passwordRegist2"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="Repeat Password"
         android:inputType="textPassword"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="375dp" />
+        app:layout_constraintBottom_toTopOf="@+id/birthdayRegist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/passwordRegist1"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="21dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="309dp" />
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegist2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/butRegist"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="25dp"
         android:text="Enregistrar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="532dp" />
+        app:layout_constraintBottom_toTopOf="@+id/labelFerLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthdayRegist"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/labelFerLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="103dp"
+        android:onClick="actionGoToLogin"
         android:text="Ja estic enregistrat, vull fer login"
         android:textColor="#0E0E0E"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="605dp"
-        android:onClick="actionGoToLogin"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butRegist"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/birthdayRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="75dp"
         tools:layout_editor_absoluteY="448dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

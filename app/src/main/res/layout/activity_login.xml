@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login"
-    android:background="@drawable/loginbackground">
+    android:background="@drawable/loginBackground"
+    tools:context=".login">
 
     <EditText
         android:id="@+id/usernameLogin"
@@ -13,10 +13,13 @@
         android:layout_height="wrap_content"
         android:hint="Username"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="255dp"></EditText>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333"
+        tools:ignore="MissingConstraints"></EditText>
 
     <EditText
         android:id="@+id/passwordLogin"
@@ -34,22 +37,26 @@
         android:id="@+id/butLogin"
         android:layout_width="149dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="103dp"
+        android:onClick="actionLog"
         android:text="log in"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/newUserLabelLogin"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogin"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="381dp"
-        android:onClick="actionLog"/>
+        tools:layout_editor_absoluteX="131dp" />
 
     <TextView
         android:id="@+id/newUserLabelLogin"
         android:layout_width="0dp"
         android:layout_height="47dp"
+        android:layout_marginTop="38dp"
+        android:onClick="actionRegistre"
         android:text="Vull crear un nou usuari"
         android:textColor="#0E0E0E"
         android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/butLogin"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="477dp"
-        android:onClick="actionRegistre"/>
+        tools:layout_editor_absoluteX="112dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
