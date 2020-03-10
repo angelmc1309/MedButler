@@ -1,7 +1,9 @@
 package com.example.medbutler
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class Sign_in : AppCompatActivity() {
 
@@ -9,4 +11,9 @@ class Sign_in : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
     }
+    fun actionGoToLogin(view: View){
+        val intent= Intent(this, login::class.java)
+        startActivity(intent)
+    }
+
 }

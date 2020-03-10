@@ -15,7 +15,7 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/newUserLabelLogin"
         android:layout_width="343dp"
         android:layout_height="44dp"
         android:text="Nom : Angel Morales"

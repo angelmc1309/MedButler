@@ -42,7 +42,7 @@
         android:onClick="actionLog"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/newUserLabelLogin"
         android:layout_width="0dp"
         android:layout_height="47dp"
         android:text="Vull crear un nou usuari"
@@ -50,5 +50,6 @@
         android:textSize="18sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="477dp" />
+        tools:layout_editor_absoluteY="477dp"
+        android:onClick="actionRegistre"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
