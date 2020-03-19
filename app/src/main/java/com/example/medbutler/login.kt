@@ -12,12 +12,13 @@ class login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
     }
     fun actionLog(view: View){
         var stat= usernameLogin.text.toString().equals("admin@gmail.com") && passwordLogin.text.toString().equals("admin")
         if(stat==true){
             Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, MainActivity::class.java)
+            val intent= Intent(this, ToolBarTemplate::class.java)
             startActivity(intent)
         }
 
