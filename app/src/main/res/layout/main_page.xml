@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/backgroundmp1"
     android:weightSum="10">
 
     <RelativeLayout
@@ -53,10 +54,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:src="@drawable/profilelogo1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
@@ -64,11 +66,11 @@
                 </ImageView>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Me"
+                    android:text="Profile"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_blue_bright"
+                    android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold">
 
@@ -89,16 +91,18 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:onClick="viewCalendar">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:src="@drawable/calendarlogo1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
@@ -106,11 +110,11 @@
                 </ImageView>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Today"
+                    android:text="Calendar"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_blue_bright"
+                    android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold">
 
@@ -139,10 +143,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:src="@drawable/treatmentlogo1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
@@ -150,11 +155,11 @@
                 </ImageView>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Exercise"
+                    android:text="Treatment"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_blue_bright"
+                    android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold">
 
@@ -181,10 +186,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:src="@drawable/settingslogo1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
@@ -192,11 +198,11 @@
                 </ImageView>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Something"
+                    android:text="Settings"
                     android:textAlignment="center"
-                    android:textColor="@android:color/holo_blue_bright"
+                    android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold">
 
