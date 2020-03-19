@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun viewCalendar(view: View){
-        val intent= Intent(this, calendar::class.java)
+        val intent= Intent(this, Calendar::class.java)
         startActivity(intent)
     }
 }

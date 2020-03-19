@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 
-class calendar : AppCompatActivity(){
+class Calendar : AppCompatActivity(){
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.calendar_layout)
     }
 
