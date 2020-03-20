@@ -18,7 +18,7 @@ class login : AppCompatActivity() {
         var stat= usernameLogin.text.toString().equals("admin@gmail.com") && passwordLogin.text.toString().equals("admin")
         if(stat==true){
             Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, ToolBarTemplate::class.java)
+            val intent= Intent(this, UserProfile::class.java)
             startActivity(intent)
         }
 
