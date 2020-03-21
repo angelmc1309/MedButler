@@ -40,4 +40,33 @@
         <item>Hiphop</item>
     </string-array>
 
+    <string-array name="ringtoneList">
+        <item>None</item>
+        <item>Beginning</item>
+        <item>Coconuts</item>
+        <item>Duet</item>
+        <item>End note</item>
+        <item>Gentle gong</item>
+        <item>Mallet</item>
+        <item>Orsers up</item>
+        <item>Ping</item>
+        <item>Popcorn</item>
+        <item>Tuneup</item>
+        <item>Twinkle</item>
+    </string-array>
+
+    <string-array name="ringtoneListValues">
+        <item>None</item>
+        <item>Beginning</item>
+        <item>Coconuts</item>
+        <item>Duet</item>
+        <item>Endnote</item>
+        <item>Gentlegong</item>
+        <item>Mallet</item>
+        <item>Orsersup</item>
+        <item>Ping</item>
+        <item>Popcorn</item>
+        <item>Tuneup</item>
+        <item>Twinkle</item>
+    </string-array>
 </resources>

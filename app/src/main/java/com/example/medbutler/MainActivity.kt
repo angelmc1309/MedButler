@@ -16,4 +16,9 @@ class MainActivity : AppCompatActivity() {
         val intent= Intent(this, Calendar::class.java)
         startActivity(intent)
     }
+
+    fun viewSettings(view: View) {
+        val intent= Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+    }
 }
