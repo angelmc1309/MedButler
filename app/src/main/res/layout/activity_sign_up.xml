@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginback"
-    tools:context=".Sign_in">
+    tools:context=".Sign_up">
 
     <TextView
         android:id="@+id/textView"
@@ -14,9 +14,9 @@
         android:layout_marginStart="75dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="85dp"
-        android:text="Crear un nou usuari"
-        android:textColor="#D6C1C1"
-        android:textColorHighlight="#E85252"
+        android:text="@string/crearNouUsuariLabel"
+        android:textColor="@color/colorTitulCrearNouUsuari"
+        android:textColorHighlight="@color/highlightTitulCrearNouUsuari"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +154,7 @@
             android:background="@drawable/selec_genere"
             android:button="@null"
             android:gravity="center"
-            android:text="Masculí"
+            android:text="@string/selecHome"
             android:textSize="15dp"></RadioButton>
 
         <RadioButton
@@ -167,7 +167,7 @@
             android:background="@drawable/selec_genere"
             android:button="@null"
             android:gravity="center"
-            android:text="Femení"
+            android:text="@string/selecDona"
             android:textSize="15dp"></RadioButton>
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

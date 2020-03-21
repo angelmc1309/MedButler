@@ -23,7 +23,7 @@ class login : AppCompatActivity() {
 
     }
     fun actionRegistre(view:View){
-        val intent=Intent(this, Sign_in::class.java)
+        val intent=Intent(this, Sign_up::class.java)
         startActivity(intent)
     }
 

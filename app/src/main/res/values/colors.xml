@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorCrearNouUsuari">#80000000</color>
+    <color name="colorTitulCrearNouUsuari">#D6C1C1</color>
+    <color name="highlightTitulCrearNouUsuari">#E85252</color>
+
 </resources>
