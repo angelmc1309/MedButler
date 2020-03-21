@@ -12,5 +12,8 @@ class Calendar : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calendar_layout)
     }
-
+    fun actionUser(view: View){
+        val intent= Intent(this, UserProfile::class.java)
+        startActivity(intent)
+    }
 }

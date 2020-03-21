@@ -2,4 +2,6 @@
     <string name="app_name">MedButler</string>
     <string name="labelFerLog">Ja estic enregistrat, vull fer login</string>
     <string name="butRegist">Enregistrar</string>
+    <string name="complete_name">Armando Gran Jaleo</string>
+    <string name="greeting">HI,USER!</string>
 </resources>

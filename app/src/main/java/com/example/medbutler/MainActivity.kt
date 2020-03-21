@@ -12,8 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_page)
     }
 
-    fun viewCalendar(view: View){
+    fun actionCalendar(view: View){
         val intent= Intent(this, Calendar::class.java)
+        startActivity(intent)
+    }
+    fun actionUser(view: View){
+        val intent= Intent(this, UserProfile::class.java)
         startActivity(intent)
     }
 }
