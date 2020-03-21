@@ -3,4 +3,9 @@
     <string name="labelFerLog">Ja estic enregistrat, vull fer login</string>
     <string name="butRegist">Enregistrar</string>
 
+    <string name="key_full_name" translatable="false">key_full_name</string>
+    <string name="key_email" translatable="false">key_email</string>
+    <string name="key_sleep_timer" translatable="false">key_sleep_timer</string>
+    <string name="key_music_quality" translatable="false">key_music_quality</string>
+    <string name="key_notification_ringtone" translatable="false">key_notification_ringtone</string>
 </resources>

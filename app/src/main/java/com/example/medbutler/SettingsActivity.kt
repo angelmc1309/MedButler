@@ -16,9 +16,39 @@ class SettingsActivity : AppCompatActivity() {
             .commit()
     }
 
-    class MainSettingsFragment : PreferenceFragmentCompat(){
+    class MainSettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener{
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            // Load the preferences from an XML resource
+            setPreferencesFromResource(R.xml.preferences, rootKey)
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_full_name)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_email)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_sleep_timer)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_music_quality)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_notification_ringtone)))
         }
 
+        private fun bindPreferenceSummaryToValue(preference: Preference) {
+            preference.onPreferenceChangeListener = this
+
+            onPreferenceChange(preference,
+                PreferenceManager
+                    .getDefaultSharedPreferences(preference.context)
+                    .getString(preference.key, ""))
+        }
+
+        override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
+            val stringValue = value.toString()
+
+            if (preference is ListPreference) {
+                val listPreference = preference
+                val prefIndex = listPreference.findIndexOfValue(stringValue)
+                if (prefIndex >= 0) { // if (prefIndex >= 0) {
+                    preference.setSummary(listPreference.entries[prefIndex])
+                } // else preference.setSummary null ??
+            } else if (preference is EditTextPreference) {
+                preference?.summary = stringValue
+            }
+            return true
+        }
     }
 }
