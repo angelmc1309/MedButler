@@ -77,14 +77,18 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ed
 		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.example.medbutler.ActivitySettings
+ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:12:9-63
+	android:name
+		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:12:19-51
 activity#com.example.medbutler.Sign_in
-ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:12:9-54
+ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:13:9-45
 	android:name
-		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:12:19-42
+		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:13:19-42
 activity#com.example.medbutler.login
-ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:13:9-20:20
+ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:14:13-34
+		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:14:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
@@ -104,7 +108,7 @@ ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_d
 	android:name
 		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:19-51
 activity#com.example.medbutler.Calendar
-ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:23:9-55
+ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:23:9-46
 	android:name
 		ADDED from C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:23:19-43
 uses-sdk
