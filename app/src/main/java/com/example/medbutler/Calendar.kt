@@ -3,17 +3,14 @@ package com.example.medbutler
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 
-class MainActivity : AppCompatActivity() {
+class Calendar : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_page)
+        setContentView(R.layout.calendar_layout)
     }
 
-    fun viewCalendar(view: View){
-        val intent= Intent(this, Calendar::class.java)
-        startActivity(intent)
-    }
 }
