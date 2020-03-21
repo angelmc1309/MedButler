@@ -11,7 +11,7 @@
 9-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:5:5-23:19
+11-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:5:5-24:19
 12        android:allowBackup="true"
 12-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -48,9 +48,12 @@
 29        <activity android:name="com.example.medbutler.MainActivity" />
 29-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:21:9-50
 29-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:21:19-47
-30        <activity android:name="com.example.medbutler.Calendar" />
-30-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:9-55
-30-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:19-43
-31    </application>
-32
-33</manifest>
+30        <activity android:name="com.example.medbutler.SettingsActivity" />
+30-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:9-54
+30-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:19-51
+31        <activity android:name="com.example.medbutler.Calendar" />
+31-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:23:9-55
+31-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:23:19-43
+32    </application>
+33
+34</manifest>

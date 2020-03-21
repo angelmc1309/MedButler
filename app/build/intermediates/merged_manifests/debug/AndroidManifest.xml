@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.medbutler.MainActivity" />
+        <activity android:name="com.example.medbutler.SettingsActivity" />
         <activity android:name="com.example.medbutler.Calendar" />
     </application>
 
