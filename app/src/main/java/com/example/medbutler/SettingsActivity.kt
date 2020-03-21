@@ -1,7 +1,6 @@
 package com.example.medbutler
 
 import android.os.Bundle
-import android.preference.RingtonePreference
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
 
