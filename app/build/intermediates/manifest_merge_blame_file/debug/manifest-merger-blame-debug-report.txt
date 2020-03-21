@@ -1,0 +1,56 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.medbutler"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:5:5-23:19
+12        android:allowBackup="true"
+12-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.2.0] C:\Users\Eduard\.gradle\caches\transforms-2\files-2.1\3a2d57241743ce74e59dea7566120136\core-1.2.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:11:9-40
+21        <activity android:name="com.example.medbutler.Sign_in" />
+21-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:12:9-54
+21-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:12:19-42
+22        <activity android:name="com.example.medbutler.login" >
+22-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:13:9-20:20
+22-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:14:13-34
+23            <intent-filter>
+23-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:15:13-19:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:16:17-69
+24-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:16:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:18:17-77
+26-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:18:27-74
+27            </intent-filter>
+28        </activity>
+29        <activity android:name="com.example.medbutler.MainActivity" />
+29-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:21:9-50
+29-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:21:19-47
+30        <activity android:name="com.example.medbutler.Calendar" />
+30-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:9-55
+30-->C:\Users\Eduard\Desktop\Universitat UB\Semestre 2\Projecte_Integrat_de_Software\Projecte\MedButler\app\src\main\AndroidManifest.xml:22:19-43
+31    </application>
+32
+33</manifest>
