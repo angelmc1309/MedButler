@@ -12,17 +12,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="116dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="85dp"
         android:text="Crear un nou usuari"
         android:textColor="#D6C1C1"
         android:textColorHighlight="#E85252"
         android:textSize="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/usernameRegist"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -32,14 +33,14 @@
         android:layout_marginStart="75dp"
         android:layout_marginEnd="80dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Nom d'usuari"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364"
+        app:layout_constraintVertical_bias="0.313"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -50,12 +51,14 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
-        android:hint="Repeat Password"
+        android:hint="Contrasenya(repetir)"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/birthdayRegist"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -64,16 +67,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="21dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Contrasenya"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/passwordRegist2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameRegist"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -81,13 +82,14 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="135dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="136dp"
         android:text="@string/butRegist"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthdayRegist"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.824"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -96,7 +98,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
         android:layout_marginEnd="103dp"
-        android:layout_marginBottom="107dp"
         android:onClick="actionGoToLogin"
         android:text="@string/labelFerLog"
         android:textColor="#0E0E0E"
@@ -104,8 +105,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butRegist"
-        app:layout_constraintVertical_bias="0.903"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -114,11 +115,59 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="80dp"
+        android:clickable="true"
+        android:editable="false"
         android:ems="10"
-        android:inputType="date"
+        android:hint="Data naixement"
+        android:inputType="none"
+        android:onClick="pickBirthday"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="441dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679"
+        tools:ignore="MissingConstraints" />
+
+
+    <RadioGroup
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418">
+
+
+        <RadioButton
+
+            android:id="@+id/maleButRegist"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/selec_genere"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Masculí"
+            android:textSize="15dp"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/femaleButRegst"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/selec_genere"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Femení"
+            android:textSize="15dp"></RadioButton>
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
