@@ -1,0 +1,4 @@
+#Sun Mar 22 15:55:28 CET 2020
+base.0=C\:\\Users\\Angel\\AndroidStudioProjects\\MedButler\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
