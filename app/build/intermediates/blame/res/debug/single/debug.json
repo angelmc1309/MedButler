@@ -4,20 +4,32 @@
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_backgroundmp1.png.flat",
-        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-mdpi\\backgroundmp1.png"
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_settingslogo1.png.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-mdpi\\settingslogo1.png"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_page.xml.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\main_page.xml"
     },
     {
-        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_settingslogo1.png.flat",
-        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-mdpi\\settingslogo1.png"
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_backgroundmp1.png.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-mdpi\\backgroundmp1.png"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\xml_appearence_preferences.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\xml\\appearence_preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_appearence_activity.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\settings_appearence_activity.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_privacy_security_activity.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\settings_privacy_security_activity.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
@@ -26,6 +38,10 @@
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_profilelogo1.png.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-xxxhdpi\\profilelogo1.png"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_about_activity.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\settings_about_activity.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_treatmentlogo1.png.flat",
@@ -40,12 +56,12 @@
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-xxhdpi\\helpandsupport_icon.png"
     },
     {
-        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_account_activity.xml.flat",
@@ -66,6 +82,10 @@
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_calendarlogo1.png.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-xxxhdpi\\calendarlogo1.png"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_notifications_activity.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\settings_notifications_activity.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -160,12 +180,20 @@
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-xhdpi\\settingslogo1.png"
     },
     {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\xml_about_preferences.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\xml\\about_preferences.xml"
+    },
+    {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_profile_layout.xml.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\user_profile_layout.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_row_settings.xml.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\row_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\xml_notifications_preferences.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\xml\\notifications_preferences.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_activity.xml.flat",
@@ -178,6 +206,14 @@
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_help_support_activity.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\layout\\settings_help_support_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\xml_help_support_preferences.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\xml\\help_support_preferences.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_profilelogo1.png.flat",
@@ -234,6 +270,10 @@
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_backgroundmp1.png.flat",
         "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\drawable-xxxhdpi\\backgroundmp1.png"
+    },
+    {
+        "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\xml_privacy_security_preferences.xml.flat",
+        "source": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\src\\main\\res\\xml\\privacy_security_preferences.xml"
     },
     {
         "merged": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_activity1.xml.flat",

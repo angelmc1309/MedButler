@@ -33,18 +33,28 @@ class SettingsActivity : AppCompatActivity() {
             }
             if (position == 1){
                 Toast.makeText(this@SettingsActivity, "you click on Notifications", Toast.LENGTH_LONG).show()
+                val intent= Intent(this, SettingsNotificationsActivity::class.java)
+                startActivity(intent)
             }
             if (position == 2){
                 Toast.makeText(this@SettingsActivity, "you click on Appearance", Toast.LENGTH_LONG).show()
+                val intent= Intent(this, SettingsAppearanceActivity::class.java)
+                startActivity(intent)
             }
             if (position == 3){
                 Toast.makeText(this@SettingsActivity, "you click on Privacy & Security", Toast.LENGTH_LONG).show()
+                val intent= Intent(this, SettingsPrivacySecurityActivity::class.java)
+                startActivity(intent)
             }
             if (position == 4){
                 Toast.makeText(this@SettingsActivity, "you click on Help and Support", Toast.LENGTH_LONG).show()
+                val intent= Intent(this, SettingsHelpSupportActivity::class.java)
+                startActivity(intent)
             }
             if (position == 5){
                 Toast.makeText(this@SettingsActivity, "you click on About", Toast.LENGTH_LONG).show()
+                val intent= Intent(this, SettingsAboutActivity::class.java)
+                startActivity(intent)
             }
         }
     }

@@ -23,8 +23,12 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+array colorTheme
+array colorThemeValues
 array musicQuality
 array musicQualityValues
+array prefSyncConnectionType
+array prefSyncConnectionTypeValues
 array ringtoneList
 array ringtoneListValues
 array timerList
@@ -977,7 +981,12 @@ id seekbar
 id seekbar_value
 id select_dialog_listview
 id settings
+id settings_about
 id settings_account
+id settings_appearence
+id settings_help_support
+id settings_notifications
+id settings_privacy_security
 id shortcut
 id showCustom
 id showHome
@@ -1115,9 +1124,14 @@ layout row_settings
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout settings_about_activity
 layout settings_account_activity
 layout settings_activity
 layout settings_activity1
+layout settings_appearence_activity
+layout settings_help_support_activity
+layout settings_notifications_activity
+layout settings_privacy_security_activity
 layout support_simple_spinner_dropdown_item
 layout user_profile_layout
 layout week_layout
@@ -1621,5 +1635,10 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml about_preferences
 xml account_preferences
+xml appearence_preferences
+xml help_support_preferences
+xml notifications_preferences
 xml preferences
+xml privacy_security_preferences
