@@ -7,18 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SettingsActivity"
+    android:weightSum="11"
     >
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:paddingBottom="7dp">
+        android:paddingBottom="7dp"
+        android:layout_weight="9">
 
     </ListView>
 
 
     <LinearLayout
+        android:layout_weight="2"
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
