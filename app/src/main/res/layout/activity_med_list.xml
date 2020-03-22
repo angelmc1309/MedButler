@@ -7,18 +7,20 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/newUserLabelLogin"
+        android:id="@+id/medicineLabel"
         android:layout_width="match_parent"
         android:layout_height="85dp"
         android:layout_gravity="center_horizontal"
         android:font="@font/averia_serif_libre_light"
         android:fontFamily="@font/averia_serif_libre_light"
+        android:textSize="32dp"
+        android:textColor="@android:color/black"
         android:text="@string/medsDesc"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="32dp"
+
+
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-46dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/med_1"
@@ -32,7 +34,7 @@
         android:textColor="@android:color/white"
         android:textSize="24dp"
         app:layout_constraintTop_toBottomOf="@+id/med_2"
-        tools:layout_editor_absoluteX="-35dp" />
+        tools:layout_editor_absoluteX="-16dp" />
 
     <TextView
         android:id="@+id/med_2"
@@ -45,8 +47,8 @@
         android:text="Ibuprofeno cada 6 hores"
         android:textColor="@android:color/white"
         android:textSize="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/newUserLabelLogin"
-        tools:layout_editor_absoluteX="-16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/medicineLabel"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/med_3"

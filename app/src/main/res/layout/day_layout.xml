@@ -8,14 +8,75 @@
         android:id="@+id/day_label"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:text="Dia"
+        android:text="Dilluns"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
+        android:font="@font/averia_serif_libre_light"
+        android:fontFamily="@font/averia_serif_libre_light"
+        android:textColor="@android:color/black"
         android:textSize="32dp"/>
 
-    <ListView
+
+    <TextView
+    android:id="@+id/apat_1"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/colorPrimary"
+    android:font="@font/averia_serif_libre_light"
+    android:fontFamily="@font/averia_serif_libre_light"
+    android:text="Cereals"
+    android:textColor="@android:color/white"
+    android:textSize="24dp"
+    />
+    <TextView
+        android:id="@+id/apat_2"
         android:layout_width="match_parent"
-        android:layout_height="328dp" />
+        android:layout_height="85dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:font="@font/averia_serif_libre_light"
+        android:fontFamily="@font/averia_serif_libre_light"
+        android:text="3 mandarines"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
+        />
+    <TextView
+        android:id="@+id/apat_3"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:font="@font/averia_serif_libre_light"
+        android:fontFamily="@font/averia_serif_libre_light"
+        android:text="Peix"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
+        />
+    <TextView
+    android:id="@+id/apat_4"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/colorPrimary"
+    android:font="@font/averia_serif_libre_light"
+    android:fontFamily="@font/averia_serif_libre_light"
+    android:text="Entrepà de formatge"
+    android:textColor="@android:color/white"
+    android:textSize="24dp"
+    />
+    <TextView
+        android:id="@+id/apat_5"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:font="@font/averia_serif_libre_light"
+        android:fontFamily="@font/averia_serif_libre_light"
+        android:text="Carn"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
+        />
 
 
 

@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/asul"
-        android:text="Dara de neixement: septembre 2000"
+        android:text="Data de naixement: septembre 2000"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
