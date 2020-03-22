@@ -4,4 +4,9 @@
     <string name="butRegist">Enregistrar</string>
     <string name="complete_name">Armando Gran Jaleo</string>
     <string name="greeting">HI,USER!</string>
+    <string name="crearNouUsuariLabel">Crear un nou usuari</string>
+    <string name="selecHome">Home</string>
+    <string name="selecDona">Dona</string>
+    <string name="loginBut">Log in</string>
+    <string name="vullEnregistrarLabel">Vull crear un nou usuari</string>
 </resources>

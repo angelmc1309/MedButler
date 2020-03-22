@@ -20,11 +20,13 @@ class login : AppCompatActivity() {
             Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
             val intent= Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }else{
+            Toast.makeText(this,"Usuari/contrasenya incorrecte!", Toast.LENGTH_SHORT).show()
         }
 
     }
     fun actionRegistre(view:View){
-        val intent=Intent(this, Sign_in::class.java)
+        val intent=Intent(this, Sign_up::class.java)
         startActivity(intent)
     }
 
