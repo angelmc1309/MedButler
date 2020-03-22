@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.medbutler.ActivitySettings" />
+        <activity android:name="com.example.medbutler.SettingsActivity" />
         <activity android:name="com.example.medbutler.Sign_in" />
         <activity android:name="com.example.medbutler.login" >
             <intent-filter>
@@ -29,8 +29,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.medbutler.MainActivity" />
-        <activity android:name="com.example.medbutler.SettingsActivity" />
+        <activity android:name="com.example.medbutler.SettingsActivity1" />
         <activity android:name="com.example.medbutler.Calendar" />
+        <activity android:name="com.example.medbutler.SettingsAccountActivity" />
     </application>
 
 </manifest>

@@ -31,6 +31,8 @@ array timerList
 array timerListValues
 array typeOfMusic
 array typeOfMusicValues
+array updateInterval
+array updateIntervalValues
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -975,6 +977,7 @@ id seekbar
 id seekbar_value
 id select_dialog_listview
 id settings
+id settings_account
 id shortcut
 id showCustom
 id showHome
@@ -1080,7 +1083,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
-layout activity_settings
 layout activity_sign_in
 layout calendar_layout
 layout custom_dialog
@@ -1109,11 +1111,13 @@ layout preference_widget_seekbar
 layout preference_widget_seekbar_material
 layout preference_widget_switch
 layout preference_widget_switch_compat
-layout rwo_settings
+layout row_settings
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout settings_account_activity
 layout settings_activity
+layout settings_activity1
 layout support_simple_spinner_dropdown_item
 layout user_profile_layout
 layout week_layout
@@ -1148,7 +1152,11 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
 string butRegist
+string date_of_birth
+string email_adress
 string expand_button_title
+string full_name
+string height
 string key_email
 string key_full_name
 string key_music_quality
@@ -1158,8 +1166,11 @@ string labelFerLog
 string search_menu_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
+string sync_interval
+string username
 string v7_preference_off
 string v7_preference_on
+string weight
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1610,4 +1621,5 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml account_preferences
 xml preferences
