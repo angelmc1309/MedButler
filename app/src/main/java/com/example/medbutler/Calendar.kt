@@ -16,13 +16,25 @@ class Calendar : AppCompatActivity(){
         val cal = findViewById<CalendarView>(R.id.calendar_view)
         cal.setOnDateChangeListener(CalendarView.OnDateChangeListener { view, year, month, dayOfMonth -> calendarClick(cal)})
     }
+    fun actionCalendar(view: View){
+        val intent= Intent(this, Calendar::class.java)
+        startActivity(intent)
+    }
     fun actionUser(view: View){
         val intent= Intent(this, UserProfile::class.java)
         startActivity(intent)
+    }
+    fun actionMeds(view: View){
+        val intent= Intent(this, MedListActivity::class.java)
+        startActivity(intent)
+    }
+    fun actionSettings(view: View){
+        //TODO
     }
     fun calendarClick(view: View){
         val intent= Intent(this, DayActivity::class.java)
         startActivity(intent)
 
     }
+
 }

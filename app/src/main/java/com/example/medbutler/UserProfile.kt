@@ -16,12 +16,15 @@ class UserProfile : AppCompatActivity() {
         val intent= Intent(this, Calendar::class.java)
         startActivity(intent)
     }
+    fun actionUser(view: View){
+        val intent= Intent(this, UserProfile::class.java)
+        startActivity(intent)
+    }
     fun actionMeds(view: View){
-        //TODO
-        Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
+        val intent= Intent(this, MedListActivity::class.java)
+        startActivity(intent)
     }
     fun actionSettings(view: View){
         //TODO
-        Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
     }
 }

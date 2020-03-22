@@ -9,4 +9,5 @@
     <string name="selecDona">Dona</string>
     <string name="loginBut">Log in</string>
     <string name="vullEnregistrarLabel">Vull crear un nou usuari</string>
+    <string name="medsDesc">Llistat de medicines</string>
 </resources>

@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class MainActivity : AppCompatActivity() {
+class MedListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_page)
+        setContentView(R.layout.activity_med_list)
     }
-
     fun actionCalendar(view: View){
         val intent= Intent(this, Calendar::class.java)
         startActivity(intent)

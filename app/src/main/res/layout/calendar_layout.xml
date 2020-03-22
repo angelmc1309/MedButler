@@ -103,6 +103,7 @@
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/meds_logo"
+            android:onClick="actionMeds"
             android:paddingRight="10dp"
             android:layout_weight="1"
             />
@@ -113,6 +114,7 @@
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/settings"
+            android:onClick="actionSettings"
             android:paddingRight="10dp"
             android:layout_weight="1"
             />

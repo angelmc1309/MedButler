@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/newUserLabelLogin"
+        android:id="@+id/day_label"
         android:layout_width="match_parent"
         android:layout_height="85dp"
         android:text="Dia"

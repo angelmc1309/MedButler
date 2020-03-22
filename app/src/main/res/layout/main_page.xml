@@ -138,7 +138,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:onClick="actionMeds">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -181,7 +182,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:onClick="actionSettings">
 
             <LinearLayout
                 android:layout_width="wrap_content"
