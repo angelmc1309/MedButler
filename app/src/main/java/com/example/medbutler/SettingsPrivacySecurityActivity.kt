@@ -11,11 +11,11 @@ class SettingsPrivacySecurityActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_privacy_security, AccountSettingsFragment())
+            .replace(R.id.settings_privacy_security, PrivacySecuritySettingsFragment())
             .commit()
     }
 
-    class AccountSettingsFragment : PreferenceFragmentCompat() {
+    class PrivacySecuritySettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.privacy_security_preferences, rootKey)

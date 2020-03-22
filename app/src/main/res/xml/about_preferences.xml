@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="About"
-        android:summary="We are a team of like-minded people, specialized in development of Android App Development creating new trends across the app space. Glad to Help in anyway!">
+    <PreferenceCategory android:title="About">
+
+        <Preference
+            android:summary="We are a team of like-minded people, specialized in development of Android App Development creating new trends across the app space. Glad to Help in anyway!"/>
 
         <Preference
             android:title="Version"

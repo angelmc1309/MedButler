@@ -11,11 +11,11 @@ class SettingsHelpSupportActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_help_support, AccountSettingsFragment())
+            .replace(R.id.settings_help_support, HelpSupportSettingsFragment())
             .commit()
     }
 
-    class AccountSettingsFragment : PreferenceFragmentCompat() {
+    class HelpSupportSettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.help_support_preferences, rootKey)

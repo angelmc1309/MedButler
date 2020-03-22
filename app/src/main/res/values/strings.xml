@@ -16,5 +16,7 @@
     <string name="date_of_birth" translatable="false">date_of_birth</string>
     <string name="height" translatable="false">height</string>
     <string name="weight" translatable="false">weight</string>
+    <string name="key_color_theme" translatable="false">key_color_theme</string>
+    <string name="pref_sync_connection_type">pref_sync_connection_type</string>
 
 </resources>

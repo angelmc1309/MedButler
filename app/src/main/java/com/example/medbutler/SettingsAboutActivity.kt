@@ -11,11 +11,11 @@ class SettingsAboutActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_about, AccountSettingsFragment())
+            .replace(R.id.settings_about, AboutSettingsFragment())
             .commit()
     }
 
-    class AccountSettingsFragment : PreferenceFragmentCompat() {
+    class AboutSettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.about_preferences, rootKey)

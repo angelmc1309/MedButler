@@ -1,15 +1,21 @@
 package com.example.medbutler
 
 import android.app.DatePickerDialog
-import android.app.Dialog
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.DialogFragment
 import androidx.preference.*
+
+/*
+import android.R.attr
+import android.app.Dialog
+import android.content.SharedPreferences
+import android.view.View
+import androidx.fragment.app.DialogFragment
+ */
 
 
 class SettingsAccountActivity : AppCompatActivity() {
@@ -24,19 +30,43 @@ class SettingsAccountActivity : AppCompatActivity() {
     }
 
     class AccountSettingsFragment : PreferenceFragmentCompat(),
-        Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
+        Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener { //SharedPreferences.OnSharedPreferenceChangeListener
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.account_preferences, rootKey)
             bindPreferenceSummaryToValue(findPreference(getString(R.string.sync_interval)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sync_connection_type)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.full_name)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.username)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.email_adress)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.height)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.weight)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.date_of_birth)))
 
             findPreference(getString(R.string.date_of_birth)).onPreferenceClickListener = this
+
+            //bindSharedPreferenceToValue(activity!!.getSharedPreferences(getString(R.string.date_of_birth),0),getString(R.string.date_of_birth))
         }
+
+        /*
+
+        private fun bindSharedPreferenceToValue(sharedPreferences:SharedPreferences, key: String){
+            sharedPreferences.registerOnSharedPreferenceChangeListener(this)
+
+            onSharedPreferenceChanged(sharedPreferences,key)
+        }
+
+        override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?
+        ) {
+            if (key.equals("date_of_birth")){
+                val newValue = sharedPreferences!!.getString(key, "12")
+                val stringValue = newValue.toString()
+                findPreference(getString(R.string.date_of_birth))?.summary = stringValue
+            }
+        }
+
+         */
 
         private fun bindPreferenceSummaryToValue(preference: Preference) {
             preference.onPreferenceChangeListener = this
@@ -50,7 +80,14 @@ class SettingsAccountActivity : AppCompatActivity() {
         }
 
         override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
-            val stringValue = value.toString()
+
+            val stringValue:String
+            if(value.toString() != ""){
+                stringValue = value.toString()
+            }else{
+                stringValue = preference?.summary.toString()
+            }
+
 
             if (preference is ListPreference) {
                 val listPreference = preference
@@ -72,14 +109,23 @@ class SettingsAccountActivity : AppCompatActivity() {
             return true
         }
 
+        @RequiresApi(Build.VERSION_CODES.N)
         private fun showDatePickerDialog(preference: Preference?) {
-            val newFragment = DatePickerFragment.newInstance(DatePickerDialog.OnDateSetListener { _, year, month, day ->
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+            val dpd = DatePickerDialog(activity!!, DatePickerDialog.OnDateSetListener {view: DatePicker, year: Int, month: Int, dayOfMonth: Int ->
                 // +1 because January is zero
-                val selectedDate = day.toString() + " / " + (month + 1) + " / " + year
-                onPreferenceChange(preference,selectedDate)
-            })
-            newFragment.show(fragmentManager!!, "datePicker")
+                val selectedDate = dayOfMonth.toString() + " / " + (month + 1) + " / " + year
+                PreferenceManager.getDefaultSharedPreferences(context).edit().putString(preference?.key, selectedDate).apply()
+                preference?.summary = selectedDate
+            }, year, month, day)
+            dpd.show()
         }
+
+        /*
 
         class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
@@ -110,5 +156,7 @@ class SettingsAccountActivity : AppCompatActivity() {
             }
 
         }
+
+         */
     }
 }

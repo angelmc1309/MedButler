@@ -1171,12 +1171,14 @@ string email_adress
 string expand_button_title
 string full_name
 string height
+string key_color_theme
 string key_email
 string key_full_name
 string key_music_quality
 string key_notification_ringtone
 string key_sleep_timer
 string labelFerLog
+string pref_sync_connection_type
 string search_menu_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list

@@ -22,7 +22,7 @@ class SettingsActivity : AppCompatActivity() {
         list.add(ModelSettings("Appearance", "customize the look of the application", R.drawable.appearance_icon))
         list.add(ModelSettings("Privacy & Security", "see all privacy & security settings", R.drawable.privacyandsecurity_icon))
         list.add(ModelSettings("Help and Support", "App FAQ, contact us...", R.drawable.helpandsupport_icon))
-        list.add(ModelSettings("About", "version, size...", R.drawable.about_icon))
+        list.add(ModelSettings("About", "information about us, actual version of the application", R.drawable.about_icon))
 
         listview.adapter = AdapterSettings(this, R.layout.row_settings, list)
         listview.setOnItemClickListener {parent:AdapterView<*>, view:View, position:Int, id:Long ->
