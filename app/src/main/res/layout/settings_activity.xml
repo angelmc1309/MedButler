@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity"
+    >
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:paddingBottom="7dp">
+
+    </ListView>
+
+
+    <LinearLayout
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/colorPrimaryDark"
+
+        android:weightSum="4">
+
+
+
+        <ImageButton
+            android:id="@+id/userButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/user_logo"
+            android:onClick="actionUser"
+            android:paddingRight="10dp"
+            android:layout_weight="1"
+            />
+        <ImageButton
+            android:id="@+id/calendarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/calendar"
+            android:onClick="actionCalendar"
+
+            android:paddingRight="10dp"
+            android:layout_weight="1"
+            />
+        <ImageButton
+            android:id="@+id/medsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/meds_logo"
+            android:onClick="actionMeds"
+            android:paddingRight="10dp"
+            android:layout_weight="1"
+            />
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/settings"
+            android:paddingRight="10dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+</LinearLayout>

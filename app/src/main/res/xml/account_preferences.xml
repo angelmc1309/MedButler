@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Sync Information">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="perform_sync"
+            android:title="Enable Auto Sync"
+            android:summary="Enable or disable data synchronization"/>
+        <ListPreference
+            android:defaultValue="WiFi"
+            android:entries="@array/prefSyncConnectionType"
+            android:entryValues="@array/prefSyncConnectionTypeValues"
+            android:key="pref_sync_connection_type"
+            android:title="Sync Connection Type"
+            android:dependency="perform_sync"
+            android:summary="Define which synchronization type will be performed"/>
+        <ListPreference
+            android:defaultValue="30"
+            android:entries="@array/updateInterval"
+            android:entryValues="@array/updateIntervalValues"
+            android:key="sync_interval"
+            android:title="Sync Interval"
+            android:dependency="perform_sync"
+            android:summary="Define how often synchronization will be performed"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Personal Information">
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="full_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Your full name"
+            android:dialogMessage="Enter full name"
+            android:dialogTitle="Enter your full name"
+            android:inputType="textCapWords"
+            android:summary="Enter your full name"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="username"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Your username"
+            android:dialogMessage="Enter username"
+            android:dialogTitle="Enter your username"
+            android:summary="Enter your username to be used in the application"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="email_adress"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Email Address"
+            android:summary="Enter your email address"
+            android:dialogTitle="Enter your email adress"
+            android:dialogMessage="Enter your email adress"
+            android:inputType="textEmailAddress"/>
+
+        <Preference
+            android:defaultValue=""
+            android:title="Your date of birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="true"
+            android:maxLines="1"
+            android:summary="Enter your date of birth"
+            android:key="date_of_birth"
+            android:inputType="date"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="height"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Your height"
+            android:summary="Enter your height in centimeters"
+            android:dialogTitle="Enter your height in centimeters"
+            android:dialogMessage="Enter your height (cm)"
+            android:inputType="number"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="weight"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Your weight"
+            android:summary="Enter your weight in kilograms"
+            android:dialogTitle="Enter your weight in kilograms"
+            android:dialogMessage="Enter your weight (kg)"
+            android:inputType="number"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -9,8 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MedListActivity"></activity>
+        <activity android:name=".AddMedLayout"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".SettingsAccountActivity" />
+        <activity android:name=".SettingsAboutActivity" />
+        <activity android:name=".SettingsAppearanceActivity" />
+        <activity android:name=".SettingsHelpSupportActivity" />
+        <activity android:name=".SettingsPrivacySecurityActivity" />
+        <activity android:name=".SettingsNotificationsActivity" />
+        <activity android:name=".MedListActivity" />
         <activity android:name=".DayActivity" />
+        <activity android:name=".AdapterSettings" />
         <activity android:name=".Sign_up" />
         <activity
             android:name=".UserProfile"

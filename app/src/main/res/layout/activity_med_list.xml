@@ -125,7 +125,7 @@
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="84dp"
         android:text="Afegir Medicines"
-
+        android:onClick="actionAddMed"
         app:layout_constraintBottom_toTopOf="@+id/my_toolbar"
         app:layout_constraintEnd_toEndOf="parent" />
 

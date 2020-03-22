@@ -29,7 +29,8 @@ class Calendar : AppCompatActivity(){
         startActivity(intent)
     }
     fun actionSettings(view: View){
-        //TODO
+        val intent= Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
     fun calendarClick(view: View){
         val intent= Intent(this, DayActivity::class.java)

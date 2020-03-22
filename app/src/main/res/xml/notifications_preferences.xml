@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Notifications">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="enable_notification"
+            android:summary="New notifications will be puched to your phone"
+            android:title="Push notifications" />
+
+        <ListPreference
+            android:defaultValue="None"
+            android:dependency="enable_notification"
+            android:entries="@array/ringtoneList"
+            android:entryValues="@array/ringtoneListValues"
+            android:key="key_notification_ringtone"
+            android:summary="Choose notification sound"
+            android:title="Notification ringtone" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:dependency="enable_notification"
+            android:key="enable_vibrate"
+            android:summary="Vibrate when there is a new notification"
+            android:title="Vibrate" />
+    </PreferenceCategory>
+</PreferenceScreen>

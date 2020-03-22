@@ -25,6 +25,7 @@ class UserProfile : AppCompatActivity() {
         startActivity(intent)
     }
     fun actionSettings(view: View){
-        //TODO
+        val intent= Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 }

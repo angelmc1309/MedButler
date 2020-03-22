@@ -19,11 +19,13 @@ class MedListActivity : AppCompatActivity() {
         val intent= Intent(this, UserProfile::class.java)
         startActivity(intent)
     }
-    fun actionMeds(view: View){
-        val intent= Intent(this, MedListActivity::class.java)
+
+    fun actionSettings(view: View){
+        val intent= Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
-    fun actionSettings(view: View){
-        //TODO
+    fun actionAddMed(view: View){
+        val intent= Intent(this, AddMedLayout::class.java)
+        startActivity(intent)
     }
 }

@@ -10,4 +10,18 @@
     <string name="loginBut">Log in</string>
     <string name="vullEnregistrarLabel">Vull crear un nou usuari</string>
     <string name="medsDesc">Llistat de medicines</string>
+    <string name="key_full_name" translatable="false">key_full_name</string>
+    <string name="key_email" translatable="false">key_email</string>
+    <string name="key_sleep_timer" translatable="false">key_sleep_timer</string>
+    <string name="key_music_quality" translatable="false">key_music_quality</string>
+    <string name="key_notification_ringtone" translatable="false">key_notification_ringtone</string>
+    <string name="sync_interval" translatable="false">sync_interval</string>
+    <string name="full_name" translatable="false">full_name</string>
+    <string name="username" translatable="false">username</string>
+    <string name="email_adress" translatable="false">email_adress</string>
+    <string name="date_of_birth" translatable="false">date_of_birth</string>
+    <string name="height" translatable="false">height</string>
+    <string name="weight" translatable="false">weight</string>
+    <string name="key_color_theme" translatable="false">key_color_theme</string>
+    <string name="pref_sync_connection_type">pref_sync_connection_type</string>
 </resources>

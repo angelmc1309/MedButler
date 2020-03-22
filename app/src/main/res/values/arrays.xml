@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="timerList">
+        <item>Afet 5 seconds</item>
+        <item>Afet 10 seconds</item>
+        <item>Afet 15 seconds</item>
+        <item>Afet 20 seconds</item>
+    </string-array>
+
+    <string-array name="timerListValues">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+    
+    <string-array name="musicQuality">
+        <item>128kbps</item>
+        <item>320kbps</item>
+        <item>Lossless</item>
+    </string-array>
+    
+    <string-array name="musicQualityValues">
+        <item>128</item>
+        <item>320</item>
+        <item>Lossless</item>
+    </string-array>
+
+    <string-array name="typeOfMusic">
+        <item>Pop</item>
+        <item>Classical</item>
+        <item>Rock</item>
+        <item>Hip hop</item>
+    </string-array>
+
+    <string-array name="typeOfMusicValues">
+        <item>Pop</item>
+        <item>Classical</item>
+        <item>Rock</item>
+        <item>Hiphop</item>
+    </string-array>
+
+    <string-array name="ringtoneList">
+        <item>None</item>
+        <item>Beginning</item>
+        <item>Coconuts</item>
+        <item>Duet</item>
+        <item>End note</item>
+        <item>Gentle gong</item>
+        <item>Mallet</item>
+        <item>Orsers up</item>
+        <item>Ping</item>
+        <item>Popcorn</item>
+        <item>Tuneup</item>
+        <item>Twinkle</item>
+    </string-array>
+
+    <string-array name="ringtoneListValues">
+        <item>None</item>
+        <item>Beginning</item>
+        <item>Coconuts</item>
+        <item>Duet</item>
+        <item>Endnote</item>
+        <item>Gentlegong</item>
+        <item>Mallet</item>
+        <item>Orsersup</item>
+        <item>Ping</item>
+        <item>Popcorn</item>
+        <item>Tuneup</item>
+        <item>Twinkle</item>
+    </string-array>
+
+    <string-array name="updateInterval">
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>30 minutes</item>
+    </string-array>
+
+    <string-array name="updateIntervalValues">
+        <item>5</item>
+        <item>10</item>
+        <item>30</item>
+    </string-array>
+    
+    <string-array name="prefSyncConnectionType">
+        <item>WiFi</item>
+        <item>Mobile Data</item>
+        <item>WiFi/Mobile Data</item>
+    </string-array>
+
+    <string-array name="prefSyncConnectionTypeValues">
+        <item>WiFi</item>
+        <item>Mobile Data</item>
+        <item>WiFi_Mobile</item>
+    </string-array>
+    
+    <string-array name="colorTheme">
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Red</item>
+        <item>Violet</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+        <item>White</item>
+    </string-array>
+
+    <string-array name="colorThemeValues">
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Red</item>
+        <item>Violet</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+        <item>White</item>
+    </string-array>
+</resources>
