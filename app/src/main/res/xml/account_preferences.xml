@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory android:title="Sync Information">
 
@@ -8,6 +9,14 @@
             android:key="perform_sync"
             android:title="Enable Auto Sync"
             android:summary="Enable or disable data synchronization"/>
+        <ListPreference
+            android:defaultValue="WiFi"
+            android:entries="@array/prefSyncConnectionType"
+            android:entryValues="@array/prefSyncConnectionTypeValues"
+            android:key="pref_sync_connection_type"
+            android:title="Sync Connection Type"
+            android:dependency="perform_sync"
+            android:summary="Define which synchronization type will be performed"/>
         <ListPreference
             android:defaultValue="30"
             android:entries="@array/updateInterval"

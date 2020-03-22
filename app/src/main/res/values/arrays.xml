@@ -81,4 +81,38 @@
         <item>10</item>
         <item>30</item>
     </string-array>
+    
+    <string-array name="prefSyncConnectionType">
+        <item>WiFi</item>
+        <item>Mobile Data</item>
+        <item>WiFi/Mobile Data</item>
+    </string-array>
+
+    <string-array name="prefSyncConnectionTypeValues">
+        <item>WiFi</item>
+        <item>Mobile Data</item>
+        <item>WiFi_Mobile</item>
+    </string-array>
+    
+    <string-array name="colorTheme">
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Red</item>
+        <item>Violet</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+        <item>White</item>
+    </string-array>
+
+    <string-array name="colorThemeValues">
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Red</item>
+        <item>Violet</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+        <item>White</item>
+    </string-array>
 </resources>

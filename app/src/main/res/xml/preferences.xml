@@ -58,7 +58,6 @@
     <PreferenceCategory android:title="OTHER">
 
         <SwitchPreferenceCompat
-            android:editable="true"
             android:key="enable_notification"
             android:title="Push notifications" />
 
