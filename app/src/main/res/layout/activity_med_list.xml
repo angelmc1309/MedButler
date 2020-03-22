@@ -119,12 +119,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/afegirMedicines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="84dp"
         android:text="Afegir Medicines"
+        
         app:layout_constraintBottom_toTopOf="@+id/my_toolbar"
         app:layout_constraintEnd_toEndOf="parent" />
 
