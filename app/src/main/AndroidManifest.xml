@@ -9,9 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashScreen">
-
-        </activity>
         <activity android:name=".AddMedLayout" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".SettingsAccountActivity" />
@@ -29,7 +26,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".ToolBarTemplate" />
         <activity android:name=".login"
-            android:theme="@style/splashTheme">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
