@@ -93,26 +93,5 @@
         <item>Mobile Data</item>
         <item>WiFi_Mobile</item>
     </string-array>
-    
-    <string-array name="colorTheme">
-        <item>Yellow</item>
-        <item>Orange</item>
-        <item>Red</item>
-        <item>Violet</item>
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Black</item>
-        <item>White</item>
-    </string-array>
 
-    <string-array name="colorThemeValues">
-        <item>Yellow</item>
-        <item>Orange</item>
-        <item>Red</item>
-        <item>Violet</item>
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Black</item>
-        <item>White</item>
-    </string-array>
 </resources>

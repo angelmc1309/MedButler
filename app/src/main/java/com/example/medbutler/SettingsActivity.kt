@@ -1,5 +1,6 @@
 package com.example.medbutler
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,8 +39,8 @@ class SettingsActivity : AppCompatActivity() {
             }
             if (position == 2){
                 Toast.makeText(this@SettingsActivity, "you click on Appearance", Toast.LENGTH_LONG).show()
-                val intent= Intent(this, SettingsAppearanceActivity::class.java)
-                startActivity(intent)
+                val intent2= Intent(this, SettingsAppearanceActivity()::class.java)
+                startActivity(intent2)
             }
             if (position == 3){
                 Toast.makeText(this@SettingsActivity, "you click on Privacy & Security", Toast.LENGTH_LONG).show()
