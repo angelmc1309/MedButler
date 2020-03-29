@@ -1,0 +1,88 @@
+package com.example.medbutler.ListView
+
+import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ListView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.medbutler.MainActivity
+import com.example.medbutler.R
+
+class ModelListViewCalendar : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.image_listview_layout_all)
+        var listview = findViewById<ListView>(R.id.listviewAll)
+        var list = mutableListOf<ModelOther>()
+
+        list.add(
+            ModelOther(
+                "Calendar model picture one",
+                R.drawable.cal_im
+            )
+        )
+        list.add(
+            ModelOther(
+                "Calendar model picture two",
+                R.drawable.cal2_im
+            )
+        )
+        list.add(
+            ModelOther(
+                "Calendar model picture three",
+                R.drawable.cal3_im
+            )
+        )
+        list.add(
+            ModelOther(
+                "Calendar model picture four",
+                R.drawable.cal4_im
+            )
+        )
+        list.add(
+            ModelOther(
+                "Calendar model picture five",
+                R.drawable.cal5_im
+            )
+        )
+
+        listview.adapter = CustomAdapterOther(
+            this,
+            R.layout.listview_layout_calendar,
+            list
+        )
+        listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
+            if (position == 0) {
+                Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture one", Toast.LENGTH_SHORT).show()
+                MainActivity.calendarImageId = "cal_im"
+                MainActivity.calendarImageBackgroundId = "cal_back"
+                finish()
+            }
+            if (position == 1) {
+                Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture two", Toast.LENGTH_SHORT).show()
+                MainActivity.calendarImageId = "cal2_im"
+                MainActivity.calendarImageBackgroundId = "cal2_back"
+                finish()
+            }
+            if (position == 2) {
+                Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture three", Toast.LENGTH_SHORT).show()
+                MainActivity.calendarImageId = "cal3_im"
+                MainActivity.calendarImageBackgroundId = "cal3_back"
+                finish()
+            }
+            if (position == 3) {
+                Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture four", Toast.LENGTH_SHORT).show()
+                MainActivity.calendarImageId = "cal4_im"
+                MainActivity.calendarImageBackgroundId = "cal4_back"
+                finish()
+            }
+            if (position == 4) {
+                Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture five", Toast.LENGTH_SHORT).show()
+                MainActivity.calendarImageId = "cal5_im"
+                MainActivity.calendarImageBackgroundId = "cal5_back"
+                finish()
+            }
+        }
+    }
+}

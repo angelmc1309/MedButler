@@ -56,6 +56,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             android:onClick="actionUser">
+
             <RelativeLayout
                 android:id="@+id/profileLayout"
                 android:layout_width="match_parent"
@@ -64,33 +65,37 @@
                 android:layout_margin="10dp">
 
                 <ImageView
+                    android:id="@+id/profileImageBackground"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:id="@+id/profileImageBackground"/>
+                    android:layout_marginBottom="24dp"
+                    android:layout_above="@id/ProfileText"/>
+
                 <ImageView
+                    android:id="@+id/profileImagePerson"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
+                    android:layout_above="@id/ProfileText"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:id="@+id/profileImagePerson"/>
+                    android:layout_marginBottom="24dp" />
 
                 <TextView
+                    android:id="@+id/ProfileText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="219dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
                     android:background="@android:color/white"
                     android:text="@string/profile"
                     android:textAlignment="center"
@@ -125,32 +130,35 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:id="@+id/calendarImageBackground" />
+                    android:layout_marginBottom="24dp"
+                    android:id="@+id/calendarImageBackground"
+                    android:layout_above="@id/CalendarText"/>
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:id="@+id/calendarImage" />
+                    android:layout_marginBottom="24dp"
+                    android:id="@+id/calendarImage"
+                    android:layout_above="@id/CalendarText"/>
 
                 <TextView
+                    android:id="@+id/CalendarText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="219dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
                     android:background="@android:color/white"
                     android:text="@string/calendar"
                     android:textAlignment="center"
@@ -185,40 +193,56 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="10dp">
 
-                <ImageView
-                    android:id="@+id/treatmentImageFirst"
+                <RelativeLayout
+                    android:id="@+id/treatmentLayout2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="217dp"
                     android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:adjustViewBounds="true"
-                    android:background="@drawable/border_image_view"
-                    android:scaleType="fitCenter"
-                    android:layout_centerInParent="true"/>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:adjustViewBounds="true"
-                    android:background="@drawable/border_image_view"
-                    android:scaleType="fitCenter"
-                    android:layout_centerInParent="true"
-                    android:id="@+id/treatmentImageSecond"
-                    android:alpha="0"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="219dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="26dp">
+
+                    <ImageView
+                        android:id="@+id/treatmentImageFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/border_image_view"
+                        android:scaleType="fitCenter"
+                        android:layout_centerInParent="true"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/border_image_view"
+                        android:scaleType="fitCenter"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/treatmentImageSecond"
+                        android:alpha="0"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/TreatmentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
                     android:background="@android:color/white"
                     android:text="@string/treatment"
                     android:textAlignment="center"
@@ -253,32 +277,33 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
+                    android:layout_marginBottom="24dp"
                     android:id="@+id/settingsImageBackground" />
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
+                    android:layout_marginBottom="24dp"
                     android:id="@+id/settingsImage" />
 
                 <TextView
+                    android:id="@+id/SettingsText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="219dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
                     android:background="@android:color/white"
                     android:text="@string/settings"
                     android:textAlignment="center"

@@ -103,16 +103,25 @@
         <item>set4_im</item>
     </string-array>
 
+    <string-array name="prefTreatmentThemeName">
+        <item>Treatment &amp; Care normal</item>
+        <item>Treatment &amp; Care open apple</item>
+        <item>Heart beating monitor classic</item>
+        <item>Heart beating monitor purple</item>
+    </string-array>
+
     <string-array name="prefTreatmentTheme">
-        <item>Treatment theme one</item>
-        <item>Treatment theme two</item>
-        <item>Treatment theme three</item>
+        <item>Treatment animated theme one</item>
+        <item>Treatment animated theme two</item>
+        <item>Treatment animated theme three</item>
+        <item>Treatment animated theme four</item>
     </string-array>
 
     <string-array name="prefTreatmentThemeValues">
         <item>treat1_1</item>
         <item>treat2_1</item>
         <item>treat3_1</item>
+        <item>treat3_3</item>
     </string-array>
 
 </resources>

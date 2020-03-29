@@ -1,10 +1,12 @@
 package com.example.medbutler
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
+import com.example.medbutler.ListView.*
 import petrov.kristiyan.colorpicker.ColorPicker
 import petrov.kristiyan.colorpicker.ColorPicker.OnChooseColorListener
 
@@ -25,12 +27,14 @@ class SettingsAppearanceActivity : AppCompatActivity() {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.appearence_preferences, rootKey)
 
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.profile_picture_ListPref)))
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.calendar_picture_ListPref)))
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.settings_picture_ListPref)))
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.treatment_picture_ListPref)))
+            //bindPreferenceSummaryToValue(findPreference(getString(R.string.settings_picture_ListPref)))
+
 
             findPreference(getString(R.string.key_color_theme)).onPreferenceClickListener = this
+            findPreference(getString(R.string.profile_picture_ListPref)).onPreferenceClickListener = this
+            findPreference(getString(R.string.treatment_picture_ListPref)).onPreferenceClickListener = this
+            findPreference(getString(R.string.calendar_picture_ListPref)).onPreferenceClickListener = this
+            findPreference(getString(R.string.settings_picture_ListPref)).onPreferenceClickListener = this
         }
 
         private fun bindPreferenceSummaryToValue(preference: Preference) {
@@ -44,7 +48,7 @@ class SettingsAppearanceActivity : AppCompatActivity() {
 
         override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
 
-            if (preference?.key.equals("profile_picture_ListPref")) {
+            /*if (preference?.key.equals("profile_picture_ListPref")) {
                 if (preference != null) {
                     if ((preference as ListPreference).value.equals("man_profile_image")){
                         MainActivity.profileImagePersonId = "man_profile_image"
@@ -65,8 +69,8 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                         MainActivity.profileImagePersonId = "woman_profile_image3"
                         MainActivity.profileImageBackgroundId = "woman_profile_background3"
                     }
-                }
-            } else if (preference?.key.equals("calendar_picture_ListPref")) {
+                }*/
+            /*if (preference?.key.equals("calendar_picture_ListPref")) {
                 if (preference != null) {
                     if ((preference as ListPreference).value.equals("cal_im")){
                         MainActivity.calendarImageId = "cal_im"
@@ -84,8 +88,8 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                         MainActivity.calendarImageId = "cal5_im"
                         MainActivity.calendarImageBackgroundId = "cal5_back"
                     }
-                }
-            } else if (preference?.key.equals("settings_picture_ListPref")){
+                }*/
+            /*if (preference?.key.equals("settings_picture_ListPref")){
                 if (preference != null) {
                     if ((preference as ListPreference).value.equals("set1_im")){
                         MainActivity.settingsImageId = "set1_im"
@@ -101,8 +105,7 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                         MainActivity.settingsImageBackgroundId = "set4_gray"
                     }
                 }
-            }else if ((preference?.key.equals("treatment_picture_ListPref"))){
-                if (preference != null) {
+            } else if ((preference?.key.equals("treatment_picture_ListPref"))){
                     if ((preference as ListPreference).value.equals("treat1_1")){
                         MainActivity.treatmentImageFirstId = "treat1_1"
                         MainActivity.treatmentImageSecondId = "treat1_2"
@@ -112,9 +115,12 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                     } else if (preference.value.equals("treat3_1")){
                         MainActivity.treatmentImageFirstId = "treat3_1"
                         MainActivity.treatmentImageSecondId = "treat3_2"
+                    } else if (preference.value.equals("treat3_3")){
+                    MainActivity.treatmentImageFirstId = "treat3_3"
+                    MainActivity.treatmentImageSecondId = "treat3_2"
                     }
                 }
-            }
+            }*/
             return true
         }
 
@@ -122,6 +128,26 @@ class SettingsAppearanceActivity : AppCompatActivity() {
         override fun onPreferenceClick(preference: Preference?): Boolean {
             if (preference?.key.equals("key_color_theme")){
                 showColorPicker(preference)
+            }else if ((preference?.key.equals("treatment_picture_ListPref"))){
+                if (preference != null) {
+                    val intent= Intent(context, ModelListViewTreatment::class.java)
+                    startActivity(intent)
+                }
+            }else if (preference?.key.equals("profile_picture_ListPref")) {
+                if (preference != null) {
+                    val intent = Intent(context, ModelListViewProfile::class.java)
+                    startActivity(intent)
+                }
+            }else if (preference?.key.equals("calendar_picture_ListPref")) {
+                if (preference != null) {
+                    val intent = Intent(context, ModelListViewCalendar::class.java)
+                    startActivity(intent)
+                }
+            }else if (preference?.key.equals("settings_picture_ListPref")) {
+                if (preference != null) {
+                    val intent = Intent(context, ModelListViewSettings::class.java)
+                    startActivity(intent)
+                }
             }
             return true
         }

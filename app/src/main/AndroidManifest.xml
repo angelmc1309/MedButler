@@ -17,9 +17,18 @@
         <activity android:name=".SettingsHelpSupportActivity" />
         <activity android:name=".SettingsPrivacySecurityActivity" />
         <activity android:name=".SettingsNotificationsActivity" />
+        <activity android:name=".ListView.ModelListViewTreatment" />
+        <activity android:name=".ListView.ModelSettings" />
+        <activity android:name=".ListView.ModelTreatment" />
         <activity android:name=".MedListActivity" />
         <activity android:name=".DayActivity" />
-        <activity android:name=".AdapterSettings" />
+        <activity android:name=".ListView.ModelListViewProfile" />
+        <activity android:name=".ListView.ModelOther" />
+        <activity android:name=".ListView.CustomListviewAdapter" />
+        <activity android:name=".ListView.CustomAdapterOther" />
+        <activity android:name=".ListView.AdapterSettings" />
+        <activity android:name=".ListView.ModelListViewCalendar" />
+        <activity android:name=".ListView.ModelListViewSettings" />
         <activity android:name=".Sign_up" />
         <activity
             android:name=".UserProfile"
