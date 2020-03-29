@@ -13,5 +13,41 @@
             android:maxLines="1"
             android:summary="Choose the color theme for the application"
             android:key="key_color_theme" />
+
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="Main Page Images Options">
+        <ListPreference
+            android:defaultValue="man_profile_image"
+            android:entries="@array/prefProfilePicture"
+            android:entryValues="@array/prefProfilePictureValues"
+            android:key="profile_picture_ListPref"
+            android:title="Profile Image"
+            android:summary="Select one model for profile picture"/>
+
+        <ListPreference
+            android:defaultValue="cal_im"
+            android:entries="@array/prefCalendarPicture"
+            android:entryValues="@array/prefCalendarPictureValues"
+            android:key="calendar_picture_ListPref"
+            android:title="Calendar Image"
+            android:summary="Select one picture model for calendar picture"/>
+
+        <ListPreference
+            android:defaultValue="set1_im"
+            android:entries="@array/prefSettingsPicture"
+            android:entryValues="@array/prefSettingsPictureValues"
+            android:key="settings_picture_ListPref"
+            android:title="Settings Image"
+            android:summary="Select one picture model for settings picture"/>
+
+        <ListPreference
+            android:defaultValue="treat1_1"
+            android:entries="@array/prefTreatmentTheme"
+            android:entryValues="@array/prefTreatmentThemeValues"
+            android:key="treatment_picture_ListPref"
+            android:title="Treatment Animated Theme"
+            android:summary="Select your favourite Main treatment animated theme"/>
+    </PreferenceCategory>
+
 </PreferenceScreen>

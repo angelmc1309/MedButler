@@ -29,4 +29,8 @@
     <string name="todo">TODO</string>
     <string name="treatment">Treatment</string>
     <string name="calendar">Calendar</string>
+    <string name="profile_picture_ListPref" translatable="false">profile_picture_ListPref</string>
+    <string name="calendar_picture_ListPref" translatable="false">calendar_picture_ListPref</string>
+    <string name="settings_picture_ListPref" translatable="false">settings_picture_ListPref</string>
+    <string name="treatment_picture_ListPref" translatable="false">treatment_picture_ListPref</string>
 </resources>

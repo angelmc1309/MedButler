@@ -16,10 +16,16 @@
             android:id="@+id/textGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="86dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="98dp"
             android:text="@string/greeting"
             android:textColor="@android:color/black"
-            android:textSize="34sp">
+            android:textSize="34sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -180,25 +186,29 @@
                 android:layout_margin="10dp">
 
                 <ImageView
+                    android:id="@+id/treatmentImageFirst"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:id="@+id/treatmentImageFirst" />
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/border_image_view"
+                    android:scaleType="fitCenter"
+                    android:layout_centerInParent="true"/>
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/border_image_view"
+                    android:scaleType="fitCenter"
+                    android:layout_centerInParent="true"
                     android:id="@+id/treatmentImageSecond"
                     android:alpha="0"/>
 

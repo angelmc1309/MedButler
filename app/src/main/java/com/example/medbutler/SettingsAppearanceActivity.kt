@@ -1,11 +1,9 @@
 package com.example.medbutler
 
-import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.preference.*
 import petrov.kristiyan.colorpicker.ColorPicker
 import petrov.kristiyan.colorpicker.ColorPicker.OnChooseColorListener
@@ -27,7 +25,10 @@ class SettingsAppearanceActivity : AppCompatActivity() {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.appearence_preferences, rootKey)
 
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_color_theme)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.profile_picture_ListPref)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.calendar_picture_ListPref)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.settings_picture_ListPref)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.treatment_picture_ListPref)))
 
             findPreference(getString(R.string.key_color_theme)).onPreferenceClickListener = this
         }
@@ -43,23 +44,76 @@ class SettingsAppearanceActivity : AppCompatActivity() {
 
         override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
 
-            val stringValue:String
-            if(value.toString() != ""){
-                stringValue = value.toString()
-            }else{
-                stringValue = preference?.summary.toString()
-            }
-
-            if (preference is ListPreference) {
-                val listPreference = preference
-                val prefIndex = listPreference.findIndexOfValue(stringValue)
-                if (prefIndex >= 0) { // if (prefIndex >= 0) {
-                    preference.setSummary(listPreference.entries[prefIndex])
-                } // else preference.setSummary null ??
-            } else if (preference is EditTextPreference) {
-                preference?.summary = stringValue
-            } else {
-                preference?.summary = stringValue
+            if (preference?.key.equals("profile_picture_ListPref")) {
+                if (preference != null) {
+                    if ((preference as ListPreference).value.equals("man_profile_image")){
+                        MainActivity.profileImagePersonId = "man_profile_image"
+                        MainActivity.profileImageBackgroundId = "man_profile_background"
+                    } else if (preference.value.equals("woman_profile_image")){
+                        MainActivity.profileImagePersonId = "woman_profile_image"
+                        MainActivity.profileImageBackgroundId = "woman_profile_background"
+                    } else if (preference.value.equals("man_profile_image2")){
+                        MainActivity.profileImagePersonId = "man_profile_image2"
+                        MainActivity.profileImageBackgroundId = "man_profile_background2"
+                    } else if (preference.value.equals("woman_profile_image2")){
+                        MainActivity.profileImagePersonId = "woman_profile_image2"
+                        MainActivity.profileImageBackgroundId = "woman_profile_background2"
+                    } else if (preference.value.equals("man_profile_image3")){
+                        MainActivity.profileImagePersonId = "man_profile_image3"
+                        MainActivity.profileImageBackgroundId = "man_profile_background3"
+                    } else if (preference.value.equals("woman_profile_image3")){
+                        MainActivity.profileImagePersonId = "woman_profile_image3"
+                        MainActivity.profileImageBackgroundId = "woman_profile_background3"
+                    }
+                }
+            } else if (preference?.key.equals("calendar_picture_ListPref")) {
+                if (preference != null) {
+                    if ((preference as ListPreference).value.equals("cal_im")){
+                        MainActivity.calendarImageId = "cal_im"
+                        MainActivity.calendarImageBackgroundId = "cal_back"
+                    } else if (preference.value.equals("cal2_im")){
+                        MainActivity.calendarImageId = "cal2_im"
+                        MainActivity.calendarImageBackgroundId = "cal2_back"
+                    } else if (preference.value.equals("cal3_im")){
+                        MainActivity.calendarImageId = "cal3_im"
+                        MainActivity.calendarImageBackgroundId = "cal3_back"
+                    } else if (preference.value.equals("cal4_im")){
+                        MainActivity.calendarImageId = "cal4_im"
+                        MainActivity.calendarImageBackgroundId = "cal4_back"
+                    } else if (preference.value.equals("cal5_im")){
+                        MainActivity.calendarImageId = "cal5_im"
+                        MainActivity.calendarImageBackgroundId = "cal5_back"
+                    }
+                }
+            } else if (preference?.key.equals("settings_picture_ListPref")){
+                if (preference != null) {
+                    if ((preference as ListPreference).value.equals("set1_im")){
+                        MainActivity.settingsImageId = "set1_im"
+                        MainActivity.settingsImageBackgroundId = "set1_gray"
+                    } else if (preference.value.equals("set2_im")){
+                        MainActivity.settingsImageId = "set2_im"
+                        MainActivity.settingsImageBackgroundId = "set2_gray"
+                    } else if (preference.value.equals("set3_im")){
+                        MainActivity.settingsImageId = "set3_im"
+                        MainActivity.settingsImageBackgroundId = "set3_gray"
+                    } else if (preference.value.equals("set4_im")){
+                        MainActivity.settingsImageId = "set4_im"
+                        MainActivity.settingsImageBackgroundId = "set4_gray"
+                    }
+                }
+            }else if ((preference?.key.equals("treatment_picture_ListPref"))){
+                if (preference != null) {
+                    if ((preference as ListPreference).value.equals("treat1_1")){
+                        MainActivity.treatmentImageFirstId = "treat1_1"
+                        MainActivity.treatmentImageSecondId = "treat1_2"
+                    } else if (preference.value.equals("treat2_1")){
+                        MainActivity.treatmentImageFirstId = "treat2_1"
+                        MainActivity.treatmentImageSecondId = "treat2_2"
+                    } else if (preference.value.equals("treat3_1")){
+                        MainActivity.treatmentImageFirstId = "treat3_1"
+                        MainActivity.treatmentImageSecondId = "treat3_2"
+                    }
+                }
             }
             return true
         }

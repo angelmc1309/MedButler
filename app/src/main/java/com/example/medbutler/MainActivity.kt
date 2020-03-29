@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,24 +21,24 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         updateAppearance()
-        //canvair init per actualitzar imatge. Afegir actualitzar color fons imatge/layout
     }
     companion object {
         var colorTheme:Int = -16728876
         var profileImagePersonId:String = "man_profile_image"
-        var profileImageBackgroundId:String = "man_profile_background" //initicalitzat totes
+        var profileImageBackgroundId:String = "man_profile_background"
         var calendarImageId:String = "cal_im"
         var calendarImageBackgroundId:String = "cal_back"
         var settingsImageId:String = "set1_im"
-        var settingsImageBackgroundId:String = "set1_gray" //initicalitzat totes
+        var settingsImageBackgroundId:String = "set1_gray"
         var treatmentImageFirstId:String = "treat1_1"
-        var treatmentImageSecondId:String = "treat1_2" //initicalitzat totes
+        var treatmentImageSecondId:String = "treat1_2"
     }
 
 
     fun updateAppearance(){
+
         // Set PorterDuffColorFilter with color and mode
-        val mode = PorterDuff.Mode.LIGHTEN //ADD
+        val mode = PorterDuff.Mode.ADD //ADD
         val mode2 = PorterDuff.Mode.DARKEN
 
         // profileImagePerson
@@ -126,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun actionSettings(view: View){
-        val intent= Intent(this, SettingsActivity()::class.java)
-        startActivity(intent)
+        val intentSettings= Intent(this, SettingsActivity::class.java)
+        startActivity(intentSettings)
     }
 }
