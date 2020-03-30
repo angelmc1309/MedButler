@@ -3,7 +3,7 @@
     <string name="labelFerLog">Ja estic enregistrat, vull fer login</string>
     <string name="butRegist">Enregistrar</string>
     <string name="complete_name">Armando Gran Jaleo</string>
-    <string name="greeting">HI,USER!</string>
+    <string name="greeting">Welcome user!</string>
     <string name="crearNouUsuariLabel">Crear un nou usuari</string>
     <string name="selecHome">Home</string>
     <string name="selecDona">Dona</string>
@@ -24,4 +24,13 @@
     <string name="weight" translatable="false">weight</string>
     <string name="key_color_theme" translatable="false">key_color_theme</string>
     <string name="pref_sync_connection_type">pref_sync_connection_type</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="todo">TODO</string>
+    <string name="treatment">Treatment</string>
+    <string name="calendar">Calendar</string>
+    <string name="profile_picture_ListPref" translatable="false">profile_picture_ListPref</string>
+    <string name="calendar_picture_ListPref" translatable="false">calendar_picture_ListPref</string>
+    <string name="settings_picture_ListPref" translatable="false">settings_picture_ListPref</string>
+    <string name="treatment_picture_ListPref" translatable="false">treatment_picture_ListPref</string>
 </resources>
