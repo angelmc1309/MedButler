@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
-        super.onResume()
         updateAppearance()
+        super.onResume()
     }
     companion object {
         var colorTheme:Int = -16728876
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set PorterDuffColorFilter with color and mode
         val mode = PorterDuff.Mode.ADD //ADD
-        val mode2 = PorterDuff.Mode.DARKEN
+        val mode2 = PorterDuff.Mode.OVERLAY
 
         // profileImagePerson
         val profileImagePerson:ImageView = findViewById(R.id.profileImagePerson)

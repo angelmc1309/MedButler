@@ -40,6 +40,24 @@ class ModelListViewSettings : AppCompatActivity() {
                 R.drawable.set4_im
             )
         )
+        list.add(
+            ModelOther(
+                "Settings model picture five",
+                R.drawable.set5_im
+            )
+        )
+        list.add(
+            ModelOther(
+                "Settings model picture six",
+                R.drawable.set6_im
+            )
+        )
+        list.add(
+            ModelOther(
+                "Settings model picture seven",
+                R.drawable.set7_im
+            )
+        )
 
         listview.adapter = CustomAdapterOther(
             this,
@@ -69,6 +87,24 @@ class ModelListViewSettings : AppCompatActivity() {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture four", Toast.LENGTH_SHORT).show()
                 MainActivity.settingsImageId = "set4_im"
                 MainActivity.settingsImageBackgroundId = "set4_gray"
+                finish()
+            }
+            if (position == 4) {
+                Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture five", Toast.LENGTH_SHORT).show()
+                MainActivity.settingsImageId = "set5_im"
+                MainActivity.settingsImageBackgroundId = "set5_gray"
+                finish()
+            }
+            if (position == 5) {
+                Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture six", Toast.LENGTH_SHORT).show()
+                MainActivity.settingsImageId = "set6_im"
+                MainActivity.settingsImageBackgroundId = "set6_gray"
+                finish()
+            }
+            if (position == 6) {
+                Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture seven", Toast.LENGTH_SHORT).show()
+                MainActivity.settingsImageId = "set7_im"
+                MainActivity.settingsImageBackgroundId = "set7_gray"
                 finish()
             }
         }
