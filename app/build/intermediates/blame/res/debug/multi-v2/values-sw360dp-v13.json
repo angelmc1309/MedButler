@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+            "outputFile": "D:\\pisProject\\MedButler\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Eduard\\.gradle\\caches\\transforms-2\\files-2.1\\88b5381937e0c76c6d2662af3e3f28fc\\preference-1.0.0\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\Changhao\\.gradle\\caches\\transforms-2\\files-2.1\\495e9e10a7ab8a2f6f2c1d5b35cceed2\\preference-1.0.0\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

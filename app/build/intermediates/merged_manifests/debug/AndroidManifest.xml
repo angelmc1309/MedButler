@@ -8,22 +8,49 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.medbutler.AddMedLayout" />
+        <activity android:name="com.example.medbutler.SettingsActivity" />
+        <activity android:name="com.example.medbutler.SettingsAccountActivity" />
+        <activity android:name="com.example.medbutler.SettingsAboutActivity" />
+        <activity android:name="com.example.medbutler.SettingsAppearanceActivity" />
+        <activity android:name="com.example.medbutler.SettingsHelpSupportActivity" />
+        <activity android:name="com.example.medbutler.SettingsPrivacySecurityActivity" />
+        <activity android:name="com.example.medbutler.SettingsNotificationsActivity" />
+        <activity android:name="com.example.medbutler.ListView.ModelListViewTreatment" />
+        <activity android:name="com.example.medbutler.ListView.ModelSettings" />
+        <activity android:name="com.example.medbutler.ListView.ModelTreatment" />
+        <activity android:name="com.example.medbutler.MedListActivity" />
+        <activity android:name="com.example.medbutler.DayActivity" />
+        <activity android:name="com.example.medbutler.ListView.ModelListViewProfile" />
+        <activity android:name="com.example.medbutler.ListView.ModelOther" />
+        <activity android:name="com.example.medbutler.ListView.CustomListviewAdapter" />
+        <activity android:name="com.example.medbutler.ListView.CustomAdapterOther" />
+        <activity android:name="com.example.medbutler.ListView.AdapterSettings" />
+        <activity android:name="com.example.medbutler.ListView.ModelListViewCalendar" />
+        <activity android:name="com.example.medbutler.ListView.ModelListViewSettings" />
+        <activity android:name="com.example.medbutler.Sign_up" />
         <activity
             android:name="com.example.medbutler.UserProfile"
             android:theme="@style/AppTheme" />
         <activity android:name="com.example.medbutler.ToolBarTemplate" />
-        <activity android:name="com.example.medbutler.Sign_in" />
-        <activity android:name="com.example.medbutler.login" >
+        <activity
+            android:name="com.example.medbutler.Login"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,6 +65,78 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.example.medbutler.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INSTALL_PACKAGES" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
