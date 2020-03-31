@@ -133,9 +133,10 @@
 
 
     <RadioGroup
+        android:id="@+id/radioGroupGender"
         android:layout_width="265dp"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

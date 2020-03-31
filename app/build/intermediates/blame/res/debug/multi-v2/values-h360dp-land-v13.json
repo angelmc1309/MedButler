@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Eduard\\Desktop\\Universitat UB\\Semestre 2\\Projecte_Integrat_de_Software\\Projecte\\MedButler\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+            "outputFile": "D:\\pisProject\\MedButler\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Eduard\\.gradle\\caches\\transforms-2\\files-2.1\\47abacb1918e5400690601bc64cd71d9\\material-1.1.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+                    "source": "C:\\Users\\Changhao\\.gradle\\caches\\transforms-2\\files-2.1\\a2d5120d0ba2d2c902616afdf19ac125\\material-1.1.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
