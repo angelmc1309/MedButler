@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.example.medbutler.R
 
 class AdapterSettings (var mCtx: Context, var resources:Int, var items:List<ModelSettings>):ArrayAdapter<ModelSettings>(mCtx, resources, items) {
@@ -21,6 +22,7 @@ class AdapterSettings (var mCtx: Context, var resources:Int, var items:List<Mode
         var mItem: ModelSettings = items[position]
         imageView.setImageDrawable(mCtx.resources.getDrawable(mItem.img))
         titleTextView.text = mItem.title
+        descriptionTextView.setTextColor(ContextCompat.getColor(context, R.color.md_black_clear))
         descriptionTextView.text = mItem.description
         return view
     }

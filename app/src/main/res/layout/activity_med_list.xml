@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/backgroundLayout"
     android:layout_height="match_parent">
 
     <TextView
@@ -65,58 +66,59 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <LinearLayout
+
+        android:showDividers="middle"
+        android:divider="@drawable/empty_tall_divider"
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="0dp"
         android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:weightSum="4"
+        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent">
 
 
         <ImageButton
             android:id="@+id/userButton"
+            android:src="@drawable/user_logo"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:paddingRight="10dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             android:onClick="actionUser"
-            android:src="@drawable/user_logo" />
-
+            />
         <ImageButton
+            android:layout_width="wrap_content"
             android:id="@+id/calendarButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:paddingRight="10dp"
+            android:src="@drawable/calendar"
             android:onClick="actionCalendar"
-
-            android:src="@drawable/calendar" />
-
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            />
         <ImageButton
+            android:layout_width="wrap_content"
             android:id="@+id/medsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:src="@drawable/meds_logo"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:paddingRight="10dp"
-            android:src="@drawable/meds_logo" />
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            />
 
         <ImageButton
-            android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:id="@+id/settingsButton"
+            android:src="@drawable/settings"
             android:onClick="actionSettings"
-            android:background="@color/colorPrimaryDark"
-            android:paddingRight="10dp"
-            android:src="@drawable/settings" />
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            />
 
     </LinearLayout>
 

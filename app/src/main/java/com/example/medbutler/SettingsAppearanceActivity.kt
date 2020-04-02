@@ -1,12 +1,14 @@
 package com.example.medbutler
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
 import com.example.medbutler.ListView.*
+import kotlinx.android.synthetic.*
 import petrov.kristiyan.colorpicker.ColorPicker
 import petrov.kristiyan.colorpicker.ColorPicker.OnChooseColorListener
 
@@ -28,99 +30,33 @@ class SettingsAppearanceActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.appearence_preferences, rootKey)
 
             //bindPreferenceSummaryToValue(findPreference(getString(R.string.settings_picture_ListPref)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.change_color_toolbar)))
 
-
+            findPreference(getString(R.string.change_color_toolbar)).setDefaultValue(MainActivity.changeToolbarWithColorTheme)
             findPreference(getString(R.string.key_color_theme)).onPreferenceClickListener = this
             findPreference(getString(R.string.profile_picture_ListPref)).onPreferenceClickListener = this
             findPreference(getString(R.string.treatment_picture_ListPref)).onPreferenceClickListener = this
             findPreference(getString(R.string.calendar_picture_ListPref)).onPreferenceClickListener = this
             findPreference(getString(R.string.settings_picture_ListPref)).onPreferenceClickListener = this
+            findPreference(getString(R.string.key_background_theme)).onPreferenceClickListener = this
+            findPreference(getString(R.string.key_toolbar_color)).onPreferenceClickListener = this
         }
 
         private fun bindPreferenceSummaryToValue(preference: Preference) {
             preference.onPreferenceChangeListener = this
-
-            onPreferenceChange(preference,
-                PreferenceManager
-                    .getDefaultSharedPreferences(preference.context)
-                    .getString(preference.key, ""))
         }
 
         override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
 
-            /*if (preference?.key.equals("profile_picture_ListPref")) {
-                if (preference != null) {
-                    if ((preference as ListPreference).value.equals("man_profile_image")){
-                        MainActivity.profileImagePersonId = "man_profile_image"
-                        MainActivity.profileImageBackgroundId = "man_profile_background"
-                    } else if (preference.value.equals("woman_profile_image")){
-                        MainActivity.profileImagePersonId = "woman_profile_image"
-                        MainActivity.profileImageBackgroundId = "woman_profile_background"
-                    } else if (preference.value.equals("man_profile_image2")){
-                        MainActivity.profileImagePersonId = "man_profile_image2"
-                        MainActivity.profileImageBackgroundId = "man_profile_background2"
-                    } else if (preference.value.equals("woman_profile_image2")){
-                        MainActivity.profileImagePersonId = "woman_profile_image2"
-                        MainActivity.profileImageBackgroundId = "woman_profile_background2"
-                    } else if (preference.value.equals("man_profile_image3")){
-                        MainActivity.profileImagePersonId = "man_profile_image3"
-                        MainActivity.profileImageBackgroundId = "man_profile_background3"
-                    } else if (preference.value.equals("woman_profile_image3")){
-                        MainActivity.profileImagePersonId = "woman_profile_image3"
-                        MainActivity.profileImageBackgroundId = "woman_profile_background3"
-                    }
-                }*/
-            /*if (preference?.key.equals("calendar_picture_ListPref")) {
-                if (preference != null) {
-                    if ((preference as ListPreference).value.equals("cal_im")){
-                        MainActivity.calendarImageId = "cal_im"
-                        MainActivity.calendarImageBackgroundId = "cal_back"
-                    } else if (preference.value.equals("cal2_im")){
-                        MainActivity.calendarImageId = "cal2_im"
-                        MainActivity.calendarImageBackgroundId = "cal2_back"
-                    } else if (preference.value.equals("cal3_im")){
-                        MainActivity.calendarImageId = "cal3_im"
-                        MainActivity.calendarImageBackgroundId = "cal3_back"
-                    } else if (preference.value.equals("cal4_im")){
-                        MainActivity.calendarImageId = "cal4_im"
-                        MainActivity.calendarImageBackgroundId = "cal4_back"
-                    } else if (preference.value.equals("cal5_im")){
-                        MainActivity.calendarImageId = "cal5_im"
-                        MainActivity.calendarImageBackgroundId = "cal5_back"
-                    }
-                }*/
-            /*if (preference?.key.equals("settings_picture_ListPref")){
-                if (preference != null) {
-                    if ((preference as ListPreference).value.equals("set1_im")){
-                        MainActivity.settingsImageId = "set1_im"
-                        MainActivity.settingsImageBackgroundId = "set1_gray"
-                    } else if (preference.value.equals("set2_im")){
-                        MainActivity.settingsImageId = "set2_im"
-                        MainActivity.settingsImageBackgroundId = "set2_gray"
-                    } else if (preference.value.equals("set3_im")){
-                        MainActivity.settingsImageId = "set3_im"
-                        MainActivity.settingsImageBackgroundId = "set3_gray"
-                    } else if (preference.value.equals("set4_im")){
-                        MainActivity.settingsImageId = "set4_im"
-                        MainActivity.settingsImageBackgroundId = "set4_gray"
-                    }
+            if (preference is SwitchPreferenceCompat) {
+                if (!preference.isChecked){
+                    MainActivity.changeToolbarWithColorTheme = true
+                    MainActivity.toolbarColor = MainActivity.colorTheme
+                    MainActivity.darkerToolbarColor = MainActivity.darkerColorTheme
+                }else{
+                    MainActivity.changeToolbarWithColorTheme = false
                 }
-            } else if ((preference?.key.equals("treatment_picture_ListPref"))){
-                    if ((preference as ListPreference).value.equals("treat1_1")){
-                        MainActivity.treatmentImageFirstId = "treat1_1"
-                        MainActivity.treatmentImageSecondId = "treat1_2"
-                    } else if (preference.value.equals("treat2_1")){
-                        MainActivity.treatmentImageFirstId = "treat2_1"
-                        MainActivity.treatmentImageSecondId = "treat2_2"
-                    } else if (preference.value.equals("treat3_1")){
-                        MainActivity.treatmentImageFirstId = "treat3_1"
-                        MainActivity.treatmentImageSecondId = "treat3_2"
-                    } else if (preference.value.equals("treat3_3")){
-                    MainActivity.treatmentImageFirstId = "treat3_3"
-                    MainActivity.treatmentImageSecondId = "treat3_2"
-                    }
-                }
-            }*/
+            }
             return true
         }
 
@@ -148,6 +84,13 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                     val intent = Intent(context, ModelListViewSettings::class.java)
                     startActivity(intent)
                 }
+            }else if (preference?.key.equals("key_background_theme")) {
+                if (preference != null) {
+                    val intent = Intent(context, ModelListViewBackground::class.java)
+                    startActivity(intent)
+                }
+            }else if (preference?.key.equals("key_toolbar_color")) {
+                showColorPicker(preference)
             }
             return true
         }
@@ -163,13 +106,40 @@ class SettingsAppearanceActivity : AppCompatActivity() {
             colorPicker.show()
             colorPicker.setOnChooseColorListener(object : OnChooseColorListener {
                 override fun onChooseColor(position: Int, color: Int) {
-                    MainActivity.colorTheme = color
+                    if (preference?.key.equals("key_color_theme")){
+                        // val colorBrighter:Int = manipulateColor(color, 0.85f)
+                        MainActivity.colorTheme = color
+                        val colorDarker:Int = manipulateColor(color, 0.7f)
+                        MainActivity.darkerColorTheme = colorDarker
+                        if (MainActivity.changeToolbarWithColorTheme){
+                            MainActivity.toolbarColor = color
+                            MainActivity.darkerToolbarColor = colorDarker
+                        }
+                    }else if (preference?.key.equals("key_toolbar_color")){
+                        MainActivity.toolbarColor = color
+                        val colorDarker:Int = manipulateColor(color, 0.7f)
+                        MainActivity.darkerToolbarColor = colorDarker
+                    }
                 }
 
                 override fun onCancel() {
                     // put code
                 }
             })
+        }
+
+        // Use a factor less than 1.0f to darken.
+        fun manipulateColor(color: Int, factor: Float): Int {
+            val a: Int = Color.alpha(color)
+            val r = Math.round(Color.red(color) * factor).toInt()
+            val g = Math.round(Color.green(color) * factor).toInt()
+            val b = Math.round(Color.blue(color) * factor).toInt()
+            return Color.argb(
+                a,
+                Math.min(r, 255),
+                Math.min(g, 255),
+                Math.min(b, 255)
+            )
         }
     }
 }

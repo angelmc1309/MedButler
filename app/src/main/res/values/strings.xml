@@ -33,4 +33,8 @@
     <string name="calendar_picture_ListPref" translatable="false">calendar_picture_ListPref</string>
     <string name="settings_picture_ListPref" translatable="false">settings_picture_ListPref</string>
     <string name="treatment_picture_ListPref" translatable="false">treatment_picture_ListPref</string>
+    <string name="key_background_theme" translatable="false">key_background_theme</string>
+    <string name="change_color_toolbar" translatable="false">change_color_toolbar</string>key_toolbar_color
+    <string name="key_toolbar_color" translatable="false">key_toolbar_color</string>
+    <string name="action_gohome" translatable="false">Go Home</string>
 </resources>

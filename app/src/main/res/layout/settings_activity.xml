@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SettingsActivity"
-    android:weightSum="11"
+    android:weightSum="9"
+    android:id="@+id/backgroundLayout"
     >
 
     <ListView
@@ -21,60 +22,59 @@
 
 
     <LinearLayout
-        android:layout_weight="2"
+
+        android:showDividers="middle"
+        android:divider="@drawable/empty_tall_divider"
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginBottom="0dp"
         android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:background="@color/colorPrimaryDark"
-
         android:weightSum="4">
-
-
 
         <ImageButton
             android:id="@+id/userButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
             android:src="@drawable/user_logo"
-            android:onClick="actionUser"
-            android:paddingRight="10dp"
             android:layout_weight="1"
-            />
-        <ImageButton
-            android:id="@+id/calendarButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:onClick="actionUser"
+            />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:id="@+id/calendarButton"
             android:src="@drawable/calendar"
             android:onClick="actionCalendar"
-
-            android:paddingRight="10dp"
             android:layout_weight="1"
-            />
-        <ImageButton
-            android:id="@+id/medsButton"
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:id="@+id/medsButton"
             android:src="@drawable/meds_logo"
             android:onClick="actionMeds"
-            android:paddingRight="10dp"
             android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             />
 
         <ImageButton
-            android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:id="@+id/settingsButton"
             android:src="@drawable/settings"
-            android:paddingRight="10dp"
             android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             />
 
     </LinearLayout>
+
 </LinearLayout>

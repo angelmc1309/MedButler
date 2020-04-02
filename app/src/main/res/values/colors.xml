@@ -41,6 +41,7 @@
     <color name="md_blue_grey_500">#607d8b</color>
 
     <color name="md_black">#000000</color>
+    <color name="md_black_clear">#232323</color>
     <color name="md_white">#ffffff</color>
 
     <array name="color_choices">

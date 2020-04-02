@@ -1,5 +1,6 @@
 package com.example.medbutler
 
+import android.R.attr.name
 import android.animation.ValueAnimator
 import android.content.Context
 import android.content.Intent
@@ -7,6 +8,7 @@ import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 
@@ -23,7 +25,12 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
     }
     companion object {
+        var background:String = "Default"
+        var changeToolbarWithColorTheme:Boolean = false
         var colorTheme:Int = -16728876
+        var darkerColorTheme:Int = -16743276
+        var toolbarColor = -16728876
+        var darkerToolbarColor = -16743276
         var profileImagePersonId:String = "man_profile_image"
         var profileImageBackgroundId:String = "man_profile_background"
         var calendarImageId:String = "cal_im"
@@ -46,6 +53,12 @@ class MainActivity : AppCompatActivity() {
         val context: Context = profileImagePerson.getContext()
         val id: Int = context.getResources().getIdentifier(profileImagePersonId, "drawable", context.getPackageName())
         profileImagePerson.setImageResource(id)
+
+        // background
+        val backgroundLay:LinearLayout = findViewById(R.id.backgroundLayout)
+        val idBack = resources.getIdentifier(background, "drawable", packageName)
+        // val drawable = resources.getDrawable(idBack)
+        backgroundLay.setBackgroundResource(idBack)
 
         // profileImageBackground
         val profileImageBackground:ImageView = findViewById(R.id.profileImageBackground)
