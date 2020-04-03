@@ -66,4 +66,8 @@ class UserProfile : AppCompatActivity() {
         val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+    fun actionModif(view: View) {
+        val intent= Intent(this, SettingsAccountActivity::class.java)
+        startActivity(intent)
+    }
 }
