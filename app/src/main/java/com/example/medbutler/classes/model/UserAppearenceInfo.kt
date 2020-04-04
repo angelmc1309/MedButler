@@ -1,4 +1,4 @@
-package com.example.medbutler.classes.Model
+package com.example.medbutler.classes.model
 
 class UserAppearenceInfo {
     var background:String = "Default"

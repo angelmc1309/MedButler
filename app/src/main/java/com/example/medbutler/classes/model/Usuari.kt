@@ -1,4 +1,4 @@
-package com.example.medbutler.classes.Model
+package com.example.medbutler.classes.model
 
 open class Usuari {
     private lateinit var username:String
@@ -11,7 +11,9 @@ open class Usuari {
         this.birthday=birthday
         this.gender=gender
     }
-
+    fun getId():String{
+        return "test"
+    }
     //var d=Usuari("k","j","s","s")
 
 }
