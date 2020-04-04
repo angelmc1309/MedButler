@@ -1,44 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="timerList">
-        <item>Afet 5 seconds</item>
-        <item>Afet 10 seconds</item>
-        <item>Afet 15 seconds</item>
-        <item>Afet 20 seconds</item>
-    </string-array>
-
-    <string-array name="timerListValues">
-        <item>5</item>
-        <item>10</item>
-        <item>15</item>
-        <item>20</item>
-    </string-array>
-    
-    <string-array name="musicQuality">
-        <item>128kbps</item>
-        <item>320kbps</item>
-        <item>Lossless</item>
-    </string-array>
-    
-    <string-array name="musicQualityValues">
-        <item>128</item>
-        <item>320</item>
-        <item>Lossless</item>
-    </string-array>
-
-    <string-array name="typeOfMusic">
-        <item>Pop</item>
-        <item>Classical</item>
-        <item>Rock</item>
-        <item>Hip hop</item>
-    </string-array>
-
-    <string-array name="typeOfMusicValues">
-        <item>Pop</item>
-        <item>Classical</item>
-        <item>Rock</item>
-        <item>Hiphop</item>
-    </string-array>
 
     <string-array name="ringtoneList">
         <item>None</item>
@@ -93,26 +54,74 @@
         <item>Mobile Data</item>
         <item>WiFi_Mobile</item>
     </string-array>
-    
-    <string-array name="colorTheme">
-        <item>Yellow</item>
-        <item>Orange</item>
-        <item>Red</item>
-        <item>Violet</item>
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Black</item>
-        <item>White</item>
+
+    <string-array name="prefProfilePicture">
+        <item>Man profile model one</item>
+        <item>Woman profile model one</item>
+        <item>Man profile model two</item>
+        <item>Woman profile model two</item>
+        <item>Man profile model three</item>
+        <item>Woman profile model three</item>
     </string-array>
 
-    <string-array name="colorThemeValues">
-        <item>Yellow</item>
-        <item>Orange</item>
-        <item>Red</item>
-        <item>Violet</item>
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Black</item>
-        <item>White</item>
+    <string-array name="prefProfilePictureValues">
+        <item>man_profile_image</item>
+        <item>woman_profile_image</item>
+        <item>man_profile_image2</item>
+        <item>woman_profile_image2</item>
+        <item>man_profile_image3</item>
+        <item>woman_profile_image3</item>
     </string-array>
+
+    <string-array name="prefCalendarPicture">
+        <item>Calendar model picture one</item>
+        <item>Calendar model picture two</item>
+        <item>Calendar model picture three</item>
+        <item>Calendar model picture four</item>
+        <item>Calendar model picture five</item>
+    </string-array>
+
+    <string-array name="prefCalendarPictureValues">
+        <item>cal_im</item>
+        <item>cal2_im</item>
+        <item>cal3_im</item>
+        <item>cal4_im</item>
+        <item>cal5_im</item>
+    </string-array>
+
+    <string-array name="prefSettingsPicture">
+        <item>Settings model picture one</item>
+        <item>Settings model picture two</item>
+        <item>Settings model picture three</item>
+        <item>Settings model picture four</item>
+    </string-array>
+
+    <string-array name="prefSettingsPictureValues">
+        <item>set1_im</item>
+        <item>set2_im</item>
+        <item>set3_im</item>
+        <item>set4_im</item>
+    </string-array>
+
+    <string-array name="prefTreatmentThemeName">
+        <item>Treatment &amp; Care normal</item>
+        <item>Treatment &amp; Care open apple</item>
+        <item>Heart beating monitor classic</item>
+        <item>Heart beating monitor purple</item>
+    </string-array>
+
+    <string-array name="prefTreatmentTheme">
+        <item>Treatment animated theme one</item>
+        <item>Treatment animated theme two</item>
+        <item>Treatment animated theme three</item>
+        <item>Treatment animated theme four</item>
+    </string-array>
+
+    <string-array name="prefTreatmentThemeValues">
+        <item>treat1_1</item>
+        <item>treat2_1</item>
+        <item>treat3_1</item>
+        <item>treat3_3</item>
+    </string-array>
+
 </resources>

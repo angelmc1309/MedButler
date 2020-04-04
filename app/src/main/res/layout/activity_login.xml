@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginback"
-    tools:context=".login">
+    tools:context=".Login">
 
     <EditText
         android:id="@+id/usernameLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="35dp"
         android:hint="Username"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,10 +21,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.333"
-        tools:ignore="MissingConstraints"></EditText>
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/passwordLogin"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="35dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -31,35 +35,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameLogin"
-        tools:ignore="MissingConstraints"></EditText>
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/butLogin"
         android:layout_width="149dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="103dp"
         android:onClick="actionLog"
         android:text="@string/loginBut"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/newUserLabelLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLogin"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
 
     <TextView
         android:id="@+id/newUserLabelLogin"
-        android:layout_width="0dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="112dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:onClick="actionRegistre"
         android:text="@string/vullEnregistrarLabel"
-        android:textColor="#0E0E0E"
+        android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butLogin"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
 </androidx.constraintlayout.widget.ConstraintLayout>

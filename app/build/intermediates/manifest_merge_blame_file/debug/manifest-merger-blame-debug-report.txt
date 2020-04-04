@@ -6,70 +6,279 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml
+8-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml
+9-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:5:5-30:19
-12        android:allowBackup="true"
-12-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.2.0] C:\Users\Angel\.gradle\caches\transforms-2\files-2.1\7ea99ae170f37e74143993a79bd9285e\core-1.2.0\AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-20-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:11:9-65
-21        <activity
-21-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:12:9-13:56
-22            android:name="com.example.medbutler.UserProfile"
-22-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:12:19-46
-23            android:theme="@style/AppTheme" />
-23-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:13:13-44
-24        <activity android:name="com.example.medbutler.ToolBarTemplate" />
-24-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:14:9-53
-24-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:14:19-50
-25        <activity android:name="com.example.medbutler.Sign_in" />
-25-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:15:9-45
-25-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:15:19-42
-26        <activity android:name="com.example.medbutler.login" >
-26-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:16:9-22:20
-26-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:16:19-40
-27            <intent-filter>
-27-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:17:13-21:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:18:17-69
-28-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:18:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:20:17-77
-30-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:20:27-74
-31            </intent-filter>
-32        </activity>
-33        <activity android:name="com.example.medbutler.MainActivity" />
-33-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:23:9-50
-33-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:23:19-47
-34        <activity
-34-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:24:9-25:56
-35            android:name="com.example.medbutler.Calendar"
-35-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:24:19-43
-36            android:theme="@style/AppTheme" />
-36-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:25:13-44
-37
-38        <meta-data
-38-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:27:9-29:57
-39            android:name="preloaded_fonts"
-39-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:28:13-43
-40            android:resource="@array/preloaded_fonts" />
-40-->C:\Users\Angel\AndroidStudioProjects\MedButler\app\src\main\AndroidManifest.xml:29:13-54
-41    </application>
-42
-43</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:22:5-67
+11-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:22:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:23:5-79
+12-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:23:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+13-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:24:5-68
+13-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:24:22-65
+14    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+14-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:26:5-82
+14-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:26:22-79
+15    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+15-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:26:5-110
+15-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:26:22-107
+16
+17    <application
+17-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:5:5-53:19
+18        android:allowBackup="true"
+18-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.2.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ce6c21cf11f58fc491462c7d7ae62076\core-1.2.0\AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+21-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:7:9-43
+22        android:label="@string/app_name"
+22-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:8:9-41
+23        android:supportsRtl="true"
+23-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:9:9-35
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:10:9-40
+26        <activity android:name="com.example.medbutler.AddMedLayout" />
+26-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:12:9-50
+26-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:12:19-47
+27        <activity android:name="com.example.medbutler.SettingsActivity" />
+27-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:13:9-54
+27-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:13:19-51
+28        <activity android:name="com.example.medbutler.SettingsAccountActivity" />
+28-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:14:9-61
+28-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:14:19-58
+29        <activity android:name="com.example.medbutler.SettingsAboutActivity" />
+29-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:15:9-59
+29-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:15:19-56
+30        <activity android:name="com.example.medbutler.SettingsAppearanceActivity" />
+30-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:16:9-64
+30-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:16:19-61
+31        <activity android:name="com.example.medbutler.SettingsHelpSupportActivity" />
+31-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:17:9-65
+31-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:17:19-62
+32        <activity android:name="com.example.medbutler.SettingsPrivacySecurityActivity" />
+32-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:18:9-69
+32-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:18:19-66
+33        <activity android:name="com.example.medbutler.SettingsNotificationsActivity" />
+33-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:19:9-67
+33-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:19:19-64
+34        <activity android:name="com.example.medbutler.ListView.ModelListViewTreatment" />
+34-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:20:9-69
+34-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:20:19-66
+35        <activity android:name="com.example.medbutler.ListView.ModelSettings" />
+35-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:21:9-60
+35-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:21:19-57
+36        <activity android:name="com.example.medbutler.ListView.ModelTreatment" />
+36-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:22:9-61
+36-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:22:19-58
+37        <activity android:name="com.example.medbutler.MedListActivity" />
+37-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:23:9-53
+37-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:23:19-50
+38        <activity android:name="com.example.medbutler.DayActivity" />
+38-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:24:9-49
+38-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:24:19-46
+39        <activity android:name="com.example.medbutler.ListView.ModelListViewProfile" />
+39-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:25:9-67
+39-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:25:19-64
+40        <activity android:name="com.example.medbutler.ListView.ModelOther" />
+40-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:26:9-57
+40-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:26:19-54
+41        <activity android:name="com.example.medbutler.ListView.CustomListviewAdapter" />
+41-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:27:9-68
+41-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:27:19-65
+42        <activity android:name="com.example.medbutler.ListView.CustomAdapterOther" />
+42-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:28:9-65
+42-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:28:19-62
+43        <activity android:name="com.example.medbutler.ListView.AdapterSettings" />
+43-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:29:9-62
+43-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:29:19-59
+44        <activity android:name="com.example.medbutler.ListView.ModelListViewCalendar" />
+44-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:30:9-68
+44-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:30:19-65
+45        <activity android:name="com.example.medbutler.ListView.ModelListViewSettings" />
+45-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:31:9-68
+45-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:31:19-65
+46        <activity android:name="com.example.medbutler.Sign_up" />
+46-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:32:9-45
+46-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:32:19-42
+47        <activity
+47-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:33:9-35:47
+48            android:name="com.example.medbutler.UserProfile"
+48-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:34:13-40
+49            android:theme="@style/AppTheme" />
+49-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:35:13-44
+50        <activity android:name="com.example.medbutler.ToolBarTemplate" />
+50-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:36:9-53
+50-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:36:19-50
+51        <activity
+51-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:37:9-44:20
+52            android:name="com.example.medbutler.Login"
+52-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:37:19-40
+53            android:theme="@style/SplashTheme" >
+53-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:38:13-47
+54            <intent-filter>
+54-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:39:13-43:29
+55                <action android:name="android.intent.action.MAIN" />
+55-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:40:17-69
+55-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:40:25-66
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:42:17-77
+57-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:42:27-74
+58            </intent-filter>
+59        </activity>
+60        <activity android:name="com.example.medbutler.MainActivity" />
+60-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:45:9-50
+60-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:45:19-47
+61        <activity
+61-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:46:9-48:47
+62            android:name="com.example.medbutler.Calendar"
+62-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:47:13-37
+63            android:theme="@style/AppTheme" />
+63-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:48:13-44
+64
+65        <meta-data
+65-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:50:9-52:57
+66            android:name="preloaded_fonts"
+66-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:51:13-43
+67            android:resource="@array/preloaded_fonts" />
+67-->D:\pisProject\MedButler\app\src\main\AndroidManifest.xml:52:13-54
+68
+69        <activity
+69-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:24:9-31:50
+70            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+70-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:25:13-85
+71            android:excludeFromRecents="true"
+71-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:26:13-46
+72            android:exported="true"
+72-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:27:13-36
+73            android:launchMode="singleTask"
+73-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:28:13-44
+74            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+74-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:29:13-102
+75            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+75-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:30:13-72
+76
+77        <service
+77-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:33:9-39:19
+78            android:name="com.google.firebase.components.ComponentDiscoveryService"
+78-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:34:13-84
+79            android:directBootAware="true"
+79-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ac592bb9e86f8540e27feb297f270648\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+80            android:exported="false" >
+80-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:35:13-37
+81            <meta-data
+81-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:36:13-38:85
+82                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+82-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:37:17-109
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-auth:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\0cfb1039b7d32db8b0d57eeeb16a6047\jetified-firebase-auth-19.3.0\AndroidManifest.xml:38:17-82
+84            <meta-data
+84-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:30:13-32:85
+85                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+85-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:31:17-139
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.android.gms:play-services-measurement-api:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ca09f8b4749e3a4f0d88b98b45b8c506\jetified-play-services-measurement-api-17.3.0\AndroidManifest.xml:32:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:32:13-34:85
+88                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+88-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:33:17-96
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:34:17-82
+90        </service>
+91
+92        <receiver
+92-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:37:9-44:20
+93            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+93-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:38:13-78
+94            android:exported="true"
+94-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:39:13-36
+95            android:permission="com.google.android.c2dm.permission.SEND" >
+95-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:40:13-73
+96            <intent-filter>
+96-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:41:13-43:29
+97                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+97-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:42:17-81
+97-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\f2cdc7c0c7152074a66d8489043e391a\jetified-firebase-iid-20.0.2\AndroidManifest.xml:42:25-78
+98            </intent-filter>
+99        </receiver>
+100
+101        <activity
+101-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\c5d4bcd734d2a9325a7f17f1644e7748\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+102            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+102-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\c5d4bcd734d2a9325a7f17f1644e7748\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+103            android:exported="false"
+103-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\c5d4bcd734d2a9325a7f17f1644e7748\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+104            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+104-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\c5d4bcd734d2a9325a7f17f1644e7748\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+105
+106        <provider
+106-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ac592bb9e86f8540e27feb297f270648\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+107            android:name="com.google.firebase.provider.FirebaseInitProvider"
+107-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ac592bb9e86f8540e27feb297f270648\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+108            android:authorities="com.example.medbutler.firebaseinitprovider"
+108-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ac592bb9e86f8540e27feb297f270648\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+109            android:exported="false"
+109-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ac592bb9e86f8540e27feb297f270648\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+110            android:initOrder="100" />
+110-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\ac592bb9e86f8540e27feb297f270648\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+111
+112        <receiver
+112-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:29:9-33:20
+113            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+113-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:30:13-85
+114            android:enabled="true"
+114-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:31:13-35
+115            android:exported="false" >
+115-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:32:13-37
+116        </receiver>
+117        <receiver
+117-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:34:9-42:20
+118            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+118-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:35:13-100
+119            android:enabled="true"
+119-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:36:13-35
+120            android:exported="true"
+120-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:37:13-36
+121            android:permission="android.permission.INSTALL_PACKAGES" >
+121-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:38:13-69
+122            <intent-filter>
+122-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:39:13-41:29
+123                <action android:name="com.android.vending.INSTALL_REFERRER" />
+123-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:40:17-79
+123-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:40:25-76
+124            </intent-filter>
+125        </receiver>
+126
+127        <service
+127-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:44:9-47:40
+128            android:name="com.google.android.gms.measurement.AppMeasurementService"
+128-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:45:13-84
+129            android:enabled="true"
+129-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:46:13-35
+130            android:exported="false" />
+130-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:47:13-37
+131        <service
+131-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:48:9-52:72
+132            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+132-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:49:13-87
+133            android:enabled="true"
+133-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:50:13-35
+134            android:exported="false"
+134-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:51:13-37
+135            android:permission="android.permission.BIND_JOB_SERVICE" />
+135-->[com.google.android.gms:play-services-measurement:17.3.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\cb3b67dbdb7a579b9e051111b63ff055\jetified-play-services-measurement-17.3.0\AndroidManifest.xml:52:13-69
+136
+137        <meta-data
+137-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\4fae2c7453a4a6fd3e4334c09c4310db\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+138            android:name="com.google.android.gms.version"
+138-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\4fae2c7453a4a6fd3e4334c09c4310db\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+139            android:value="@integer/google_play_services_version" />
+139-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Changhao\.gradle\caches\transforms-2\files-2.1\4fae2c7453a4a6fd3e4334c09c4310db\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+140    </application>
+141
+142</manifest>

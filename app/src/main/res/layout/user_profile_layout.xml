@@ -6,27 +6,51 @@
     android:layout_height="match_parent"
     android:gravity="top"
     android:orientation="vertical"
-
+    android:id="@+id/backgroundLayout"
     android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/user_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="77dp"
         android:layout_weight="15"
         android:adjustViewBounds="true"
-        android:background="@drawable/user_photo" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_angel" />
 
-    <TextView
-        android:id="@+id/user_complete_name_label"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="5"
-        android:font="@font/averia_serif_libre_light"
-        android:fontFamily="@font/averia_serif_libre_light"
-        android:text="@string/complete_name"
-        android:textColor="@android:color/black"
-        android:textSize="28sp" />
+        android:layout_height="43dp"
+        android:layout_weight="4.5">
+
+        <TextView
+            android:id="@+id/user_complete_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/averia_serif_libre_light"
+            android:paddingLeft="30dp"
+            android:text="@string/complete_name"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/profile_modif"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:background="@null"
+            android:onClick="actionModif"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile_modif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.928"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/userName_label"
@@ -36,7 +60,8 @@
         android:fontFamily="@font/asul"
         android:text="Username : ajaleo"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:paddingLeft="30dp"/>
 
     <TextView
         android:id="@+id/email_label"
@@ -46,7 +71,8 @@
         android:fontFamily="@font/asul"
         android:text="Correu: admin@gmail.com"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:paddingLeft="30dp"/>
 
     <TextView
         android:id="@+id/date_label"
@@ -56,7 +82,8 @@
         android:fontFamily="@font/asul"
         android:text="Data de naixement: septembre 2000"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:paddingLeft="30dp"/>
 
     <TextView
         android:id="@+id/height_label"
@@ -66,7 +93,8 @@
         android:fontFamily="@font/asul"
         android:text="Altura: 180 cm"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:paddingLeft="30dp"/>
 
     <TextView
         android:id="@+id/weight_label"
@@ -76,60 +104,58 @@
         android:fontFamily="@font/asul"
         android:textColor="@android:color/black"
         android:text="Pes: 60 kg"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:paddingLeft="30dp"/>
 
     <LinearLayout
-        android:id="@+id/my_user_toolbar"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_tall_divider"
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginBottom="0dp"
         android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:background="@color/colorPrimaryDark"
         android:weightSum="4">
-
-
 
         <ImageButton
             android:id="@+id/userButton"
+            android:src="@drawable/user_logo"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
-            android:src="@drawable/user_logo"
-            android:paddingRight="10dp"
-            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             />
         <ImageButton
-            android:id="@+id/calendarButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:id="@+id/calendarButton"
             android:src="@drawable/calendar"
             android:onClick="actionCalendar"
-            android:paddingRight="10dp"
             android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             />
         <ImageButton
-            android:id="@+id/medsButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:id="@+id/medsButton"
             android:src="@drawable/meds_logo"
             android:onClick="actionMeds"
-            android:paddingRight="10dp"
             android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             />
 
         <ImageButton
-            android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:id="@+id/settingsButton"
             android:src="@drawable/settings"
             android:onClick="actionSettings"
-            android:paddingRight="10dp"
             android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             />
 
     </LinearLayout>

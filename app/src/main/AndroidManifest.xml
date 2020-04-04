@@ -9,9 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashScreen">
-
-        </activity>
         <activity android:name=".AddMedLayout" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".SettingsAccountActivity" />
@@ -20,16 +17,26 @@
         <activity android:name=".SettingsHelpSupportActivity" />
         <activity android:name=".SettingsPrivacySecurityActivity" />
         <activity android:name=".SettingsNotificationsActivity" />
+        <activity android:name=".ListView.ModelListViewTreatment" />
+        <activity android:name=".ListView.ModelSettings" />
+        <activity android:name=".ListView.ModelTreatment" />
+        <activity android:name=".classes.Model.UserAppearenceInfo"/>
         <activity android:name=".MedListActivity" />
         <activity android:name=".DayActivity" />
-        <activity android:name=".AdapterSettings" />
+        <activity android:name=".ListView.ModelListViewProfile" />
+        <activity android:name=".ListView.ModelOther" />
+        <activity android:name=".ListView.CustomListviewAdapter" />
+        <activity android:name=".ListView.CustomAdapterOther" />
+        <activity android:name=".ListView.AdapterSettings" />
+        <activity android:name=".ListView.ModelListViewCalendar" />
+        <activity android:name=".ListView.ModelListViewSettings" />
+        <activity android:name=".ListView.ModelListViewBackground"/>
         <activity android:name=".Sign_up" />
         <activity
             android:name=".UserProfile"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ToolBarTemplate" />
-        <activity android:name=".login"
-            android:theme="@style/splashTheme">
+        <activity android:name=".Login"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
