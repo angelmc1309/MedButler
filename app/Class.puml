@@ -1,0 +1,44 @@
+@startuml
+
+
+
+Model.MedList "1"*--"*" Model.Med:"contains"
+Model.User "1"--"1" Model.MedList:"has"
+Model.User "1"--"1" Model.Diet:"has"
+Model.Diet "1"*--"*" Model.Day:"contains"
+Model.Day "1"*--"*" Model.Food:"contains"
+Model.User "1"--"1" Model.UserInfo:"describes"
+
+
+class Model.User{
+    String id
+    String[] getInfo()
+}
+Controller - Model:"manipulates and updates"
+Controller -- DataBase:"gets and updates information"
+package DataBase{}
+package Controller{}
+class Model.Food{
+    String foodId
+    String[] properties
+}
+class Model.Food{
+    String foodId
+    String[] properties
+}
+class Controller.MainController{
+MainController uniqueInstance
+registraUsuari()
+loginUsuari()
+}
+interface DataBase.DAO<T>{
+T get(String id)
+List<T> getAll()
+void save(T t)
+void update(T t, String[] params)
+void delete(T t)
+}
+DataBase.DAO <|-- DataBase.DAOUser
+
+
+@enduml
