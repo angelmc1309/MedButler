@@ -8,7 +8,4 @@ class MainController {
      val user = null
      val daoUser = DAOUser()
 
-
-
-
 }
