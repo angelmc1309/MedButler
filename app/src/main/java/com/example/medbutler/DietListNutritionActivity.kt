@@ -75,7 +75,7 @@ class DietListNutritionActivity : AppCompatActivity() {
         toolbarTreatment.setBackgroundColor(MainActivity.toolbarColor)
         medListBut.setBackgroundColor(MainActivity.brighterToolbarColor)
         medListBut.setTextColor(MainActivity.darkerToolbarColorText)
-        dietListBut.setBackgroundColor(MainActivity.brighterToolbarColor)
+        dietListBut.setBackgroundColor(MainActivity.toolbarColor)
         dietListBut.setTextColor(MainActivity.darkerToolbarColorText)
         userBut.setBackgroundColor(MainActivity.toolbarColor)
         calendarButt.setBackgroundColor(MainActivity.toolbarColor)

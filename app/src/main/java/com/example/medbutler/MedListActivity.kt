@@ -57,7 +57,7 @@ class MedListActivity : AppCompatActivity() {
         var dietListBut: TextView = findViewById(R.id.diet_list)
         toolbar.setBackgroundColor(MainActivity.darkerToolbarColor)
         toolbarTreatment.setBackgroundColor(MainActivity.toolbarColor)
-        medListBut.setBackgroundColor(MainActivity.brighterToolbarColor)
+        medListBut.setBackgroundColor(MainActivity.toolbarColor)
         medListBut.setTextColor(MainActivity.darkerToolbarColorText)
         dietListBut.setBackgroundColor(MainActivity.brighterToolbarColor)
         dietListBut.setTextColor(MainActivity.darkerToolbarColorText)
