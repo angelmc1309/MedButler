@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
         var background:String = "Default"
         var changeToolbarWithColorTheme:Boolean = false
         var colorTheme:Int = -16728876
-        var darkerColorTheme:Int = -16743276
+        var darkerToolbarColorText:Int = -16743276
         var toolbarColor = -16728876
+        var brighterToolbarColor = -16743276
         var darkerToolbarColor = -16743276
         var profileImagePersonId:String = "man_profile_image"
         var profileImageBackgroundId:String = "man_profile_background"

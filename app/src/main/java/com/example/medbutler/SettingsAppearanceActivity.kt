@@ -52,7 +52,9 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                 if (!preference.isChecked){
                     MainActivity.changeToolbarWithColorTheme = true
                     MainActivity.toolbarColor = MainActivity.colorTheme
-                    MainActivity.darkerToolbarColor = MainActivity.darkerColorTheme
+                    MainActivity.darkerToolbarColor = manipulateColor(MainActivity.colorTheme, 0.7f)
+                    MainActivity.brighterToolbarColor = manipulateColor(MainActivity.colorTheme, 1.3f)
+                    MainActivity.darkerToolbarColorText = manipulateColor(MainActivity.colorTheme, 0.4f)
                 }else{
                     MainActivity.changeToolbarWithColorTheme = false
                 }
@@ -110,15 +112,18 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                         // val colorBrighter:Int = manipulateColor(color, 0.85f)
                         MainActivity.colorTheme = color
                         val colorDarker:Int = manipulateColor(color, 0.7f)
-                        MainActivity.darkerColorTheme = colorDarker
                         if (MainActivity.changeToolbarWithColorTheme){
                             MainActivity.toolbarColor = color
                             MainActivity.darkerToolbarColor = colorDarker
+                            MainActivity.brighterToolbarColor = manipulateColor(MainActivity.colorTheme, 1.3f)
+                            MainActivity.darkerToolbarColorText = manipulateColor(MainActivity.colorTheme, 0.4f)
                         }
                     }else if (preference?.key.equals("key_toolbar_color")){
                         MainActivity.toolbarColor = color
                         val colorDarker:Int = manipulateColor(color, 0.7f)
                         MainActivity.darkerToolbarColor = colorDarker
+                        MainActivity.brighterToolbarColor = manipulateColor(MainActivity.colorTheme, 1.3f)
+                        MainActivity.darkerToolbarColorText = manipulateColor(MainActivity.colorTheme, 0.4f)
                     }
                 }
 

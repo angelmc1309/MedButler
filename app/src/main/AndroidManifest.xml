@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".AddMedLayout" />
+        <activity android:name=".AddMedActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".SettingsAccountActivity" />
         <activity android:name=".SettingsAboutActivity" />
@@ -22,6 +22,7 @@
         <activity android:name=".ListView.ModelTreatment" />
         <activity android:name=".classes.model.UserAppearenceInfo"/>
         <activity android:name=".MedListActivity" />
+        <activity android:name=".DietListNutritionActivity" />
         <activity android:name=".DayActivity" />
         <activity android:name=".ListView.ModelListViewProfile" />
         <activity android:name=".ListView.ModelOther" />
