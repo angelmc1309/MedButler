@@ -6,21 +6,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
+import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.model.Usuari
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import java.util.Calendar
 
 class Sign_up : AppCompatActivity() {
 
     private lateinit var firebase_auth: FirebaseAuth;
-
+   // private lateinit var controller:MainController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         firebase_auth=FirebaseAuth.getInstance()
+
     }
     fun actionGoToLogin(view: View){
         val intent= Intent(this, Login::class.java)
@@ -35,7 +36,7 @@ class Sign_up : AppCompatActivity() {
         mostrarDate.show()
     }
     fun enregistrar(view: View){
-
+        var genderr:String=""
 
         if (! passwordRegist1.text.toString().equals(passwordRegist2.text.toString())){
             Toast.makeText(this,"Contresenya diferent", Toast.LENGTH_SHORT).show()
@@ -69,8 +70,25 @@ class Sign_up : AppCompatActivity() {
             return
 
         }
-        firebase_auth.createUserWithEmailAndPassword(usernameRegist.text.toString(),passwordRegist1.text.toString())
-            .addOnCompleteListener(this){ task->
+        if(femaleButRegst.isChecked){
+            genderr="Female"
+        }else if(maleButRegist.isChecked){
+            genderr="Male"
+        }else{
+            Toast.makeText(this,"Man or Women!!!", Toast.LENGTH_SHORT).show()
+        }
+
+        /*controller.Enregistrar(usernameRegist.text.toString(),fullnameRegist.text.toString(),passwordRegist1.text.toString(),
+            birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString(), genderr)*/
+        val user:Usuari=
+            Usuari(usernameRegist.text.toString(),fullnameRegist.text.toString(),
+                birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
+
+        MainController.Enregistrar(user, passwordRegist1.text.toString())
+        val intent= Intent(this, Login::class.java)
+        startActivity(intent)
+        finish()
+        /*addOnCompleteListener(this){ task->
                 if(task.isSuccessful){
                     val intent= Intent(this, Login::class.java)
                     startActivity(intent)
@@ -81,7 +99,7 @@ class Sign_up : AppCompatActivity() {
                     Toast.makeText(baseContext,e.message.toString(),Toast.LENGTH_LONG).show()
 
                 }
-            }
+            }*/
 
 
 

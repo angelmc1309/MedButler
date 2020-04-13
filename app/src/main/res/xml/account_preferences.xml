@@ -58,6 +58,7 @@
             android:title="Email Address"
             android:summary="Enter your email address"
             android:dialogTitle="Enter your email adress"
+
             android:dialogMessage="Enter your email adress"
             android:inputType="textEmailAddress"/>
 

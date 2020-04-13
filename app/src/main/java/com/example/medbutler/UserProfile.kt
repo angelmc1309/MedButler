@@ -16,6 +16,7 @@ class UserProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

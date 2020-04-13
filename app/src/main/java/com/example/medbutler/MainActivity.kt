@@ -1,6 +1,5 @@
 package com.example.medbutler
 
-import android.R.attr.name
 import android.animation.ValueAnimator
 import android.content.Context
 import android.content.Intent
@@ -18,6 +17,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
+
+
+        //welcomeLaber.setText(controller.getCurrentUser()?.email)
+        //welcomeLaber.setText(controller.getCurrentUserInfo())
+//        Toast.makeText(baseContext,controller.getCurrentUserInfo(),Toast.LENGTH_LONG).show()
     }
 
     override fun onResume() {
