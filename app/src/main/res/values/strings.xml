@@ -47,4 +47,7 @@
     <string name="medication_frequency">Medication frequency</string>
     <string name="treatment_duration">Treatment duration</string>
     <string name="click_here_to_select_the_time">click here to select the time</string>
+    <string name="modify_anything_about_your_medicine">Modify anything about your medicine</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="discard_changes">Discard changes</string>
 </resources>
