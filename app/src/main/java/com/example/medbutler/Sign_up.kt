@@ -16,12 +16,12 @@ import java.util.Calendar
 class Sign_up : AppCompatActivity() {
 
     private lateinit var firebase_auth: FirebaseAuth;
-    private lateinit var controller:MainController
+   // private lateinit var controller:MainController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         firebase_auth=FirebaseAuth.getInstance()
-        controller= MainController()
+
     }
     fun actionGoToLogin(view: View){
         val intent= Intent(this, Login::class.java)
@@ -84,7 +84,7 @@ class Sign_up : AppCompatActivity() {
             Usuari(usernameRegist.text.toString(),fullnameRegist.text.toString(),
                 birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
 
-        controller.Enregistrar(user, passwordRegist1.text.toString())
+        MainController.Enregistrar(user, passwordRegist1.text.toString())
         val intent= Intent(this, Login::class.java)
         startActivity(intent)
         finish()

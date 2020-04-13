@@ -5,16 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.medbutler.classes.controller.MainController
-import com.example.medbutler.classes.model.Usuari
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.coroutines.runBlocking
 
 class Login : AppCompatActivity() {
     private lateinit var firebase_auth: FirebaseAuth;
-    val controller:MainController=MainController()
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         Thread.sleep(2000)

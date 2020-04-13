@@ -19,9 +19,9 @@ import kotlinx.coroutines.tasks.await
 import java.util.*
 import kotlinx.coroutines.*
 
-class MainController {
+object MainController {
     /*Unique instance of the controller*/
-    object Singleton
+    //object Singleton
 
     var user:Usuari = Usuari()
     val daoUser = DAOUser()
@@ -98,37 +98,20 @@ class MainController {
 
                 }
         }
+    fun addMed(
+        id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
+        startTimeHour: Int, allowNotification: Boolean
+    ) {
+        user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
+            allowNotification)
 
-/*fun Enregistrar(
-     email: String,
-     fullname: String,
-     password: String,
-     birthday: String,
-     height:String,
-     weight:String, genderr:String
-){
-
-
-     firebase_auth.createUserWithEmailAndPassword(email,password)
-    val user=Usuari(email,fullname,birthday,height,weight,genderr)
-    print(user.toStringg())
-    userdb.document(email).set(user)
-         /*.addOnCompleteListener{  task: Task<AuthResult> ->
-          if(task.isSuccessful){
-               /*val user= hashMapOf(
-                    "Fullname" to fullname,
-                    "Birthday" to birthday,
-                    "Email" to email,
-                    "Gender" to genderr,
-                    "Height" to height,
-                    "Weight" to weight
-
-               )*/
-               val user=Usuari(email,fullname,birthday,height,weight,genderr)
-               db.collection("users").document(email).set(user)
-
-          }*/
-}*/
+    }
+    fun getMedList():String{
+        return  user.getMedList()
+    }
+    fun removeMed(id: String){
+        user.removeMed(id)
+    }
     }
 
 

@@ -1,6 +1,5 @@
 package com.example.medbutler
 
-import android.R.attr.name
 import android.animation.ValueAnimator
 import android.content.Context
 import android.content.Intent
@@ -10,10 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.medbutler.classes.controller.MainController
-import kotlinx.android.synthetic.main.main_page.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
-        val controller:MainController= MainController()
+
 
         //welcomeLaber.setText(controller.getCurrentUser()?.email)
         //welcomeLaber.setText(controller.getCurrentUserInfo())

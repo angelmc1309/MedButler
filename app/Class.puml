@@ -39,6 +39,6 @@ void update(T t, String[] params)
 void delete(T t)
 }
 DataBase.DAO <|-- DataBase.DAOUser
-
+Model.UserInfo "1"--"1" Model.UserAppearenceInfo:"has"
 
 @enduml
