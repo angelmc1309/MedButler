@@ -6,15 +6,13 @@ import android.content.res.ColorStateList
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.view.*
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.medbutler.classes.model.Med
+import kotlinx.android.synthetic.main.activity_med_list.*
+import kotlin.collections.ArrayList
 
 class MedListActivity : AppCompatActivity() {
 
@@ -23,6 +21,36 @@ class MedListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_med_list)
         updateAppearance()
+        var med1:Med = Med( "IB600","Ibuprofeno 600mg", 24,7,30, 1,false)
+        var med2:Med = Med( "IB400","Ibuprofeno 400mg", 4,14,2, 5,true)
+        var med3:Med = Med( "IB400","Ibuprofeno 400mg", 72,0,30, 8,false)
+        var med4:Med = Med( "IB600","Ibuprofeno 600mg", 48,90,22, 8,true)
+        var med5:Med = Med( "IB800","Ibuprofeno 800mg", 24,30,54, 7,true)
+        var med6:Med = Med( "IB999900","Ibuprofeno 99999mg", 24,7,13, 12,false) // PER EL TEST
+        val array_exemple = arrayListOf(med1,med2,med3,med4,med5,med6)   //Obenir array Usuari de Controler
+
+        listViewMedList.adapter = CustomAdapter(this, R.layout.simple_list_item_custom, array_exemple)
+
+        listViewMedList.setOnItemClickListener { parent, view, position, id ->
+            var listItem:Med = array_exemple.get(position)
+            val intentModifMed= Intent(this, ModifMedActivity::class.java)
+            startActivity(intentModifMed)
+        }
+    }
+
+    class CustomAdapter (var mCtx: Context, var resources:Int, var items:List<Med>):
+        ArrayAdapter<Med>(mCtx, resources, items) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+            val view: View = layoutInflater.inflate(resources, null)
+
+            val lay:RelativeLayout = view.findViewById(R.id.relatLayout)
+            val titleTextView: TextView = view.findViewById(R.id.textMedAtributes)
+
+            var mItem: Med = items[position]
+            titleTextView.text = mItem.toStringAllAtributes()
+            return view
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

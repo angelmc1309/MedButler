@@ -24,6 +24,7 @@
         <activity android:name=".MedListActivity" />
         <activity android:name=".DietListNutritionActivity" />
         <activity android:name=".DayActivity" />
+        <activity android:name=".ModifMedActivity" />
         <activity android:name=".ListView.ModelListViewProfile" />
         <activity android:name=".ListView.ModelOther" />
         <activity android:name=".ListView.CustomListviewAdapter" />
