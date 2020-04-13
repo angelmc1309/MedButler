@@ -1,56 +1,65 @@
 package com.example.medbutler.classes.model
 
-open class Usuari {
-    private lateinit var username:String
-    private lateinit var passwrd:String
-    private lateinit var birthday:String
-    private lateinit var gender:String
-    private lateinit var weight:String
-    private lateinit var height:String
-    private lateinit var fullname:String
-    constructor(username:String,fullname:String, birthday:String, height:String,weight:String, gender:String){
-        this.username=username
-       // this.passwrd=password
-        this.birthday=birthday
-        this.gender=gender
-        this.height=height
-        this.weight=weight
-        this.fullname=fullname
+ class Usuari
+ {
+     private var username: String=""
+     private var fullname: String=""
+     private var birthday: String=""
+     private var height: String=""
+     private var weight: String=""
+     //private var gender: String=""
+     constructor(){
+
+     }
+     constructor(username: String,
+                  fullname: String,
+                 birthday: String,
+                 height: String,
+                 weight: String
+                 ){
+         this.username=username
+         this.fullname=fullname
+         this.birthday=birthday
+         this.height=height
+         this.weight=weight
+         //gender: String
+         //this.gender=gender
+     }
+
+    fun tostringg():String{
+        return username+" "+fullname+" "+birthday+" "+height+" "+weight
+                //gender
     }
-    fun getId():String{
+    fun getusername(): String? {
         return this.username
     }
-    fun getFullname():String{
+    fun getfullname(): String {
         return this.fullname
     }
-    fun getPassword():String{
-        return this.passwrd
-    }
-    fun getBirthday():String{
+
+    fun getbirthday(): String? {
         return this.birthday
     }
-    fun getHeight():String{
+    fun getheight(): String? {
         return this.height
     }
-    fun getWeight():String{
+    fun getweight(): String? {
         return this.weight
     }
-    fun setId(newMail:String){
+    fun setusername(newMail:String){
         this.username=newMail
     }
-    fun setFullname(newFullname:String){
+    fun setfullname(newFullname:String){
         this.fullname=newFullname
     }
-    fun setPassword(newPass:String){
-        this.passwrd=newPass
-    }
-    fun setBirthday(newBirth:String){
+
+    fun setbirthday(newBirth:String){
         this.birthday=newBirth
     }
-    fun setWeight(newWeight:String){
+    fun setweight(newWeight:String){
         this.weight=newWeight
     }
-    fun setHeight(newHeight:String){
+    fun setheight(newHeight:String){
         this.height=newHeight
     }
 

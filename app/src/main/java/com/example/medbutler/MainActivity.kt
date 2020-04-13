@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_page)
         val controller:MainController= MainController()
 
-        welcomeLaber.setText(controller.getCurrentUser()?.email)
+        //welcomeLaber.setText(controller.getCurrentUser()?.email)
         //welcomeLaber.setText(controller.getCurrentUserInfo())
 //        Toast.makeText(baseContext,controller.getCurrentUserInfo(),Toast.LENGTH_LONG).show()
     }
