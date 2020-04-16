@@ -8,6 +8,7 @@ package com.example.medbutler.classes.model
      private var height: String=""
      private var weight: String=""
      private val medList:MedList = MedList()
+     private val appearanceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //private var gender: String=""
      constructor(){
 
@@ -74,6 +75,10 @@ package com.example.medbutler.classes.model
 
      fun removeMed(id: String) {
          medList.removeMed(id)
+     }
+
+     fun getappearanceInfo(): UserAppearenceInfo {
+        return this.appearanceInfo
      }
     //var d=Usuari("k","j","s","s")
 

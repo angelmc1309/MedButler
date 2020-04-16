@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.MainActivity
 import com.example.medbutler.R
+import com.example.medbutler.classes.controller.MainController
 
 class ModelListViewProfile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,38 +62,38 @@ class ModelListViewProfile : AppCompatActivity() {
         listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
             if (position == 0) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Man profile model one", Toast.LENGTH_SHORT).show()
-                MainActivity.profileImagePersonId = "man_profile_image"
-                MainActivity.profileImageBackgroundId = "man_profile_background"
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImagePersonId("man_profile_image")
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImageBackgroundId("man_profile_background")
                 finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Woman profile model one", Toast.LENGTH_SHORT).show()
-                MainActivity.profileImagePersonId = "woman_profile_image"
-                MainActivity.profileImageBackgroundId = "woman_profile_background"
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImagePersonId("woman_profile_image")
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImageBackgroundId("woman_profile_background")
                 finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Man profile model two", Toast.LENGTH_SHORT).show()
-                MainActivity.profileImagePersonId = "man_profile_image2"
-                MainActivity.profileImageBackgroundId = "man_profile_background2"
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImagePersonId("man_profile_image2")
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImageBackgroundId("man_profile_background2")
                 finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Woman profile model two", Toast.LENGTH_SHORT).show()
-                MainActivity.profileImagePersonId = "woman_profile_image2"
-                MainActivity.profileImageBackgroundId = "woman_profile_background2"
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImagePersonId("woman_profile_image2")
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImageBackgroundId("woman_profile_background2")
                 finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Man profile model three", Toast.LENGTH_SHORT).show()
-                MainActivity.profileImagePersonId = "man_profile_image3"
-                MainActivity.profileImageBackgroundId = "man_profile_background3"
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImagePersonId("man_profile_image3")
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImageBackgroundId("man_profile_background3")
                 finish()
             }
             if (position == 5) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Woman profile model three", Toast.LENGTH_SHORT).show()
-                MainActivity.profileImagePersonId = "woman_profile_image3"
-                MainActivity.profileImageBackgroundId = "woman_profile_background3"
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImagePersonId("woman_profile_image3")
+                MainController.getUsuariPerProvarEdu().getappearanceInfo().setprofileImageBackgroundId("woman_profile_background3")
                 finish()
             }
         }

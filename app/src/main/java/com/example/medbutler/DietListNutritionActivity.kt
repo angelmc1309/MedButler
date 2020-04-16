@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.ms.square.android.expandabletextview.ExpandableTextView
+import com.example.medbutler.classes.controller.MainController
 
 class DietListNutritionActivity : AppCompatActivity() {
 
@@ -41,6 +42,12 @@ class DietListNutritionActivity : AppCompatActivity() {
                 "Limite el alcohol. El alcohol añade calorías adicionales, las que pueden llevar al aumento de peso. Tener sobrepeso puede elevar su nivel de colesterol malo y disminuir su nivel de colesterol bueno. Demasiado alcohol también puede aumentar su riesgo de enfermedades del corazón, porque puede elevar su presión arterial y el nivel de triglicéridos. Una bebida es un vaso de vino, cerveza o una pequeña cantidad de licor fuerte, y la recomendación es:"
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onResume() {
+        updateAppearance()
+        super.onResume()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_gohome_toolbar,menu)
         return true
@@ -58,7 +65,7 @@ class DietListNutritionActivity : AppCompatActivity() {
         // background
         val backgroundLay: ConstraintLayout = findViewById(R.id.backgroundLayout)
         val context: Context = backgroundLay.getContext()
-        val idBack = resources.getIdentifier(MainActivity.background, "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
@@ -71,18 +78,18 @@ class DietListNutritionActivity : AppCompatActivity() {
         var medListBut: TextView = findViewById(R.id.med_list)
         var dietListBut: TextView = findViewById(R.id.diet_list)
         var addDietBut: Button = findViewById(R.id.addDiet)
-        toolbar.setBackgroundColor(MainActivity.darkerToolbarColor)
-        toolbarTreatment.setBackgroundColor(MainActivity.toolbarColor)
-        medListBut.setBackgroundColor(MainActivity.brighterToolbarColor)
-        medListBut.setTextColor(MainActivity.darkerToolbarColorText)
-        dietListBut.setBackgroundColor(MainActivity.toolbarColor)
-        dietListBut.setTextColor(MainActivity.darkerToolbarColorText)
-        userBut.setBackgroundColor(MainActivity.toolbarColor)
-        calendarButt.setBackgroundColor(MainActivity.toolbarColor)
-        settingsBut.setBackgroundColor(MainActivity.toolbarColor)
-        medsBut.setBackgroundColor(MainActivity.toolbarColor)
-        addDietBut.setBackgroundTintList(ColorStateList.valueOf(MainActivity.brighterToolbarColor))
-        addDietBut.setTextColor(MainActivity.darkerToolbarColorText)
+        toolbar.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColor())
+        toolbarTreatment.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        medListBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor())
+        medListBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
+        dietListBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        dietListBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
+        userBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        calendarButt.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        settingsBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        medsBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        addDietBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor()))
+        addDietBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
     }
 
     fun actionCalendar(view: View){

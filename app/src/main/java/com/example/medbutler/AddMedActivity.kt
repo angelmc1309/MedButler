@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_add_med_layout.*
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import com.example.medbutler.classes.controller.MainController
 
 class AddMedActivity : AppCompatActivity() {
 
@@ -66,21 +67,27 @@ class AddMedActivity : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onResume() {
+        updateAppearance()
+        super.onResume()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun updateAppearance(){
         // background
         val backgroundLay: RelativeLayout = findViewById(R.id.backgroundAddMed)
         val context: Context = backgroundLay.getContext()
-        val idBack = resources.getIdentifier(MainActivity.background, "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
         var addBut: TextView = findViewById(R.id.btnAddMed)
         var disBut: TextView = findViewById(R.id.btnDiscardMed)
 
-        addBut.setBackgroundTintList(ColorStateList.valueOf(MainActivity.brighterToolbarColor))
-        addBut.setTextColor(MainActivity.darkerToolbarColorText)
-        disBut.setBackgroundTintList(ColorStateList.valueOf(MainActivity.brighterToolbarColor))
-        disBut.setTextColor(MainActivity.darkerToolbarColorText)
+        addBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor()))
+        addBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
+        disBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor()))
+        disBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
         /*
         addBut.setBackgroundColor(MainActivity.brighterToolbarColor)
         addBut.setTextColor(MainActivity.darkerToolbarColorText)

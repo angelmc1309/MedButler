@@ -11,6 +11,7 @@ import com.example.medbutler.ListView.*
 import kotlinx.android.synthetic.*
 import petrov.kristiyan.colorpicker.ColorPicker
 import petrov.kristiyan.colorpicker.ColorPicker.OnChooseColorListener
+import com.example.medbutler.classes.controller.MainController
 
 
 class SettingsAppearanceActivity : AppCompatActivity() {
@@ -32,7 +33,8 @@ class SettingsAppearanceActivity : AppCompatActivity() {
             //bindPreferenceSummaryToValue(findPreference(getString(R.string.settings_picture_ListPref)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.change_color_toolbar)))
 
-            findPreference(getString(R.string.change_color_toolbar)).setDefaultValue(MainActivity.changeToolbarWithColorTheme)
+            val switch:SwitchPreferenceCompat = findPreference(getString(R.string.change_color_toolbar)) as SwitchPreferenceCompat
+            switch.isChecked = MainController.getUsuariPerProvarEdu().getappearanceInfo().getchangeToolbarWithColorTheme()
             findPreference(getString(R.string.key_color_theme)).onPreferenceClickListener = this
             findPreference(getString(R.string.profile_picture_ListPref)).onPreferenceClickListener = this
             findPreference(getString(R.string.treatment_picture_ListPref)).onPreferenceClickListener = this
@@ -50,13 +52,13 @@ class SettingsAppearanceActivity : AppCompatActivity() {
 
             if (preference is SwitchPreferenceCompat) {
                 if (!preference.isChecked){
-                    MainActivity.changeToolbarWithColorTheme = true
-                    MainActivity.toolbarColor = MainActivity.colorTheme
-                    MainActivity.darkerToolbarColor = manipulateColor(MainActivity.colorTheme, 0.7f)
-                    MainActivity.brighterToolbarColor = manipulateColor(MainActivity.colorTheme, 1.3f)
-                    MainActivity.darkerToolbarColorText = manipulateColor(MainActivity.colorTheme, 0.4f)
+                    MainController.getUsuariPerProvarEdu().getappearanceInfo().setchangeToolbarWithColorTheme(true)
+                    MainController.getUsuariPerProvarEdu().getappearanceInfo().settoolbarColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme())
+                    MainController.getUsuariPerProvarEdu().getappearanceInfo().setdarkerToolbarColor(manipulateColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme(), 0.7f))
+                    MainController.getUsuariPerProvarEdu().getappearanceInfo().setbrighterToolbarColor(manipulateColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme(), 1.3f))
+                    MainController.getUsuariPerProvarEdu().getappearanceInfo().setdarkerToolbarColorText(manipulateColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme(), 0.4f))
                 }else{
-                    MainActivity.changeToolbarWithColorTheme = false
+                    MainController.getUsuariPerProvarEdu().getappearanceInfo().setchangeToolbarWithColorTheme(false)
                 }
             }
             return true
@@ -110,20 +112,18 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                 override fun onChooseColor(position: Int, color: Int) {
                     if (preference?.key.equals("key_color_theme")){
                         // val colorBrighter:Int = manipulateColor(color, 0.85f)
-                        MainActivity.colorTheme = color
-                        val colorDarker:Int = manipulateColor(color, 0.7f)
-                        if (MainActivity.changeToolbarWithColorTheme){
-                            MainActivity.toolbarColor = color
-                            MainActivity.darkerToolbarColor = colorDarker
-                            MainActivity.brighterToolbarColor = manipulateColor(MainActivity.colorTheme, 1.3f)
-                            MainActivity.darkerToolbarColorText = manipulateColor(MainActivity.colorTheme, 0.4f)
+                        MainController.getUsuariPerProvarEdu().getappearanceInfo().setcolorTheme(color)
+                        if (MainController.getUsuariPerProvarEdu().getappearanceInfo().getchangeToolbarWithColorTheme()){
+                            MainController.getUsuariPerProvarEdu().getappearanceInfo().settoolbarColor(color)
+                            MainController.getUsuariPerProvarEdu().getappearanceInfo().setdarkerToolbarColor(manipulateColor(color, 0.7f))
+                            MainController.getUsuariPerProvarEdu().getappearanceInfo().setbrighterToolbarColor(manipulateColor(color, 1.3f))
+                            MainController.getUsuariPerProvarEdu().getappearanceInfo().setdarkerToolbarColorText(manipulateColor(color, 0.4f))
                         }
                     }else if (preference?.key.equals("key_toolbar_color")){
-                        MainActivity.toolbarColor = color
-                        val colorDarker:Int = manipulateColor(color, 0.7f)
-                        MainActivity.darkerToolbarColor = colorDarker
-                        MainActivity.brighterToolbarColor = manipulateColor(MainActivity.colorTheme, 1.3f)
-                        MainActivity.darkerToolbarColorText = manipulateColor(MainActivity.colorTheme, 0.4f)
+                        MainController.getUsuariPerProvarEdu().getappearanceInfo().settoolbarColor(color)
+                        MainController.getUsuariPerProvarEdu().getappearanceInfo().setdarkerToolbarColor(manipulateColor(color, 0.7f))
+                        MainController.getUsuariPerProvarEdu().getappearanceInfo().setbrighterToolbarColor(manipulateColor(color, 1.3f))
+                        MainController.getUsuariPerProvarEdu().getappearanceInfo().setdarkerToolbarColorText(manipulateColor(color, 0.4f))
                     }
                 }
 
