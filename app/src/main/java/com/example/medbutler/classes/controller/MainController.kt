@@ -25,5 +25,14 @@ object MainController {
      fun removeMed(id: String){
           user.removeMed(id)
      }
-
+     //order enter que indica quin apat del dia es
+     fun setFood(date:String,order:Int,name: String) {
+          //TODO test this funtionality
+          if(existsThisDay(date)) {
+               user.setFood(date,order,name)
+          }
+     }
+     fun existsThisDay(date:String):Boolean{
+          return user.existsThisDay(date)
+     }
 }

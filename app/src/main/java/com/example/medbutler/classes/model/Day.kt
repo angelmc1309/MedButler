@@ -2,12 +2,17 @@ package com.example.medbutler.classes.model
 
 class Day {
     private var date:String
+    private val foodList :ArrayList<Food> = ArrayList<Food>(5)
     constructor(date:String){
         this.date = date
     }
 
     fun getDate():String{
         return date
+    }
+    fun setFood(number:Int,name:String){
+        val f = Food(name)
+        foodList[number] = f
     }
 
     fun setDate(newDate:String){

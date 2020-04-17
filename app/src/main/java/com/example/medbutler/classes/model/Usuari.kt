@@ -6,6 +6,7 @@ open class Usuari {
     private var birthday:String
     private var gender:String
     private val medList:MedList = MedList()
+    private val calendar:Calendar= Calendar()
     constructor(username:String,password:String, birthday:String, gender:String){
         this.username=username
         this.passwrd=password
@@ -28,6 +29,13 @@ open class Usuari {
 
     fun removeMed(id: String) {
         medList.removeMed(id)
+    }
+    fun setFood(date: String,order:Int,name: String){
+        calendar.setFood(date,order,name)
+    }
+
+    fun existsThisDay(date: String): Boolean {
+        return calendar.existsThisDay(date)
     }
     //var d=Usuari("k","j","s","s")
 
