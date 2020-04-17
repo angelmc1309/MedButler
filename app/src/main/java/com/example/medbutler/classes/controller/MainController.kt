@@ -1,6 +1,8 @@
 package com.example.medbutler.classes.controller
 
 import com.example.medbutler.classes.dataBase.DAOUser
+import com.example.medbutler.classes.model.Calendar
+import com.example.medbutler.classes.model.Day
 import com.example.medbutler.classes.model.Usuari
 
 object MainController {
@@ -9,6 +11,8 @@ object MainController {
      private var user: Usuari = Usuari("", "", "", "")
 
      private val daoUser = DAOUser()
+
+     private var calendar: Calendar = Calendar()
 
 
      fun addMed(
@@ -34,5 +38,19 @@ object MainController {
      }
      fun existsThisDay(date:String):Boolean{
           return user.existsThisDay(date)
+     }
+
+     fun createDay(date: String){
+          if(!existsThisDay(date)){
+              user.addDay(date)
+          }
+     }
+
+     fun getDayList():String{
+          return user.getDayList()
+     }
+
+     fun removeDay(date: String){
+          user.removeDay(date)
      }
 }

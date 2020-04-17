@@ -2,6 +2,7 @@ package com.example.medbutler.classes.model
 
 class Calendar {
     var list :ArrayList<Day> = ArrayList<Day>()
+        get() = field
 
     fun addDay(date:String){
         val day = Day(date)
@@ -10,7 +11,7 @@ class Calendar {
 
     fun removeDay(day:String){
         for(date in list){
-            if (day == date.getDate()){
+            if (date.getDate() == day){
                 list.remove(date)
                 return
             }
@@ -31,6 +32,10 @@ class Calendar {
 
     fun existsThisDay(date: String): Boolean {
         return find(date) != null
+    }
+
+    override fun toString():String{
+        return list.toString()
     }
 
 }

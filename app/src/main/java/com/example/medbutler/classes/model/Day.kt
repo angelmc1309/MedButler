@@ -19,4 +19,8 @@ class Day {
         date = newDate
     }
 
+    override fun toString(): String {
+        return date
+    }
+
 }

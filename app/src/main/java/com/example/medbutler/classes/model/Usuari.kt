@@ -37,6 +37,18 @@ open class Usuari {
     fun existsThisDay(date: String): Boolean {
         return calendar.existsThisDay(date)
     }
+
+    fun addDay(date: String){
+        calendar.addDay(date)
+    }
+
+    fun getDayList():String{
+        return calendar.toString()
+    }
+
+    fun removeDay(date: String){
+        calendar.removeDay(date)
+    }
     //var d=Usuari("k","j","s","s")
 
 
