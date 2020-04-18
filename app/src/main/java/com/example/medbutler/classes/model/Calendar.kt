@@ -38,4 +38,12 @@ class Calendar {
         return list.toString()
     }
 
+    fun getFood(date:String): String? {
+        if(find(date) != null) {
+            return find(date)?.getFood()
+        }else{
+            return null
+        }
+    }
+
 }

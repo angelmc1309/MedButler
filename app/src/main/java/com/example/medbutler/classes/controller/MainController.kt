@@ -34,6 +34,9 @@ object MainController {
           //TODO test this funtionality
           if(existsThisDay(date)) {
                user.setFood(date,order,name)
+          }else{
+               user.addDay(date)
+               user.setFood(date, order, name)
           }
      }
      fun existsThisDay(date:String):Boolean{
@@ -53,4 +56,12 @@ object MainController {
      fun removeDay(date: String){
           user.removeDay(date)
      }
+
+     fun getFood(date:String):String?{
+          if(existsThisDay(date)){
+               return user.getFood(date)
+          }else{
+               return null
+          }
+     } //Preguntar com solucionar lo del interrogant
 }

@@ -5,6 +5,9 @@ class Day {
     private val foodList :ArrayList<Food> = ArrayList<Food>(5)
     constructor(date:String){
         this.date = date
+        for(x in 0 until 5){
+            foodList.add(Food(""))
+        }
     }
 
     fun getDate():String{
@@ -21,6 +24,10 @@ class Day {
 
     override fun toString(): String {
         return date
+    }
+
+    fun getFood():String{
+        return foodList.toString()
     }
 
 }

@@ -11,4 +11,8 @@ class Food {
         this.name = name
         nutricionalValues = nutricional.clone() as ArrayList<String>
     }
+
+    override fun toString(): String {
+        return this.name
+    }
 }

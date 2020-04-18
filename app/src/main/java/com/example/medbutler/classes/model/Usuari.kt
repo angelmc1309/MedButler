@@ -49,6 +49,10 @@ open class Usuari {
     fun removeDay(date: String){
         calendar.removeDay(date)
     }
+
+    fun getFood(date: String):String?{
+        return calendar.getFood(date)
+    }
     //var d=Usuari("k","j","s","s")
 
 
