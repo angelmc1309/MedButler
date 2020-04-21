@@ -1,23 +1,11 @@
 package com.example.medbutler.classes.controller
 
-import android.content.ContentValues.TAG
-import android.util.Log
-import android.widget.Toast
+import android.widget.TextView
+import com.example.medbutler.R
+import com.example.medbutler.UserProfile
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.Usuari
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.tasks.await
-import java.util.*
-import kotlinx.coroutines.*
+
 
 object MainController {
     /*Unique instance of the controller*/
@@ -25,94 +13,66 @@ object MainController {
 
     var user:Usuari = Usuari()
     val daoUser = DAOUser()
-    var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
-    var db = FirebaseFirestore.getInstance()
-    var userdb = db.collection("users")
-    fun getCurrentUser(): FirebaseUser? {
-        val user = FirebaseAuth.getInstance().currentUser
-        //val usermail= user?.email
-        // val x=db.collection("users").document(usermail)
-        if (user != null) {
-            return user
-        } else {
-            return null
-        }
+    //var db = FirebaseFirestore.getInstance()
+
+
+
+  fun setCurrentUser(user:Usuari){
+        this.user=user
 
     }
-  suspend fun getCurrentUserInfo():Usuari?{
-
-
-        //var docRef = db.collection("users").document("m@gmail.com")
-        var u:Usuari?=null
-        /*try {
-            val snaps=docRef.get().await()
-            val u=snaps.toObject(Usuari::class.java)
-            if (u != null) {
-                getu(u)
-            }
-        }catch (e: FirebaseFirestoreException){
-
-        }*/
-        return try {
-            val dara=db.collection("users").document("m@gmail.com").get().addOnSuccessListener {
-                    /*documentSnapshot ->
-                val uuser = documentSnapshot.toObject(Usuari::class.java)*/
-                result->
-
-                Log.d(TAG, result.getString("username"))
-
-                /*val uuser=result.toObject(Usuari::class.java)
-                if (uuser != null) {
-                    u=uuser
-                }*/
-            }.await()
-            return u
-        }catch (e: FirebaseFirestoreException){
-            return null
-        }
-     //   return name
+    fun getcurrent():Usuari{
+        return this.user
     }
-    fun getu(u:Usuari){
-        this.user=u
+    fun initFirestore(){
+        daoUser.get()
+}
+    fun deleteUser(email:Usuari){
+        daoUser.delete(email)
+    }
+    fun login(username:String, passwor: String){
+        daoUser.login(username,passwor)
+    }
+    fun signOut(){
+        daoUser.signOut()
+    }
+    fun initUserProfer(context:UserProfile){
+
+        context.findViewById<TextView>(R.id.userName_label).setText(getcurrent().getfullname())
+        context.findViewById<TextView>(R.id.email_label).setText(getcurrent().getusername())
+        context.findViewById<TextView>(R.id.date_label).setText(getcurrent().getbirthday())
+        context.findViewById<TextView>(R.id.height_label).setText( getcurrent().getheight())
+        context.findViewById<TextView>(R.id.weight_label).setText( getcurrent().getweight())
+        context.findViewById<TextView>(R.id.user_complete_name_label).setText(getcurrent().getfullname())
+
     }
 
-    fun getuu():Usuari{
-        runBlocking{
-            getCurrentUserInfo()?.let { getu(it) }
-        }
-        return user
-    }
-
-   /* fun test()= runBlocking<Unit> {
-
-        getCurrentUserInfo()?.let { getu(it) }
-
-    }*/
-
-        fun Enregistrar(user: Usuari, passwor: String) {
-            user.getusername()?.let { firebase_auth.createUserWithEmailAndPassword(it, passwor) }
-                ?.addOnCompleteListener { task: Task<AuthResult> ->
-                    if (task.isSuccessful) {
-                        user.getusername()?.let { userdb.document(it).set(user) }
-                    }
-
-                }
-        }
+    fun Enregistrar(user: Usuari, passwor: String) {
+    daoUser.save(user,passwor)
+}
     fun addMed(
-        id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
-        startTimeHour: Int, allowNotification: Boolean
+    id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
+    startTimeHour: Int, allowNotification: Boolean
     ) {
-        user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
-            allowNotification)
+    user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
+    allowNotification)
 
     }
     fun getMedList():String{
-        return  user.getMedList()
+    return  user.getMedList()
     }
     fun removeMed(id: String){
-        user.removeMed(id)
+    user.removeMed(id)
     }
+
+    fun changePassword(newPassword:String){
+        daoUser.changePassword(newPassword)
     }
+    fun changeEmail(newEmail:String){
+        daoUser.changeEmail(newEmail)
+    }
+
+}
 
 
 

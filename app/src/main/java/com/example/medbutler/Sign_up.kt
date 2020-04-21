@@ -78,8 +78,6 @@ class Sign_up : AppCompatActivity() {
             Toast.makeText(this,"Man or Women!!!", Toast.LENGTH_SHORT).show()
         }
 
-        /*controller.Enregistrar(usernameRegist.text.toString(),fullnameRegist.text.toString(),passwordRegist1.text.toString(),
-            birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString(), genderr)*/
         val user:Usuari=
             Usuari(usernameRegist.text.toString(),fullnameRegist.text.toString(),
                 birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
@@ -88,18 +86,6 @@ class Sign_up : AppCompatActivity() {
         val intent= Intent(this, Login::class.java)
         startActivity(intent)
         finish()
-        /*addOnCompleteListener(this){ task->
-                if(task.isSuccessful){
-                    val intent= Intent(this, Login::class.java)
-                    startActivity(intent)
-                    finish()
-                }else{
-                    var e:FirebaseAuthException= task.exception as FirebaseAuthException
-
-                    Toast.makeText(baseContext,e.message.toString(),Toast.LENGTH_LONG).show()
-
-                }
-            }*/
 
 
 

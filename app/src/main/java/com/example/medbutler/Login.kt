@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
+import com.example.medbutler.classes.controller.MainController
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
-    private lateinit var firebase_auth: FirebaseAuth;
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -18,9 +16,7 @@ class Login : AppCompatActivity() {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        firebase_auth= FirebaseAuth.getInstance()
 
-      //  Toast.makeText(this,controller.getuu().getusername(), Toast.LENGTH_LONG).show()
     }
 
     fun actionLog(view: View){
@@ -36,20 +32,9 @@ class Login : AppCompatActivity() {
 
         }
         if (!usernameLogin.text.toString().isEmpty() && !passwordLogin.text.toString().isEmpty()){
-            this.firebase_auth.signInWithEmailAndPassword(usernameLogin.text.toString(),passwordLogin.text.toString()).addOnCompleteListener(this){
-                task->
-                if(task.isSuccessful){
-
-                    //Toast.makeText(this,controller.getCurrentUserInfo(), Toast.LENGTH_LONG).show()
-                    Toast.makeText(this,"hola!", Toast.LENGTH_SHORT).show()
-
-                    val intent= Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                }else{
-                    var e: FirebaseAuthException = task.exception as FirebaseAuthException
-                    Toast.makeText(baseContext,e.message.toString(),Toast.LENGTH_LONG).show()
-                }
-            }
+            MainController.login(usernameLogin.text.toString(), passwordLogin.text.toString())
+            val intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
         }else{
             Toast.makeText(this,"Usuari/contrasenya incorrecte!", Toast.LENGTH_SHORT).show()

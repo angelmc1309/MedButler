@@ -13,20 +13,17 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(1000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
-
-
-        //welcomeLaber.setText(controller.getCurrentUser()?.email)
-        //welcomeLaber.setText(controller.getCurrentUserInfo())
-//        Toast.makeText(baseContext,controller.getCurrentUserInfo(),Toast.LENGTH_LONG).show()
     }
 
     override fun onResume() {
         updateAppearance()
         super.onResume()
+
+
     }
     companion object {
         var background:String = "Default"
@@ -44,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         var treatmentImageFirstId:String = "treat1_1"
         var treatmentImageSecondId:String = "treat1_2"
     }
+
 
 
     fun updateAppearance(){

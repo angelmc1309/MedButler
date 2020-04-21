@@ -4,18 +4,22 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import com.example.medbutler.classes.controller.*
 
 class UserProfile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
+        initProfile()
 
     }
 
@@ -71,4 +75,9 @@ class UserProfile : AppCompatActivity() {
         val intent= Intent(this, SettingsAccountActivity::class.java)
         startActivity(intent)
     }
+    private fun initProfile() {
+        MainController.initUserProfer(this)
+
+    }
+
 }
