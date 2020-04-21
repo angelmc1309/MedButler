@@ -4,6 +4,8 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import android.widget.Toast
 import com.example.medbutler.classes.dataBase.DAOUser
+import com.example.medbutler.classes.model.Calendar
+import com.example.medbutler.classes.model.Day
 import com.example.medbutler.classes.model.Usuari
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
@@ -33,62 +35,7 @@ object MainController {
         Usuari("oscar","Oscar Coronavirus",
             "22/12/2008","180 cm","60 kg")
 
-    fun getCurrentUser(): FirebaseUser? {
-        val user = FirebaseAuth.getInstance().currentUser
-        //val usermail= user?.email
-        // val x=db.collection("users").document(usermail)
-        if (user != null) {
-            return user
-        } else {
-            return null
-        }
 
-    }
-
-    suspend fun getCurrentUserInfo(): Usuari? {
-
-
-        //var docRef = db.collection("users").document("m@gmail.com")
-        var u: Usuari? = null
-        /*try {
-            val snaps=docRef.get().await()
-            val u=snaps.toObject(Usuari::class.java)
-            if (u != null) {
-                getu(u)
-            }
-        }catch (e: FirebaseFirestoreException){
-
-        }*/
-        return try {
-            val dara = db.collection("users").document("m@gmail.com").get().addOnSuccessListener {
-                /*documentSnapshot ->
-                val uuser = documentSnapshot.toObject(Usuari::class.java)*/
-                    result ->
-
-                Log.d(TAG, result.getString("username"))
-
-                /*val uuser=result.toObject(Usuari::class.java)
-                if (uuser != null) {
-                    u=uuser
-                }*/
-            }.await()
-            return u
-        } catch (e: FirebaseFirestoreException) {
-            return null
-        }
-        //   return name
-    }
-
-    fun getu(u: Usuari) {
-        this.user = u
-    }
-
-    fun getuu(): Usuari {
-        runBlocking {
-            getCurrentUserInfo()?.let { getu(it) }
-        }
-        return user
-    }
 
     /* fun test()= runBlocking<Unit> {
 
@@ -106,14 +53,12 @@ object MainController {
             }
     }
 
-    fun addMed(
-        id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
-        startTimeHour: Int, allowNotification: Boolean
-    ) {
-        user.addMed(
-            id, name, period, duration, startTimeMinute, startTimeHour,
-            allowNotification
-        )
+     fun addMed(
+          id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
+          startTimeHour: Int, allowNotification: Boolean
+     ) {
+          user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
+               allowNotification)
 
     }
 
@@ -124,19 +69,49 @@ object MainController {
     fun removeMed(id: String) {
         user.removeMed(id)
     }
+     }
+     fun getMedList():String{
+         return  user.getMedList()
+     }
+     fun removeMed(id: String){
+          user.removeMed(id)
+     }
+     //order enter que indica quin apat del dia es
+     fun setFood(date:String,order:Int,name: String) {
+          //TODO test this funtionality
+          if(existsThisDay(date)) {
+               user.setFood(date,order,name)
+          }else{
+               user.addDay(date)
+               user.setFood(date, order, name)
+          }
+     }
+     fun existsThisDay(date:String):Boolean{
+          return user.existsThisDay(date)
+     }
+
+     fun createDay(date: String){
+          if(!existsThisDay(date)){
+              user.addDay(date)
+          }
+     }
 
     fun getUsuariPerProvarEdu(): Usuari {
         return usuariProvaEdu
     }
+     fun getDayList():String{
+          return user.getDayList()
+     }
+
+     fun removeDay(date: String){
+          user.removeDay(date)
+     }
+
+     fun getFood(date:String):String?{
+          if(existsThisDay(date)){
+               return user.getFood(date)
+          }else{
+               return null
+          }
+     } //Preguntar com solucionar lo del interrogant
 }
-
-
-
-
-
-
-
-
-
-
-
