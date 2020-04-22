@@ -25,7 +25,7 @@ object MainController {
     /*Unique instance of the controller*/
     //object Singleton
 
-    var user: Usuari = Usuari()
+
     val daoUser = DAOUser()
     var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
     var db = FirebaseFirestore.getInstance()
@@ -34,6 +34,7 @@ object MainController {
     val usuariProvaEdu:Usuari=
         Usuari("oscar","Oscar Coronavirus",
             "22/12/2008","180 cm","60 kg")
+    var user: Usuari = usuariProvaEdu
 
 
 
@@ -69,49 +70,43 @@ object MainController {
     fun removeMed(id: String) {
         user.removeMed(id)
     }
-     }
-     fun getMedList():String{
-         return  user.getMedList()
-     }
-     fun removeMed(id: String){
-          user.removeMed(id)
-     }
-     //order enter que indica quin apat del dia es
-     fun setFood(date:String,order:Int,name: String) {
-          //TODO test this funtionality
-          if(existsThisDay(date)) {
-               user.setFood(date,order,name)
-          }else{
-               user.addDay(date)
-               user.setFood(date, order, name)
-          }
-     }
-     fun existsThisDay(date:String):Boolean{
-          return user.existsThisDay(date)
-     }
 
-     fun createDay(date: String){
-          if(!existsThisDay(date)){
-              user.addDay(date)
-          }
-     }
+    //order enter que indica quin apat del dia es
+    fun setFood(date:String,order:Int,name: String) {
+      //TODO test this funtionality
+      if(existsThisDay(date)) {
+           user.setFood(date,order,name)
+      }else{
+           user.addDay(date)
+           user.setFood(date, order, name)
+      }
+    }
+    fun existsThisDay(date:String):Boolean{
+      return user.existsThisDay(date)
+    }
+
+    fun createDay(date: String){
+      if(!existsThisDay(date)){
+          user.addDay(date)
+      }
+    }
 
     fun getUsuariPerProvarEdu(): Usuari {
-        return usuariProvaEdu
+    return usuariProvaEdu
     }
-     fun getDayList():String{
-          return user.getDayList()
-     }
+    fun getDayList():String{
+      return user.getDayList()
+    }
 
-     fun removeDay(date: String){
-          user.removeDay(date)
-     }
+    fun removeDay(date: String){
+      user.removeDay(date)
+    }
 
-     fun getFood(date:String):String?{
-          if(existsThisDay(date)){
-               return user.getFood(date)
-          }else{
-               return null
-          }
-     } //Preguntar com solucionar lo del interrogant
+    fun getFood(date:String):String?{
+      if(existsThisDay(date)){
+           return user.getFood(date)
+      }else{
+           return null
+      }
+    } //Preguntar com solucionar lo del interrogant
 }

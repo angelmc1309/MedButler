@@ -103,7 +103,10 @@ class SettingsAccountActivity : AppCompatActivity() {
 
         @RequiresApi(Build.VERSION_CODES.N)
         override fun onPreferenceClick(preference: Preference?): Boolean {
-            showDatePickerDialog(preference)
+            if (preference?.key.equals("date_of_birth")){
+                showDatePickerDialog(preference)
+            }
+
             return true
         }
 
