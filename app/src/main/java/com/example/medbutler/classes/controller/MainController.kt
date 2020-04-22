@@ -27,7 +27,7 @@ object MainController {
     fun initFirestore(){
         daoUser.get()
 }
-    fun deleteUser(email:Usuari){
+    fun deleteUser(email:String){
         daoUser.delete(email)
     }
     fun login(username:String, passwor: String){
@@ -70,6 +70,18 @@ object MainController {
     }
     fun changeEmail(newEmail:String){
         daoUser.changeEmail(newEmail)
+    }
+    fun changeFullname(newfullname:String){
+        daoUser.updatefullname("prova")
+    }
+    fun changeHeight(newheight:String){
+        daoUser.updatefullname("prova")
+    }
+    fun changeWeight(newweight:String){
+        daoUser.updatefullname("prova")
+    }
+    fun changeBirthday(newbirthday:String){
+        daoUser.updatefullname("prova")
     }
 
 }
