@@ -14,21 +14,19 @@ import com.example.medbutler.classes.controller.MainController
 
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(1000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
-
-
-        //welcomeLaber.setText(controller.getCurrentUser()?.email)
-        //welcomeLaber.setText(controller.getCurrentUserInfo())
-//        Toast.makeText(baseContext,controller.getCurrentUserInfo(),Toast.LENGTH_LONG).show()
     }
 
     override fun onResume() {
         updateAppearance()
         super.onResume()
+
+
     }
+
 
 
     fun updateAppearance(){
