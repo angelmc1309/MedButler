@@ -37,12 +37,11 @@ object MainController {
         daoUser.signOut()
     }
     fun initUserProfer(context:UserProfile){
-        context.findViewById<TextView>(R.id.userName_label).setText("Fullname: "+getcurrent().getfullname())
-        context.findViewById<TextView>(R.id.email_label).setText("Email:"+getcurrent().getusername())
-        context.findViewById<TextView>(R.id.date_label).setText("Birthday: "+getcurrent().getbirthday())
-        context.findViewById<TextView>(R.id.height_label).setText( "Height: "+getcurrent().getheight())
-        context.findViewById<TextView>(R.id.weight_label).setText( "Weight: "+getcurrent().getweight())
-        context.findViewById<TextView>(R.id.user_complete_name_label).setText(getcurrent().getfullname())
+        context.findViewById<TextView>(R.id.user_complete_name_label).text = getcurrent().getfullname()
+        context.findViewById<TextView>(R.id.email_label).text = context.getString(R.string.email,getcurrent().getusername())
+        context.findViewById<TextView>(R.id.date_label).text = context.getString(R.string.birthday,getcurrent().getbirthday())
+        context.findViewById<TextView>(R.id.height_label).text = context.getString(R.string.height2,getcurrent().getheight(), "cm")
+        context.findViewById<TextView>(R.id.weight_label).text = context.getString(R.string.weight2,getcurrent().getweight(),"kg")
     }
 
     fun Enregistrar(user: Usuari, passwor: String) {
@@ -70,16 +69,16 @@ object MainController {
         daoUser.changeEmail(newEmail)
     }
     fun changeFullname(newfullname:String){
-        daoUser.updatefullname("prova")
+        daoUser.updatefullname(newfullname)
     }
     fun changeHeight(newheight:String){
-        daoUser.updatefullname("prova")
+        daoUser.updateheight(newheight)
     }
     fun changeWeight(newweight:String){
-        daoUser.updatefullname("prova")
+        daoUser.updateweight(newweight)
     }
     fun changeBirthday(newbirthday:String){
-        daoUser.updatefullname("prova")
+        daoUser.updatedate(newbirthday)
     }
 
 }

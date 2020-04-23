@@ -2,7 +2,6 @@
     <string name="app_name">MedButler</string>
     <string name="labelFerLog">Ja estic enregistrat, vull fer login</string>
     <string name="butRegist">Enregistrar</string>
-    <string name="complete_name">Armando Gran Jaleo</string>
     <string name="greeting">Welcome user!</string>
     <string name="crearNouUsuariLabel">Crear un nou usuari</string>
     <string name="selecHome">Home</string>
@@ -16,7 +15,7 @@
     <string name="key_notification_ringtone" translatable="false">key_notification_ringtone</string>
     <string name="sync_interval" translatable="false">sync_interval</string>
     <string name="full_name" translatable="false">full_name</string>
-    <string name="username" translatable="false">username</string>
+    <string name="password" translatable="false">password</string>
     <string name="email_adress" translatable="false">email_adress</string>
     <string name="date_of_birth" translatable="false">date_of_birth</string>
     <string name="height" translatable="false">height</string>
@@ -50,4 +49,10 @@
     <string name="modify_anything_about_your_medicine">Modify anything about your medicine</string>
     <string name="save_changes">Save Changes</string>
     <string name="discard_changes">Discard changes</string>
+    <string name="email">Email: %1$s</string>
+    <string name="height2">Height: %1$s %2$s</string>
+    <string name="weight2">Weight: %1$s %2$s</string>
+    <string name="birthday">Birthday: %1$s</string>
+    <string name="key_delete_account">key_delete_account</string>
+    <string name="key_logout">key_logout</string>
 </resources>
