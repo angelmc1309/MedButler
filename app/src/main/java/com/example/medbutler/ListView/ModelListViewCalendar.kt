@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.MainActivity
 import com.example.medbutler.R
+import com.example.medbutler.classes.controller.MainController
 
 class ModelListViewCalendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,32 +56,32 @@ class ModelListViewCalendar : AppCompatActivity() {
         listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
             if (position == 0) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture one", Toast.LENGTH_SHORT).show()
-                MainActivity.calendarImageId = "cal_im"
-                MainActivity.calendarImageBackgroundId = "cal_back"
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal_back")
                 finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture two", Toast.LENGTH_SHORT).show()
-                MainActivity.calendarImageId = "cal2_im"
-                MainActivity.calendarImageBackgroundId = "cal2_back"
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal2_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal2_back")
                 finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture three", Toast.LENGTH_SHORT).show()
-                MainActivity.calendarImageId = "cal3_im"
-                MainActivity.calendarImageBackgroundId = "cal3_back"
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal3_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal3_back")
                 finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture four", Toast.LENGTH_SHORT).show()
-                MainActivity.calendarImageId = "cal4_im"
-                MainActivity.calendarImageBackgroundId = "cal4_back"
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal4_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal4_back")
                 finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture five", Toast.LENGTH_SHORT).show()
-                MainActivity.calendarImageId = "cal5_im"
-                MainActivity.calendarImageBackgroundId = "cal5_back"
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal5_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal5_back")
                 finish()
             }
         }

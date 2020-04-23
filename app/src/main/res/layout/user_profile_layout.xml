@@ -53,23 +53,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/userName_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:fontFamily="@font/asul"
-        android:text="Username : ajaleo"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:paddingLeft="30dp"/>
-
-    <TextView
         android:id="@+id/email_label"
         android:layout_weight="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/asul"
-        android:text="Correu: admin@gmail.com"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:paddingLeft="30dp"/>
@@ -80,7 +68,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/asul"
-        android:text="Data de naixement: septembre 2000"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:paddingLeft="30dp"/>
@@ -91,7 +78,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/asul"
-        android:text="Altura: 180 cm"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:paddingLeft="30dp"/>
@@ -103,7 +89,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/asul"
         android:textColor="@android:color/black"
-        android:text="Pes: 60 kg"
         android:textSize="18sp"
         android:paddingLeft="30dp"/>
 

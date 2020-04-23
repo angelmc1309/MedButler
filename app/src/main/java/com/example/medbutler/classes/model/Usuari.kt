@@ -7,7 +7,9 @@ package com.example.medbutler.classes.model
      private var birthday: String=""
      private var height: String=""
      private var weight: String=""
-     //private val medList:MedList = MedList()
+     //private val calendar:Calendar= Calendar()
+    // private val medList:MedList = MedList()
+     //private val appearanceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //private var gender: String=""
      constructor(){
 
@@ -31,7 +33,7 @@ package com.example.medbutler.classes.model
         return username+" "+fullname+" "+birthday+" "+height+" "+weight
                 //gender
     }
-    fun getusername(): String? {
+    fun getusername(): String {
         return this.username
     }
     fun getfullname(): String {
@@ -75,6 +77,35 @@ package com.example.medbutler.classes.model
      fun removeMed(id: String) {
          MedList.removeMed(id)
      }
+
+     fun getappearanceInfo(): UserAppearenceInfo {
+       // return this.appearanceInfo
+         return UserAppearenceInfo
+     }
+
+    fun setFood(date: String,order:Int,name: String){
+        Calendar.setFood(date,order,name)
+    }
+
+    fun existsThisDay(date: String): Boolean {
+        return Calendar.existsThisDay(date)
+    }
+
+    fun addDay(date: String){
+        Calendar.addDay(date)
+    }
+
+    fun getDayList():String{
+        return Calendar.toString()
+    }
+
+    fun removeDay(date: String){
+        Calendar.removeDay(date)
+    }
+
+    fun getFood(date: String):String?{
+        return Calendar.getFood(date)
+    }
     //var d=Usuari("k","j","s","s")
 
 

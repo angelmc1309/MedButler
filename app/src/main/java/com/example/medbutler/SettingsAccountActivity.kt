@@ -8,6 +8,7 @@ import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
+import com.example.medbutler.classes.controller.*
 import android.R.attr
 import android.app.Dialog
 import android.content.SharedPreferences
@@ -98,12 +99,33 @@ class SettingsAccountActivity : AppCompatActivity() {
             } else {
                 preference?.summary = stringValue
             }
+
+            if (preference?.key.equals("date_of_birth")){
+                MainController.changeBirthday(stringValue)
+            }else if (preference?.key.equals("full_name")) {
+                MainController.changeFullname(stringValue)
+            }else if (preference?.key.equals("email_adress")) {
+                MainController.changeEmail(stringValue)
+            }else if (preference?.key.equals("password")) {
+                MainController.changePassword(stringValue)
+            }else if (preference?.key.equals("height")) {
+                MainController.changeHeight(stringValue)
+            }else if (preference?.key.equals("weight")) {
+                MainController.changeWeight(stringValue)
+            }
+
             return true
         }
 
         @RequiresApi(Build.VERSION_CODES.N)
         override fun onPreferenceClick(preference: Preference?): Boolean {
-            showDatePickerDialog(preference)
+            if (preference?.key.equals("date_of_birth")){
+                showDatePickerDialog(preference)
+            }else if (preference?.key.equals("key_logout")) {
+                MainController.signOut()
+            }else if (preference?.key.equals("key_delete_account")) {
+                MainController.deleteUser(MainController.getcurrent().getusername())
+            }
             return true
         }
 

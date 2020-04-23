@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.medbutler.classes.controller.*
 
 class UserProfile : AppCompatActivity() {
@@ -20,7 +21,12 @@ class UserProfile : AppCompatActivity() {
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
         initProfile()
+    }
 
+    override fun onResume() {
+        updateAppearance()
+        initProfile()
+        super.onResume()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -39,7 +45,7 @@ class UserProfile : AppCompatActivity() {
         // background
         val backgroundLay:LinearLayout = findViewById(R.id.backgroundLayout)
         val context: Context = backgroundLay.getContext()
-        val idBack = resources.getIdentifier(MainActivity.background, "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
@@ -48,11 +54,11 @@ class UserProfile : AppCompatActivity() {
         var calendarButt:ImageButton = findViewById(R.id.calendarButton)
         var settingsBut:ImageButton = findViewById(R.id.settingsButton)
         var medsBut:ImageButton = findViewById(R.id.medsButton)
-        toolbar.setBackgroundColor(MainActivity.darkerToolbarColor)
-        userBut.setBackgroundColor(MainActivity.toolbarColor)
-        calendarButt.setBackgroundColor(MainActivity.toolbarColor)
-        settingsBut.setBackgroundColor(MainActivity.toolbarColor)
-        medsBut.setBackgroundColor(MainActivity.toolbarColor)
+        toolbar.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColor())
+        userBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
     }
 
     fun actionCalendar(view: View){

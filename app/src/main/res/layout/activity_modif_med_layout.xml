@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/backgroundAddMed">
+    android:id="@+id/backgroundModifMed">
 
     <TextView
-        android:id="@+id/titleAddMed"
+        android:id="@+id/titleModifdMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -16,24 +16,24 @@
         android:layout_marginEnd="0dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:paddingStart="33dp"
-        android:paddingEnd="20dp"
-        android:text="@string/enter_the_required_information_about_your_medicine"
+        android:paddingStart="90dp"
+        android:paddingEnd="90dp"
+        android:text="@string/modify_anything_about_your_medicine"
         android:textColor="@android:color/black"
         android:textSize="25sp">
 
     </TextView>
 
     <TextView
-        android:id="@+id/frequencyText"
+        android:id="@+id/modifFrequencyText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@id/medName"
+        android:layout_below="@id/modifMedName"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="9dp"
-        android:layout_toStartOf="@id/spinnerFrequency"
+        android:layout_toStartOf="@id/modifSpinnerFrequency"
         android:gravity="center|start"
         android:paddingStart="30dp"
         android:paddingEnd="0dp"
@@ -41,14 +41,14 @@
         android:text="@string/medication_frequency" />
 
     <TextView
-        android:id="@+id/durationText"
+        android:id="@+id/modifDurationText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@id/frequencyText"
+        android:layout_below="@id/modifFrequencyText"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="9dp"
-        android:layout_toStartOf="@id/spinnerFrequency"
+        android:layout_toStartOf="@id/modifSpinnerFrequency"
         android:gravity="center|start"
         android:paddingStart="30dp"
         android:paddingEnd="0dp"
@@ -60,7 +60,7 @@
         android:id="@+id/spinnerDuration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/frequencyText"
+        android:layout_below="@id/modifFrequencyText"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="200dp"
         android:layout_marginTop="11dp"
@@ -68,7 +68,7 @@
         android:gravity="center|start" />
 
     <EditText
-        android:id="@+id/medName"
+        android:id="@+id/modifMedName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -84,16 +84,16 @@
     </EditText>
 
     <Spinner
-        android:id="@+id/spinnerFrequency"
+        android:id="@+id/modifSpinnerFrequency"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/medName"
+        android:layout_below="@id/modifMedName"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="10dp"/>
 
     <TextView
-        android:id="@+id/textSpinnerDuration"
+        android:id="@+id/modifTextSpinnerDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -103,10 +103,10 @@
         android:gravity="center" />
 
     <TextView
-        android:id="@+id/startTimeText"
+        android:id="@+id/modifStartTimeText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/durationText"
+        android:layout_below="@id/modifDurationText"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
@@ -120,10 +120,10 @@
 
 
     <TextView
-        android:id="@+id/startTimeClick"
+        android:id="@+id/modifStartTimeClick"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@+id/durationText"
+        android:layout_below="@id/modifDurationText"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="156dp"
@@ -140,10 +140,10 @@
         android:textSize="15sp" />
 
     <Switch
-        android:id="@+id/switchNotification"
+        android:id="@+id/modifSwitchNotification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/startTimeText"
+        android:layout_below="@id/modifStartTimeText"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="30dp"
@@ -155,35 +155,35 @@
     </Switch>
 
     <Button
-        android:id="@+id/btnAddMed"
-        android:layout_width="88dp"
+        android:id="@+id/modifBtnAddMed"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switchNotification"
+        android:layout_below="@id/modifSwitchNotification"
         android:layout_alignParentStart="true"
         android:layout_gravity="center"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="98dp"
         android:layout_marginTop="30dp"
         android:onClick="addMed"
-        android:text="@string/add">
+        android:text="@string/save_changes">
 
     </Button>
 
     <Button
-        android:id="@+id/btnDiscardMed"
-        android:layout_width="88dp"
+        android:id="@+id/modifBtnDiscardMed"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switchNotification"
+        android:layout_below="@id/modifSwitchNotification"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="105dp"
+        android:layout_marginEnd="98dp"
         android:onClick="discardMed"
-        android:text="@string/discard">
+        android:text="@string/discard_changes">
 
     </Button>
 
     <TextView
-        android:id="@+id/textSpinnerFrequency"
+        android:id="@+id/modifTextSpinnerFrequency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

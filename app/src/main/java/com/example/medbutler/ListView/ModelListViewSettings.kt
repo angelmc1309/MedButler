@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.MainActivity
 import com.example.medbutler.R
+import com.example.medbutler.classes.controller.MainController
 
 class ModelListViewSettings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,44 +68,44 @@ class ModelListViewSettings : AppCompatActivity() {
         listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
             if (position == 0) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture one", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set1_im"
-                MainActivity.settingsImageBackgroundId = "set1_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set1_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set1_gray")
                 finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture two", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set2_im"
-                MainActivity.settingsImageBackgroundId = "set2_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set2_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set2_gray")
                 finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture three", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set3_im"
-                MainActivity.settingsImageBackgroundId = "set3_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set3_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set3_gray")
                 finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture four", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set4_im"
-                MainActivity.settingsImageBackgroundId = "set4_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set4_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set4_gray")
                 finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture five", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set5_im"
-                MainActivity.settingsImageBackgroundId = "set5_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set5_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set5_gray")
                 finish()
             }
             if (position == 5) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture six", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set6_im"
-                MainActivity.settingsImageBackgroundId = "set6_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set6_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set6_gray")
                 finish()
             }
             if (position == 6) {
                 Toast.makeText(this@ModelListViewSettings, "you selected Settings model picture seven", Toast.LENGTH_SHORT).show()
-                MainActivity.settingsImageId = "set7_im"
-                MainActivity.settingsImageBackgroundId = "set7_gray"
+                MainController.getcurrent().getappearanceInfo().setsettingsImageId("set7_im")
+                MainController.getcurrent().getappearanceInfo().setsettingsImageBackgroundId("set7_gray")
                 finish()
             }
         }

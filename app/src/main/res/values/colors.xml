@@ -42,7 +42,11 @@
 
     <color name="md_black">#000000</color>
     <color name="md_black_clear">#232323</color>
+    <color name="md_black_clear2">#363636</color>
     <color name="md_white">#ffffff</color>
+    <color name="scroll_1">#2B3943</color>
+    <color name="scroll_2">#3B4B56</color>
+    <color name="scroll_3">#34424C</color>
 
     <array name="color_choices">
         <item>@color/md_red_500</item>

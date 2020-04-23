@@ -3,8 +3,10 @@ package com.example.medbutler
 
 
 
-
 import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.dataBase.DAOUser
+import com.example.medbutler.classes.model.Med
+import com.example.medbutler.classes.model.Usuari
 import org.junit.Assert
 import org.junit.Test
 
