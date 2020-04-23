@@ -11,6 +11,7 @@ import androidx.preference.*
 import com.example.medbutler.classes.controller.*
 import android.R.attr
 import android.app.Dialog
+import android.content.Intent
 import android.content.SharedPreferences
 import android.view.View
 import androidx.fragment.app.DialogFragment
@@ -123,6 +124,8 @@ class SettingsAccountActivity : AppCompatActivity() {
                 showDatePickerDialog(preference)
             }else if (preference?.key.equals("key_logout")) {
                 MainController.signOut()
+                val intent= Intent(context, Login::class.java)
+                startActivity(intent)
             }else if (preference?.key.equals("key_delete_account")) {
                 MainController.deleteUser(MainController.getcurrent().getusername())
             }

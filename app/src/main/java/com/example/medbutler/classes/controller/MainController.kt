@@ -43,12 +43,11 @@ object MainController {
     }
     fun initUserProfer(context:UserProfile){
 
-        context.findViewById<TextView>(R.id.height_label).setText( "Height: "+getcurrent().getheight())
-        context.findViewById<TextView>(R.id.weight_label).setText( "Weight: "+getcurrent().getweight())
-        context.findViewById<TextView>(R.id.user_complete_name_label).setText(getcurrent().getfullname())
-        context.findViewById<TextView>(R.id.email_label).setText("Email Adress: " + getcurrent().getusername())
-        context.findViewById<TextView>(R.id.date_label).setText("Date of birth: " + getcurrent().getbirthday())
-
+        context.findViewById<TextView>(R.id.user_complete_name_label).text = getcurrent().getfullname()
+        context.findViewById<TextView>(R.id.email_label).text = context.getString(R.string.email,getcurrent().getusername())
+        context.findViewById<TextView>(R.id.date_label).text = context.getString(R.string.birthday,getcurrent().getbirthday())
+        context.findViewById<TextView>(R.id.height_label).text = context.getString(R.string.height2,getcurrent().getheight(), "cm")
+        context.findViewById<TextView>(R.id.weight_label).text = context.getString(R.string.weight2,getcurrent().getweight(),"kg")
     }
 
     fun Enregistrar(user: Usuari, passwor: String) {
