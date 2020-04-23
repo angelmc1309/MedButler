@@ -17,14 +17,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.classes.controller.*
 import hakobastvatsatryan.DropdownTextView
-import kotlinx.android.synthetic.main.activity_diet_nutrition.*
+import kotlinx.android.synthetic.main.activity_nutritional_information.*
 
-class DietListNutritionActivity : AppCompatActivity() {
+class NutritionalInformationActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diet_nutrition)
+        setContentView(R.layout.activity_nutritional_information)
         updateAppearance()
 
         val dropdown = DropdownTextView.Builder(this)

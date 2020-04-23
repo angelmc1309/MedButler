@@ -12,7 +12,6 @@ import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.classes.model.Med
 import kotlinx.android.synthetic.main.activity_med_list.*
-import kotlin.collections.ArrayList
 import com.example.medbutler.classes.controller.MainController
 
 class MedListActivity : AppCompatActivity() {
@@ -125,7 +124,7 @@ class MedListActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun actionDietList(view: View) {
-        val intent= Intent(this, DietListNutritionActivity::class.java)
+        val intent= Intent(this, NutritionalInformationActivity::class.java)
         startActivity(intent)
     }
 }

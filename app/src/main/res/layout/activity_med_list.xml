@@ -45,7 +45,7 @@
             android:focusable="true"
             android:gravity="center"
             android:onClick="actionDietList"
-            android:text="@string/diets_nutrition"
+            android:text="@string/nutritional_information"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_weight="0.5"

@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.medbutler.classes.controller.*
 
 class UserProfile : AppCompatActivity() {
@@ -23,6 +24,7 @@ class UserProfile : AppCompatActivity() {
 
     override fun onResume() {
         updateAppearance()
+        initProfile()
         super.onResume()
     }
 

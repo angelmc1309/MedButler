@@ -54,14 +54,11 @@ object MainController {
         daoUser.signOut()
     }
     fun initUserProfer(context:UserProfile){
-
-        context.findViewById<TextView>(R.id.userName_label).setText(getcurrent().getfullname())
-        context.findViewById<TextView>(R.id.email_label).setText(getcurrent().getusername())
-        context.findViewById<TextView>(R.id.date_label).setText(getcurrent().getbirthday())
-        context.findViewById<TextView>(R.id.height_label).setText( getcurrent().getheight())
-        context.findViewById<TextView>(R.id.weight_label).setText( getcurrent().getweight())
         context.findViewById<TextView>(R.id.user_complete_name_label).setText(getcurrent().getfullname())
-
+        context.findViewById<TextView>(R.id.email_label).setText("Email Adress: " + getcurrent().getusername())
+        context.findViewById<TextView>(R.id.date_label).setText("Date of birth: " + getcurrent().getbirthday())
+        context.findViewById<TextView>(R.id.height_label).setText("Height: " + getcurrent().getheight())
+        context.findViewById<TextView>(R.id.weight_label).setText("Weight: " + getcurrent().getweight())
     }
 
     fun Enregistrar(user: Usuari, passwor: String) {
@@ -86,16 +83,16 @@ object MainController {
         daoUser.changeEmail(newEmail)
     }
     fun changeFullname(newfullname:String){
-        daoUser.updatefullname("prova")
+        daoUser.updatefullname(newfullname)
     }
     fun changeHeight(newheight:String){
-        daoUser.updatefullname("prova")
+        daoUser.updateheight(newheight)
     }
     fun changeWeight(newweight:String){
-        daoUser.updatefullname("prova")
+        daoUser.updateweight(newweight)
     }
     fun changeBirthday(newbirthday:String){
-        daoUser.updatefullname("prova")
+        daoUser.updatedate(newbirthday)
     }
 
     //order enter que indica quin apat del dia es

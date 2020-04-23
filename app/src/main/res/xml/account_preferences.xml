@@ -42,25 +42,24 @@
 
         <EditTextPreference
             android:defaultValue=""
-            android:key="username"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
-            android:title="Your username"
-            android:dialogMessage="Enter username"
-            android:dialogTitle="Enter your username"
-            android:summary="Enter your username to be used in the application"/>
-
-        <EditTextPreference
-            android:defaultValue=""
             android:key="email_adress"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Email Address"
-            android:summary="Enter your email address"
-            android:dialogTitle="Enter your email adress"
-
-            android:dialogMessage="Enter your email adress"
+            android:summary="Enter your new email address"
+            android:dialogTitle="Enter your new email adress"
+            android:dialogMessage="Enter your new email adress"
             android:inputType="textEmailAddress"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="password"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Your password"
+            android:dialogMessage="Enter new password"
+            android:dialogTitle="Enter your new password"
+            android:summary="Enter your new password to be used in the application"/>
 
         <Preference
             android:defaultValue=""
