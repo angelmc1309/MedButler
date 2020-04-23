@@ -85,6 +85,18 @@ object MainController {
     fun changeEmail(newEmail:String){
         daoUser.changeEmail(newEmail)
     }
+    fun changeFullname(newfullname:String){
+        daoUser.updatefullname("prova")
+    }
+    fun changeHeight(newheight:String){
+        daoUser.updatefullname("prova")
+    }
+    fun changeWeight(newweight:String){
+        daoUser.updatefullname("prova")
+    }
+    fun changeBirthday(newbirthday:String){
+        daoUser.updatefullname("prova")
+    }
 
     //order enter que indica quin apat del dia es
     fun setFood(date:String,order:Int,name: String) {

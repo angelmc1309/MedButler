@@ -15,7 +15,7 @@ import com.example.medbutler.classes.controller.MainController
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1000)
+        Thread.sleep(1500)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
     }

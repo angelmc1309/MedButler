@@ -89,7 +89,53 @@ class DAOUser : DAO<Usuari> {
 
     }
     fun changeEmail(newEmail:String){
+        if (user != null) {
+            user.email?.let {
+                userdb.document(it).update(mapOf(
+                    "username" to newEmail
+                ))
+            }
+        }
         user!!.updateEmail(newEmail)
+
     }
+    fun updatefullname(newname:String){
+        if (user != null) {
+            user.email?.let {
+                userdb.document(it).update(mapOf(
+                    "fullname" to newname
+                ))
+            }
+        }
+    }
+    fun updateheight(newheight:String){
+        if (user != null) {
+            user.email?.let {
+                userdb.document(it).update(mapOf(
+                    "height" to newheight
+                ))
+            }
+        }
+    }
+    fun updateweight(newweight:String){
+        if (user != null) {
+            user.email?.let {
+                userdb.document(it).update(mapOf(
+                    "weight" to newweight
+                ))
+            }
+        }
+    }
+    fun updatedate(newdate:String){
+        if (user != null) {
+            user.email?.let {
+                userdb.document(it).update(mapOf(
+                    "birthday" to newdate
+                ))
+            }
+        }
+    }
+
+
 
 }
