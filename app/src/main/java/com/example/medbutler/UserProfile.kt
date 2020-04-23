@@ -24,6 +24,7 @@ class UserProfile : AppCompatActivity() {
     }
 
     override fun onResume() {
+        Thread.sleep(1000)
         updateAppearance()
         initProfile()
         super.onResume()

@@ -15,8 +15,6 @@ import android.content.SharedPreferences
 import android.view.View
 import androidx.fragment.app.DialogFragment
 
-
-
 class SettingsAccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +35,15 @@ class SettingsAccountActivity : AppCompatActivity() {
             bindPreferenceSummaryToValue(findPreference(getString(R.string.sync_interval)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sync_connection_type)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.full_name)))
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.username)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.email_adress)))
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.password)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.height)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.weight)))
             bindPreferenceSummaryToValue(findPreference(getString(R.string.date_of_birth)))
 
             findPreference(getString(R.string.date_of_birth)).onPreferenceClickListener = this
+            findPreference(getString(R.string.key_logout)).onPreferenceClickListener = this
+            findPreference(getString(R.string.key_delete_account)).onPreferenceClickListener = this
 
             //bindSharedPreferenceToValue(activity!!.getSharedPreferences(getString(R.string.date_of_birth),0),getString(R.string.date_of_birth))
         }
