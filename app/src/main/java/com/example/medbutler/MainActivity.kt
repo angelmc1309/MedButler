@@ -38,60 +38,60 @@ class MainActivity : AppCompatActivity() {
         // profileImagePerson
         val profileImagePerson:ImageView = findViewById(R.id.profileImagePerson)
         val context: Context = profileImagePerson.getContext()
-        val id: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getprofileImagePersonId(), "drawable", context.getPackageName())
+        val id: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().getprofileImagePersonId(), "drawable", context.getPackageName())
         profileImagePerson.setImageResource(id)
 
         // background
         val backgroundLay:LinearLayout = findViewById(R.id.backgroundLayout)
-        val idBack = resources.getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbackground(), "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
         // profileImageBackground
         val profileImageBackground:ImageView = findViewById(R.id.profileImageBackground)
-        val id2: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getprofileImageBackgroundId(), "drawable", context.getPackageName())
+        val id2: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().getprofileImageBackgroundId(), "drawable", context.getPackageName())
         profileImageBackground.setImageResource(id2)
-        profileImageBackground.setColorFilter(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme(), mode)
+        profileImageBackground.setColorFilter(MainController.getcurrent().getappearanceInfo().getcolorTheme(), mode)
         val profileLayoutBackground:RelativeLayout = findViewById(R.id.profileLayout)
-        profileLayoutBackground.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme())
+        profileLayoutBackground.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getcolorTheme())
 
         // calendarImage
         val calendarImage:ImageView = findViewById(R.id.calendarImage)
-        val id3: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcalendarImageId(), "drawable", context.getPackageName())
+        val id3: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().getcalendarImageId(), "drawable", context.getPackageName())
         calendarImage.setImageResource(id3)
 
         // calendarImageBackground
         val calendarImageBackground:ImageView = findViewById(R.id.calendarImageBackground)
-        val id4: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcalendarImageBackgroundId(), "drawable", context.getPackageName())
+        val id4: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().getcalendarImageBackgroundId(), "drawable", context.getPackageName())
         calendarImageBackground.setImageResource(id4)
-        calendarImageBackground.setColorFilter(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme(), mode)
+        calendarImageBackground.setColorFilter(MainController.getcurrent().getappearanceInfo().getcolorTheme(), mode)
         val calendarLayoutBackground:RelativeLayout = findViewById(R.id.calendarLayout)
-        calendarLayoutBackground.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme())
+        calendarLayoutBackground.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getcolorTheme())
 
         // settingsImage
         val settingsImage:ImageView = findViewById(R.id.settingsImage)
-        val id5: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getsettingsImageId(), "drawable", context.getPackageName())
+        val id5: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().getsettingsImageId(), "drawable", context.getPackageName())
         settingsImage.setImageResource(id5)
 
         // settingsImageBackground
         val settingsImageBackground:ImageView = findViewById(R.id.settingsImageBackground)
-        val id6: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getsettingsImageBackgroundId(), "drawable", context.getPackageName())
+        val id6: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().getsettingsImageBackgroundId(), "drawable", context.getPackageName())
         settingsImageBackground.setImageResource(id6)
-        settingsImageBackground.setColorFilter(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme(), mode2)
+        settingsImageBackground.setColorFilter(MainController.getcurrent().getappearanceInfo().getcolorTheme(), mode2)
         val settingsLayoutBackground:RelativeLayout = findViewById(R.id.settingsLayout)
-        settingsLayoutBackground.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme())
+        settingsLayoutBackground.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getcolorTheme())
 
         // treatmentImageFirst
         val treatmentImageFirst:ImageView = findViewById(R.id.treatmentImageFirst)
-        val id7: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettreatmentImageFirstId(), "drawable", context.getPackageName())
+        val id7: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().gettreatmentImageFirstId(), "drawable", context.getPackageName())
         treatmentImageFirst.setImageResource(id7)
 
         // treatmentImageSecond
         val treatmentImageSecond:ImageView = findViewById(R.id.treatmentImageSecond)
-        val id8: Int = context.getResources().getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettreatmentImageSecondId(), "drawable", context.getPackageName())
+        val id8: Int = context.getResources().getIdentifier(MainController.getcurrent().getappearanceInfo().gettreatmentImageSecondId(), "drawable", context.getPackageName())
         treatmentImageSecond.setImageResource(id8)
         val treatmentLayoutBackground:RelativeLayout = findViewById(R.id.treatmentLayout)
-        treatmentLayoutBackground.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getcolorTheme())
+        treatmentLayoutBackground.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getcolorTheme())
 
         animacio(treatmentImageFirst,treatmentImageSecond)
     }

@@ -44,7 +44,7 @@ object MainController {
     fun initFirestore(){
         daoUser.get()
 }
-    fun deleteUser(email:Usuari){
+    fun deleteUser(email:String){
         daoUser.delete(email)
     }
     fun login(username:String, passwor: String){
@@ -104,10 +104,6 @@ object MainController {
       if(!existsThisDay(date)){
           user.addDay(date)
       }
-    }
-
-    fun getUsuariPerProvarEdu(): Usuari {
-    return usuariProvaEdu
     }
     fun getDayList():String{
       return user.getDayList()

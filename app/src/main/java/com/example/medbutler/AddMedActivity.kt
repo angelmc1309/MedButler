@@ -77,17 +77,17 @@ class AddMedActivity : AppCompatActivity() {
         // background
         val backgroundLay: RelativeLayout = findViewById(R.id.backgroundAddMed)
         val context: Context = backgroundLay.getContext()
-        val idBack = resources.getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbackground(), "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
         var addBut: TextView = findViewById(R.id.btnAddMed)
         var disBut: TextView = findViewById(R.id.btnDiscardMed)
 
-        addBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor()))
-        addBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
-        disBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor()))
-        disBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
+        addBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
+        addBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
+        disBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
+        disBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
         /*
         addBut.setBackgroundColor(MainActivity.brighterToolbarColor)
         addBut.setTextColor(MainActivity.darkerToolbarColorText)

@@ -15,7 +15,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.controller.*
 import hakobastvatsatryan.DropdownTextView
 import kotlinx.android.synthetic.main.activity_diet_nutrition.*
 
@@ -83,7 +83,7 @@ class DietListNutritionActivity : AppCompatActivity() {
         // background
         val backgroundLay: ConstraintLayout = findViewById(R.id.backgroundLayout)
         val context: Context = backgroundLay.getContext()
-        val idBack = resources.getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbackground(), "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
@@ -95,16 +95,16 @@ class DietListNutritionActivity : AppCompatActivity() {
         var toolbarTreatment: LinearLayout = findViewById(R.id.toolbar_treatment)
         var medListBut: TextView = findViewById(R.id.med_list)
         var dietListBut: TextView = findViewById(R.id.diet_list)
-        toolbar.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColor())
-        toolbarTreatment.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        medListBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbrighterToolbarColor())
-        medListBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
-        dietListBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        dietListBut.setTextColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColorText())
-        userBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        calendarButt.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        settingsBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        medsBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        toolbar.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColor())
+        toolbarTreatment.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        medListBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor())
+        medListBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
+        dietListBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        dietListBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
+        userBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
     }
 
     fun actionCalendar(view: View){

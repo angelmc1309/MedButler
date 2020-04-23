@@ -44,7 +44,7 @@ class Calendar : AppCompatActivity(){
         // background
         val backgroundLay: LinearLayout = findViewById(R.id.backgroundLayout)
         val context: Context = backgroundLay.getContext()
-        val idBack = resources.getIdentifier(MainController.getUsuariPerProvarEdu().getappearanceInfo().getbackground(), "drawable", packageName)
+        val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
@@ -53,11 +53,11 @@ class Calendar : AppCompatActivity(){
         var calendarButt: ImageButton = findViewById(R.id.calendarButton)
         var settingsBut: ImageButton = findViewById(R.id.settingsButton)
         var medsBut: ImageButton = findViewById(R.id.medsButton)
-        toolbar.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().getdarkerToolbarColor())
-        userBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        calendarButt.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        settingsBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
-        medsBut.setBackgroundColor(MainController.getUsuariPerProvarEdu().getappearanceInfo().gettoolbarColor())
+        toolbar.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColor())
+        userBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
     }
 
     fun actionUser(view: View){

@@ -33,7 +33,7 @@ package com.example.medbutler.classes.model
         return username+" "+fullname+" "+birthday+" "+height+" "+weight
                 //gender
     }
-    fun getusername(): String? {
+    fun getusername(): String {
         return this.username
     }
     fun getfullname(): String {

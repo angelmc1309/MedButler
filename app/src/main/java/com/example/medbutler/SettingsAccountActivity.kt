@@ -8,6 +8,7 @@ import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
+import com.example.medbutler.classes.controller.*
 import android.R.attr
 import android.app.Dialog
 import android.content.SharedPreferences
@@ -105,8 +106,11 @@ class SettingsAccountActivity : AppCompatActivity() {
         override fun onPreferenceClick(preference: Preference?): Boolean {
             if (preference?.key.equals("date_of_birth")){
                 showDatePickerDialog(preference)
+            }else if (preference?.key.equals("key_logout")) {
+                MainController.signOut()
+            }else if (preference?.key.equals("key_delete_account")) {
+                MainController.deleteUser(MainController.getcurrent().getusername())
             }
-
             return true
         }
 

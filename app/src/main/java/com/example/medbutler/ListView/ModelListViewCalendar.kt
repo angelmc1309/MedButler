@@ -56,32 +56,32 @@ class ModelListViewCalendar : AppCompatActivity() {
         listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
             if (position == 0) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture one", Toast.LENGTH_SHORT).show()
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageId("cal_im")
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageBackgroundId("cal_back")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal_back")
                 finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture two", Toast.LENGTH_SHORT).show()
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageId("cal2_im")
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageBackgroundId("cal2_back")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal2_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal2_back")
                 finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture three", Toast.LENGTH_SHORT).show()
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageId("cal3_im")
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageBackgroundId("cal3_back")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal3_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal3_back")
                 finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture four", Toast.LENGTH_SHORT).show()
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageId("cal4_im")
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageBackgroundId("cal4_back")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal4_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal4_back")
                 finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture five", Toast.LENGTH_SHORT).show()
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageId("cal5_im")
-                MainController.getUsuariPerProvarEdu().getappearanceInfo().setcalendarImageBackgroundId("cal5_back")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal5_im")
+                MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal5_back")
                 finish()
             }
         }
