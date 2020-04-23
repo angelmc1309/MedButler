@@ -1,6 +1,6 @@
 package com.example.medbutler.classes.model
 
-class MedList(){
+object MedList{
 
     val list :ArrayList<Med> = ArrayList<Med>()
         get() = field
@@ -23,5 +23,8 @@ class MedList(){
                 return
             }
         }
+    }
+    fun rtsList(): ArrayList<Med> {
+        return list
     }
 }

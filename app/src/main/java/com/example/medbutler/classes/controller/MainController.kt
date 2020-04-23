@@ -37,14 +37,12 @@ object MainController {
         daoUser.signOut()
     }
     fun initUserProfer(context:UserProfile){
-
-        context.findViewById<TextView>(R.id.userName_label).setText(getcurrent().getfullname())
-        context.findViewById<TextView>(R.id.email_label).setText(getcurrent().getusername())
-        context.findViewById<TextView>(R.id.date_label).setText(getcurrent().getbirthday())
-        context.findViewById<TextView>(R.id.height_label).setText( getcurrent().getheight())
-        context.findViewById<TextView>(R.id.weight_label).setText( getcurrent().getweight())
+        context.findViewById<TextView>(R.id.userName_label).setText("Fullname: "+getcurrent().getfullname())
+        context.findViewById<TextView>(R.id.email_label).setText("Email:"+getcurrent().getusername())
+        context.findViewById<TextView>(R.id.date_label).setText("Birthday: "+getcurrent().getbirthday())
+        context.findViewById<TextView>(R.id.height_label).setText( "Height: "+getcurrent().getheight())
+        context.findViewById<TextView>(R.id.weight_label).setText( "Weight: "+getcurrent().getweight())
         context.findViewById<TextView>(R.id.user_complete_name_label).setText(getcurrent().getfullname())
-
     }
 
     fun Enregistrar(user: Usuari, passwor: String) {

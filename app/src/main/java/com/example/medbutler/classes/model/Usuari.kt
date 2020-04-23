@@ -7,7 +7,7 @@ package com.example.medbutler.classes.model
      private var birthday: String=""
      private var height: String=""
      private var weight: String=""
-     private val medList:MedList = MedList()
+     //private val medList:MedList = MedList()
      //private var gender: String=""
      constructor(){
 
@@ -65,15 +65,15 @@ package com.example.medbutler.classes.model
     }
      fun addMed(id: String,name: String, period: Int,duration: Int,startTimeMinute:Int,
                 startTimeHour:Int,allowNotification:Boolean){
-         medList.addMed(id, name, period, duration, startTimeMinute, startTimeHour, allowNotification)
+         MedList.addMed(id, name, period, duration, startTimeMinute, startTimeHour, allowNotification)
      }
 
      fun getMedList():String {
-         return medList.toString()
+         return MedList.toString()
      }
 
      fun removeMed(id: String) {
-         medList.removeMed(id)
+         MedList.removeMed(id)
      }
     //var d=Usuari("k","j","s","s")
 
