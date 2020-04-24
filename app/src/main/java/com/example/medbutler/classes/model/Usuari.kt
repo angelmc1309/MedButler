@@ -110,6 +110,15 @@ package com.example.medbutler.classes.model
     fun getFood(date: String):String?{
         return Calendar.getFood(date)
     }
+     fun addDisease(disease:String){
+         listOfDisease.add(disease)
+     }
+     fun removeDisease(disease: String){
+         listOfDisease.remove(disease)
+     }
+     fun showDiseaseIHave(): String {
+         return listOfDisease.toString()
+     }
     //var d=Usuari("k","j","s","s")
 
 

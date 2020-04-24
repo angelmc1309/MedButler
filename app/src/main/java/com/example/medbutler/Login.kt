@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.dataBase.DAOUser
+import com.google.firebase.auth.FirebaseAuthException
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
@@ -32,9 +34,19 @@ class Login : AppCompatActivity() {
 
         }
         if (!usernameLogin.text.toString().isEmpty() && !passwordLogin.text.toString().isEmpty()){
-            MainController.login(usernameLogin.text.toString(), passwordLogin.text.toString())
-            val intent= Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            var n=MainController.login(this, usernameLogin.text.toString(), passwordLogin.text.toString())
+            n.addOnCompleteListener{
+                    task->
+                if(task.isSuccessful){
+                    MainController.initFirestore()
+                    val intent= Intent(this, Login::class.java)
+                    startActivity(intent)
+                }else{
+                    var e: FirebaseAuthException = task.exception as FirebaseAuthException
+                    Toast.makeText(this,e.message,Toast.LENGTH_LONG).show()
+
+                }
+            }
 
         }else{
             Toast.makeText(this,"Usuari/contrasenya incorrecte!", Toast.LENGTH_SHORT).show()

@@ -1,6 +1,12 @@
 package com.example.medbutler.classes.dataBase
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
+import com.example.medbutler.Login
+import com.example.medbutler.MainActivity
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Usuari
 import com.google.android.gms.tasks.Task
@@ -67,19 +73,22 @@ class DAOUser : DAO<Usuari> {
     override fun update(obj: Usuari, params: List<String>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    fun login(username:String, password: String){
-        this.firebase_auth.signInWithEmailAndPassword(username,password).addOnCompleteListener{
+    fun login(context:Context,username:String, password: String): Task<AuthResult> {
+        return this.firebase_auth.signInWithEmailAndPassword(username,password)
+    }
+        /*this.firebase_auth.signInWithEmailAndPassword(username,password).addOnCompleteListener{
                 task->
             if(task.isSuccessful){
                 MainController.initFirestore()
-
+                val intent= Intent(context, Login::class.java)
+                startActivity(intent)
             }else{
                 var e: FirebaseAuthException = task.exception as FirebaseAuthException
-                Log.d("TAG",e.message)
+                Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
 
             }
         }
-    }
+    }*/
     fun signOut(){
         firebase_auth.signOut()
     }
