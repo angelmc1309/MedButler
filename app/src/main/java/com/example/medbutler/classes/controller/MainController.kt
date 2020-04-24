@@ -21,8 +21,6 @@ object MainController {
     val daoUser = DAOUser()
     //var db = FirebaseFirestore.getInstance()
 
-
-
     fun setCurrentUser(user:Usuari){
         this.user=user
 

@@ -14,7 +14,7 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        Thread.sleep(2000)
+        // Thread.sleep(2000)
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -31,7 +31,6 @@ class Login : AppCompatActivity() {
             passwordLogin.error="Password empty!"
             usernameLogin.requestFocus()
             return
-
         }
         if (!usernameLogin.text.toString().isEmpty() && !passwordLogin.text.toString().isEmpty()){
             MainController.login(this,usernameLogin.text.toString(),passwordLogin.text.toString())
