@@ -78,7 +78,7 @@ class DAOUser : DAO<Usuari> {
     override fun update(obj: Usuari, params: List<String>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    fun login(context:Context,username:String, password: String) {
+    fun login(context:Login,username:String, password: String) {
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
