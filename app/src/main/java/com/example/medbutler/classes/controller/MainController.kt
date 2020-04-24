@@ -36,8 +36,8 @@ object MainController {
     fun deleteUser(email:String){
         daoUser.delete(email)
     }
-    fun login(context: Login, username:String, passwor: String): Task<AuthResult> {
-       return daoUser.login(context,username,passwor)
+    fun login(context: Login, username:String, passwor: String) {
+        daoUser.login(context,username,passwor)
     }
     fun signOut(){
         daoUser.signOut()
