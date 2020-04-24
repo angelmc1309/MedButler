@@ -34,15 +34,7 @@ class Login : AppCompatActivity() {
 
         }
         if (!usernameLogin.text.toString().isEmpty() && !passwordLogin.text.toString().isEmpty()){
-            MainController.login(this, usernameLogin.text.toString(), passwordLogin.text.toString())
-            if(MainController.daoUser.firebase_auth.currentUser!=null){
-                val intent= Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
-
-
-        }else{
-            Toast.makeText(this,"Usuari/contrasenya empty!", Toast.LENGTH_SHORT).show()
+            MainController.login(this,usernameLogin.text.toString(),passwordLogin.text.toString())
         }
 
     }

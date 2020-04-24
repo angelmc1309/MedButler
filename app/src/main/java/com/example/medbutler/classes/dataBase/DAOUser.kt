@@ -14,6 +14,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.system.exitProcess
 
 class DAOUser : DAO<Usuari> {
     var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -81,6 +82,8 @@ class DAOUser : DAO<Usuari> {
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    val intent= Intent(context, MainActivity::class.java)
+                    context.startActivity(intent)
                     MainController.initFirestore()
 
                 } else {
