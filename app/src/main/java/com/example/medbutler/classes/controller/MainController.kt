@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import android.widget.Toast
 import android.widget.TextView
+import com.example.medbutler.Login
 import com.example.medbutler.R
 import com.example.medbutler.UserProfile
 import com.example.medbutler.classes.dataBase.DAOUser
@@ -11,6 +12,8 @@ import com.example.medbutler.classes.model.Calendar
 import com.example.medbutler.classes.model.Day
 import com.example.medbutler.classes.model.Med
 import com.example.medbutler.classes.model.Usuari
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 
 
 object MainController {
@@ -36,8 +39,8 @@ object MainController {
     fun deleteUser(email:String){
         daoUser.delete(email)
     }
-    fun login(username:String, passwor: String){
-        daoUser.login(username,passwor)
+    fun login(context: Login, username:String, passwor: String): Task<AuthResult> {
+       return daoUser.login(context,username,passwor)
     }
     fun signOut(){
         daoUser.signOut()

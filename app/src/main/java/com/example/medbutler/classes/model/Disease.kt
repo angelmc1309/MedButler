@@ -1,7 +1,7 @@
 package com.example.medbutler.classes.model
 
 object Disease {
-    
+
     val list = arrayListOf<String>("Hipertensión arterial", "Enfermedades cardiovasculares / Enfermedad del corazón (como infartos)", "Lumbalgia",
         "Artritis (incluida la artrosis)", "Colesterol alto", "Alergia crónica", "Cefaleas", "Diabetes", " Cáncer", " Ansiedad crónica",
         "Bronquitis crónica", "Parkinson", "Osteoporosis", "VIH / SIDA", "Enfermedad Pulmonar Obstructiva Crónica", "Colesterol",
