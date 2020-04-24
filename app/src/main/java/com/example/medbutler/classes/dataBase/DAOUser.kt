@@ -14,6 +14,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.system.exitProcess
 
 class DAOUser : DAO<Usuari> {
     var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -86,7 +87,7 @@ class DAOUser : DAO<Usuari> {
                 } else {
                     var e: FirebaseAuthException = task.exception as FirebaseAuthException
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
-                
+                    //return@addOnCompleteListener
                 }
             }
 
