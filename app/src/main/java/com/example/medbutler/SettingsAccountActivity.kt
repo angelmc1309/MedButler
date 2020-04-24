@@ -116,6 +116,7 @@ class SettingsAccountActivity : AppCompatActivity() {
             }
 
             return true
+
         }
 
         @RequiresApi(Build.VERSION_CODES.N)
@@ -126,6 +127,7 @@ class SettingsAccountActivity : AppCompatActivity() {
                 MainController.signOut()
                 val intent= Intent(context, Login::class.java)
                 startActivity(intent)
+                onDestroy()
             }else if (preference?.key.equals("key_delete_account")) {
                 MainController.deleteUser(MainController.getcurrent().getusername())
             }
