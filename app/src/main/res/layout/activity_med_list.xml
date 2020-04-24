@@ -44,7 +44,7 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
-            android:onClick="actionDietList"
+            android:onClick="actionInfoList"
             android:text="@string/disease_information"
             android:textSize="20sp"
             android:textStyle="bold"

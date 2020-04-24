@@ -53,6 +53,7 @@
     <string name="height2">Height: %1$s %2$s</string>
     <string name="weight2">Weight: %1$s %2$s</string>
     <string name="birthday">Birthday: %1$s</string>
+    <string name="time_select">"    %1$s:%2$s"</string>
     <string name="key_delete_account">key_delete_account</string>
     <string name="key_logout">key_logout</string>
     <string name="userDiseases">User Diseases</string>

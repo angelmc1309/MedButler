@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.classes.model.Med
 import kotlinx.android.synthetic.main.activity_med_list.*
 import com.example.medbutler.classes.controller.MainController
+import java.io.Serializable
 
 class MedListActivity : AppCompatActivity() {
 
@@ -21,21 +22,15 @@ class MedListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_med_list)
         updateAppearance()
+        /* TEST:
         var med1:Med = Med( "IB600","Ibuprofeno 600mg", 24,7,30, 1,false)
         var med2:Med = Med( "IB400","Ibuprofeno 400mg", 4,14,2, 5,true)
         var med3:Med = Med( "IB400","Ibuprofeno 400mg", 72,0,30, 8,false)
         var med4:Med = Med( "IB600","Ibuprofeno 600mg", 48,90,22, 8,true)
         var med5:Med = Med( "IB800","Ibuprofeno 800mg", 24,30,54, 7,true)
-        var med6:Med = Med( "IB999900","Ibuprofeno 99999mg", 24,7,13, 12,false) // PER EL TEST
+        var med6:Med = Med( "IB999900","Ibuprofeno 99999mg", 24,7,13, 12,false)
         val array_exemple = arrayListOf(med1,med2,med3,med4,med5,med6)   //Obenir array Usuari de Controler
-
-        listViewMedList.adapter = CustomAdapter(this, R.layout.simple_list_item_custom, array_exemple)
-
-        listViewMedList.setOnItemClickListener { parent, view, position, id ->
-            var listItem:Med = array_exemple.get(position)
-            val intentModifMed= Intent(this, ModifMedActivity::class.java)
-            startActivity(intentModifMed)
-        }
+         */
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -101,6 +96,17 @@ class MedListActivity : AppCompatActivity() {
         medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         addMedBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
         addMedBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
+
+        val array_exemple = MainController.getMedListArray()
+
+        listViewMedList.adapter = CustomAdapter(this, R.layout.simple_list_item_custom, array_exemple)
+
+        listViewMedList.setOnItemClickListener { parent, view, position, id ->
+            var listItemId:Med = array_exemple.get(position)
+            val intentModifMed= Intent(this, ModifMedActivity::class.java)
+            intent.putExtra("extra_object_med", listItemId as Serializable);
+            startActivity(intentModifMed)
+        }
     }
 
     fun actionCalendar(view: View){
@@ -123,7 +129,7 @@ class MedListActivity : AppCompatActivity() {
         val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-    fun actionDietList(view: View) {
+    fun actionInfoList(view: View) {
         val intent= Intent(this, DiseaseInformationActivity::class.java)
         startActivity(intent)
     }

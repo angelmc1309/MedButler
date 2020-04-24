@@ -8,7 +8,7 @@
     android:id="@+id/backgroundModifMed">
 
     <TextView
-        android:id="@+id/titleModifdMed"
+        android:id="@+id/titleModifMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -57,7 +57,7 @@
         android:text="@string/treatment_duration" />
 
     <Spinner
-        android:id="@+id/spinnerDuration"
+        android:id="@+id/modifSpinnerDuration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/modifFrequencyText"
@@ -91,16 +91,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="10dp"/>
-
-    <TextView
-        android:id="@+id/modifTextSpinnerDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="326dp"
-        android:layout_marginTop="464dp"
-        android:gravity="center" />
 
     <TextView
         android:id="@+id/modifStartTimeText"
@@ -163,7 +153,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="98dp"
         android:layout_marginTop="30dp"
-        android:onClick="addMed"
+        android:onClick="saveChanges"
         android:text="@string/save_changes">
 
     </Button>
@@ -177,19 +167,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="98dp"
-        android:onClick="discardMed"
+        android:onClick="discardChanges"
         android:text="@string/discard_changes">
 
     </Button>
-
-    <TextView
-        android:id="@+id/modifTextSpinnerFrequency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="500dp"
-        android:gravity="center" />
 
 </RelativeLayout>
