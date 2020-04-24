@@ -11,6 +11,7 @@ package com.example.medbutler.classes.model
     // private val medList:MedList = MedList()
      //private val appearanceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //private var gender: String=""
+     val listOfDisease :ArrayList<String> = ArrayList<String>()
      constructor(){
 
      }

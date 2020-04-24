@@ -9,6 +9,7 @@ import com.example.medbutler.UserProfile
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.Calendar
 import com.example.medbutler.classes.model.Day
+import com.example.medbutler.classes.model.Med
 import com.example.medbutler.classes.model.Usuari
 
 
@@ -60,6 +61,9 @@ object MainController {
     }
     fun getMedList():String{
         return  user.getMedList()
+    }
+    fun getMedListArray(): ArrayList<Med> {
+        return user.getMedListArray()
     }
     fun removeMed(id: String){
         user.removeMed(id)
