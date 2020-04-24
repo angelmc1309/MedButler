@@ -82,14 +82,17 @@ class DAOUser : DAO<Usuari> {
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    val intent= Intent(context, MainActivity::class.java)
+                    context.startActivity(intent)
                     MainController.initFirestore()
 
                 } else {
                     var e: FirebaseAuthException = task.exception as FirebaseAuthException
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
-                    //return@addOnCompleteListener
+
                 }
             }
+
 
 
     }

@@ -34,26 +34,11 @@ class Login : AppCompatActivity() {
 
         }
         if (!usernameLogin.text.toString().isEmpty() && !passwordLogin.text.toString().isEmpty()){
-            //MainController.login(this, usernameLogin.text.toString(), passwordLogin.text.toString())
-            //if(MainController.daoUser.firebase_auth.currentUser!=null){
 
-            //}
-            MainController.daoUser.firebase_auth.signInWithEmailAndPassword(usernameLogin.text.toString(),passwordLogin.text.toString())
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val intent= Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        MainController.initFirestore()
-
-                    } else {
-                        var e: FirebaseAuthException = task.exception as FirebaseAuthException
-                        Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
-                    }
-                }
+            MainController.login(this,usernameLogin.text.toString(),passwordLogin.text.toString())
 
 
-        }else{
-            Toast.makeText(this,"Usuari/contrasenya empty!", Toast.LENGTH_SHORT).show()
+
         }
 
     }
