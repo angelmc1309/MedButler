@@ -86,7 +86,7 @@ class DAOUser : DAO<Usuari> {
                 } else {
                     var e: FirebaseAuthException = task.exception as FirebaseAuthException
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
-
+                
                 }
             }
 
