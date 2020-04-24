@@ -8,10 +8,7 @@ import com.example.medbutler.Login
 import com.example.medbutler.R
 import com.example.medbutler.UserProfile
 import com.example.medbutler.classes.dataBase.DAOUser
-import com.example.medbutler.classes.model.Calendar
-import com.example.medbutler.classes.model.Day
-import com.example.medbutler.classes.model.Med
-import com.example.medbutler.classes.model.Usuari
+import com.example.medbutler.classes.model.*
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 
@@ -57,11 +54,15 @@ object MainController {
     fun Enregistrar(user: Usuari, passwor: String) {
         daoUser.save(user,passwor)
     }
+    fun saveListMed() {
+        daoUser.saveListMed()
+    }
     fun addMed(id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
                startTimeHour: Int, allowNotification: Boolean) {
         user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
             allowNotification)
     }
+
     fun getMedList():String{
         return  user.getMedList()
     }
@@ -101,6 +102,8 @@ object MainController {
             user.setFood(date, order, name)
         }
     }
+
+
     fun existsThisDay(date:String):Boolean{
         return user.existsThisDay(date)
     }
@@ -125,8 +128,25 @@ object MainController {
             return null
         }
     } //Preguntar com solucionar lo del interrogant
+    fun addUserDisease(disease:String){
+        user.addDisease(disease)
+    }
+    fun removeUserDisease(disease: String){
+        user.removeDisease(disease)
+    }
+    fun showUserDisease():String{
+        return user.showDiseaseIHave()
+    }
+    fun addDatabaseDisease(disease: String){
+        Disease.addNewDisease(disease)
+    }
+    fun removeDatabaseDisease(disease: String){
+        Disease.removeDisease(disease)
+    }
+    fun showAllDatabaseDisease():String{
+        return Disease.toString()
+    }
 }
-
 
 
 

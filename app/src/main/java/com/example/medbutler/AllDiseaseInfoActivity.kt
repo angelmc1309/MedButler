@@ -2,33 +2,34 @@ package com.example.medbutler
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.classes.controller.*
+import hakobastvatsatryan.DropdownTextView
+import kotlinx.android.synthetic.main.activity_disease_information.*
 
-class UserProfile : AppCompatActivity() {
+class AllDiseaseInfoActivity : AppCompatActivity() {
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1500)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_profile_layout)
+        setContentView(R.layout.activity_all_disease_information)
         updateAppearance()
-        initProfile()
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onResume() {
-        Thread.sleep(1500)
         updateAppearance()
-        initProfile()
         super.onResume()
     }
 
@@ -44,20 +45,29 @@ class UserProfile : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun updateAppearance(){
         // background
-        val backgroundLay:LinearLayout = findViewById(R.id.backgroundLayout)
+        val backgroundLay: ConstraintLayout = findViewById(R.id.backgroundLayout)
         val context: Context = backgroundLay.getContext()
         val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
-        var toolbar:LinearLayout = findViewById(R.id.my_toolbar)
-        var userBut:ImageButton = findViewById(R.id.userButton)
-        var calendarButt:ImageButton = findViewById(R.id.calendarButton)
-        var settingsBut:ImageButton = findViewById(R.id.settingsButton)
-        var medsBut:ImageButton = findViewById(R.id.medsButton)
+        var toolbar: LinearLayout = findViewById(R.id.my_toolbar)
+        var userBut: ImageButton = findViewById(R.id.userButton)
+        var calendarButt: ImageButton = findViewById(R.id.calendarButton)
+        var settingsBut: ImageButton = findViewById(R.id.settingsButton)
+        var medsBut: ImageButton = findViewById(R.id.medsButton)
+        var toolbarTreatment: LinearLayout = findViewById(R.id.toolbar_treatment)
+        var medListBut: TextView = findViewById(R.id.med_list)
+        var dietListBut: TextView = findViewById(R.id.diet_list)
         toolbar.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColor())
+        toolbarTreatment.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        medListBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor())
+        medListBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
+        dietListBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+        dietListBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
         userBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
@@ -68,8 +78,8 @@ class UserProfile : AppCompatActivity() {
         val intent= Intent(this, Calendar::class.java)
         startActivity(intent)
     }
-    fun actionMeds(view: View){
-        val intent= Intent(this, MedListActivity::class.java)
+    fun actionUser(view: View){
+        val intent= Intent(this, UserProfile::class.java)
         startActivity(intent)
     }
     fun actionSettings(view: View){
@@ -80,12 +90,8 @@ class UserProfile : AppCompatActivity() {
         val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-    fun actionModif(view: View) {
-        val intent= Intent(this, SettingsAccountActivity::class.java)
+    fun actionMedList(view: View) {
+        val intent= Intent(this, MedListActivity::class.java)
         startActivity(intent)
     }
-    private fun initProfile() {
-        MainController.initUserProfer(this)
-    }
-
 }

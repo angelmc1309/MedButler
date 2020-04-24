@@ -70,6 +70,10 @@ class DAOUser : DAO<Usuari> {
         }
     }
 
+    fun saveListMed(){
+        userdb.document(MainController.getcurrent().getusername()).set(MainController.getcurrent())
+    }
+
     override fun update(obj: Usuari, params: List<String>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

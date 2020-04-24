@@ -30,7 +30,6 @@
     <PreferenceCategory android:title="Personal Information">
 
         <EditTextPreference
-            android:defaultValue=""
             android:key="full_name"
             android:selectAllOnFocus="true"
             android:singleLine="true"
@@ -41,7 +40,6 @@
             android:summary="Enter your full name"/>
 
         <EditTextPreference
-            android:defaultValue=""
             android:key="email_adress"
             android:selectAllOnFocus="true"
             android:singleLine="true"
@@ -52,7 +50,6 @@
             android:inputType="textEmailAddress"/>
 
         <EditTextPreference
-            android:defaultValue=""
             android:key="password"
             android:selectAllOnFocus="true"
             android:singleLine="true"
@@ -62,7 +59,6 @@
             android:summary="Enter your new password to be used in the application"/>
 
         <Preference
-            android:defaultValue=""
             android:title="Your date of birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,7 +70,6 @@
             android:inputType="date"/>
 
         <EditTextPreference
-            android:defaultValue=""
             android:key="height"
             android:selectAllOnFocus="true"
             android:singleLine="true"
@@ -85,7 +80,6 @@
             android:inputType="number"/>
 
         <EditTextPreference
-            android:defaultValue=""
             android:key="weight"
             android:selectAllOnFocus="true"
             android:singleLine="true"

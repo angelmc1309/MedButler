@@ -1,6 +1,6 @@
 package com.example.medbutler.classes.model
 
-import java.time.chrono.ChronoPeriod
+import java.io.Serializable
 
 class Med(
     var id: String,
@@ -10,7 +10,7 @@ class Med(
     private var startTimeMinute:Int,
     private var startTimeHour:Int,
     private var allowNotification:Boolean
-) {
+):Serializable {
 
     override fun toString(): String {
         return name
@@ -27,5 +27,40 @@ class Med(
         }
     }
 
-
+    fun getname(): String? {
+        return this.name
+    }
+    fun setname(newName:String){
+        this.name=newName
+    }
+    fun getperiod(): Int? {
+        return this.period
+    }
+    fun setperiod(newPeriod:Int){
+        this.period=newPeriod
+    }
+    fun getduration(): Int? {
+        return this.duration
+    }
+    fun setduration(newduration:Int){
+        this.duration=newduration
+    }
+    fun getstartTimeMinute(): Int? {
+        return this.startTimeMinute
+    }
+    fun setstartTimeMinute(newstartTimeMinute:Int){
+        this.startTimeMinute=newstartTimeMinute
+    }
+    fun getstartTimeHour(): Int? {
+        return this.startTimeHour
+    }
+    fun setstartTimeHour(newstartTimeHour:Int){
+        this.startTimeHour=newstartTimeHour
+    }
+    fun getallowNotification(): Boolean? {
+        return this.allowNotification
+    }
+    fun setallowNotification(allowNotification:Boolean){
+        this.allowNotification=allowNotification
+    }
 }

@@ -2,13 +2,11 @@ package com.example.medbutler
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -17,30 +15,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.classes.controller.*
 import hakobastvatsatryan.DropdownTextView
-import kotlinx.android.synthetic.main.activity_nutritional_information.*
+import kotlinx.android.synthetic.main.activity_disease_information.*
 
-class NutritionalInformationActivity : AppCompatActivity() {
+class DiseaseInformationActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nutritional_information)
+        setContentView(R.layout.activity_disease_information)
         updateAppearance()
 
-        val dropdown = DropdownTextView.Builder(this)
-            .setTitleTextColorRes(R.color.md_white)
-            .setTitleTextSizeRes(R.dimen.title_dim)
-            .setTitleFontRes(R.font.cabin)
-            .setContentTextColorRes(R.color.md_white_700)
-            .setContentTextSizeRes(R.dimen.text_dim)
-            .setContentFontRes(R.font.cabin)
-            .setContentPaddingRes(R.dimen.content_padding)
-            .setRegularBackgroundDrawableRes(R.drawable.layout_bg)
-            .setExpandedBackgroundDrawableRes(R.drawable.layout_bg2)
-            .setPanelPaddingRes(R.dimen.panel_padding)
-            .build()
-
-        linearLayout3.addView(dropdown) // You can specify layout params for dropdown
+        val dropdown:DropdownTextView = findViewById(R.id.first_dropdown_text_view)
+        val dropdown2:DropdownTextView = findViewById(R.id.second_dropdown_text_view)
+        val dropdown3:DropdownTextView = findViewById(R.id.third_dropdown_text_view)
 
         dropdown.setTitleText("Info nutrition")
         dropdown.setContentText("\n" + "Nutrition recommendations\n\nLimite los alimentos con colesterol. Si está tratando de bajar su colesterol, debe consumir menos de 200 mg al día. El colesterol se encuentra en alimentos de origen animal como el hígado y otras vísceras, yemas de huevo, camarones y productos lácteos de leche entera.\n" +
