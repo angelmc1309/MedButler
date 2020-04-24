@@ -34,11 +34,7 @@ class Login : AppCompatActivity() {
 
         }
         if (!usernameLogin.text.toString().isEmpty() && !passwordLogin.text.toString().isEmpty()){
-
             MainController.login(this,usernameLogin.text.toString(),passwordLogin.text.toString())
-
-
-
         }
 
     }
