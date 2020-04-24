@@ -84,10 +84,22 @@ class SettingsAccountActivity : AppCompatActivity() {
             val stringValue:String
             if(value.toString() != ""){
                 stringValue = value.toString()
+                if (preference?.key.equals("date_of_birth")){
+                    MainController.changeBirthday(stringValue)
+                }else if (preference?.key.equals("full_name")) {
+                    MainController.changeFullname(stringValue)
+                }else if (preference?.key.equals("email_adress")) {
+                    MainController.changeEmail(stringValue)
+                }else if (preference?.key.equals("password")) {
+                    MainController.changePassword(stringValue)
+                }else if (preference?.key.equals("height")) {
+                    MainController.changeHeight(stringValue)
+                }else if (preference?.key.equals("weight")) {
+                    MainController.changeWeight(stringValue)
+                }
             }else{
                 stringValue = preference?.summary.toString()
             }
-
 
             if (preference is ListPreference) {
                 val listPreference = preference
@@ -95,26 +107,7 @@ class SettingsAccountActivity : AppCompatActivity() {
                 if (prefIndex >= 0) { // if (prefIndex >= 0) {
                     preference.setSummary(listPreference.entries[prefIndex])
                 } // else preference.setSummary null ??
-            } else if (preference is EditTextPreference) {
-                preference?.summary = stringValue
-            } else {
-                preference?.summary = stringValue
             }
-
-            if (preference?.key.equals("date_of_birth")){
-                MainController.changeBirthday(stringValue)
-            }else if (preference?.key.equals("full_name")) {
-                MainController.changeFullname(stringValue)
-            }else if (preference?.key.equals("email_adress")) {
-                MainController.changeEmail(stringValue)
-            }else if (preference?.key.equals("password")) {
-                MainController.changePassword(stringValue)
-            }else if (preference?.key.equals("height")) {
-                MainController.changeHeight(stringValue)
-            }else if (preference?.key.equals("weight")) {
-                MainController.changeWeight(stringValue)
-            }
-
             return true
         }
 

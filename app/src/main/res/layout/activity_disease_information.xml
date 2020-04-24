@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/backgroundLayout"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:id="@+id/toolbar_treatment"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:divider="@drawable/empty_tall_divider"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/med_list"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="actionMedList"
+            android:text="@string/list_medicines"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_marginBottom="1dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/diet_list"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/disease_information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="0.5"
+            android:layout_marginBottom="1dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:divider="@drawable/empty_tall_divider"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/userButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="actionUser"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user_logo" />
+
+        <ImageButton
+            android:id="@+id/calendarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="actionCalendar"
+            android:scaleType="fitCenter"
+            android:src="@drawable/calendar" />
+
+        <ImageButton
+            android:id="@+id/medsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/meds_logo" />
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="actionSettings"
+            android:scaleType="fitCenter"
+            android:src="@drawable/settings" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="45dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_treatment"
+        app:layout_constraintVertical_bias="0.0">
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="221dp">
+            <LinearLayout
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:id="@+id/linearLayout3"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:divider="@drawable/empty_tall_divider2">
+
+                <TextView
+                    android:id="@+id/text_whatIsIt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <hakobastvatsatryan.DropdownTextView
+                    android:id="@+id/first_dropdown_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title_font="@font/cabin"
+                    app:title_text_color="@color/md_white"
+                    app:title_text_size="@dimen/title_dim"
+                    app:content_font="@font/cabin"
+                    app:content_padding="@dimen/content_padding"
+                    app:content_text_color="@color/md_white_700"
+                    app:content_text_size="@dimen/text_dim"
+                    app:bg_drawable_regular="@drawable/layout_bg2"
+                    app:bg_drawable_expanded="@drawable/layout_bg"
+                    app:panel_padding="@dimen/panel_padding"/>
+
+                <hakobastvatsatryan.DropdownTextView
+                    android:id="@+id/second_dropdown_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title_font="@font/cabin"
+                    app:title_text_color="@color/md_white"
+                    app:title_text_size="@dimen/title_dim"
+                    app:content_font="@font/cabin"
+                    app:content_padding="@dimen/content_padding"
+                    app:content_text_color="@color/md_white_700"
+                    app:content_text_size="@dimen/text_dim"
+                    app:bg_drawable_regular="@drawable/layout_bg2"
+                    app:bg_drawable_expanded="@drawable/layout_bg"
+                    app:panel_padding="@dimen/panel_padding"/>
+
+                <hakobastvatsatryan.DropdownTextView
+                    android:id="@+id/third_dropdown_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title_font="@font/cabin"
+                    app:title_text_color="@color/md_white"
+                    app:title_text_size="@dimen/title_dim"
+                    app:content_font="@font/cabin"
+                    app:content_padding="@dimen/content_padding"
+                    app:content_text_color="@color/md_white_700"
+                    app:content_text_size="@dimen/text_dim"
+                    app:bg_drawable_regular="@drawable/layout_bg2"
+                    app:bg_drawable_expanded="@drawable/layout_bg"
+                    app:panel_padding="@dimen/panel_padding"/>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

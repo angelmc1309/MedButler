@@ -13,23 +13,23 @@ import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_add_med_layout.*
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.controller.*
 
 class AddMedActivity : AppCompatActivity() {
 
     lateinit var optionFrequency: Spinner
-    lateinit var resultFrequency: TextView
     lateinit var optionDuration: Spinner
-    lateinit var resultDuration: TextView
+    var startTimeMinute: Int = -1
+    var startTimeHour: Int = -1
+    var resultFrequency:Int = -1
+    var resultDuration:Int = -1
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_med_layout)
         optionFrequency = findViewById(R.id.spinnerFrequency) as Spinner
-        resultFrequency = findViewById(R.id.textSpinnerFrequency) as TextView
         optionDuration = findViewById(R.id.spinnerDuration) as Spinner
-        resultDuration = findViewById(R.id.textSpinnerDuration) as TextView
 
         val optionsFrequency = arrayOf("  every 4 hours", "  every 6 hours", "  every 12 hours", "  every 24 hours", "  every 48 hours", "  every 72 hours")
         val optionsDuration = arrayOf("just one day", "one week", "two weeks", "one month", "three months", "forever")
@@ -40,18 +40,30 @@ class AddMedActivity : AppCompatActivity() {
 
         optionFrequency.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                resultFrequency.text = "Please Select an Option"
+                resultFrequency = -1 // Nothing Selected
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                resultFrequency.text = optionsFrequency.get(position)
+                resultFrequency = optionsFrequency.get(position).filter { it.isDigit() }.toInt()
             }
         }
         optionDuration.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                resultDuration.text = "Please Select an Option"
+                resultDuration = -1 // Nothing Selected
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                resultDuration.text = optionsDuration.get(position)
+                if (position == 0){
+                    resultDuration = 1
+                } else if (position == 1){
+                    resultDuration = 7
+                } else if (position == 2){
+                    resultDuration = 14
+                } else if (position == 3){
+                    resultDuration = 30
+                } else if (position == 4){
+                    resultDuration = 90
+                } else if (position == 5){
+                    resultDuration = 0
+                }
             }
         }
         startTimeClick.setOnClickListener{
@@ -59,7 +71,10 @@ class AddMedActivity : AppCompatActivity() {
             val timeSetListener = TimePickerDialog.OnTimeSetListener{view: TimePicker?, hourOfDay: Int, minute: Int ->
                 cal.set(Calendar.HOUR_OF_DAY,hourOfDay)
                 cal.set(Calendar.MINUTE,minute)
+                startTimeHour = SimpleDateFormat("HH").format(cal.time).toInt()
+                startTimeMinute = SimpleDateFormat("mm").format(cal.time).toInt()
                 startTimeClick.text = SimpleDateFormat("    HH:mm").format(cal.time)
+                startTimeClick.error = null
             }
             TimePickerDialog(this,timeSetListener,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
         }
@@ -97,8 +112,21 @@ class AddMedActivity : AppCompatActivity() {
     }
 
     fun addMed(view: View) {
-        val intent= Intent(this, MedListActivity::class.java)
-        startActivity(intent)
+
+        if(!medName.text.toString().isEmpty() && resultFrequency != -1 && resultDuration != -1 && startTimeMinute != -1 && startTimeHour != -1){
+            MainController.getcurrent().addMed(medName.text.toString(),medName.text.toString(),resultFrequency,resultDuration,startTimeMinute,startTimeHour,switchNotification.isChecked)
+            val intent= Intent(this, MedListActivity::class.java)
+            startActivity(intent)
+        } else if(medName.text.toString().isEmpty()){
+            medName.error="Medicine's name empty!!"
+            medName.requestFocus()
+        } else if(startTimeMinute == -1){
+            startTimeClick.error = "Time not selected!!"
+            startTimeClick.requestFocus()
+        }else if (startTimeHour == -1){
+            startTimeClick.error = "Time not selected!!"
+            startTimeClick.requestFocus()
+        }
     }
     fun discardMed(view: View) {
         val intent= Intent(this, MedListActivity::class.java)

@@ -124,7 +124,7 @@ class MedListActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun actionDietList(view: View) {
-        val intent= Intent(this, NutritionalInformationActivity::class.java)
+        val intent= Intent(this, DiseaseInformationActivity::class.java)
         startActivity(intent)
     }
 }
