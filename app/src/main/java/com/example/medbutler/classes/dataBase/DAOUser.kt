@@ -77,22 +77,21 @@ class DAOUser : DAO<Usuari> {
     override fun update(obj: Usuari, params: List<String>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    fun login(context:Context,username:String, password: String): Task<AuthResult> {
-        return this.firebase_auth.signInWithEmailAndPassword(username,password)
-    }
-        /*this.firebase_auth.signInWithEmailAndPassword(username,password).addOnCompleteListener{
-                task->
-            if(task.isSuccessful){
-                MainController.initFirestore()
-                val intent= Intent(context, Login::class.java)
-                startActivity(intent)
-            }else{
-                var e: FirebaseAuthException = task.exception as FirebaseAuthException
-                Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
+    fun login(context:Context,username:String, password: String) {
+        this.firebase_auth.signInWithEmailAndPassword(username, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    MainController.initFirestore()
 
+                } else {
+                    var e: FirebaseAuthException = task.exception as FirebaseAuthException
+                    Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+
+                }
             }
-        }
-    }*/
+
+
+    }
     fun signOut(){
         firebase_auth.signOut()
     }
