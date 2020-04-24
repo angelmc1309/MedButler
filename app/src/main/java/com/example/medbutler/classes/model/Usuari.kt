@@ -73,6 +73,9 @@ package com.example.medbutler.classes.model
      fun getMedList():String {
          return MedList.toString()
      }
+     fun getMedListArray(): ArrayList<Med> {
+         return MedList.rtsList()
+     }
 
      fun removeMed(id: String) {
          MedList.removeMed(id)

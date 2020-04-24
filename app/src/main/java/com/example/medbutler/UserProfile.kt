@@ -11,20 +11,22 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.example.medbutler.classes.controller.*
 
 class UserProfile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1000)
+        Thread.sleep(1500)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
         initProfile()
+
     }
 
     override fun onResume() {
-        Thread.sleep(1000)
+        Thread.sleep(1500)
         updateAppearance()
         initProfile()
         super.onResume()
