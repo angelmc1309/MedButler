@@ -148,7 +148,7 @@ class DAOUser : DAO<Usuari> {
             }
         }
     }
-    fun afegirNewDisease(disease: String){
-        diseasedb.document(disease)
+    fun afegirNewDisease(disease: Disease){
+        diseasedb.document(disease.id).set(disease)
     }
 }
