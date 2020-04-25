@@ -10,7 +10,7 @@ object AllDiseases {
         Disease("ansiedad_cronica","Ansiedad crónica"), Disease("bronquitis_cronica","Bronquitis crónica"), Disease("parkinson","Parkinson"),
         Disease("osteoporosis","Osteoporosis"), Disease("vih","VIH / SIDA"), Disease("enfermedad_pulmonar_obstructiva_cronica","Enfermedad Pulmonar Obstructiva Crónica"),
         Disease("depresion","Depresión"), Disease("hipertiroidismo","Hipertiroidismo"),Disease("hipotiroidismo","Hipotiroidismo"),  Disease("alzheimer","Alzheimer"),
-        Disease("esclerosis_multiple","Esclerosis múltiple"))
+        Disease("esclerosis_multiple","Esclerosis múltiple"), Disease("None of the above disease","none of the above disease"))
 
     fun addNewDisease(newDisease:Disease){
         list.add(newDisease)
@@ -25,5 +25,19 @@ object AllDiseases {
             addNewDisease(disease)
             return false
         }
+    }
+    fun rtArrayList(): Array<String> {
+        val aux :ArrayList<String> = ArrayList<String>()
+        for(item in list){
+            aux.add(item.id)
+        }
+        return aux.toTypedArray()
+    }
+    fun rtArrayList2(): Array<Disease> {
+        val aux :ArrayList<Disease> = ArrayList<Disease>()
+        for(item in list){
+            aux.add(item)
+        }
+        return aux.toTypedArray()
     }
 }

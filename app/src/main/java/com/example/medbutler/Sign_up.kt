@@ -1,26 +1,32 @@
 package com.example.medbutler
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Patterns
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlinx.android.synthetic.main.user_profile_layout.*
+import java.nio.charset.MalformedInputException
+import java.util.*
 import java.util.Calendar
 
 class Sign_up : AppCompatActivity() {
 
-    private lateinit var firebase_auth: FirebaseAuth;
-   // private lateinit var controller:MainController
+
+    var aux :ArrayList<Disease> = ArrayList<Disease>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-        firebase_auth=FirebaseAuth.getInstance()
 
     }
     fun actionGoToLogin(view: View){
@@ -62,35 +68,84 @@ class Sign_up : AppCompatActivity() {
             return
         }
         if(radioGroupGender.checkedRadioButtonId==-1){
-            Toast.makeText(this, "Ets un crack!",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Home o dona?",Toast.LENGTH_SHORT).show()
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(usernameRegist.text.toString()).matches()){
             usernameRegist.error="Ha de ser un email!"
             usernameRegist.requestFocus()
             return
-
         }
-        if(femaleButRegst.isChecked){
+        /*if(femaleButRegst.isChecked){
             genderr="Female"
         }else if(maleButRegist.isChecked){
             genderr="Male"
         }else{
             Toast.makeText(this,"Man or Women!!!", Toast.LENGTH_SHORT).show()
+        }*/
+        if(pesRegist.toString().isEmpty()){
+            pesRegist.error="Camp obligatori"
+            pesRegist.requestFocus()
         }
+        if(alturaRegist.toString().isEmpty()){
+            alturaRegist.error="Camp obligatori"
+            alturaRegist.requestFocus()
+        }
+        if(pesRegist.toString().isEmpty()){
+            pesRegist.error="Camp obligatori"
+            pesRegist.requestFocus()
+        }
+
+
 
         val user:Usuari=
             Usuari(usernameRegist.text.toString(),fullnameRegist.text.toString(),
                 birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
-
+        user.listOfDisease=aux
         MainController.Enregistrar(user, passwordRegist1.text.toString())
         val intent= Intent(this, Login::class.java)
         startActivity(intent)
         finish()
-
-
-
     }
-
+    fun selectDisease(view: View){
+        val builder=AlertDialog.Builder(this@Sign_up)
+        builder.setTitle("Select your diseases")
+        val arrayDisease=MainController.rtStringArrayAllDisease()
+        val arrayDisease2=MainController.rtStringArrayAllDisease2()
+        val checkedDeseaseArray= BooleanArray(arrayDisease.size)
+        builder.setMultiChoiceItems(arrayDisease, checkedDeseaseArray){dialog, which, isChecked ->
+            checkedDeseaseArray[which]=isChecked
+        }
+        builder.setPositiveButton("Ok"){dialog, which ->
+            aux.clear()
+            for(i in arrayDisease.indices){
+                val checkedd=checkedDeseaseArray[i]
+                if(checkedd){
+                    aux.add(arrayDisease2[i])
+                }
+            }
+        }
+        builder.setNeutralButton("Cancel"){dialog, which ->
+            dialog.dismiss()
+        }
+        val dial:AlertDialog=builder.create()
+        dial.show()
+}
+    fun contactwithAdmin(){
+        val builder=AlertDialog.Builder(this@Sign_up)
+        builder.setTitle("Tell us your disease")
+        var newDs:EditText= EditText(this)
+        newDs.hint="Let us know your disease. We'll update it as quick as possible"
+        newDs.inputType=InputType.TYPE_CLASS_TEXT
+        builder.setView(newDs)
+        builder.setPositiveButton("Ok"){dialog, which ->
+            MainController.afegirNewDisease(newDs.text.toString())
+        }
+        builder.setNeutralButton("Cancel"){dialog, _ ->
+            dialog.dismiss()
+        }
+        val dial:AlertDialog=builder.create()
+        dial.show()
+    }
 }
 
 

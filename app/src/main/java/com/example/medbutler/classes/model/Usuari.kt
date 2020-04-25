@@ -7,11 +7,9 @@ package com.example.medbutler.classes.model
      private var birthday: String=""
      private var height: String=""
      private var weight: String=""
-     //private val calendar:Calendar= Calendar()
-    // private val medList:MedList = MedList()
-     //private val appearanceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //private var gender: String=""
-     val listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
+     //var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
+     var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
      constructor(){
 
      }
