@@ -48,6 +48,15 @@
         android:inputType="textPersonName"
      />
     <EditText
+        android:id="@+id/passwordRegist1"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:ems="10"
+        android:hint="Contrasenya"
+        android:inputType="textPassword"
+        />
+    <EditText
         android:id="@+id/passwordRegist2"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
@@ -56,15 +65,7 @@
         android:hint="Contrasenya(repetir)"
         android:inputType="textPassword"
    />
-    <EditText
-        android:id="@+id/passwordRegist1"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="65dp"
-        android:ems="10"
-        android:hint="Contrasenya"
-        android:inputType="textPassword"
-    />
+
     <RadioGroup
         android:id="@+id/radioGroupGender"
         android:layout_width="265dp"
@@ -137,6 +138,17 @@
         android:hint="Weight(kg)"
         android:inputType="number"
         android:layout_marginLeft="65dp">
+
+    </EditText>
+    <EditText
+        android:id="@+id/diseaseSelectRegist"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:editable="false"
+        android:layout_marginLeft="65dp"
+        android:hint="Select your diseases"
+        android:onClick="selectDisease">
 
     </EditText>
 

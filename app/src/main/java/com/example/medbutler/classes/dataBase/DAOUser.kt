@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.medbutler.Login
 import com.example.medbutler.MainActivity
 import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -21,7 +22,7 @@ class DAOUser : DAO<Usuari> {
     var db = FirebaseFirestore.getInstance()
     var userdb = db.collection("users")
     val user = FirebaseAuth.getInstance().currentUser
-
+    var diseasedb=db.collection("newdiseases")
 
     override fun get(id: String) {
     }
@@ -146,5 +147,8 @@ class DAOUser : DAO<Usuari> {
                 ))
             }
         }
+    }
+    fun afegirNewDisease(disease: String){
+        diseasedb.document(disease)
     }
 }
