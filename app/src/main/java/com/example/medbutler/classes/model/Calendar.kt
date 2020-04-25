@@ -1,8 +1,9 @@
 package com.example.medbutler.classes.model
 
-object Calendar {
+class Calendar {
     var list :ArrayList<Day> = ArrayList<Day>()
         get() = field
+    constructor()
 
     fun addDay(date:String){
         val day = Day(date)

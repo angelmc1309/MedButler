@@ -8,6 +8,7 @@ package com.example.medbutler.classes.model
      private var height: String=""
      private var weight: String=""
      //private var gender: String=""
+     var calendar:Calendar=Calendar()
      //var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
      var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
      constructor(){
@@ -86,27 +87,27 @@ package com.example.medbutler.classes.model
      }
 
     fun setFood(date: String,order:Int,name: String){
-        Calendar.setFood(date,order,name)
+        calendar.setFood(date,order,name)
     }
 
     fun existsThisDay(date: String): Boolean {
-        return Calendar.existsThisDay(date)
+        return calendar.existsThisDay(date)
     }
 
     fun addDay(date: String){
-        Calendar.addDay(date)
+        calendar.addDay(date)
     }
 
     fun getDayList():String{
-        return Calendar.toString()
+        return calendar.toString()
     }
 
     fun removeDay(date: String){
-        Calendar.removeDay(date)
+        calendar.removeDay(date)
     }
 
     fun getFood(date: String):String?{
-        return Calendar.getFood(date)
+        return calendar.getFood(date)
     }
      fun addDisease(disease:Disease){
          listOfDisease.add(disease)

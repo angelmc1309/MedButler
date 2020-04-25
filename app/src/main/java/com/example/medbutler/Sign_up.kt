@@ -24,6 +24,7 @@ class Sign_up : AppCompatActivity() {
 
 
     var aux :ArrayList<Disease> = ArrayList<Disease>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -101,6 +102,7 @@ class Sign_up : AppCompatActivity() {
             Usuari(usernameRegist.text.toString(),fullnameRegist.text.toString(),
                 birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
         user.listOfDisease=aux
+
         MainController.Enregistrar(user, passwordRegist1.text.toString())
         val intent= Intent(this, Login::class.java)
         startActivity(intent)
@@ -124,6 +126,7 @@ class Sign_up : AppCompatActivity() {
                 val checkedd=checkedDeseaseArray[i]
                 if(checkedd){
                     aux.add(arrayDisease2[i])
+
                 }
             }
             for(d in aux){
