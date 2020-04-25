@@ -22,7 +22,7 @@ class DAOUser : DAO<Usuari> {
     var db = FirebaseFirestore.getInstance()
     var userdb = db.collection("users")
     val user = FirebaseAuth.getInstance().currentUser
-    var diseasedb=db.collection("newdiseases")
+    var diseasedb=db.collection("newdisease")
 
     override fun get(id: String) {
     }
