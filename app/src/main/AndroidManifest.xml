@@ -22,6 +22,7 @@
         <activity android:name=".ListView.ModelTreatment" />
         <activity android:name=".classes.model.UserAppearenceInfo"/>
         <activity android:name=".MedListActivity" />
+        <activity android:name=".AllDiseaseInfoActivity" />
         <activity android:name=".DiseaseInformationActivity" />
         <activity android:name=".DayActivity" />
         <activity android:name=".ModifMedActivity" />

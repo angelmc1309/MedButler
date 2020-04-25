@@ -1,7 +1,9 @@
 package com.example.medbutler
 
+import android.R.drawable
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
@@ -13,17 +15,24 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.medbutler.classes.controller.*
+import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.model.Disease
 import hakobastvatsatryan.DropdownTextView
 import kotlinx.android.synthetic.main.activity_disease_information.*
 
+
 class DiseaseInformationActivity : AppCompatActivity() {
+
+    lateinit var extraObjectId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disease_information)
+        val extraObject:Disease = intent.extras!!.get("extra_object_med") as Disease
+        extraObjectId = extraObject.id
         updateAppearance()
+        val stringResId = resIdByName("encefalitios utoflume", "string")
 
         val dropdown:DropdownTextView = findViewById(R.id.first_dropdown_text_view)
         val dropdown2:DropdownTextView = findViewById(R.id.second_dropdown_text_view)
@@ -92,6 +101,13 @@ class DiseaseInformationActivity : AppCompatActivity() {
         calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+    }
+
+    fun Context.resIdByName(resIdName: String?, resType: String): Int {
+        resIdName?.let {
+            return resources.getIdentifier(it, resType, packageName)
+        }
+        throw Resources.NotFoundException()
     }
 
     fun actionCalendar(view: View){

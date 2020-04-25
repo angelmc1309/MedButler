@@ -59,4 +59,12 @@
     <string name="userDiseases">User Diseases</string>
     <string name="allDiseases">All Diseases</string>
     <string name="please_select_option">Please Select an Option</string>
+    <string name="que_es">Qué es</string>
+    <string name="causas">Causas</string>
+    <string name="prevencion">Prevención</string>
+    <string name="tratamientos">Tratamientos</string>
+    <string name="que_es_hipertension_arterial"></string>
+    <string name="causas_hipertension_arterial"></string>
+    <string name="prevencion_hipertension_arterial"></string>
+    <string name="tratamientos_hipertension_arterial"></string>
 </resources>

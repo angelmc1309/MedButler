@@ -45,7 +45,7 @@ class MedListActivity : AppCompatActivity() {
             val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
             val view: View = layoutInflater.inflate(resources, null)
 
-            val lay:RelativeLayout = view.findViewById(R.id.relatLayout)
+            val lay:RelativeLayout = view.findViewById(R.id.relatLayoutSimple)
             val titleTextView: TextView = view.findViewById(R.id.textMedAtributes)
 
             var mItem: Med = items[position]
@@ -130,7 +130,7 @@ class MedListActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun actionInfoList(view: View) {
-        val intent= Intent(this, DiseaseInformationActivity::class.java)
+        val intent= Intent(this, AllDiseaseInfoActivity::class.java)
         startActivity(intent)
     }
 }

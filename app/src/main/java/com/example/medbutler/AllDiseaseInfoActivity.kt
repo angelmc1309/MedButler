@@ -4,18 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.view.*
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.medbutler.classes.controller.*
-import hakobastvatsatryan.DropdownTextView
-import kotlinx.android.synthetic.main.activity_disease_information.*
+import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.model.AllDiseases
+import com.example.medbutler.classes.model.Disease
+import kotlinx.android.synthetic.main.activity_all_disease_information.*
+import java.io.Serializable
+
 
 class AllDiseaseInfoActivity : AppCompatActivity() {
 
@@ -24,13 +23,27 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_disease_information)
         updateAppearance()
-
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onResume() {
         updateAppearance()
         super.onResume()
+    }
+
+    class CustomAdapter2 (var mCtx: Context, var resources:Int, var items:List<Disease>):
+        ArrayAdapter<Disease>(mCtx, resources, items) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+            val view: View = layoutInflater.inflate(resources, null)
+
+            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListDisease)
+            val titleTextView: TextView = view.findViewById(R.id.textListDisease)
+
+            var mItem: Disease = items[position]
+            titleTextView.text = mItem.toString()
+            return view
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -72,6 +85,46 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
         calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+
+        val array_exemple = MainController.getcurrent().listOfDisease
+
+        listViewUserDiseases.adapter = CustomAdapter2(this, R.layout.simple_list_item_custom2, array_exemple)
+
+        listViewUserDiseases.setOnItemClickListener { parent, view, position, id ->
+            var listItemId:Disease = array_exemple.get(position)
+            val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
+            intent.putExtra("extra_object_disease_user", listItemId as Serializable);
+            startActivity(intentDiseaseInfo)
+        }
+
+        val array_exemple2 = AllDiseases.list
+
+        listViewAllDiseases.adapter = CustomAdapter2(this, R.layout.simple_list_item_custom2, array_exemple2)
+
+        listViewAllDiseases.setOnItemClickListener { parent, view, position, id ->
+            var listItemId:Disease = array_exemple2.get(position)
+            val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
+            intent.putExtra("extra_object_disease", listItemId as Serializable);
+            startActivity(intentDiseaseInfo)
+        }
+
+        justifyListViewHeightBasedOnChildren(listViewUserDiseases);
+        justifyListViewHeightBasedOnChildren(listViewAllDiseases);
+    }
+
+    fun justifyListViewHeightBasedOnChildren(listView: ListView) {
+        val adapter = listView.adapter ?: return
+        val vg: ViewGroup = listView
+        var totalHeight = 0
+        for (i in 0 until adapter.count) {
+            val listItem = adapter.getView(i, null, vg)
+            listItem.measure(0, 0)
+            totalHeight += listItem.measuredHeight
+        }
+        val par = listView.layoutParams
+        par.height = totalHeight + listView.dividerHeight * (adapter.count - 1)
+        listView.layoutParams = par
+        listView.requestLayout()
     }
 
     fun actionCalendar(view: View){

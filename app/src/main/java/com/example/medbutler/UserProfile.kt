@@ -17,7 +17,6 @@ import com.example.medbutler.classes.controller.*
 class UserProfile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1500)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
@@ -26,7 +25,6 @@ class UserProfile : AppCompatActivity() {
     }
 
     override fun onResume() {
-        Thread.sleep(1500)
         updateAppearance()
         initProfile()
         super.onResume()

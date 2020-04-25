@@ -1,6 +1,8 @@
 package com.example.medbutler
 
 import android.app.DatePickerDialog
+import android.content.Intent
+import android.content.SharedPreferences
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
@@ -8,13 +10,7 @@ import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
-import com.example.medbutler.classes.controller.*
-import android.R.attr
-import android.app.Dialog
-import android.content.Intent
-import android.content.SharedPreferences
-import android.view.View
-import androidx.fragment.app.DialogFragment
+import com.example.medbutler.classes.controller.MainController
 
 class SettingsAccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,16 +81,21 @@ class SettingsAccountActivity : AppCompatActivity() {
             if(value.toString() != ""){
                 stringValue = value.toString()
                 if (preference?.key.equals("date_of_birth")){
+                    MainController.getcurrent().setbirthday(stringValue)
                     MainController.changeBirthday(stringValue)
                 }else if (preference?.key.equals("full_name")) {
+                    MainController.getcurrent().setfullname(stringValue)
                     MainController.changeFullname(stringValue)
                 }else if (preference?.key.equals("email_adress")) {
+                    MainController.getcurrent().setusername(stringValue)
                     MainController.changeEmail(stringValue)
                 }else if (preference?.key.equals("password")) {
                     MainController.changePassword(stringValue)
                 }else if (preference?.key.equals("height")) {
+                    MainController.getcurrent().setheight(stringValue)
                     MainController.changeHeight(stringValue)
                 }else if (preference?.key.equals("weight")) {
+                    MainController.getcurrent().setweight(stringValue)
                     MainController.changeWeight(stringValue)
                 }
             }else{
@@ -108,8 +109,12 @@ class SettingsAccountActivity : AppCompatActivity() {
                     preference.setSummary(listPreference.entries[prefIndex])
                 } // else preference.setSummary null ??
             }
-            return true
 
+            if (preference is EditTextPreference){
+                preference.text = ""
+            }
+
+            return true
         }
 
         @RequiresApi(Build.VERSION_CODES.N)
@@ -123,6 +128,9 @@ class SettingsAccountActivity : AppCompatActivity() {
                 onDestroy()
             }else if (preference?.key.equals("key_delete_account")) {
                 MainController.deleteUser(MainController.getcurrent().getusername())
+                val intent= Intent(context, Login::class.java)
+                startActivity(intent)
+                onDestroy()
             }
             return true
         }

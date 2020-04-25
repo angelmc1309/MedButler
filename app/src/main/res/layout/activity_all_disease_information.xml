@@ -119,55 +119,68 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/toolbar_treatment"
-        app:layout_constraintVertical_bias="0.0"
-        android:showDividers="middle"
-        android:divider="@drawable/empty_tall_divider2">
-        <TextView
-            android:paddingTop="23dp"
-            android:paddingBottom="15dp"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:paddingStart="70dp"
-            android:paddingEnd="0dp"
-            android:textColor="@color/md_black"
-            android:id="@+id/text_userDisease"
+        app:layout_constraintVertical_bias="0.0">
+        <ScrollView
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/userDiseases">
-        </TextView>
-        <ListView
-            android:id="@+id/listViewUserDiseases"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <TextView
-            android:paddingTop="23dp"
-            android:paddingBottom="15dp"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:paddingStart="70dp"
-            android:paddingEnd="0dp"
-            android:textColor="@color/md_black"
-            android:id="@+id/text_allDiseases"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/allDiseases">
+            tools:layout_editor_absoluteY="221dp">
+            <LinearLayout
+                android:paddingTop="0dp"
+                android:paddingBottom="30dp"
+                android:id="@+id/linearLayout3"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:paddingTop="30dp"
+                    android:paddingBottom="20dp"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:paddingStart="70dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/md_black"
+                    android:id="@+id/text_userDisease"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/userDiseases">
+                </TextView>
+                <ListView
+                    android:id="@+id/listViewUserDiseases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:paddingTop="30dp"
+                    android:paddingBottom="20dp"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:paddingStart="70dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/md_black"
+                    android:id="@+id/text_allDiseases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allDiseases">
 
-        </TextView>
-        <ListView
-            android:id="@+id/listViewAllDiseases"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <ImageView
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:id="@+id/user_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/disease_no_me_suspendas_porfa" />
+                </TextView>
+                <ListView
+                    android:id="@+id/listViewAllDiseases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <ImageView
+                    android:paddingTop="50dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:id="@+id/user_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/disease_no_me_suspendas_porfa" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

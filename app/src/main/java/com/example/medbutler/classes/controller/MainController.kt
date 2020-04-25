@@ -1,16 +1,11 @@
 package com.example.medbutler.classes.controller
 
-import android.content.ContentValues.TAG
-import android.util.Log
-import android.widget.Toast
 import android.widget.TextView
 import com.example.medbutler.Login
 import com.example.medbutler.R
 import com.example.medbutler.UserProfile
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.*
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 
 
 object MainController {
@@ -126,23 +121,20 @@ object MainController {
             return null
         }
     } //Preguntar com solucionar lo del interrogant
-    fun addUserDisease(disease:String){
+    fun addUserDisease(disease:Disease){
         user.addDisease(disease)
     }
-    fun removeUserDisease(disease: String){
+    fun removeUserDisease(disease: Disease){
         user.removeDisease(disease)
     }
-    fun showUserDisease():String{
-        return user.showDiseaseIHave()
+    fun addDatabaseDisease(disease: Disease){
+        AllDiseases.addNewDisease(disease)
     }
-    fun addDatabaseDisease(disease: String){
-        Disease.addNewDisease(disease)
-    }
-    fun removeDatabaseDisease(disease: String){
-        Disease.removeDisease(disease)
+    fun removeDatabaseDisease(disease: Disease){
+        AllDiseases.removeDisease(disease)
     }
     fun showAllDatabaseDisease():String{
-        return Disease.toString()
+        return AllDiseases.toString()
     }
 }
 

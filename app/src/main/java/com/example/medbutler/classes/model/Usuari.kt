@@ -11,7 +11,7 @@ package com.example.medbutler.classes.model
     // private val medList:MedList = MedList()
      //private val appearanceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //private var gender: String=""
-     val listOfDisease :ArrayList<String> = ArrayList<String>()
+     val listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
      constructor(){
 
      }
@@ -110,16 +110,11 @@ package com.example.medbutler.classes.model
     fun getFood(date: String):String?{
         return Calendar.getFood(date)
     }
-     fun addDisease(disease:String){
+     fun addDisease(disease:Disease){
          listOfDisease.add(disease)
      }
-     fun removeDisease(disease: String){
+     fun removeDisease(disease: Disease){
          listOfDisease.remove(disease)
      }
-     fun showDiseaseIHave(): String {
-         return listOfDisease.toString()
-     }
     //var d=Usuari("k","j","s","s")
-
-
 }
