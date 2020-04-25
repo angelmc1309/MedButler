@@ -112,8 +112,8 @@ class Sign_up : AppCompatActivity() {
         val arrayDisease=MainController.rtStringArrayAllDisease()
 
         val arrayDisease2=MainController.rtStringArrayAllDisease2()
-        arrayDisease.set(arrayDisease.size, "None of the above disease")
-        arrayDisease2.set(arrayDisease2.size, Disease("None of the above disease","none of the above disease"))
+        arrayDisease.set(arrayDisease.size-1, "None of the above disease")
+        arrayDisease2.set(arrayDisease2.size-1, Disease("None of the above disease","none of the above disease"))
         val checkedDeseaseArray= BooleanArray(arrayDisease.size)
         builder.setMultiChoiceItems(arrayDisease, checkedDeseaseArray){dialog, which, isChecked ->
             checkedDeseaseArray[which]=isChecked
