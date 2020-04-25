@@ -93,7 +93,7 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
         listViewUserDiseases.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Disease = array_exemple.get(position)
             val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
-            intent.putExtra("extra_object_disease_user", listItemId as Serializable);
+            intent.putExtra("extra_object_disease", listItemId as Serializable);
             startActivity(intentDiseaseInfo)
         }
 
@@ -104,7 +104,7 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
         listViewAllDiseases.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Disease = array_exemple2.get(position)
             val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
-            intent.putExtra("extra_object_disease", listItemId as Serializable);
+            intentDiseaseInfo.putExtra("extra_object_disease", listItemId as Serializable);
             startActivity(intentDiseaseInfo)
         }
 
