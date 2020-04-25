@@ -1,11 +1,16 @@
 package com.example.medbutler
 
-import android.R.drawable
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
+import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -17,7 +22,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
-import hakobastvatsatryan.DropdownTextView
 import kotlinx.android.synthetic.main.activity_disease_information.*
 
 
@@ -29,30 +33,56 @@ class DiseaseInformationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disease_information)
-        val extraObject:Disease = intent.extras!!.get("extra_object_med") as Disease
+        val extraObject:Disease = intent.extras!!.get("extra_object_disease") as Disease
         extraObjectId = extraObject.id
         updateAppearance()
-        val stringResId = resIdByName("encefalitios utoflume", "string")
+        val first_string:String = "que_es_$extraObjectId"
+        //Canviar estil titol "que es"
 
-        val dropdown:DropdownTextView = findViewById(R.id.first_dropdown_text_view)
-        val dropdown2:DropdownTextView = findViewById(R.id.second_dropdown_text_view)
-        val dropdown3:DropdownTextView = findViewById(R.id.third_dropdown_text_view)
+        val first_dropdown_string_title:String = "causas"
+        val first_dropdown_string:String = "causas_$extraObjectId"
 
-        dropdown.setTitleText("Info nutrition")
-        dropdown.setContentText("\n" + "Nutrition recommendations\n\nLimite los alimentos con colesterol. Si está tratando de bajar su colesterol, debe consumir menos de 200 mg al día. El colesterol se encuentra en alimentos de origen animal como el hígado y otras vísceras, yemas de huevo, camarones y productos lácteos de leche entera.\n" +
-                "\n" +
-                "Coma mucha fibra soluble. Los alimentos ricos en fibra soluble ayudan a evitar que el tracto digestivo absorba el colesterol. Estos alimentos incluyen\n" +
-                "\n" +
-                "Cereales de grano entero como la avena y el salvado de avena\n" +
-                "Frutas como manzanas, plátanos, naranjas, peras y ciruelas\n" +
-                "Legumbres como frijoles, lentejas, garbanzos, frijoles de carete y habas\n" +
-                "Consuma muchas frutas y verduras. Una dieta rica en frutas y verduras puede aumentar las sustancias importantes que reducen el colesterol en su dieta. Estas sustancias, llamadas estanoles o esteroles vegetales, funcionan como fibra soluble.\n" +
-                "\n" +
-                "Coma pescado rico en ácidos grasos omega-3. Estos ácidos no disminuirán su nivel de colesterol malo (LDL), pero pueden ayudar a subir su nivel de colesterol bueno (HDL). Estas grasas también pueden proteger a su corazón de coágulos de sangre e inflamación y reducir su riesgo de ataque cardíaco. Buenas fuentes de ácidos grasos omega-3 incluyen el salmón, el atún (enlatado o fresco) y la caballa. Intente comer estos pescados dos veces a la semana.\n" +
-                "\n" +
-                "Limite la sal. Debe intentar limitar la cantidad de sodio (sal) que consume a no más de 2,300 miligramos (aproximadamente una cucharadita de sal) por día. Eso incluye toda la sal que consume, ya sea que se haya agregado en la cocina o en la mesa, o que ya esté presente en los productos alimenticios. Limitar la sal no reducirá el colesterol, pero puede bajar el riesgo de enfermedades cardíacas al ayudar a reducir la presión arterial. Puede reducir la sal eligiendo alimentos con bajo contenido de sal y \"sin sal agregada\", además de preferir condimentos en la mesa o al cocinar en vez de sal.\n" +
-                "\n" +
-                "Limite el alcohol. El alcohol añade calorías adicionales, las que pueden llevar al aumento de peso. Tener sobrepeso puede elevar su nivel de colesterol malo y disminuir su nivel de colesterol bueno. Demasiado alcohol también puede aumentar su riesgo de enfermedades del corazón, porque puede elevar su presión arterial y el nivel de triglicéridos. Una bebida es un vaso de vino, cerveza o una pequeña cantidad de licor fuerte, y la recomendación es:")
+        val second_dropdown_string_title:String = "prevencion"
+        val second_dropdown_string:String = "prevencion_$extraObjectId"
+
+        val third_dropdown_string_title:String = "tratamientos"
+        val third_dropdown_string:String = "tratamientos_$extraObjectId"
+
+
+        val first_string_Id = resIdByName(first_string, "string")
+
+        val first_dropdown_title_Id = resIdByName(first_dropdown_string_title, "string")
+        val first_dropdown_Id = resIdByName(first_dropdown_string, "string")
+
+        val second_dropdown_title_Id = resIdByName(second_dropdown_string_title, "string")
+        val second_dropdown_Id = resIdByName(second_dropdown_string, "string")
+
+        val third_dropdown_title_Id = resIdByName(third_dropdown_string_title, "string")
+        val third_dropdown_Id = resIdByName(third_dropdown_string, "string")
+
+        val stringFirst = SpannableString(getString(first_string_Id))
+        stringFirst.setSpan(RelativeSizeSpan(1.7f), 0, 6, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        stringFirst.setSpan(StyleSpan(Typeface.BOLD), 0, 6, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        text_whatIsIt.setText(stringFirst)
+
+        val first_dropdown_title:String = getString(first_dropdown_title_Id)
+        val first_dropdown_text:String = getString(first_dropdown_Id)
+
+        val second_dropdown_title:String = getString(second_dropdown_title_Id)
+        val second_dropdown_text:String = getString(second_dropdown_Id)
+
+        val third_dropdown_title:String = getString(third_dropdown_title_Id)
+        val third_dropdown_text:String = getString(third_dropdown_Id)
+
+        first_dropdown_text_view.setTitleText("    $first_dropdown_title")
+        first_dropdown_text_view.setContentText(first_dropdown_text)
+
+        second_dropdown_text_view.setTitleText("    $second_dropdown_title")
+        second_dropdown_text_view.setContentText(second_dropdown_text)
+
+        third_dropdown_text_view.setTitleText("    $third_dropdown_title")
+        third_dropdown_text_view.setContentText(third_dropdown_text)
 
     }
 
