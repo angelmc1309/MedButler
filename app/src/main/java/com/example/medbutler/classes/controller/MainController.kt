@@ -136,6 +136,20 @@ object MainController {
     fun showAllDatabaseDisease():String{
         return AllDiseases.toString()
     }
+    fun getAllDatabaseDisease(): ArrayList<Disease> {
+        return AllDiseases.list
+    }
+    fun rtStringArrayAllDisease(): Array<String> {
+
+        return AllDiseases.rtArrayList()
+    }
+    fun rtStringArrayAllDisease2(): Array<Disease> {
+
+        return AllDiseases.rtArrayList2()
+    }
+    fun afegirNewDisease(disease: Disease){
+        daoUser.afegirNewDisease(disease)
+    }
 }
 
 

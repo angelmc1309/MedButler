@@ -123,10 +123,18 @@ class Sign_up : AppCompatActivity() {
                     aux.add(arrayDisease2[i])
                 }
             }
+            for(d in aux){
+                if(d.id.equals("None of the above disease")){
+
+                    contactwithAdmin()
+                    aux.remove(d)
+                }
+            }
         }
         builder.setNeutralButton("Cancel"){dialog, which ->
             dialog.dismiss()
         }
+
         val dial:AlertDialog=builder.create()
         dial.show()
 }
@@ -134,11 +142,11 @@ class Sign_up : AppCompatActivity() {
         val builder=AlertDialog.Builder(this@Sign_up)
         builder.setTitle("Tell us your disease")
         var newDs:EditText= EditText(this)
-        newDs.hint="Let us know your disease. We'll update it as quick as possible"
+        newDs.hint="We'll update your disease as soon as possible"
         newDs.inputType=InputType.TYPE_CLASS_TEXT
         builder.setView(newDs)
         builder.setPositiveButton("Ok"){dialog, which ->
-            MainController.afegirNewDisease(newDs.text.toString())
+            MainController.afegirNewDisease(Disease(newDs.text.toString(),newDs.text.toString()))
         }
         builder.setNeutralButton("Cancel"){dialog, _ ->
             dialog.dismiss()
