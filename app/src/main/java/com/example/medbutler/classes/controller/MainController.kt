@@ -3,6 +3,7 @@ package com.example.medbutler.classes.controller
 import android.widget.TextView
 import com.example.medbutler.Login
 import com.example.medbutler.R
+import com.example.medbutler.Sign_up
 import com.example.medbutler.UserProfile
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.*
@@ -43,8 +44,8 @@ object MainController {
         context.findViewById<TextView>(R.id.weight_label).text = context.getString(R.string.weight2,getcurrent().getweight(),"kg")
     }
 
-    fun Enregistrar(user: Usuari, passwor: String) {
-        daoUser.save(user,passwor)
+    fun Enregistrar(context: Sign_up, user: Usuari, passwor: String) {
+        daoUser.save(context,user,passwor)
     }
     fun saveUserAll() {
         daoUser.saveUserAll()
