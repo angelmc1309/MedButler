@@ -58,32 +58,29 @@ class ModelListViewCalendar : AppCompatActivity() {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture one", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal_im")
                 MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal_back")
-                finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture two", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal2_im")
                 MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal2_back")
-                finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture three", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal3_im")
                 MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal3_back")
-                finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture four", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal4_im")
                 MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal4_back")
-                finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewCalendar, "you selected Calendar model picture five", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setcalendarImageId("cal5_im")
                 MainController.getcurrent().getappearanceInfo().setcalendarImageBackgroundId("cal5_back")
-                finish()
             }
+            MainController.saveUserAll()
+            finish()
         }
     }
 }

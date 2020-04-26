@@ -101,7 +101,7 @@ class Sign_up : AppCompatActivity() {
         val user:Usuari=
             Usuari(usernameRegist.text.toString(),fullnameRegist.text.toString(),
                 birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
-        user.listOfDisease=aux
+        user.listOfDisease = aux
 
         MainController.Enregistrar(user, passwordRegist1.text.toString())
         val intent= Intent(this, Login::class.java)
@@ -113,7 +113,7 @@ class Sign_up : AppCompatActivity() {
         builder.setTitle("Select your diseases")
         val arrayDisease=MainController.rtStringArrayAllDisease()
 
-        val arrayDisease2=MainController.rtStringArrayAllDisease2()
+        val arrayDisease2 = MainController.rtStringArrayAllDisease2()
         arrayDisease.set(arrayDisease.size-1, "None of the above disease")
         arrayDisease2.set(arrayDisease2.size-1, Disease("None of the above disease","none of the above disease"))
         val checkedDeseaseArray= BooleanArray(arrayDisease.size)

@@ -64,38 +64,34 @@ class ModelListViewProfile : AppCompatActivity() {
                 Toast.makeText(this@ModelListViewProfile, "you selected Man profile model one", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setprofileImagePersonId("man_profile_image")
                 MainController.getcurrent().getappearanceInfo().setprofileImageBackgroundId("man_profile_background")
-                finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Woman profile model one", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setprofileImagePersonId("woman_profile_image")
                 MainController.getcurrent().getappearanceInfo().setprofileImageBackgroundId("woman_profile_background")
-                finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Man profile model two", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setprofileImagePersonId("man_profile_image2")
                 MainController.getcurrent().getappearanceInfo().setprofileImageBackgroundId("man_profile_background2")
-                finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Woman profile model two", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setprofileImagePersonId("woman_profile_image2")
                 MainController.getcurrent().getappearanceInfo().setprofileImageBackgroundId("woman_profile_background2")
-                finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Man profile model three", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setprofileImagePersonId("man_profile_image3")
                 MainController.getcurrent().getappearanceInfo().setprofileImageBackgroundId("man_profile_background3")
-                finish()
             }
             if (position == 5) {
                 Toast.makeText(this@ModelListViewProfile, "you selected Woman profile model three", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setprofileImagePersonId("woman_profile_image3")
                 MainController.getcurrent().getappearanceInfo().setprofileImageBackgroundId("woman_profile_background3")
-                finish()
             }
+            MainController.saveUserAll()
+            finish()
         }
     }
 }

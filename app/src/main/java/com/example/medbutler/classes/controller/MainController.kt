@@ -18,7 +18,6 @@ object MainController {
 
     fun setCurrentUser(user:Usuari){
         this.user=user
-
     }
     fun getcurrent():Usuari{
         return this.user
@@ -47,8 +46,8 @@ object MainController {
     fun Enregistrar(user: Usuari, passwor: String) {
         daoUser.save(user,passwor)
     }
-    fun saveListMed() {
-        daoUser.saveListMed()
+    fun saveUserAll() {
+        daoUser.saveUserAll()
     }
     fun addMed(id: String, name: String, period: Int, duration: Int, startTimeMinute: Int,
                startTimeHour: Int, allowNotification: Boolean) {
@@ -56,8 +55,8 @@ object MainController {
             allowNotification)
     }
 
-    fun getMedList():String{
-        return  user.getMedList()
+    fun getMedListString():String{
+        return  user.getMedListString()
     }
     fun getMedListArray(): ArrayList<Med> {
         return user.getMedListArray()

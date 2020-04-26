@@ -140,14 +140,14 @@ class ModifMedActivity: AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun updateAppearance(){
         // background
-        val backgroundLay: RelativeLayout = findViewById(R.id.backgroundAddMed)
+        val backgroundLay: RelativeLayout = findViewById(R.id.backgroundModifMed)
         val context: Context = backgroundLay.getContext()
         val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
-        var addBut: TextView = findViewById(R.id.btnAddMed)
-        var disBut: TextView = findViewById(R.id.btnDiscardMed)
+        var addBut: TextView = findViewById(R.id.modifBtnAddMed)
+        var disBut: TextView = findViewById(R.id.modifBtnDiscardMed)
 
         addBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
         addBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
@@ -172,7 +172,7 @@ class ModifMedActivity: AppCompatActivity() {
             MainController.getcurrent().getMedListArray()?.find { it.id.equals(extraObjectId) }?.setstartTimeMinute(startTimeMinute)
             MainController.getcurrent().getMedListArray()?.find { it.id.equals(extraObjectId) }?.setallowNotification(modifSwitchNotification.isChecked)
             MainController.getcurrent().getMedListArray()?.find { it.id.equals(extraObjectId) }?.id = modifMedName.text.toString()
-            MainController.saveListMed()
+            MainController.saveUserAll()
             val intent= Intent(this, MedListActivity::class.java)
             startActivity(intent)
         } else if(modifMedName.text.toString().isEmpty()){

@@ -8,12 +8,30 @@ package com.example.medbutler.classes.model
      private var height: String=""
      private var weight: String=""
      //private var gender: String=""
-     var calendar:Calendar=Calendar()
+     var calendar:Calendar = Calendar()
+     var medList:MedList = MedList()
+     var userAppearenceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
      var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
-     constructor(){
 
+     constructor(){
      }
+
+     constructor(username: String, fullname: String, birthday: String, height: String, weight: String, calendar: Calendar,medList: MedList,
+                 userAppearenceInfo: UserAppearenceInfo,listOfDisease: ArrayList<Disease>){
+         this.username=username
+         this.fullname=fullname
+         this.birthday=birthday
+         this.height=height
+         this.weight=weight
+         this.calendar = calendar
+         this.medList = medList
+         this.userAppearenceInfo = userAppearenceInfo
+         this.listOfDisease = listOfDisease
+         //gender: String
+         //this.gender=gender
+     }
+
      constructor(username: String,
                   fullname: String,
                  birthday: String,
@@ -29,10 +47,6 @@ package com.example.medbutler.classes.model
          //this.gender=gender
      }
 
-    fun tostringg():String{
-        return username+" "+fullname+" "+birthday+" "+height+" "+weight
-                //gender
-    }
     fun getusername(): String {
         return this.username
     }
@@ -67,23 +81,23 @@ package com.example.medbutler.classes.model
     }
      fun addMed(id: String,name: String, period: Int,duration: Int,startTimeMinute:Int,
                 startTimeHour:Int,allowNotification:Boolean){
-         MedList.addMed(id, name, period, duration, startTimeMinute, startTimeHour, allowNotification)
+         medList.addMed(id, name, period, duration, startTimeMinute, startTimeHour, allowNotification)
      }
 
-     fun getMedList():String {
-         return MedList.toString()
+     fun getMedListString():String {
+         return medList.toString()
      }
      fun getMedListArray(): ArrayList<Med> {
-         return MedList.rtsList()
+         return medList.list
      }
 
      fun removeMed(id: String) {
-         MedList.removeMed(id)
+         medList.removeMed(id)
      }
 
      fun getappearanceInfo(): UserAppearenceInfo {
        // return this.appearanceInfo
-         return UserAppearenceInfo
+         return userAppearenceInfo
      }
 
     fun setFood(date: String,order:Int,name: String){
@@ -115,5 +129,4 @@ package com.example.medbutler.classes.model
      fun removeDisease(disease: Disease){
          listOfDisease.remove(disease)
      }
-    //var d=Usuari("k","j","s","s")
 }

@@ -21,14 +21,14 @@ class MedAddTest {
 
         MainController.addMed("ib600","IBUPROFE 600mg",24,60,0,
             12,true)
-        Assert.assertEquals(MainController.getMedList(),"[IBUPROFE 600mg]")
+        Assert.assertEquals(MainController.getMedListString(),"[IBUPROFE 600mg]")
         MainController.addMed("ib500","IBUPROFE 500mg",8,60,0,
             12,true)
-        Assert.assertEquals(MainController.getMedList(),"[IBUPROFE 600mg, IBUPROFE 500mg]")
+        Assert.assertEquals(MainController.getMedListString(),"[IBUPROFE 600mg, IBUPROFE 500mg]")
     }
     @Test
     fun removeMed(){
         MainController.removeMed("ib500")
-        Assert.assertEquals(MainController.getMedList(),"[IBUPROFE 600mg]")
+        Assert.assertEquals(MainController.getMedListString(),"[IBUPROFE 600mg]")
     }
 }

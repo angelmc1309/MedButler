@@ -61,6 +61,7 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                     MainController.getcurrent().getappearanceInfo().setchangeToolbarWithColorTheme(false)
                 }
             }
+            MainController.saveUserAll()
             return true
         }
 
@@ -125,6 +126,7 @@ class SettingsAppearanceActivity : AppCompatActivity() {
                         MainController.getcurrent().getappearanceInfo().setbrighterToolbarColor(manipulateColor(color, 1.3f))
                         MainController.getcurrent().getappearanceInfo().setdarkerToolbarColorText(manipulateColor(color, 0.4f))
                     }
+                    MainController.saveUserAll()
                 }
 
                 override fun onCancel() {

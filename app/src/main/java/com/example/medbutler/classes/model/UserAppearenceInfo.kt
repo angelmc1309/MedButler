@@ -1,6 +1,8 @@
 package com.example.medbutler.classes.model
 
-object UserAppearenceInfo {
+import java.io.Serializable
+
+class UserAppearenceInfo:Serializable {
     private var background:String = "background_feather_silver"
     private var changeToolbarWithColorTheme:Boolean = true
     private var colorTheme:Int = -16728876
@@ -16,6 +18,29 @@ object UserAppearenceInfo {
     private var settingsImageBackgroundId:String = "set1_gray"
     private var treatmentImageFirstId:String = "treat2_1"
     private var treatmentImageSecondId:String = "treat2_2"
+
+    constructor(){
+    }
+
+    constructor(background:String,changeToolbarWithColorTheme:Boolean,colorTheme:Int,darkerToolbarColorText:Int,toolbarColor:Int,
+                brighterToolbarColor:Int,darkerToolbarColor:Int,profileImagePersonId:String,profileImageBackgroundId:String,calendarImageId:String,
+                calendarImageBackgroundId:String,settingsImageId:String,settingsImageBackgroundId:String,treatmentImageFirstId:String,treatmentImageSecondId:String){
+        this.background = background
+        this.changeToolbarWithColorTheme = changeToolbarWithColorTheme
+        this.colorTheme = colorTheme
+        this.darkerToolbarColorText = darkerToolbarColorText
+        this.toolbarColor = toolbarColor
+        this.brighterToolbarColor = brighterToolbarColor
+        this.darkerToolbarColor = darkerToolbarColor
+        this.profileImagePersonId = profileImagePersonId
+        this.profileImageBackgroundId = profileImageBackgroundId
+        this.calendarImageId = calendarImageId
+        this.calendarImageBackgroundId = calendarImageBackgroundId
+        this.settingsImageId = settingsImageId
+        this.settingsImageBackgroundId = settingsImageBackgroundId
+        this.treatmentImageFirstId = treatmentImageFirstId
+        this.treatmentImageSecondId = treatmentImageSecondId
+    }
 
     fun setbackground(background: String) {
         this.background = background

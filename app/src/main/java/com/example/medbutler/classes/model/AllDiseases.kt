@@ -29,7 +29,8 @@ object AllDiseases {
     fun rtArrayList(): Array<String> {
         val aux :ArrayList<String> = ArrayList<String>()
         for(item in list){
-            aux.add(item.toString())
+            aux.add(item.getname())
+            aux.add(item.getname())
         }
         return aux.toTypedArray()
     }
