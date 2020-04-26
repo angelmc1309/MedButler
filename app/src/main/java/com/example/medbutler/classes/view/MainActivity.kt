@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 
 
@@ -90,7 +91,8 @@ class MainActivity : AppCompatActivity() {
 
         animacio(treatmentImageFirst,treatmentImageSecond)
 
-        findViewById<TextView>(R.id.welcomeLaber).text = getString(R.string.greeting, MainController.getcurrent().getfullname().substringBefore(' '))
+        findViewById<TextView>(R.id.welcomeLaber).text = getString(
+            R.string.greeting, MainController.getcurrent().getfullname().substringBefore(' '))
     }
 
     fun animacio(imageFluix:ImageView,imageFort:ImageView){

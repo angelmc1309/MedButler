@@ -1,9 +1,10 @@
 package com.example.medbutler.classes.controller
 
 import android.widget.TextView
-import com.example.medbutler.Login
+import com.example.medbutler.classes.view.Login
 import com.example.medbutler.R
-import com.example.medbutler.UserProfile
+import com.example.medbutler.classes.view.UserProfile
+import com.example.medbutler.classes.dataBase.DAODiseases
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.*
 
@@ -34,7 +35,7 @@ object MainController {
     fun signOut(){
         daoUser.signOut()
     }
-    fun initUserProfer(context:UserProfile){
+    fun initUserProfer(context: UserProfile){
 
         context.findViewById<TextView>(R.id.user_complete_name_label).text = getcurrent().getfullname()
         context.findViewById<TextView>(R.id.email_label).text = context.getString(R.string.email,getcurrent().getusername())
@@ -127,24 +128,24 @@ object MainController {
         user.removeDisease(disease)
     }
     fun addDatabaseDisease(disease: Disease){
-        AllDiseases.addNewDisease(disease)
+        DAODiseases.addNewDisease(disease)
     }
     fun removeDatabaseDisease(disease: Disease){
-        AllDiseases.removeDisease(disease)
+        DAODiseases.removeDisease(disease)
     }
     fun showAllDatabaseDisease():String{
-        return AllDiseases.toString()
+        return DAODiseases.toString()
     }
     fun getAllDatabaseDisease(): ArrayList<Disease> {
-        return AllDiseases.list
+        return DAODiseases.list
     }
     fun rtStringArrayAllDisease(): Array<String> {
 
-        return AllDiseases.rtArrayList()
+        return DAODiseases.rtArrayList()
     }
     fun rtStringArrayAllDisease2(): Array<Disease> {
 
-        return AllDiseases.rtArrayList2()
+        return DAODiseases.rtArrayList2()
     }
     fun afegirNewDisease(disease: Disease){
         daoUser.afegirNewDisease(disease)

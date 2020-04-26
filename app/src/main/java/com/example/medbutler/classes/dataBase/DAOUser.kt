@@ -1,13 +1,10 @@
 package com.example.medbutler.classes.dataBase
 
-import android.content.Context
 import android.content.Intent
 import android.os.Handler
-import android.util.Log
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import com.example.medbutler.Login
-import com.example.medbutler.MainActivity
+import com.example.medbutler.classes.view.Login
+import com.example.medbutler.classes.view.MainActivity
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
@@ -16,7 +13,6 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlin.system.exitProcess
 
 class DAOUser : DAO<Usuari> {
     var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -80,7 +76,7 @@ class DAOUser : DAO<Usuari> {
     override fun update(obj: Usuari, params: List<String>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    fun login(context:Login,username:String, password: String) {
+    fun login(context: Login, username:String, password: String) {
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -99,7 +95,7 @@ class DAOUser : DAO<Usuari> {
             }
     }
     fun signOut(){
-        firebase_auth.signOut()
+        MainController.user = Usuari()
     }
     fun changePassword(newPassword:String){
 

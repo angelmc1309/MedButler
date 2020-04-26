@@ -1,13 +1,11 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
-import com.example.medbutler.classes.dataBase.DAOUser
-import com.google.firebase.auth.FirebaseAuthException
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {

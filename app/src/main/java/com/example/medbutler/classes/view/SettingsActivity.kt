@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.content.Context
 import android.content.Intent
@@ -8,8 +8,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import com.example.medbutler.ListView.AdapterSettings
-import com.example.medbutler.ListView.ModelSettings
+import com.example.medbutler.*
+import com.example.medbutler.classes.view.ListView.AdapterSettings
+import com.example.medbutler.classes.view.ListView.ModelSettings
 import com.example.medbutler.classes.controller.MainController
 
 class SettingsActivity : AppCompatActivity() {
@@ -72,32 +73,44 @@ class SettingsActivity : AppCompatActivity() {
         listview.setOnItemClickListener {parent:AdapterView<*>, view:View, position:Int, id:Long ->
             if (position == 0){
                 Toast.makeText(this@SettingsActivity, "you click on Account", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, settAcc)
+                val intent= Intent(this,
+                    settAcc
+                )
                 startActivity(intent)
             }
             if (position == 1){
                 Toast.makeText(this@SettingsActivity, "you click on Notifications", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, settNotif)
+                val intent= Intent(this,
+                    settNotif
+                )
                 startActivity(intent)
             }
             if (position == 2){
                 Toast.makeText(this@SettingsActivity, "you click on Appearance", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, settAppear)
+                val intent= Intent(this,
+                    settAppear
+                )
                 startActivity(intent)
             }
             if (position == 3){
                 Toast.makeText(this@SettingsActivity, "you click on Privacy & Security", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, settPriv)
+                val intent= Intent(this,
+                    settPriv
+                )
                 startActivity(intent)
             }
             if (position == 4){
                 Toast.makeText(this@SettingsActivity, "you click on Help and Support", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, settHelpSup)
+                val intent= Intent(this,
+                    settHelpSup
+                )
                 startActivity(intent)
             }
             if (position == 5){
                 Toast.makeText(this@SettingsActivity, "you click on About", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this, settAbout)
+                val intent= Intent(this,
+                    settAbout
+                )
                 startActivity(intent)
             }
         }

@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.app.TimePickerDialog
 import android.content.Context
@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Med
 import kotlinx.android.synthetic.main.activity_modif_med_layout.*

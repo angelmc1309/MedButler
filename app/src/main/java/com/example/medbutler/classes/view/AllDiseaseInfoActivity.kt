@@ -1,95 +1,50 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.style.RelativeSizeSpan
-import android.text.style.StyleSpan
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.view.*
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.medbutler.*
 import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.dataBase.DAODiseases
 import com.example.medbutler.classes.model.Disease
-import kotlinx.android.synthetic.main.activity_disease_information.*
+import kotlinx.android.synthetic.main.activity_all_disease_information.*
+import java.io.Serializable
 
 
-class DiseaseInformationActivity : AppCompatActivity() {
-
-    lateinit var extraObjectId:String
+class AllDiseaseInfoActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_disease_information)
-        val extraObject:Disease = intent.extras!!.get("extra_object_disease") as Disease
-        extraObjectId = extraObject.id
+        setContentView(R.layout.activity_all_disease_information)
         updateAppearance()
-        val first_string:String = "que_es_$extraObjectId"
-        //Canviar estil titol "que es"
-
-        val first_dropdown_string_title:String = "causas"
-        val first_dropdown_string:String = "causas_$extraObjectId"
-
-        val second_dropdown_string_title:String = "prevencion"
-        val second_dropdown_string:String = "prevencion_$extraObjectId"
-
-        val third_dropdown_string_title:String = "tratamientos"
-        val third_dropdown_string:String = "tratamientos_$extraObjectId"
-
-
-        val first_string_Id = resIdByName(first_string, "string")
-
-        val first_dropdown_title_Id = resIdByName(first_dropdown_string_title, "string")
-        val first_dropdown_Id = resIdByName(first_dropdown_string, "string")
-
-        val second_dropdown_title_Id = resIdByName(second_dropdown_string_title, "string")
-        val second_dropdown_Id = resIdByName(second_dropdown_string, "string")
-
-        val third_dropdown_title_Id = resIdByName(third_dropdown_string_title, "string")
-        val third_dropdown_Id = resIdByName(third_dropdown_string, "string")
-
-        val stringFirst = SpannableString(getString(first_string_Id))
-        stringFirst.setSpan(RelativeSizeSpan(1.7f), 0, 6, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        stringFirst.setSpan(StyleSpan(Typeface.BOLD), 0, 6, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        text_whatIsIt.setText(stringFirst)
-
-        val first_dropdown_title:String = getString(first_dropdown_title_Id)
-        val first_dropdown_text:String = getString(first_dropdown_Id)
-
-        val second_dropdown_title:String = getString(second_dropdown_title_Id)
-        val second_dropdown_text:String = getString(second_dropdown_Id)
-
-        val third_dropdown_title:String = getString(third_dropdown_title_Id)
-        val third_dropdown_text:String = getString(third_dropdown_Id)
-
-        first_dropdown_text_view.setTitleText("    $first_dropdown_title")
-        first_dropdown_text_view.setContentText(first_dropdown_text)
-
-        second_dropdown_text_view.setTitleText("    $second_dropdown_title")
-        second_dropdown_text_view.setContentText(second_dropdown_text)
-
-        third_dropdown_text_view.setTitleText("    $third_dropdown_title")
-        third_dropdown_text_view.setContentText(third_dropdown_text)
-
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onResume() {
         updateAppearance()
         super.onResume()
+    }
+
+    class CustomAdapter2 (var mCtx: Context, var resources:Int, var items:List<Disease>):
+        ArrayAdapter<Disease>(mCtx, resources, items) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+            val view: View = layoutInflater.inflate(resources, null)
+
+            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListDisease)
+            val titleTextView: TextView = view.findViewById(R.id.textListDisease)
+
+            var mItem: Disease = items[position]
+            titleTextView.text = mItem.getname()
+            return view
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -131,13 +86,56 @@ class DiseaseInformationActivity : AppCompatActivity() {
         calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+
+        val array_exemple = MainController.getcurrent().listOfDisease
+
+        listViewUserDiseases.adapter =
+            CustomAdapter2(
+                this,
+                R.layout.simple_list_item_custom2,
+                array_exemple
+            )
+
+        listViewUserDiseases.setOnItemClickListener { parent, view, position, id ->
+            var listItemId:Disease = array_exemple.get(position)
+            val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
+            intentDiseaseInfo.putExtra("extra_object_disease", listItemId as Serializable);
+            startActivity(intentDiseaseInfo)
+        }
+
+        val array_exemple2 = DAODiseases.list
+
+        listViewAllDiseases.adapter =
+            CustomAdapter2(
+                this,
+                R.layout.simple_list_item_custom2,
+                array_exemple2
+            )
+
+        listViewAllDiseases.setOnItemClickListener { parent, view, position, id ->
+            var listItemId:Disease = array_exemple2.get(position)
+            val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
+            intentDiseaseInfo.putExtra("extra_object_disease", listItemId as Serializable);
+            startActivity(intentDiseaseInfo)
+        }
+
+        justifyListViewHeightBasedOnChildren(listViewUserDiseases);
+        justifyListViewHeightBasedOnChildren(listViewAllDiseases);
     }
 
-    fun Context.resIdByName(resIdName: String?, resType: String): Int {
-        resIdName?.let {
-            return resources.getIdentifier(it, resType, packageName)
+    fun justifyListViewHeightBasedOnChildren(listView: ListView) {
+        val adapter = listView.adapter ?: return
+        val vg: ViewGroup = listView
+        var totalHeight = 0
+        for (i in 0 until adapter.count) {
+            val listItem = adapter.getView(i, null, vg)
+            listItem.measure(0, 0)
+            totalHeight += listItem.measuredHeight
         }
-        throw Resources.NotFoundException()
+        val par = listView.layoutParams
+        par.height = totalHeight + listView.dividerHeight * (adapter.count - 1)
+        listView.layoutParams = par
+        listView.requestLayout()
     }
 
     fun actionCalendar(view: View){
