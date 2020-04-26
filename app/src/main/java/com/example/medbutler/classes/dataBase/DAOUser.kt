@@ -54,7 +54,6 @@ class DAOUser : DAO<Usuari> {
             }
         }
     }
-
     override fun getAll() {
 
     }
@@ -74,7 +73,6 @@ class DAOUser : DAO<Usuari> {
                         var e: FirebaseAuthException = task.exception as FirebaseAuthException
                         Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
                     }
-
                 }
         }
     }
@@ -105,8 +103,7 @@ class DAOUser : DAO<Usuari> {
             }
     }
     fun signOut(){
-        MainController.user=Usuari()
-
+        MainController.user = Usuari()
     }
     fun changePassword(newPassword:String){
 
