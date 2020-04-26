@@ -6,7 +6,9 @@ import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.classes.controller.MainController
 
@@ -15,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
-        updateAppearance()
     }
 
     override fun onResume() {
@@ -88,8 +89,6 @@ class MainActivity : AppCompatActivity() {
         treatmentLayoutBackground.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getcolorTheme())
 
         animacio(treatmentImageFirst,treatmentImageSecond)
-
-        findViewById<TextView>(R.id.welcomeLaber).text = getString(R.string.greeting, MainController.getcurrent().getfullname().substringBefore(' '))
     }
 
     fun animacio(imageFluix:ImageView,imageFort:ImageView){

@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.example.medbutler.Login
 import com.example.medbutler.MainActivity
+import com.example.medbutler.Sign_up
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
@@ -60,12 +61,17 @@ class DAOUser : DAO<Usuari> {
     override fun save(obj: Usuari) {
 
     }
-    fun save(obj: Usuari, password:String) {
+    fun save(context: Sign_up,obj: Usuari, password:String) {
         obj.getusername()?.let {
             firebase_auth.createUserWithEmailAndPassword(it, password)
                 .addOnCompleteListener { task: Task<AuthResult> ->
                     if (task.isSuccessful) {
                         obj.getusername()?.let { userdb.document(it).set(obj) }
+                        val intent= Intent(context, Login::class.java)
+                        context.startActivity(intent)
+                    }else{
+                        var e: FirebaseAuthException = task.exception as FirebaseAuthException
+                        Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
                     }
 
                 }
@@ -93,7 +99,8 @@ class DAOUser : DAO<Usuari> {
             }
     }
     fun signOut(){
-        firebase_auth.signOut()
+        MainController.user=Usuari()
+
     }
     fun changePassword(newPassword:String){
 
