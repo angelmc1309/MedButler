@@ -1,8 +1,7 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.content.SharedPreferences
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
@@ -10,6 +9,7 @@ import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 
 class SettingsAccountActivity : AppCompatActivity() {
@@ -19,7 +19,10 @@ class SettingsAccountActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_account, AccountSettingsFragment())
+            .replace(
+                R.id.settings_account,
+                AccountSettingsFragment()
+            )
             .commit()
     }
 

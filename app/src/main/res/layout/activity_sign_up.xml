@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/loginback"
     android:orientation="vertical"
-    tools:context=".Sign_up">
+    tools:context=".classes.view.Sign_up">
 
 
     <TextView

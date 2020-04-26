@@ -5,10 +5,9 @@ import android.content.Intent
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
+import com.example.medbutler.classes.view.Login
+import com.example.medbutler.classes.view.MainActivity
 import androidx.core.content.ContextCompat.startActivity
-import com.example.medbutler.Login
-import com.example.medbutler.MainActivity
-import com.example.medbutler.Sign_up
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
@@ -54,6 +53,7 @@ class DAOUser : DAO<Usuari> {
             }
         }
     }
+
     override fun getAll() {
 
     }
@@ -84,7 +84,7 @@ class DAOUser : DAO<Usuari> {
     override fun update(obj: Usuari, params: List<String>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    fun login(context:Login,username:String, password: String) {
+    fun login(context: Login, username:String, password: String) {
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

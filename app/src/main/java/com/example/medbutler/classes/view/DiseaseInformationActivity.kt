@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.content.Context
 import android.content.Intent
@@ -20,6 +20,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.medbutler.*
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import kotlinx.android.synthetic.main.activity_disease_information.*

@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,9 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.medbutler.*
 import com.example.medbutler.classes.controller.MainController
-import com.example.medbutler.classes.model.AllDiseases
+import com.example.medbutler.classes.dataBase.DAODiseases
 import com.example.medbutler.classes.model.Disease
 import kotlinx.android.synthetic.main.activity_all_disease_information.*
 import java.io.Serializable
@@ -90,7 +91,12 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
 
         val array_exemple = MainController.getcurrent().listOfDisease
 
-        listViewUserDiseases.adapter = CustomAdapter2(this, R.layout.simple_list_item_custom2, array_exemple)
+        listViewUserDiseases.adapter =
+            CustomAdapter2(
+                this,
+                R.layout.simple_list_item_custom2,
+                array_exemple
+            )
 
         listViewUserDiseases.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Disease = array_exemple.get(position)
@@ -99,9 +105,14 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
             startActivity(intentDiseaseInfo)
         }
 
-        val array_exemple2 = AllDiseases.list
+        val array_exemple2 = DAODiseases.list
 
-        listViewAllDiseases.adapter = CustomAdapter2(this, R.layout.simple_list_item_custom2, array_exemple2)
+        listViewAllDiseases.adapter =
+            CustomAdapter2(
+                this,
+                R.layout.simple_list_item_custom2,
+                array_exemple2
+            )
 
         listViewAllDiseases.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Disease = array_exemple2.get(position)

@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.app.TimePickerDialog
 import android.content.Context
@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
+import com.example.medbutler.R
 import kotlinx.android.synthetic.main.activity_add_med_layout.*
 import java.text.SimpleDateFormat
 import java.util.Calendar

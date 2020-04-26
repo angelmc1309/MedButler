@@ -1,4 +1,4 @@
-package com.example.medbutler.ListView
+package com.example.medbutler.classes.view.ListView
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,6 @@ import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.medbutler.MainActivity
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 

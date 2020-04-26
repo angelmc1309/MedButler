@@ -9,36 +9,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".AddMedActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".SettingsAccountActivity" />
-        <activity android:name=".SettingsAboutActivity" />
-        <activity android:name=".SettingsAppearanceActivity" />
-        <activity android:name=".SettingsHelpSupportActivity" />
-        <activity android:name=".SettingsPrivacySecurityActivity" />
-        <activity android:name=".SettingsNotificationsActivity" />
-        <activity android:name=".ListView.ModelListViewTreatment" />
-        <activity android:name=".ListView.ModelSettings" />
-        <activity android:name=".ListView.ModelTreatment" />
+        <activity android:name=".classes.view.AddMedActivity" />
+        <activity android:name=".classes.view.SettingsActivity" />
+        <activity android:name=".classes.view.SettingsAccountActivity" />
+        <activity android:name=".classes.view.SettingsAboutActivity" />
+        <activity android:name=".classes.view.SettingsAppearanceActivity" />
+        <activity android:name=".classes.view.SettingsHelpSupportActivity" />
+        <activity android:name=".classes.view.SettingsPrivacySecurityActivity" />
+        <activity android:name=".classes.view.SettingsNotificationsActivity" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewTreatment" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelSettings" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelTreatment" />
         <activity android:name=".classes.model.UserAppearenceInfo"/>
-        <activity android:name=".MedListActivity" />
-        <activity android:name=".AllDiseaseInfoActivity" />
-        <activity android:name=".DiseaseInformationActivity" />
-        <activity android:name=".DayActivity" />
-        <activity android:name=".ModifMedActivity" />
-        <activity android:name=".ListView.ModelListViewProfile" />
-        <activity android:name=".ListView.ModelOther" />
-        <activity android:name=".ListView.CustomListviewAdapter" />
-        <activity android:name=".ListView.CustomAdapterOther" />
-        <activity android:name=".ListView.AdapterSettings" />
-        <activity android:name=".ListView.ModelListViewCalendar" />
-        <activity android:name=".ListView.ModelListViewSettings" />
-        <activity android:name=".ListView.ModelListViewBackground"/>
-        <activity android:name=".Sign_up" />
+        <activity android:name=".classes.view.MedListActivity" />
+        <activity android:name=".classes.view.AllDiseaseInfoActivity" />
+        <activity android:name=".classes.view.DiseaseInformationActivity" />
+        <activity android:name=".classes.view.DayActivity" />
+        <activity android:name=".classes.view.ModifMedActivity" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewProfile" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelOther" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.CustomListviewAdapter" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.CustomAdapterOther" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.AdapterSettings" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewCalendar" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewSettings" />
+        <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewBackground"/>
+        <activity android:name=".classes.view.Sign_up" />
         <activity
-            android:name=".UserProfile"
+            android:name=".classes.view.UserProfile"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Login"
+        <activity android:name=".classes.view.Login"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,9 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".classes.view.MainActivity" />
         <activity
-            android:name=".Calendar"
+            android:name=".classes.view.Calendar"
             android:theme="@style/AppTheme" />
 
         <meta-data

@@ -1,24 +1,28 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import com.example.medbutler.R
 
-class SettingsHelpSupportActivity : AppCompatActivity() {
+class SettingsPrivacySecurityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.settings_help_support_activity)
+        setContentView(R.layout.settings_privacy_security_activity)
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_help_support, HelpSupportSettingsFragment())
+            .replace(
+                R.id.settings_privacy_security,
+                PrivacySecuritySettingsFragment()
+            )
             .commit()
     }
 
-    class HelpSupportSettingsFragment : PreferenceFragmentCompat() {
+    class PrivacySecuritySettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
-            setPreferencesFromResource(R.xml.help_support_preferences, rootKey)
+            setPreferencesFromResource(R.xml.privacy_security_preferences, rootKey)
         }
     }
 }

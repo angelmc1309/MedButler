@@ -20,5 +20,5 @@ class DayAddTest {
         Assert.assertEquals(MainController.getDayList(),"[17/04/2020]")
         //Remove funciona, exemple a dalt, el que no funciona és aquest test
         //No agafa el calendari que es crea anteriorment
-    }*/
+}*/
 }

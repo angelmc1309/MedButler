@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,8 +7,8 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
-import com.example.medbutler.ListView.*
-import kotlinx.android.synthetic.*
+import com.example.medbutler.classes.view.ListView.*
+import com.example.medbutler.R
 import petrov.kristiyan.colorpicker.ColorPicker
 import petrov.kristiyan.colorpicker.ColorPicker.OnChooseColorListener
 import com.example.medbutler.classes.controller.MainController
@@ -21,7 +21,10 @@ class SettingsAppearanceActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_appearence, AppearanceSettingsFragment())
+            .replace(
+                R.id.settings_appearence,
+                AppearanceSettingsFragment()
+            )
             .commit()
     }
 

@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -10,13 +10,11 @@ import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.user_profile_layout.*
-import java.nio.charset.MalformedInputException
 import java.util.*
 import java.util.Calendar
 

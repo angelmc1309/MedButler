@@ -1,7 +1,8 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.medbutler.R
 
 class DayActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_page)
+        updateAppearance()
     }
 
     override fun onResume() {
@@ -90,6 +92,8 @@ class MainActivity : AppCompatActivity() {
         treatmentLayoutBackground.setBackgroundColor(MainController.getcurrent().getappearanceInfo().getcolorTheme())
 
         animacio(treatmentImageFirst,treatmentImageSecond)
+
+        findViewById<TextView>(R.id.welcomeLaber).text = getString(R.string.greeting, MainController.getcurrent().getfullname().substringBefore(' '))
     }
 
     fun animacio(imageFluix:ImageView,imageFort:ImageView){

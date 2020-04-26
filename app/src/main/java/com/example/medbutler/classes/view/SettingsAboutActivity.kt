@@ -1,8 +1,9 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import com.example.medbutler.R
 
 class SettingsAboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +12,10 @@ class SettingsAboutActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_about, AboutSettingsFragment())
+            .replace(
+                R.id.settings_about,
+                AboutSettingsFragment()
+            )
             .commit()
     }
 

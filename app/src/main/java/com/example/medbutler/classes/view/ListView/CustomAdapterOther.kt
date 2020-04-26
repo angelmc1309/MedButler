@@ -1,4 +1,4 @@
-package com.example.medbutler.ListView
+package com.example.medbutler.classes.view.ListView
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -1,8 +1,9 @@
-package com.example.medbutler
+package com.example.medbutler.classes.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
+import com.example.medbutler.R
 
 class SettingsNotificationsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +12,10 @@ class SettingsNotificationsActivity : AppCompatActivity() {
         //Load settings framgent
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.settings_notifications, NotificationsSettingsFragment())
+            .replace(
+                R.id.settings_notifications,
+                NotificationsSettingsFragment()
+            )
             .commit()
     }
 
