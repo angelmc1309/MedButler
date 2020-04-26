@@ -99,63 +99,53 @@ class ModelListViewBackground : AppCompatActivity() {
             if (position == 0) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Default Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("default_background")
-                finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewBackground, "you selected White Forms Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("backgroud_white_forms")
-                finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Feather Grey Silver Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("background_feather_silver")
-                finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Blue Texture Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("backgroud_blue_texture")
-                finish()
             }
             if (position == 4) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Blue Texture Clarity Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("backgroud_blue_texture_clarity")
-                finish()
             }
             if (position == 5) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Blue Geometric Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("backgroud_blue_geometric")
-                finish()
             }
             if (position == 6) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Default Blue Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("default_blue_background")
-                finish()
             }
             if (position == 7) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Default Blue 2 Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("default_blue_background2")
-                finish()
             }
             if (position == 8) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Pinck-Blue Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("background_pinck_blue")
-                finish()
             }
             if (position == 9) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Pinck Hexagon Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("background_pinck_hexagon")
-                finish()
             }
             if (position == 10) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Pinck Sky Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("background_pinck_sky")
-                finish()
             }
             if (position == 11) {
                 Toast.makeText(this@ModelListViewBackground, "you selected Pinck Original Background", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().setbackground("background_pinck_original")
-                finish()
             }
+            MainController.saveUserAll()
+            finish()
         }
     }
 }

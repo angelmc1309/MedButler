@@ -3,6 +3,11 @@ package com.example.medbutler.classes.model
 class Day {
     private var date:String
     private val foodList :ArrayList<Food> = ArrayList<Food>(5)
+
+    constructor(){
+        date = ""
+    }
+
     constructor(date:String){
         this.date = date
         for(x in 0 until 5){

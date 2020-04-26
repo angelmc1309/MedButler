@@ -2,15 +2,28 @@ package com.example.medbutler.classes.model
 
 import java.io.Serializable
 
-class Med(
-    var id: String,
-    private var name: String,
-    private var period: Int,
-    private var duration: Int,
-    private var startTimeMinute:Int,
-    private var startTimeHour:Int,
-    private var allowNotification:Boolean
-):Serializable {
+class Med:Serializable {
+
+    var id: String = ""
+    private var name: String = ""
+    private var period: Int = 0
+    private var duration: Int = 0
+    private var startTimeMinute:Int = 0
+    private var startTimeHour:Int = 0
+    private var allowNotification:Boolean = false
+
+    constructor(){
+    }
+
+    constructor(id: String, name: String, period: Int, duration: Int, startTimeMinute:Int, startTimeHour:Int, allowNotification:Boolean){
+        this.id = id
+        this.name = name
+        this.period = period
+        this.duration = duration
+        this.startTimeMinute = startTimeMinute
+        this.startTimeHour = startTimeHour
+        this.allowNotification = allowNotification
+    }
 
     override fun toString(): String {
         return name

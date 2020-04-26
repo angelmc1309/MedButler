@@ -2,7 +2,7 @@
     <string name="app_name">MedButler</string>
     <string name="labelFerLog">Ja estic enregistrat, vull fer login</string>
     <string name="butRegist">Enregistrar</string>
-    <string name="greeting">Welcome user!</string>
+    <string name="greeting">Welcome %1$s!</string>
     <string name="crearNouUsuariLabel">Crear un nou usuari</string>
     <string name="selecHome">Home</string>
     <string name="selecDona">Dona</string>

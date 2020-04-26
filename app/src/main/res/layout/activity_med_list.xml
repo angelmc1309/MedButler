@@ -54,9 +54,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingBottom="70dp"
         android:paddingTop="45dp"
         app:layout_constraintBottom_toBottomOf="@+id/my_toolbar"
@@ -65,11 +66,24 @@
         app:layout_constraintTop_toTopOf="@id/toolbar_treatment"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintHorizontal_bias="0.0">
-        <ListView
-            android:id="@+id/listViewMedList"
+        <ScrollView
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            tools:layout_editor_absoluteY="221dp">
+            <LinearLayout
+                android:paddingTop="0dp"
+                android:paddingBottom="90dp"
+                android:id="@+id/linearLayout5"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <ListView
+                    android:id="@+id/listViewMedList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout

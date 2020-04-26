@@ -4,21 +4,25 @@ import java.io.Serializable
 
 class Disease:Serializable {
     var id: String
-     private var name: String
+    private var name: String
     constructor(){
-        id=""
-        name=""
+        id = ""
+        name = ""
     }
     constructor(id:String, name:String){
-        this.id=id
-        this.name=name
+        this.id = id
+        this.name = name
     }
-
 
     override fun toString(): String {
         return this.name
     }
+
+    fun getname():String{
+        return this.name
+    }
+
     fun setname(newName:String){
-        this.name=newName
+        this.name = newName
     }
 }

@@ -57,26 +57,24 @@ class ModelListViewTreatment : AppCompatActivity() {
                 Toast.makeText(this@ModelListViewTreatment, "you selected Treatment &amp; Care normal", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().settreatmentImageFirstId("treat1_1")
                 MainController.getcurrent().getappearanceInfo().settreatmentImageSecondId("treat1_2")
-                finish()
             }
             if (position == 1) {
                 Toast.makeText(this@ModelListViewTreatment, "you selected Treatment &amp; Care open apple", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().settreatmentImageFirstId("treat2_1")
                 MainController.getcurrent().getappearanceInfo().settreatmentImageSecondId("treat2_2")
-                finish()
             }
             if (position == 2) {
                 Toast.makeText(this@ModelListViewTreatment, "you selected Heart beating monitor classic", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().settreatmentImageFirstId("treat3_1")
                 MainController.getcurrent().getappearanceInfo().settreatmentImageSecondId("treat3_2")
-                finish()
             }
             if (position == 3) {
                 Toast.makeText(this@ModelListViewTreatment, "you selected Heart beating monitor purple", Toast.LENGTH_SHORT).show()
                 MainController.getcurrent().getappearanceInfo().settreatmentImageFirstId("treat3_3")
                 MainController.getcurrent().getappearanceInfo().settreatmentImageSecondId("treat3_2")
-                finish()
             }
+            MainController.saveUserAll()
+            finish()
         }
     }
 }

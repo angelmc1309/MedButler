@@ -43,7 +43,7 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
             val titleTextView: TextView = view.findViewById(R.id.textListDisease)
 
             var mItem: Disease = items[position]
-            titleTextView.text = mItem.toString()
+            titleTextView.text = mItem.getname()
             return view
         }
     }
@@ -95,7 +95,7 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
         listViewUserDiseases.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Disease = array_exemple.get(position)
             val intentDiseaseInfo= Intent(this, DiseaseInformationActivity::class.java)
-            intent.putExtra("extra_object_disease", listItemId as Serializable);
+            intentDiseaseInfo.putExtra("extra_object_disease", listItemId as Serializable);
             startActivity(intentDiseaseInfo)
         }
 
