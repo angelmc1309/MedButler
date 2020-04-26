@@ -1,6 +1,6 @@
 package com.example.medbutler.classes.model
 
- class Usuari
+class Usuari
  {
      private var username: String=""
      private var fullname: String=""
