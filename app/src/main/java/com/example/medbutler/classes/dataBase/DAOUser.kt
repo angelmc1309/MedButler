@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
+import com.example.medbutler.classes.view.Sign_up
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -61,7 +62,7 @@ class DAOUser : DAO<Usuari> {
     override fun save(obj: Usuari) {
 
     }
-    fun save(context: Sign_up,obj: Usuari, password:String) {
+    fun save(context: Sign_up, obj: Usuari, password:String) {
         obj.getusername()?.let {
             firebase_auth.createUserWithEmailAndPassword(it, password)
                 .addOnCompleteListener { task: Task<AuthResult> ->

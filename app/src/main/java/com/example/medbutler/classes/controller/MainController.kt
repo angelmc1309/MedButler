@@ -7,6 +7,7 @@ import com.example.medbutler.classes.view.UserProfile
 import com.example.medbutler.classes.dataBase.DAODiseases
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.*
+import com.example.medbutler.classes.view.Sign_up
 
 
 object MainController {

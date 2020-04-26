@@ -32,7 +32,15 @@ class Med:Serializable {
     fun toStringAllAtributes(): String {
         var hour:String = ('0' + startTimeHour.toString())
         var minute:String = ('0' + startTimeMinute.toString())
-        var string: String = name + " - every " + period + " hours - for "+ duration + " days - " + hour.substring(hour.length-2) + ":" + minute.substring(minute.length-2)
+        var durationModif:String
+        if (duration == 0){
+            durationModif = "forever"
+        }else if(duration == 1){
+            durationModif = "for just one day"
+        }else{
+            durationModif = "for "+ duration + " days"
+        }
+        var string: String = name + " - every " + period + " hours - "+ durationModif + " - " + hour.substring(hour.length-2) + ":" + minute.substring(minute.length-2)
         if (allowNotification){
             return (string + " - notification ON")
         }else{

@@ -1,20 +1,24 @@
 package com.example.medbutler.classes.view
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import android.widget.*
+import android.widget.AdapterView.OnItemLongClickListener
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.R
+import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Med
 import kotlinx.android.synthetic.main.activity_med_list.*
-import com.example.medbutler.classes.controller.MainController
 import java.io.Serializable
+
 
 class MedListActivity : AppCompatActivity() {
 
@@ -114,7 +118,41 @@ class MedListActivity : AppCompatActivity() {
             startActivity(intentModifMed)
         }
 
+        listViewMedList.setOnItemLongClickListener(OnItemLongClickListener { arg0, arg1, pos, id ->
+            var listItemId:Med = array_exemple.get(pos)
+            withCustomStyle(listItemId)
+            true
+        })
+
         justifyListViewHeightBasedOnChildren(listViewMedList);
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    fun withCustomStyle(listItemId:Med) {
+
+        val positiveButtonClick = { dialog: DialogInterface, which: Int ->
+            MainController.removeMed(listItemId.id)
+            MainController.saveUserAll()
+            this.onResume()
+        }
+        val modifButtonClick = { dialog: DialogInterface, which: Int ->
+            val intentModifMed= Intent(this, ModifMedActivity::class.java)
+            intentModifMed.putExtra("extra_object_med", listItemId as Serializable);
+            startActivity(intentModifMed)
+        }
+
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogCustom))
+
+        with(builder)
+        {
+            setTitle("Dialog on Android")
+            setMessage("Are you sure you want to delete this medicine?")
+            setPositiveButton(R.string.yes, DialogInterface.OnClickListener(function = positiveButtonClick))
+            setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
+            setNeutralButton(R.string.modif, modifButtonClick)
+            show()
+        }
+
     }
 
     fun justifyListViewHeightBasedOnChildren(listView: ListView) {

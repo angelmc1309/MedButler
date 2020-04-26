@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
@@ -41,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         // background
         val backgroundLay:LinearLayout = findViewById(R.id.backgroundLayout)
         val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
-        Toast.makeText(this,MainController.getcurrent().getusername(),Toast.LENGTH_LONG).show()
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 

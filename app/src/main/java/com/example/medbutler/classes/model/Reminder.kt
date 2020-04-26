@@ -4,6 +4,13 @@ class Reminder {
     private var reminderName:String
     private var importance:Int
 
+    /*
+    Importance -->  0 = indiferente/indifferent
+                    1 = opcional/optional
+                    2 = importante/important
+                    3 = Muy importante/Very important
+    */
+
     constructor(){
         reminderName = ""
         importance = 0
@@ -35,10 +42,3 @@ class Reminder {
         this.importance = importance
     }
 }
-
-/*
-Importance -->  0 = indiferente/indifferent
-                1 = opcional/optional
-                2 = importante/important
-                3 = Muy importante/Very important
- */

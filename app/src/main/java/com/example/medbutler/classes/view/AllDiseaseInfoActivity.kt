@@ -22,7 +22,6 @@ class AllDiseaseInfoActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(3000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_disease_information)
         updateAppearance()
