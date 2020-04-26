@@ -103,10 +103,8 @@ class Sign_up : AppCompatActivity() {
                 birthdayRegist.text.toString(),alturaRegist.text.toString(),pesRegist.text.toString())
         user.listOfDisease = aux
 
-        MainController.Enregistrar(user, passwordRegist1.text.toString())
-        val intent= Intent(this, Login::class.java)
-        startActivity(intent)
-        finish()
+        MainController.Enregistrar(this,user, passwordRegist1.text.toString())
+
     }
     fun selectDisease(view: View){
         val builder=AlertDialog.Builder(this@Sign_up)

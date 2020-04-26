@@ -14,12 +14,14 @@ import com.example.medbutler.classes.model.AllDiseases
 import com.example.medbutler.classes.model.Disease
 import kotlinx.android.synthetic.main.activity_all_disease_information.*
 import java.io.Serializable
+import kotlin.concurrent.thread
 
 
 class AllDiseaseInfoActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(3000)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_disease_information)
         updateAppearance()

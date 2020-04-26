@@ -30,7 +30,6 @@ object AllDiseases {
         val aux :ArrayList<String> = ArrayList<String>()
         for(item in list){
             aux.add(item.getname())
-            aux.add(item.getname())
         }
         return aux.toTypedArray()
     }
