@@ -17,7 +17,7 @@ object MainController {
     //var db = FirebaseFirestore.getInstance()
 
     fun setCurrentUser(user:Usuari){
-        this.user=user
+        this.user = user
     }
     fun getcurrent():Usuari{
         return this.user

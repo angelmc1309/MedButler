@@ -2,6 +2,7 @@ package com.example.medbutler.classes.dataBase
 
 import android.content.Context
 import android.content.Intent
+import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
@@ -90,8 +91,13 @@ class DAOUser : DAO<Usuari> {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     MainController.initFirestore()
-                    val intent= Intent(context, MainActivity::class.java)
-                    context.startActivity(intent)
+                    Handler().postDelayed(
+                        {
+                            val intent= Intent(context, MainActivity::class.java)
+                            context.startActivity(intent)
+                        },
+                        1000 // value in milliseconds
+                    )
                 } else {
                     var e: FirebaseAuthException = task.exception as FirebaseAuthException
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()

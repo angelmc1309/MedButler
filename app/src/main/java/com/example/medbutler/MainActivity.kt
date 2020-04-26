@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         // background
         val backgroundLay:LinearLayout = findViewById(R.id.backgroundLayout)
         val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
+        Toast.makeText(this,MainController.getcurrent().getusername(),Toast.LENGTH_LONG).show()
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
