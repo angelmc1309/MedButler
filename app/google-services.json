@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "341121430160",
+    "firebase_url": "https://medbutler-71283.firebaseio.com",
+    "project_id": "medbutler-71283",
+    "storage_bucket": "medbutler-71283.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341121430160:android:18f6f616e8d5f18d01de15",
+        "android_client_info": {
+          "package_name": "com.example.medbutler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341121430160-98rsn7s03ltvu20sfkrti32jegqhppjt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medbutler",
+            "certificate_hash": "a8f449622352ebd9b62cd372d5a053669b790250"
+          }
+        },
+        {
+          "client_id": "341121430160-oubmpa0upebg261mqh1u5363m3mqid9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medbutler",
+            "certificate_hash": "ebb03a4d5d24d507d8c82d70124f2c68c5450c95"
+          }
+        },
+        {
+          "client_id": "341121430160-cfi6tdfq5folakn5igu7ue28jtiafspp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQWZ-qKaQDVKYp0gyr1IPt-K6IhOPudXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341121430160-cfi6tdfq5folakn5igu7ue28jtiafspp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
