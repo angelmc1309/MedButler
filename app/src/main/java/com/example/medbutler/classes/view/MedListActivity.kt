@@ -99,7 +99,9 @@ class MedListActivity : AppCompatActivity() {
         calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+
         addMedBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
+        addMedBut.setBackgroundResource(R.drawable.rounded_button)
         addMedBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
 
         val array_exemple = MainController.getMedListArray()

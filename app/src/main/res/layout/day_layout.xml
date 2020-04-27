@@ -168,6 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
+            android:onClick="actionAddFood"
             fab:fab_label="Add Food"
             fab:fab_size="mini" />
 
@@ -177,6 +178,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
             fab:fab_label="Add Reminder"
+            android:onClick="actionAddReminder"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -185,6 +187,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
             fab:fab_label="Add Task"
+            android:onClick="actionAddTask"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
