@@ -36,18 +36,29 @@
     <string name="change_color_toolbar" translatable="false">change_color_toolbar</string>key_toolbar_color
     <string name="key_toolbar_color" translatable="false">key_toolbar_color</string>
     <string name="action_gohome" translatable="false">Go Home</string>
+    <string name="action_gocalendar" translatable="false">Go Calendar</string>
     <string name="disease_information">Disease Information</string>
     <string name="list_medicines">List of medicines</string>
     <string name="add">Add</string>
     <string name="enter_the_required_information_about_your_medicine">Enter the required information about your medicine</string>
+    <string name="enter_the_required_information_about_your_task">Enter the required information about your task</string>
+    <string name="enter_the_required_information_about_your_reminder">Enter the required information about your reminder</string>
     <string name="discard">Discard</string>
     <string name="turn_on_notifications_for_this_medicine">Turn on notifications for this medicine</string>
+    <string name="turn_on_notifications_for_this_task">Turn on notifications for this task</string>
+    <string name="turn_on_notifications_for_this_reminder">Turn on notifications for this reminder</string>
     <string name="select_start_time">Select Start Time</string>
     <string name="medicine_s_name">Medicine\'s name</string>
+    <string name="reminder_s_name">Reminder\'s name</string>
+    <string name="task_s_name">Task\'s name</string>
     <string name="medication_frequency">Medication frequency</string>
+    <string name="reminder_importance">Reminder importance</string>
     <string name="treatment_duration">Treatment duration</string>
     <string name="click_here_to_select_the_time">click here to select the time</string>
+    <string name="click_here">click here</string>
     <string name="modify_anything_about_your_medicine">Modify anything about your medicine</string>
+    <string name="modify_anything_about_your_task">Modify anything about your task</string>
+    <string name="modify_anything_about_your_reminder">Modify anything about your reminder</string>
     <string name="save_changes">Save Changes</string>
     <string name="discard_changes">Discard changes</string>
     <string name="email">Email: %1$s</string>

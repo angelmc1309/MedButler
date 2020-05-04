@@ -10,6 +10,8 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".classes.view.AddMedActivity" />
+        <activity android:name=".classes.view.AddReminderActivity" />
+        <activity android:name=".classes.view.AddTaskActivity" />
         <activity android:name=".classes.view.SettingsActivity" />
         <activity android:name=".classes.view.SettingsAccountActivity" />
         <activity android:name=".classes.view.SettingsAboutActivity" />
@@ -26,6 +28,8 @@
         <activity android:name=".classes.view.DiseaseInformationActivity" />
         <activity android:name=".classes.view.DayActivity" />
         <activity android:name=".classes.view.ModifMedActivity" />
+        <activity android:name=".classes.view.ModifReminderActivity" />
+        <activity android:name=".classes.view.ModifTaskActivity" />
         <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewProfile" />
         <activity android:name="com.example.medbutler.classes.view.ListView.ModelOther" />
         <activity android:name="com.example.medbutler.classes.view.ListView.CustomListviewAdapter" />

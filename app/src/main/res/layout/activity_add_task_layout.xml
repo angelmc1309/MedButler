@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/backgroundAddTask">
+
+    <ImageView
+        android:layout_marginStart="20dp"
+        android:id="@+id/task_image_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="138dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin1_norm"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="162dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin2_norm"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="154dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin4_norm"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="297dp"
+        android:layout_marginTop="182dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin5_norm"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="137dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin3_norm"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="202dp"
+        android:layout_marginTop="185dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/titleAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingStart="33dp"
+        android:paddingEnd="20dp"
+        android:text="@string/enter_the_required_information_about_your_task"
+        android:textColor="@android:color/black"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/startTimeTextTask"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/taskName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center|start"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="@string/select_start_time"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/startTimeClickTask"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/taskName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="28dp"
+        android:layout_toEndOf="@id/startTimeTextTask"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center|start"
+        android:paddingStart="40dp"
+        android:paddingEnd="20dp"
+        android:text="@string/click_here"
+        android:textColor="@color/md_black"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/taskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginEnd="70dp"
+        android:hint="@string/task_s_name"
+        android:importantForAutofill="no"
+        android:inputType="text">
+
+    </EditText>
+
+
+    <Switch
+        android:id="@+id/switchNotificationTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startTimeTextTask"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="65dp"
+        android:checked="false"
+        android:text="@string/turn_on_notifications_for_this_task"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchNotificationTask"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="30dp"
+        android:onClick="addTask"
+        android:text="@string/add" />
+    <Button
+        android:id="@+id/btnDiscardTask"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchNotificationTask"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="130dp"
+        android:onClick="discardTask"
+        android:text="@string/discard" />
+
+</RelativeLayout>
