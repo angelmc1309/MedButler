@@ -123,10 +123,31 @@ class Usuari
     fun getFood(date: String):String?{
         return calendar.getFood(date)
     }
-     fun addDisease(disease:Disease){
-         listOfDisease.add(disease)
+    fun getFoodArray(date: String):ArrayList<Food>?{
+        return calendar.getFoodArray(date)
+    }
+     fun getReminderArray(date: String):ArrayList<Reminder>?{
+         return calendar.getReminderArray(date)
      }
-     fun removeDisease(disease: Disease){
-         listOfDisease.remove(disease)
+     fun getTaskArray(date: String):ArrayList<Task>?{
+         return calendar.getTaskArray(date)
      }
+     fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
+         calendar.addReminder(id,reminderDate,reminderName,importance,allowNotification)
+     }
+     fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
+         calendar.addTask(id,taskDate,taskName,taskStartTimeMinute,taskStartTimeHour,allowNotification)
+     }
+     fun removeReminder(reminderDate: String, id: String) {
+         calendar.removeReminder(reminderDate,id)
+     }
+     fun removeTask(taskDate: String, id: String) {
+         calendar.removeTask(taskDate,id)
+     }
+    fun addDisease(disease:Disease){
+        listOfDisease.add(disease)
+    }
+    fun removeDisease(disease: Disease){
+        listOfDisease.remove(disease)
+    }
 }

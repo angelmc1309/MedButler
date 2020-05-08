@@ -37,4 +37,43 @@ class Day {
         return foodList.toString()
     }
 
+    fun getFoodArray():ArrayList<Food>{
+        return foodList
+    }
+
+    fun getReminderArray():ArrayList<Reminder>{
+        return reminderList
+    }
+
+    fun getTaskArray():ArrayList<Task>{
+        return taskList
+    }
+
+    fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
+
+        val reminder = Reminder(id, reminderDate, reminderName, importance, allowNotification)
+        reminderList.add(reminder)
+    }
+    fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
+
+        val task = Task(id, taskDate, taskName, taskStartTimeMinute,taskStartTimeHour, allowNotification)
+        taskList.add(task)
+    }
+    fun removeReminder(id: String) {
+        for(reminder in reminderList){
+            if (id == reminder.id){
+                reminderList.remove(reminder)
+                return
+            }
+        }
+    }
+    fun removeTask(id: String) {
+        for(task in taskList){
+            if (id == task.id){
+                taskList.remove(task)
+                return
+            }
+        }
+    }
+
 }

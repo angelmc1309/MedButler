@@ -50,9 +50,11 @@
     <string name="select_start_time">Select Start Time</string>
     <string name="medicine_s_name">Medicine\'s name</string>
     <string name="reminder_s_name">Reminder\'s name</string>
+    <string name="meal_information">Meal complete information</string>
     <string name="task_s_name">Task\'s name</string>
     <string name="medication_frequency">Medication frequency</string>
     <string name="reminder_importance">Reminder importance</string>
+    <string name="select_meal">Select which meal of the day is:</string>
     <string name="treatment_duration">Treatment duration</string>
     <string name="click_here_to_select_the_time">click here to select the time</string>
     <string name="click_here">click here</string>
@@ -175,4 +177,5 @@
     <string name="reminders">Reminders</string>
     <string name="tasks">Tasks</string>
     <string name="add_medicine">Add Medicine</string>
+    <string name="enter_information_about_your_meal">Enter information about your meal</string>
 </resources>

@@ -12,6 +12,7 @@
         <activity android:name=".classes.view.AddMedActivity" />
         <activity android:name=".classes.view.AddReminderActivity" />
         <activity android:name=".classes.view.AddTaskActivity" />
+        <activity android:name=".classes.view.AddFoodActivity" />
         <activity android:name=".classes.view.SettingsActivity" />
         <activity android:name=".classes.view.SettingsAccountActivity" />
         <activity android:name=".classes.view.SettingsAboutActivity" />

@@ -63,9 +63,9 @@ class DayActivity : AppCompatActivity() {
         //Toast.makeText(this,"Functionality Add TASK not implemented yet",Toast.LENGTH_LONG).show()
     }
     fun actionAddFood(view: View) {
-        //val intent= Intent(this, AddFoodActivity::class.java)
-        //startActivity(intent)
-        Toast.makeText(this,"Functionality Add FOOD not implemented yet",Toast.LENGTH_LONG).show()
+        val intent= Intent(this, AddFoodActivity::class.java)
+        startActivity(intent)
+        //Toast.makeText(this,"Functionality Add FOOD not implemented yet",Toast.LENGTH_LONG).show()
     }
     fun actiongoCalendar(){
         val intent= Intent(this, Calendar::class.java)

@@ -47,4 +47,40 @@ class Calendar {
         }
     }
 
+    fun getFoodArray(date:String): ArrayList<Food>? {
+        if(find(date) != null) {
+            return find(date)?.getFoodArray()
+        }else{
+            return null
+        }
+    }
+
+    fun getReminderArray(date:String): ArrayList<Reminder>? {
+        if(find(date) != null) {
+            return find(date)?.getReminderArray()
+        }else{
+            return null
+        }
+    }
+
+    fun getTaskArray(date:String): ArrayList<Task>? {
+        if(find(date) != null) {
+            return find(date)?.getTaskArray()
+        }else{
+            return null
+        }
+    }
+
+    fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
+        find(reminderDate)?.addReminder(id,reminderDate,reminderName,importance,allowNotification)
+    }
+    fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
+        find(taskDate)?.addTask(id,taskDate,taskName,taskStartTimeMinute,taskStartTimeHour,allowNotification)
+    }
+    fun removeReminder(reminderDate: String, id: String) {
+        find(reminderDate)?.removeReminder(id)
+    }
+    fun removeTask(taskDate: String, id: String) {
+        find(taskDate)?.removeTask(id)
+    }
 }
