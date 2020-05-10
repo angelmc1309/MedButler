@@ -11,7 +11,8 @@
             android:summary="Got any queries? We are happy to help!"
             android:title="Send Feedback"
             android:dialogMessage="Got any queries? We are happy to help!"
-            android:dialogTitle="Send Feedback" />
+            android:dialogTitle="Send Feedback"
+            android:hint="Feedback"/>
 
         <Preference
             android:title="FAQ"

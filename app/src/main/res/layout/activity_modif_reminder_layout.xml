@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/backgroundModifyReminder">
+
+    <ImageView
+        android:layout_marginStart="20dp"
+        android:id="@+id/reminder_modify_image_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="138dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin1_shad_modify"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="162dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin2_shad_modify"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="154dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin4_shad_modify"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="297dp"
+        android:layout_marginTop="182dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin5_shad_modify"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="137dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/push_pin3_shad_modify"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="202dp"
+        android:layout_marginTop="185dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/titleReminderModify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingStart="90dp"
+        android:paddingEnd="90dp"
+        android:text="@string/modify_anything_about_your_reminder"
+        android:textColor="@android:color/black"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/importanceReminderModify"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/reminderNameModify"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center|start"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="@string/reminder_importance"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/reminderNameModify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginEnd="75dp"
+        android:hint="@string/reminder_s_name"
+        android:importantForAutofill="no"
+        android:inputType="text">
+
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinnerImportanceModify"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminderNameModify"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="28dp"
+        android:layout_toEndOf="@id/importanceReminderModify" />
+
+
+    <Switch
+        android:id="@+id/switchNotificationReminderModify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/importanceReminderModify"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="65dp"
+        android:checked="false"
+        android:text="@string/turn_on_notifications_for_this_reminder"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btnModifyReminder"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchNotificationReminderModify"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="22dp"
+        android:onClick="actionModifyReminder"
+        android:text="@string/save_changes" />
+
+    <Button
+        android:id="@+id/btnDiscardModifyReminder"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchNotificationReminderModify"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="98dp"
+        android:onClick="actionDiscardModifyReminder"
+        android:text="@string/discard_changes" />
+
+</RelativeLayout>

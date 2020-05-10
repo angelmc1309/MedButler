@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginback"
-    tools:context=".Sign_up">
+    android:orientation="vertical"
+    tools:context=".classes.view.Sign_up">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="85dp"
@@ -18,128 +21,55 @@
         android:textColor="@color/colorTitulCrearNouUsuari"
         android:textColorHighlight="@color/highlightTitulCrearNouUsuari"
         android:textSize="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156"
-        tools:ignore="MissingConstraints" />
-
+        />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/fullnameRegist"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:ems="10"
+        android:hint="Nom real"
+        android:inputType="textPersonName"
+        />
     <EditText
         android:id="@+id/usernameRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginLeft="65dp"
         android:ems="10"
-        android:hint="Nom d'usuari"
+        android:hint="Email(Login)"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/passwordRegist2"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="Contrasenya(repetir)"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
-        tools:ignore="MissingConstraints" />
-
+     />
     <EditText
         android:id="@+id/passwordRegist1"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginLeft="65dp"
         android:ems="10"
         android:hint="Contrasenya"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/butRegist"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginEnd="136dp"
-        android:text="@string/butRegist"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824"
-        tools:ignore="MissingConstraints"
-        android:onClick="enregistrar"/>
-
-    <TextView
-        android:id="@+id/labelFerLog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
-        android:layout_marginEnd="103dp"
-        android:gravity="center"
-        android:onClick="actionGoToLogin"
-        android:text="@string/labelFerLog"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butRegist"
-        app:layout_constraintVertical_bias="0.343"
-        tools:ignore="MissingConstraints" />
-
+        />
     <EditText
-        android:id="@+id/birthdayRegist"
+        android:id="@+id/passwordRegist2"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="80dp"
-        android:clickable="true"
-        android:editable="false"
+        android:layout_marginLeft="65dp"
         android:ems="10"
-        android:hint="Data naixement"
-        android:inputType="none"
-        android:onClick="pickBirthday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679"
-        tools:ignore="MissingConstraints" />
-
+        android:hint="Contrasenya(repetir)"
+        android:inputType="textPassword"
+   />
 
     <RadioGroup
         android:id="@+id/radioGroupGender"
         android:layout_width="265dp"
-
+        android:layout_marginLeft="65dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -176,4 +106,79 @@
             android:text="@string/selecDona"
             android:textSize="15dp"></RadioButton>
     </RadioGroup>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+¡
+
+    <EditText
+        android:id="@+id/birthdayRegist"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:clickable="true"
+        android:editable="false"
+        android:ems="10"
+        android:hint="Data naixement"
+        android:inputType="none"
+        android:onClick="pickBirthday"
+  />
+    <EditText
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/alturaRegist"
+        android:hint="Height(cm)"
+        android:inputType="number"
+        android:layout_marginLeft="65dp">
+
+    </EditText>
+    <EditText
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/pesRegist"
+        android:hint="Weight(kg)"
+        android:inputType="number"
+        android:layout_marginLeft="65dp">
+
+    </EditText>
+    <EditText
+        android:id="@+id/diseaseSelectRegist"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:editable="false"
+        android:layout_marginLeft="65dp"
+        android:hint="Select your diseases"
+        android:onClick="selectDisease">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/labelFerLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:onClick="actionGoToLogin"
+        android:text="@string/labelFerLog"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+/>
+    <Button
+        android:id="@+id/butRegist"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="136dp"
+        android:text="@string/butRegist"
+        android:onClick="enregistrar"/>
+
+</LinearLayout>
+
+</ScrollView>
+
+
+</LinearLayout>

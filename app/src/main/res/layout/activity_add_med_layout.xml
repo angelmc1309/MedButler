@@ -1,75 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_weight="10">
+    android:id="@+id/backgroundAddMed">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/titleAddMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingStart="33dp"
+        android:paddingEnd="20dp"
+        android:text="@string/enter_the_required_information_about_your_medicine"
+        android:textColor="@android:color/black"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/frequencyText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/medName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="9dp"
+        android:layout_toStartOf="@id/spinnerFrequency"
+        android:gravity="center|start"
+        android:paddingStart="30dp"
+        android:paddingEnd="0dp"
+        android:textSize="15sp"
+        android:text="@string/medication_frequency" />
+
+    <TextView
+        android:id="@+id/durationText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/frequencyText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="9dp"
+        android:layout_toStartOf="@id/spinnerFrequency"
+        android:gravity="center|start"
+        android:paddingStart="30dp"
+        android:paddingEnd="0dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:text="@string/treatment_duration" />
+
+    <Spinner
+        android:id="@+id/spinnerDuration"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frequencyText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center|start" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="NEW MEDICINE"
-            android:textSize="34sp"
-            android:textColor="@android:color/black">
-
-        </TextView>
-
-    </RelativeLayout>
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/medName"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="35dp"
+        android:hint="@string/medicine_s_name"
+        android:importantForAutofill="no"
+        android:inputType="text">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Medicine's name">
+    </EditText>
 
-        </EditText>
+    <Spinner
+        android:id="@+id/spinnerFrequency"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Frequency">
-
-        </EditText>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Description">
-
-        </EditText>
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Turn on notifications"
-            android:textSize="18dp">
-
-        </Switch>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Done"
-            android:onClick="actionMeds">
-
-        </Button>
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/startTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/durationText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="255dp"
+        android:gravity="center|start"
+        android:paddingStart="30dp"
+        android:paddingEnd="0dp"
+        android:text="@string/select_start_time"
+        android:textSize="15sp" />
 
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/startTimeClick"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/durationText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center|start"
+        android:paddingStart="40dp"
+        android:paddingEnd="0dp"
+        android:text="@string/click_here_to_select_the_time"
+        android:textColor="@color/md_black"
+        android:textSize="15sp" />
+
+    <Switch
+        android:id="@+id/switchNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startTimeText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:checked="false"
+        android:text="@string/turn_on_notifications_for_this_medicine"
+        android:textSize="15sp">
+
+    </Switch>
+
+    <Button
+        android:id="@+id/btnAddMed"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchNotification"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="30dp"
+        android:onClick="addMed"
+        android:text="@string/add" />
+
+    <Button
+        android:id="@+id/btnDiscardMed"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchNotification"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="105dp"
+        android:onClick="discardMed"
+        android:text="@string/discard" />
+
+</RelativeLayout>

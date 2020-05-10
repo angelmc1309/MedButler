@@ -1,9 +1,19 @@
 package com.example.medbutler.classes.model
 
-class MedList(){
+import java.io.Serializable
 
-    val list :ArrayList<Med> = ArrayList<Med>()
-        get() = field
+class MedList:Serializable{
+
+    var list :ArrayList<Med> = ArrayList<Med>()
+
+    constructor(){
+
+    }
+
+    constructor(list:ArrayList<Med>){
+        this.list = list
+    }
+
     fun addMed(id: String,name: String, period: Int,duration: Int,startTimeMinute:Int,
                startTimeHour:Int,allowNotification:Boolean){
 

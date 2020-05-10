@@ -42,7 +42,17 @@
 
     <color name="md_black">#000000</color>
     <color name="md_black_clear">#232323</color>
+    <color name="md_black_clear2">#363636</color>
+    <color name="black_transp">#8C000000</color>
     <color name="md_white">#ffffff</color>
+    <color name="white_hint">#8CFFFFFF</color>
+    <color name="white_hint2">#8CFFFFFF</color>
+    <color name="scroll_border_1">#A634424C</color>
+    <color name="scroll_border_2">#A62B3943</color>
+    <color name="scroll_1">#485c6a</color>
+    <color name="scroll_2">#3e4f5b</color>
+    <color name="list_disease_title">#3b3b3b</color>
+
 
     <array name="color_choices">
         <item>@color/md_red_500</item>

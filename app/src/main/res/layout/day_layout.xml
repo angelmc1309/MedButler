@@ -1,83 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/dayConstraintLayout"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/day_label"
+    <LinearLayout
+        android:id="@+id/dayLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:text="Dilluns"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"
-        android:font="@font/averia_serif_libre_light"
-        android:fontFamily="@font/averia_serif_libre_light"
-        android:textColor="@android:color/black"
-        android:textSize="32dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/titleDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/brawler"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="CURRENT DAY"
+            android:textColor="@android:color/black"
+            android:textSize="30sp">
 
-    <TextView
-    android:id="@+id/apat_1"
-    android:layout_width="match_parent"
-    android:layout_height="85dp"
-    android:layout_gravity="center_horizontal"
-    android:background="@color/colorPrimary"
-    android:font="@font/averia_serif_libre_light"
-    android:fontFamily="@font/averia_serif_libre_light"
-    android:text="Cereals"
-    android:textColor="@android:color/white"
-    android:textSize="24dp"
-    />
-    <TextView
-        android:id="@+id/apat_2"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorPrimary"
-        android:font="@font/averia_serif_libre_light"
-        android:fontFamily="@font/averia_serif_libre_light"
-        android:text="3 mandarines"
-        android:textColor="@android:color/white"
-        android:textSize="24dp"
-        />
-    <TextView
-        android:id="@+id/apat_3"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorPrimary"
-        android:font="@font/averia_serif_libre_light"
-        android:fontFamily="@font/averia_serif_libre_light"
-        android:text="Peix"
-        android:textColor="@android:color/white"
-        android:textSize="24dp"
-        />
-    <TextView
-    android:id="@+id/apat_4"
-    android:layout_width="match_parent"
-    android:layout_height="85dp"
-    android:layout_gravity="center_horizontal"
-    android:background="@color/colorPrimary"
-    android:font="@font/averia_serif_libre_light"
-    android:fontFamily="@font/averia_serif_libre_light"
-    android:text="Entrepà de formatge"
-    android:textColor="@android:color/white"
-    android:textSize="24dp"
-    />
-    <TextView
-        android:id="@+id/apat_5"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorPrimary"
-        android:font="@font/averia_serif_libre_light"
-        android:fontFamily="@font/averia_serif_libre_light"
-        android:text="Carn"
-        android:textColor="@android:color/white"
-        android:textSize="24dp"
-        />
+        </TextView>
 
+        <LinearLayout
+            android:id="@+id/linearLayoutDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/my_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/toolbar_treatment"
+            app:layout_constraintVertical_bias="0.0">
 
+            <ScrollView
+                android:id="@+id/scrollDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-</LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayout3Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="30dp">
+
+                    <TextView
+                        android:id="@+id/todays_foodTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="70dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/todays_food"
+                        android:textColor="@color/md_black"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:id="@+id/listViewTodaysFood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/remindersTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="70dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/reminders"
+                        android:textColor="@color/md_black"
+                        android:textSize="21sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <ListView
+                        android:id="@+id/listViewReminders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tasksTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="70dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/tasks"
+                        android:textColor="@color/md_black"
+                        android:textSize="21sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <ListView
+                        android:id="@+id/listViewTasks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:paddingBottom="40dp"
+        android:paddingRight="20dp"
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorNormal="#DA4336"
+        fab:menu_colorPressed="#E75043"
+        fab:menu_colorRipple="#99FFFFFF"
+        fab:menu_fab_size="normal"
+        fab:menu_icon="@drawable/fab_add"
+        fab:menu_labels_colorNormal="#333333"
+        fab:menu_labels_colorPressed="#444444"
+        fab:menu_labels_colorRipple="#66FFFFFF"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_textColor="#FFFFFF"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_openDirection="up"
+        fab:menu_shadowColor="#66000000"
+        fab:menu_shadowRadius="4dp"
+        fab:menu_shadowXOffset="1dp"
+        fab:menu_shadowYOffset="3dp"
+        fab:menu_showShadow="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            android:onClick="actionAddFood"
+            fab:fab_label="Add Food"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            fab:fab_label="Add Reminder"
+            android:onClick="actionAddReminder"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            fab:fab_label="Add Task"
+            android:onClick="actionAddTask"
+            fab:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+</androidx.constraintlayout.widget.ConstraintLayout>
