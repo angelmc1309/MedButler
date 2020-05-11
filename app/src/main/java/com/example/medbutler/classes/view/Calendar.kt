@@ -10,10 +10,15 @@ import android.view.View
 import android.widget.CalendarView
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.Toast
 import com.example.medbutler.*
 import com.example.medbutler.classes.controller.MainController
+import kotlinx.android.synthetic.main.calendar_layout.*
+import kotlinx.android.synthetic.main.main_page.*
 
 class Calendar : AppCompatActivity(){
+
+    var actualDate : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,10 +81,15 @@ class Calendar : AppCompatActivity(){
     fun calendarClick(view: View){
         val intent= Intent(this, DayActivity::class.java)
         startActivity(intent)
-
     }
     fun actiongoHome(){
         val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+    fun getDateString(view: View){
+        actualDate = this.calendar_view.date.toString()
+        //Toast.makeText(this,"Hola",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,actualDate,Toast.LENGTH_LONG).show()
+    }
+
 }
