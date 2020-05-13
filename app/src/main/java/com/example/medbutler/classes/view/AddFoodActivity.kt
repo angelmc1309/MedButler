@@ -11,18 +11,22 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.*
+import com.example.medbutler.classes.model.Day
 import kotlinx.android.synthetic.main.activity_add_food_layout.*
+import java.io.Serializable
 import kotlin.random.Random
 
 class AddFoodActivity : AppCompatActivity() {
 
     lateinit var optionMeal: Spinner
     var resultMeal:Int = -1
+    lateinit var extraObjectDayId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_food_layout)
+        extraObjectDayId = intent.getStringExtra("extra_object_dayID")!!
         val back_num = createbackground()
         optionMeal = findViewById(R.id.spinnerMeal) as Spinner
 
@@ -97,9 +101,11 @@ class AddFoodActivity : AppCompatActivity() {
     fun addFood(view: View) {
 
         if(!foodName.text.toString().isEmpty() && resultMeal != -1){
-            //addFood()
-            //MainController.saveUserAll()
+            MainController.setFood(extraObjectDayId,resultMeal,foodName.text.toString())
+            MainController.saveUserAll()
             val intent= Intent(this, DayActivity::class.java)
+            val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+            intent.putExtra("extra_object_day", day as Serializable)
             startActivity(intent)
         } else if(foodName.text.toString().isEmpty()){
             foodName.error="Reminder's name empty!!"
@@ -109,6 +115,8 @@ class AddFoodActivity : AppCompatActivity() {
 
     fun discardFood(view: View) {
         val intent= Intent(this, DayActivity::class.java)
+        val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+        intent.putExtra("extra_object_day", day as Serializable)
         startActivity(intent)
     }
 

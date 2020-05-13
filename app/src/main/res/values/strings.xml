@@ -178,4 +178,6 @@
     <string name="tasks">Tasks</string>
     <string name="add_medicine">Add Medicine</string>
     <string name="enter_information_about_your_meal">Enter information about your meal</string>
+    <string name="notification_on">notification ON</string>
+    <string name="notification_off">notification OFF</string>
 </resources>

@@ -1,13 +1,14 @@
 package com.example.medbutler.classes.model
 
-class Day {
-    private var date:String
+import java.io.Serializable
+
+class Day: Serializable {
+    private var date:String = ""
     private val foodList :ArrayList<Food> = ArrayList<Food>(5)
     private val reminderList:ArrayList<Reminder> = ArrayList<Reminder>()
     private val taskList:ArrayList<Task> = ArrayList<Task>()
 
     constructor(){
-        date = ""
     }
 
     constructor(date:String){

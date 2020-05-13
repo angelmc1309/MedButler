@@ -14,18 +14,22 @@ import com.example.medbutler.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import com.example.medbutler.classes.controller.*
+import com.example.medbutler.classes.model.Day
 import kotlinx.android.synthetic.main.activity_add_task_layout.*
 import kotlin.random.Random
+import java.io.Serializable
 
 class AddTaskActivity : AppCompatActivity() {
 
     var startTimeMinuteTask: Int = -1
     var startTimeHourTask: Int = -1
+    lateinit var extraObjectDayId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_task_layout)
+        extraObjectDayId = intent.getStringExtra("extra_object_dayID")!!
         startTimeClickTask.setOnClickListener{
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener{view: TimePicker?, hourOfDay: Int, minute: Int ->
@@ -77,9 +81,11 @@ class AddTaskActivity : AppCompatActivity() {
     fun addTask(view: View) {
 
         if(!taskName.text.toString().isEmpty() && startTimeMinuteTask != -1 && startTimeHourTask != -1){
-            //addTask(taskName.text.toString(),taskName.text.toString(),startTimeMinuteTask,startTimeHourTask,switchNotificationTask.isChecked)
-            //MainController.saveUserAll()
+            MainController.addTask(taskName.text.toString(),extraObjectDayId,taskName.text.toString(),startTimeMinuteTask,startTimeHourTask,switchNotificationTask.isChecked)
+            MainController.saveUserAll()
             val intent= Intent(this, DayActivity::class.java)
+            val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+            intent.putExtra("extra_object_day", day as Serializable)
             startActivity(intent)
         } else if(taskName.text.toString().isEmpty()){
             taskName.error="Task's name empty!!"
@@ -95,6 +101,8 @@ class AddTaskActivity : AppCompatActivity() {
 
     fun discardTask(view: View) {
         val intent= Intent(this, DayActivity::class.java)
+        val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+        intent.putExtra("extra_object_day", day as Serializable)
         startActivity(intent)
     }
 

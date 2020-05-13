@@ -57,58 +57,118 @@
                     android:paddingTop="0dp"
                     android:paddingBottom="30dp">
 
-                    <TextView
-                        android:id="@+id/todays_foodTitle"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="70dp"
-                        android:paddingTop="25dp"
-                        android:paddingEnd="0dp"
-                        android:paddingBottom="20dp"
-                        android:text="@string/todays_food"
-                        android:textColor="@color/md_black"
-                        android:textSize="21sp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/todays_foodTitle"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="70dp"
+                            android:paddingTop="25dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="20dp"
+                            android:text="@string/todays_food"
+                            android:textColor="@color/md_black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/todays_foodImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/todays_foodTitle"
+                            android:layout_centerVertical="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/food_list_icon" />
+
+                    </RelativeLayout>
+
 
                     <ListView
                         android:id="@+id/listViewTodaysFood"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/remindersTitle"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="70dp"
-                        android:paddingTop="25dp"
-                        android:paddingEnd="0dp"
-                        android:paddingBottom="20dp"
-                        android:text="@string/reminders"
-                        android:textColor="@color/md_black"
-                        android:textSize="21sp"
-                        android:textStyle="bold">
+                        android:layout_height="wrap_content">
 
-                    </TextView>
+                        <TextView
+                            android:id="@+id/remindersTitle"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="70dp"
+                            android:paddingTop="25dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="20dp"
+                            android:text="@string/reminders"
+                            android:textColor="@color/md_black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/remindersTitleImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/remindersTitle"
+                            android:layout_centerVertical="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/reminder_list_icon" />
+
+                    </RelativeLayout>
 
                     <ListView
                         android:id="@+id/listViewReminders"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/tasksTitle"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="70dp"
-                        android:paddingTop="25dp"
-                        android:paddingEnd="0dp"
-                        android:paddingBottom="20dp"
-                        android:text="@string/tasks"
-                        android:textColor="@color/md_black"
-                        android:textSize="21sp"
-                        android:textStyle="bold">
+                        android:layout_height="wrap_content">
 
-                    </TextView>
+                        <TextView
+                            android:id="@+id/tasksTitle"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="70dp"
+                            android:paddingTop="25dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="20dp"
+                            android:text="@string/tasks"
+                            android:textColor="@color/md_black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/tasksTitleImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/tasksTitle"
+                            android:layout_centerVertical="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/task_list_icon" />
+
+                    </RelativeLayout>
 
                     <ListView
                         android:id="@+id/listViewTasks"

@@ -1,6 +1,8 @@
 package com.example.medbutler.classes.model
 
-class Task {
+import java.io.Serializable
+
+class Task: Serializable {
     var id: String = ""
     private var taskDate:String = ""     // Mateix valor que l'atribut que dia al qual pertanyi, el guardem per si de cas el necessitéssim
     private var taskName:String = ""

@@ -116,7 +116,7 @@ class MedListActivity : AppCompatActivity() {
         listViewMedList.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Med = array_exemple.get(position)
             val intentModifMed= Intent(this, ModifMedActivity::class.java)
-            intentModifMed.putExtra("extra_object_med", listItemId as Serializable);
+            intentModifMed.putExtra("extra_object_med", listItemId as Serializable)
             startActivity(intentModifMed)
         }
 
@@ -126,7 +126,7 @@ class MedListActivity : AppCompatActivity() {
             true
         })
 
-        justifyListViewHeightBasedOnChildren(listViewMedList);
+        justifyListViewHeightBasedOnChildren(listViewMedList)
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -139,7 +139,7 @@ class MedListActivity : AppCompatActivity() {
         }
         val modifButtonClick = { dialog: DialogInterface, which: Int ->
             val intentModifMed= Intent(this, ModifMedActivity::class.java)
-            intentModifMed.putExtra("extra_object_med", listItemId as Serializable);
+            intentModifMed.putExtra("extra_object_med", listItemId as Serializable)
             startActivity(intentModifMed)
         }
 

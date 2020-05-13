@@ -14,22 +14,24 @@ import com.example.medbutler.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import com.example.medbutler.classes.controller.*
+import com.example.medbutler.classes.model.Day
 import com.example.medbutler.classes.model.Task
 import kotlinx.android.synthetic.main.activity_modif_task_layout.*
+import java.io.Serializable
 import kotlin.random.Random
 
 class ModifTaskActivity : AppCompatActivity() {
 
     var startTimeMinuteTask: Int = -1
     var startTimeHourTask: Int = -1
-    lateinit var extraObjectId:String
+    lateinit var extraObjectDayId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modif_task_layout)
-        val extraObject: Task = intent.extras!!.get("extra_object_reminder") as Task
-        extraObjectId = extraObject.id
+        val extraObject: Task = intent.extras!!.get("extra_object_task") as Task
+        extraObjectDayId = extraObject.gettaskDate()
 
         taskNameModify.setText(extraObject.gettaskName())
 
@@ -93,14 +95,16 @@ class ModifTaskActivity : AppCompatActivity() {
 
         if(!taskNameModify.text.toString().isEmpty() && startTimeMinuteTask != -1 && startTimeHourTask != -1){
 
-            //GET_CURRENT_DAY.getTaskListArray()?.find { it.id.equals(extraObjectId) }?.setreminderName(taskNameModify.text.toString())
-            //GET_CURRENT_DAY.getTaskListArray()?.find { it.id.equals(extraObjectId) }?.settaskStartTimeHour(startTimeHourTask)
-            //GET_CURRENT_DAY.getTaskListArray()?.find { it.id.equals(extraObjectId) }?.settaskStartTimeMinute(startTimeMinuteTask)
-            //GET_CURRENT_DAY.getTaskListArray()?.find { it.id.equals(extraObjectId) }?.setallowNotification(switchNotificationTaskModify.isChecked)
-            //GET_CURRENT_DAY.getTaskListArray()?.find { it.id.equals(extraObjectId) }?.id = taskNameModify.text.toString()
-            //MainController.saveUserAll()
+            val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.settaskName(taskNameModify.text.toString())
+            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.settaskStartTimeHour(startTimeHourTask)
+            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.settaskStartTimeMinute(startTimeMinuteTask)
+            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.setallowNotification(switchNotificationTaskModify.isChecked)
+            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.id = taskNameModify.text.toString()
+            MainController.saveUserAll()
 
             val intent= Intent(this, DayActivity::class.java)
+            intent.putExtra("extra_object_day", day as Serializable)
             startActivity(intent)
         } else if(taskNameModify.text.toString().isEmpty()){
             taskNameModify.error="Task's name empty!!"
@@ -116,6 +120,8 @@ class ModifTaskActivity : AppCompatActivity() {
 
     fun actionDiscardModifyTask(view: View) {
         val intent= Intent(this, DayActivity::class.java)
+        val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+        intent.putExtra("extra_object_day", day as Serializable)
         startActivity(intent)
     }
 

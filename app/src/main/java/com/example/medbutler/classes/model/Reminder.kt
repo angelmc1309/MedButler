@@ -2,7 +2,7 @@ package com.example.medbutler.classes.model
 
 import java.io.Serializable
 
-class Reminder:Serializable {
+class Reminder: Serializable {
     var id: String = ""
     private var reminderDate:String = ""     // Mateix valor que l'atribut que dia al qual pertanyi, el guardem per si de cas el necessitéssim
     private var reminderName:String = ""

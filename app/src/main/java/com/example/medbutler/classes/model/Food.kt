@@ -1,12 +1,12 @@
 package com.example.medbutler.classes.model
 
-class Food {
-    private var name:String
-    private val nutricionalValues:ArrayList<String>
+import java.io.Serializable
+
+class Food: Serializable{
+    private var name:String = ""
+    private var nutricionalValues:ArrayList<String> = ArrayList()
 
     constructor(){
-        name = ""
-        nutricionalValues = ArrayList()
     }
 
     constructor(name:String){
@@ -20,5 +20,16 @@ class Food {
 
     override fun toString(): String {
         return this.name
+    }
+
+    fun getname(): String? {
+        return this.name
+    }
+    fun setname(newName:String){
+        this.name=newName
+    }
+
+    fun getNutricionalValuesArray():ArrayList<String>{
+        return nutricionalValues
     }
 }

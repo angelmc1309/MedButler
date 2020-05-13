@@ -11,22 +11,24 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.*
+import com.example.medbutler.classes.model.Day
 import com.example.medbutler.classes.model.Reminder
 import kotlinx.android.synthetic.main.activity_modif_reminder_layout.*
+import java.io.Serializable
 import kotlin.random.Random
 
 class ModifReminderActivity : AppCompatActivity() {
 
     lateinit var optionImportance: Spinner
     var resultImportance:Int = -1
-    lateinit var extraObjectId:String
+    lateinit var extraObjectDayId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modif_reminder_layout)
         val extraObject: Reminder = intent.extras!!.get("extra_object_reminder") as Reminder
-        extraObjectId = extraObject.id
+        extraObjectDayId = extraObject.getreminderDate()
         optionImportance = findViewById(R.id.spinnerImportanceModify) as Spinner
 
         /*
@@ -104,13 +106,15 @@ class ModifReminderActivity : AppCompatActivity() {
 
         if(!reminderNameModify.text.toString().isEmpty() && resultImportance != -1){
 
-            //GET_CURRENT_DAY.getReminderListArray()?.find { it.id.equals(extraObjectId) }?.settaskName(reminderNameModify.text.toString())
-            //GET_CURRENT_DAY.getReminderListArray()?.find { it.id.equals(extraObjectId) }?.setimportance(resultImportance)
-            //GET_CURRENT_DAY.getReminderListArray()?.find { it.id.equals(extraObjectId) }?.setallowNotification(switchNotificationReminderModify.isChecked)
-            //GET_CURRENT_DAY.getReminderListArray()?.find { it.id.equals(extraObjectId) }?.id = reminderNameModify.text.toString()
-            //MainController.saveUserAll()
+            val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.setreminderName(reminderNameModify.text.toString())
+            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.setimportance(resultImportance)
+            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.setallowNotification(switchNotificationReminderModify.isChecked)
+            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.id = reminderNameModify.text.toString()
+            MainController.saveUserAll()
 
             val intent= Intent(this, DayActivity::class.java)
+            intent.putExtra("extra_object_day", day as Serializable)
             startActivity(intent)
         } else if(reminderNameModify.text.toString().isEmpty()){
             reminderNameModify.error="Reminder's name empty!!"
@@ -120,6 +124,8 @@ class ModifReminderActivity : AppCompatActivity() {
 
     fun actionDiscardModifyReminder(view: View) {
         val intent= Intent(this, DayActivity::class.java)
+        val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+        intent.putExtra("extra_object_day", day as Serializable)
         startActivity(intent)
     }
 

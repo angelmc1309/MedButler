@@ -11,18 +11,22 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.*
+import com.example.medbutler.classes.model.Day
 import kotlinx.android.synthetic.main.activity_add_reminder_layout.*
+import java.io.Serializable
 import kotlin.random.Random
 
 class AddReminderActivity : AppCompatActivity() {
 
     lateinit var optionImportance: Spinner
     var resultImportance:Int = -1
+    lateinit var extraObjectDayId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_reminder_layout)
+        extraObjectDayId = intent.getStringExtra("extra_object_dayID")!!
         optionImportance = findViewById(R.id.spinnerImportance) as Spinner
 
         /*
@@ -83,9 +87,11 @@ class AddReminderActivity : AppCompatActivity() {
     fun addReminder(view: View) {
 
         if(!reminderName.text.toString().isEmpty() && resultImportance != -1){
-            //addReminder(reminderName.text.toString(),reminderName.text.toString(),resultImportance,switchNotificationReminder.isChecked)
-            //MainController.saveUserAll()
+            MainController.addReminder(reminderName.text.toString(),extraObjectDayId,reminderName.text.toString(),resultImportance,switchNotificationReminder.isChecked)
+            MainController.saveUserAll()
             val intent= Intent(this, DayActivity::class.java)
+            val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+            intent.putExtra("extra_object_day", day as Serializable)
             startActivity(intent)
         } else if(reminderName.text.toString().isEmpty()){
             reminderName.error="Reminder's name empty!!"
@@ -95,6 +101,8 @@ class AddReminderActivity : AppCompatActivity() {
 
     fun discardReminder(view: View) {
         val intent= Intent(this, DayActivity::class.java)
+        val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
+        intent.putExtra("extra_object_day", day as Serializable)
         startActivity(intent)
     }
 
