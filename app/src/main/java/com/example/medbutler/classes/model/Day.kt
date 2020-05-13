@@ -4,9 +4,9 @@ import java.io.Serializable
 
 class Day: Serializable {
     private var date:String = ""
-    private val foodList :ArrayList<Food> = ArrayList<Food>(5)
-    private val reminderList:ArrayList<Reminder> = ArrayList<Reminder>()
-    private val taskList:ArrayList<Task> = ArrayList<Task>()
+    private var foodList :ArrayList<Food> = ArrayList<Food>(5)
+    private var reminderList:ArrayList<Reminder> = ArrayList<Reminder>()
+    private var taskList:ArrayList<Task> = ArrayList<Task>()
 
     constructor(){
     }
@@ -48,6 +48,18 @@ class Day: Serializable {
 
     fun getTaskArray():ArrayList<Task>{
         return taskList
+    }
+    fun setFoodArray(foodlist:ArrayList<Food>){
+        this.foodList=foodList
+
+    }
+    fun setReminderArray(reminderlist:ArrayList<Reminder>){
+        this.reminderList=reminderlist
+
+    }
+    fun setTaskArray(taskList:ArrayList<Task>){
+        this.taskList=taskList
+
     }
 
     fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
