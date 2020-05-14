@@ -18,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Day
+import com.example.medbutler.classes.model.Food
 import com.example.medbutler.classes.model.Reminder
 import com.example.medbutler.classes.model.Task
 import kotlinx.android.synthetic.main.day_layout.*
@@ -26,14 +27,12 @@ import java.io.Serializable
 class DayActivity : AppCompatActivity() {
 
     lateinit var extraObjectId:String
-    lateinit var extraObjectDay:Day
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.day_layout)
         val extraObject:Day = intent.extras!!.get("extra_object_day") as Day
-        extraObjectDay = extraObject
         extraObjectId = extraObject.getDate()
         updateAppearance()
     }
@@ -50,7 +49,7 @@ class DayActivity : AppCompatActivity() {
             val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
             val view: View = layoutInflater.inflate(resources, null)
 
-            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListDisease)
+            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListDay)
             val titleTextView: TextView = view.findViewById(R.id.textNameinDay)
             val firstTextView: TextView = view.findViewById(R.id.textinDayFirst)
             val secondTextView: TextView = view.findViewById(R.id.textinDaySecond)
@@ -77,7 +76,7 @@ class DayActivity : AppCompatActivity() {
             val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
             val view: View = layoutInflater.inflate(resources, null)
 
-            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListDisease)
+            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListDay)
             val titleTextView: TextView = view.findViewById(R.id.textNameinDay)
             val firstTextView: TextView = view.findViewById(R.id.textinDayFirst)
             val secondTextView: TextView = view.findViewById(R.id.textinDaySecond)
@@ -108,6 +107,38 @@ class DayActivity : AppCompatActivity() {
         }
     }
 
+    class CustomAdapter4 (var mCtx: Context, var resources:Int, var items:List<Food>):
+        ArrayAdapter<Food>(mCtx, resources, items) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+            val view: View = layoutInflater.inflate(resources, null)
+
+            val lay: RelativeLayout = view.findViewById(R.id.relatLayoutListFood)
+            val titleTextView: TextView = view.findViewById(R.id.textNameinDayFood)
+            val firstTextView: TextView = view.findViewById(R.id.textinDayFirstFood)
+
+            var mItem: Food = items[position]
+            if (position == 0){
+                titleTextView.text = context.getString(R.string.first_meal)
+            } else if (position == 1){
+                titleTextView.text = context.getString(R.string.second_meal)
+            } else if (position == 2){
+                titleTextView.text = context.getString(R.string.third_meal)
+            } else if (position == 3){
+                titleTextView.text = context.getString(R.string.fourth_meal)
+            } else if (position == 4){
+                titleTextView.text = context.getString(R.string.fifth_meal)
+            }
+            if (mItem.getname().equals("")){
+                firstTextView.text = context.getString(R.string.not_introduced)
+            }else{
+                firstTextView.text = mItem.getname()
+            }
+
+            return view
+        }
+    }
+
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun updateAppearance(){
         // background
@@ -116,7 +147,7 @@ class DayActivity : AppCompatActivity() {
         val idBack = resources.getIdentifier(MainController.getcurrent().getappearanceInfo().getbackground(), "drawable", packageName)
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
-        val array_exemple = extraObjectDay.getReminderArray()
+        val array_exemple = MainController.getReminderArray(extraObjectId)!!
 
         listViewReminders.adapter =
             CustomAdapter3(
@@ -138,7 +169,7 @@ class DayActivity : AppCompatActivity() {
             true
         })
 
-        val array_exemple2 = extraObjectDay.getTaskArray()
+        val array_exemple2 = MainController.getTaskArray(extraObjectId)!!
 
         listViewTasks.adapter =
             CustomAdapter2(
@@ -149,7 +180,7 @@ class DayActivity : AppCompatActivity() {
 
         listViewTasks.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Task = array_exemple2.get(position)
-            val intentModifTask= Intent(this, DiseaseInformationActivity::class.java)
+            val intentModifTask= Intent(this, ModifTaskActivity::class.java)
             intentModifTask.putExtra("extra_object_task", listItemId as Serializable)
             startActivity(intentModifTask)
         }
@@ -160,8 +191,62 @@ class DayActivity : AppCompatActivity() {
             true
         })
 
+        val array_exemple3 = MainController.getFoodArray(extraObjectId)!!
+
+        listViewTodaysFood.adapter =
+            CustomAdapter4(
+                this,
+                R.layout.simple_list_item_custom4,
+                array_exemple3
+            )
+
+        listViewTodaysFood.setOnItemClickListener { parent, view, position, id ->
+            var listItemId:Food = array_exemple3.get(position)
+            if (!listItemId.getname().equals("")){
+                val intentModifFood= Intent(this, ModifFoodActivity::class.java)
+                intentModifFood.putExtra("extra_object_food", listItemId as Serializable)
+                startActivity(intentModifFood)
+            }
+        }
+
+        listViewTodaysFood.setOnItemLongClickListener(OnItemLongClickListener { arg0, arg1, pos, id ->
+             var listItemId:Food = array_exemple3.get(pos)
+            if (!listItemId.getname().equals("")) {
+                withCustomStyleFood(listItemId)
+            }
+            true
+        })
+
+        justifyListViewHeightBasedOnChildren(listViewTodaysFood)
         justifyListViewHeightBasedOnChildren(listViewReminders)
         justifyListViewHeightBasedOnChildren(listViewTasks)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    fun withCustomStyleFood(listItemId:Food) {
+
+        val positiveButtonClick = { dialog: DialogInterface, which: Int ->
+            MainController.deleteFood(listItemId.getfoodDate(),listItemId.getnumber())
+            MainController.saveUserAll()
+            this.onResume()
+        }
+        val modifButtonClick = { dialog: DialogInterface, which: Int ->
+            val intentModifFood= Intent(this, ModifFoodActivity::class.java)
+            intentModifFood.putExtra("extra_object_food", listItemId as Serializable)
+            startActivity(intentModifFood)
+        }
+
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AlertDialogCustom))
+
+        with(builder)
+        {
+            setTitle("Dialog on Android")
+            setMessage("Are you sure you want to delete this Meal?")
+            setPositiveButton(R.string.yes, DialogInterface.OnClickListener(function = positiveButtonClick))
+            setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
+            setNeutralButton(R.string.modif_food, modifButtonClick)
+            show()
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -186,7 +271,7 @@ class DayActivity : AppCompatActivity() {
             setMessage("Are you sure you want to delete this reminder?")
             setPositiveButton(R.string.yes, DialogInterface.OnClickListener(function = positiveButtonClick))
             setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
-            setNeutralButton(R.string.modif, modifButtonClick)
+            setNeutralButton(R.string.modif_reminder, modifButtonClick)
             show()
         }
     }
@@ -213,7 +298,7 @@ class DayActivity : AppCompatActivity() {
             setMessage("Are you sure you want to delete this task?")
             setPositiveButton(R.string.yes, DialogInterface.OnClickListener(function = positiveButtonClick))
             setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
-            setNeutralButton(R.string.modif, modifButtonClick)
+            setNeutralButton(R.string.modif_task, modifButtonClick)
             show()
         }
     }

@@ -20,11 +20,16 @@ class Calendar {
     }
 
     fun setFood(date:String,order: Int, name: String) {
-        find(date)?.setFood(order,name)
+        find(date)?.setFood(date,order,name)
     }
+
+    fun deleteFood(date:String, number:Int){
+        find(date)?.deleteFood(date,number)
+    }
+
     fun find(date: String): Day? {
         for(day in list){
-            if(day.getDate() ==date){
+            if(day.getDate().equals(date)){
                 return day
             }
         }

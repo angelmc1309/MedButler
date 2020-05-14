@@ -66,11 +66,11 @@ class DAOUser : DAO<Usuari> {
 
     }
     fun save(context: Sign_up, obj: Usuari, password:String) {
-        obj.getusername()?.let {
+        obj.getusername().let {
             firebase_auth.createUserWithEmailAndPassword(it, password)
                 .addOnCompleteListener { task: Task<AuthResult> ->
                     if (task.isSuccessful) {
-                        obj.getusername()?.let { userdb.document(it).set(obj) }
+                        obj.getusername().let { userdb.document(it).set(obj) }
                         val intent= Intent(context, Login::class.java)
                         context.startActivity(intent)
                     }else{

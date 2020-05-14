@@ -8,19 +8,20 @@
     android:orientation="vertical"
     tools:context=".classes.view.Sign_up">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="85dp"
-        android:text="@string/crearNouUsuariLabel"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:text="@string/create_a_new_user"
         android:textColor="@color/colorTitulCrearNouUsuari"
         android:textColorHighlight="@color/highlightTitulCrearNouUsuari"
-        android:textSize="28dp"
+        android:textSize="32sp"
+        android:fontFamily="@font/cabin"
         />
 <ScrollView
     android:layout_width="match_parent"
@@ -28,41 +29,46 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="60dp">
     <EditText
+        android:fontFamily="@font/cabin"
         android:id="@+id/fullnameRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:ems="10"
-        android:hint="Nom real"
+        android:hint="@string/real_name"
         android:inputType="textPersonName"
         />
     <EditText
+        android:fontFamily="@font/cabin"
         android:id="@+id/usernameRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:ems="10"
-        android:hint="Email(Login)"
+        android:hint="@string/email_login"
         android:inputType="textPersonName"
      />
     <EditText
+        android:fontFamily="@font/cabin"
         android:id="@+id/passwordRegist1"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:ems="10"
-        android:hint="Contrasenya"
+        android:hint="@string/password2"
         android:inputType="textPassword"
         />
     <EditText
+        android:fontFamily="@font/cabin"
         android:id="@+id/passwordRegist2"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:ems="10"
-        android:hint="Contrasenya(repetir)"
+        android:hint="@string/password_repeat"
         android:inputType="textPassword"
    />
 
@@ -76,41 +82,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418">
+        app:layout_constraintVertical_bias="0.418"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
 
 
         <RadioButton
-
+            android:fontFamily="@font/cabin"
             android:id="@+id/maleButRegist"
             android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:background="@drawable/selec_genere"
             android:button="@null"
             android:gravity="center"
-            android:text="@string/selecHome"
-            android:textSize="15dp"></RadioButton>
+            android:text="@string/selecMan"
+            android:textSize="18sp" />
 
         <RadioButton
+            android:fontFamily="@font/cabin"
             android:id="@+id/femaleButRegst"
             android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:background="@drawable/selec_genere"
             android:button="@null"
             android:gravity="center"
-            android:text="@string/selecDona"
-            android:textSize="15dp"></RadioButton>
+            android:text="@string/selecWoman"
+            android:textSize="18sp" />
     </RadioGroup>
 
-
-¡
-
     <EditText
+        android:fontFamily="@font/cabin"
         android:id="@+id/birthdayRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
@@ -118,63 +125,72 @@
         android:clickable="true"
         android:editable="false"
         android:ems="10"
-        android:hint="Data naixement"
+        android:hint="@string/date_of_birth2"
         android:inputType="none"
         android:onClick="pickBirthday"
-  />
+        android:focusable="true" />
     <EditText
+        android:fontFamily="@font/cabin"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:id="@+id/alturaRegist"
-        android:hint="Height(cm)"
+        android:hint="@string/height_cm"
         android:inputType="number"
         android:layout_marginLeft="65dp">
 
     </EditText>
     <EditText
+        android:fontFamily="@font/cabin"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:id="@+id/pesRegist"
-        android:hint="Weight(kg)"
+        android:hint="@string/weight_kg"
         android:inputType="number"
         android:layout_marginLeft="65dp">
 
     </EditText>
     <EditText
+        android:fontFamily="@font/cabin"
         android:id="@+id/diseaseSelectRegist"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:editable="false"
         android:layout_marginLeft="65dp"
-        android:hint="Select your diseases"
+        android:hint="@string/select_your_diseases"
         android:onClick="selectDisease">
 
     </EditText>
 
-    <TextView
-        android:id="@+id/labelFerLog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginTop="17dp"
-        android:gravity="center"
-        android:onClick="actionGoToLogin"
-        android:text="@string/labelFerLog"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-/>
     <Button
         android:id="@+id/butRegist"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="135dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="136dp"
         android:text="@string/butRegist"
+        android:textSize="18sp"
+        android:fontFamily="@font/cabin"
+        android:textStyle="bold"
         android:onClick="enregistrar"/>
+
+    <Button
+        android:fontFamily="@font/cabin"
+        android:id="@+id/labelFerLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:onClick="actionGoToLogin"
+        android:text="@string/labelLog"
+        android:textColor="@color/md_black"
+        android:textSize="18sp"
+        android:textStyle="normal" />
 
 </LinearLayout>
 

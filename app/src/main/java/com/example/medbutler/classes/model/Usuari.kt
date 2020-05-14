@@ -104,6 +104,10 @@ class Usuari
         calendar.setFood(date,order,name)
     }
 
+    fun deleteFood(date:String, number:Int){
+        calendar.deleteFood(date,number)
+    }
+
     fun existsThisDay(date: String): Boolean {
         return calendar.existsThisDay(date)
     }

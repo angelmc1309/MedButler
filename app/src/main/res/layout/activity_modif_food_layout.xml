@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/backgroundAddFoodModif">
+
+    <ImageView
+        android:id="@+id/food_image_backModif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/titleAddFoodModif"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="@string/modify_anything_about_your_meal"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="28sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/selectFoodModif"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/foodNameModif"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="@string/select_meal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/asul"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/foodNameModif"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleAddFoodModif"
+        android:layout_marginTop="7dp"
+        android:hint="@string/meal_information"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:layout_centerHorizontal="true">
+
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinnerMealModif"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectFoodModif"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnAddFoodModif"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerMealModif"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="22dp"
+        android:onClick="addFoodModif"
+        android:text="@string/save_changes" />
+
+    <Button
+        android:id="@+id/btnDiscardFoodModif"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerMealModif"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="98dp"
+        android:onClick="discardFoodModif"
+        android:text="@string/discard_changes" />
+
+</RelativeLayout>

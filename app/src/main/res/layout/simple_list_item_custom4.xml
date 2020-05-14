@@ -4,60 +4,45 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/relatLayoutListDay"
+        android:id="@+id/relatLayoutListFood"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:layout_marginBottom="0dp">
 
         <TextView
             android:paddingStart="30dp"
-            android:paddingEnd="25dp"
-            android:id="@+id/textNameinDay"
+            android:paddingEnd="0dp"
+            android:id="@+id/textNameinDayFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:textStyle="bold"
-            android:textSize="17sp"
+            android:textSize="19sp"
             android:background="@android:color/transparent"
             android:fontFamily="@font/cabin"
             android:textColor="#1a1a1a"/>
 
         <TextView
-            android:id="@+id/textinDayFirst"
+            android:id="@+id/textinDayFirstFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textNameinDay"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="3dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toEndOf="@+id/textNameinDayFood"
             android:background="@android:color/transparent"
             android:paddingStart="00dp"
             android:paddingEnd="0dp"
             android:textColor="#1a1a1a"
-            android:textSize="15sp"
-            android:layout_marginBottom="4dp"
+            android:textSize="17sp"
             android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/textinDaySecond"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textNameinDay"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="3dp"
-            android:layout_toEndOf="@+id/textinDayFirst"
-            android:background="@android:color/transparent"
-            android:paddingStart="0dp"
-            android:paddingEnd="23dp"
-            android:textColor="#1a1a1a"
-            android:textSize="15sp"
-            android:textStyle="normal"
-            android:layout_marginBottom="4dp"/>
-
-
 
     </RelativeLayout>
 </LinearLayout>

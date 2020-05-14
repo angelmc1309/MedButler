@@ -14,15 +14,20 @@ class Day: Serializable {
     constructor(date:String){
         this.date = date
         for(x in 0 until 5){
-            foodList.add(Food(""))
+            foodList.add(Food("",date, x))
         }
     }
 
     fun getDate():String{
         return date
     }
-    fun setFood(number:Int,name:String){
-        val f = Food(name)
+    fun setFood(date:String, number:Int,name:String){
+        val f = Food(name, date, number)
+        foodList[number] = f
+    }
+
+    fun deleteFood(date:String, number:Int){
+        val f = Food("", date, number)
         foodList[number] = f
     }
 
@@ -49,17 +54,17 @@ class Day: Serializable {
     fun getTaskArray():ArrayList<Task>{
         return taskList
     }
-    fun setFoodArray(foodlist:ArrayList<Food>){
-        this.foodList=foodList
 
+    fun setFoodArray(foodlist:ArrayList<Food>){
+        this.foodList=foodlist
     }
+
     fun setReminderArray(reminderlist:ArrayList<Reminder>){
         this.reminderList=reminderlist
-
     }
+
     fun setTaskArray(taskList:ArrayList<Task>){
         this.taskList=taskList
-
     }
 
     fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){

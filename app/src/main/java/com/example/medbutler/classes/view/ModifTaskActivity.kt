@@ -25,12 +25,14 @@ class ModifTaskActivity : AppCompatActivity() {
     var startTimeMinuteTask: Int = -1
     var startTimeHourTask: Int = -1
     lateinit var extraObjectDayId:String
+    lateinit var extraObjectTaskId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modif_task_layout)
         val extraObject: Task = intent.extras!!.get("extra_object_task") as Task
+        extraObjectTaskId = extraObject.id
         extraObjectDayId = extraObject.gettaskDate()
 
         taskNameModify.setText(extraObject.gettaskName())
@@ -96,11 +98,11 @@ class ModifTaskActivity : AppCompatActivity() {
         if(!taskNameModify.text.toString().isEmpty() && startTimeMinuteTask != -1 && startTimeHourTask != -1){
 
             val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
-            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.settaskName(taskNameModify.text.toString())
-            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.settaskStartTimeHour(startTimeHourTask)
-            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.settaskStartTimeMinute(startTimeMinuteTask)
-            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.setallowNotification(switchNotificationTaskModify.isChecked)
-            day.getTaskArray()?.find { it.id.equals(extraObjectDayId) }?.id = taskNameModify.text.toString()
+            day.getTaskArray().find { it.id.equals(extraObjectTaskId) }?.settaskName(taskNameModify.text.toString())
+            day.getTaskArray().find { it.id.equals(extraObjectTaskId) }?.settaskStartTimeHour(startTimeHourTask)
+            day.getTaskArray().find { it.id.equals(extraObjectTaskId) }?.settaskStartTimeMinute(startTimeMinuteTask)
+            day.getTaskArray().find { it.id.equals(extraObjectTaskId) }?.setallowNotification(switchNotificationTaskModify.isChecked)
+            day.getTaskArray().find { it.id.equals(extraObjectTaskId) }?.id = taskNameModify.text.toString()
             MainController.saveUserAll()
 
             val intent= Intent(this, DayActivity::class.java)

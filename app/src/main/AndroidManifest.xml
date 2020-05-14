@@ -31,6 +31,7 @@
         <activity android:name=".classes.view.ModifMedActivity" />
         <activity android:name=".classes.view.ModifReminderActivity" />
         <activity android:name=".classes.view.ModifTaskActivity" />
+        <activity android:name=".classes.view.ModifFoodActivity" />
         <activity android:name="com.example.medbutler.classes.view.ListView.ModelListViewProfile" />
         <activity android:name="com.example.medbutler.classes.view.ListView.ModelOther" />
         <activity android:name="com.example.medbutler.classes.view.ListView.CustomListviewAdapter" />

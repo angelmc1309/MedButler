@@ -96,6 +96,9 @@ object MainController {
             user.setFood(date, order, name)
         }
     }
+    fun deleteFood(date:String, number:Int){
+        user.deleteFood(date,number)
+    }
 
     fun existsThisDay(date:String):Boolean{
         return user.existsThisDay(date)

@@ -22,12 +22,14 @@ class ModifReminderActivity : AppCompatActivity() {
     lateinit var optionImportance: Spinner
     var resultImportance:Int = -1
     lateinit var extraObjectDayId:String
+    lateinit var extraObjectReminderId:String
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modif_reminder_layout)
         val extraObject: Reminder = intent.extras!!.get("extra_object_reminder") as Reminder
+        extraObjectReminderId = extraObject.id
         extraObjectDayId = extraObject.getreminderDate()
         optionImportance = findViewById(R.id.spinnerImportanceModify) as Spinner
 
@@ -107,10 +109,10 @@ class ModifReminderActivity : AppCompatActivity() {
         if(!reminderNameModify.text.toString().isEmpty() && resultImportance != -1){
 
             val day: Day = MainController.getcurrent().calendar.find(extraObjectDayId)!!
-            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.setreminderName(reminderNameModify.text.toString())
-            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.setimportance(resultImportance)
-            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.setallowNotification(switchNotificationReminderModify.isChecked)
-            day.getReminderArray()?.find { it.id.equals(extraObjectDayId) }?.id = reminderNameModify.text.toString()
+            day.getReminderArray().find { it.id.equals(extraObjectReminderId) }?.setreminderName(reminderNameModify.text.toString())
+            day.getReminderArray().find { it.id.equals(extraObjectReminderId) }?.setimportance(resultImportance)
+            day.getReminderArray().find { it.id.equals(extraObjectReminderId) }?.setallowNotification(switchNotificationReminderModify.isChecked)
+            day.getReminderArray().find { it.id.equals(extraObjectReminderId) }?.id = reminderNameModify.text.toString()
             MainController.saveUserAll()
 
             val intent= Intent(this, DayActivity::class.java)
