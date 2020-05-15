@@ -186,6 +186,12 @@ object MainController {
     fun removeTask(taskDate: String, id: String) {
         user.removeTask(taskDate,id)
     }
+    fun launchGallery(context: UserProfile){
+        daoUser.launchGallery(context )
+    }
+    fun addUploadRecordToDb(uri: String, context: UserProfile){
+        daoUser.addUploadRecordToDb(uri, context)
+    }
 }
 
 

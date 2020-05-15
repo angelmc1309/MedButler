@@ -13,6 +13,7 @@ import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
 import com.example.medbutler.classes.view.Sign_up
+import com.example.medbutler.classes.view.UserProfile
 import com.google.android.gms.tasks.Task
 import com.google.common.io.Files.getFileExtension
 import com.google.firebase.auth.AuthResult
@@ -20,15 +21,23 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlin.system.exitProcess
 
 class DAOUser : DAO<Usuari> {
     var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
+
     var db = FirebaseFirestore.getInstance()
     var userdb = db.collection("users")
+    var imgdb = db.collection("img")
     val user = FirebaseAuth.getInstance().currentUser
     var diseasedb=db.collection("newdisease")
-    var imgStore=FirebaseStorage.getInstance().reference.child("admin")
+
+     val PICK_IMAGE_REQUEST = 71
+     var filePath: Uri? = null
+     var firebaseStore: FirebaseStorage? = FirebaseStorage.getInstance()
+     var storageReference: StorageReference? = FirebaseStorage.getInstance().reference
+
     override fun get(id: String) {
     }
     fun get(){
@@ -180,4 +189,25 @@ class DAOUser : DAO<Usuari> {
         }
             .addOnPausedListener { System.out.println("Upload is paused!") }*/
     }
+    fun launchGallery(context: UserProfile){
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+    }
+     fun addUploadRecordToDb(uri: String, context: UserProfile){
+        val data = HashMap<String, Any>()
+        data["imageUrl"] = uri
+
+         firebase_auth.currentUser?.email?.let {
+             imgdb.document(it).set(data)
+                 .addOnSuccessListener { documentReference ->
+                     Toast.makeText(context, "Saved to DB", Toast.LENGTH_LONG).show()
+                 }
+                 .addOnFailureListener { e ->
+                     Toast.makeText(context, "Error saving to DB", Toast.LENGTH_LONG).show()
+                 }
+         }
+    }
+
 }
