@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.*
 import com.google.android.gms.tasks.Continuation
@@ -22,18 +23,16 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.user_profile_layout.*
 import java.io.IOException
-import java.util.*
 
 class UserProfile : AppCompatActivity() {
     val PICK_IMAGE_REQUEST = 71
     var filePath: Uri? = null
-    var firebaseStore: FirebaseStorage? = FirebaseStorage.getInstance()
-    var storageReference: StorageReference? = FirebaseStorage.getInstance().reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
         initProfile()
+        loadImg()
 
     }
 
@@ -102,7 +101,10 @@ class UserProfile : AppCompatActivity() {
         MainController.launchGallery(this)
     }
     fun uploadImg(view: View){
-        if(filePath != null){
+
+        filePath?.let { MainController.uploadImg(this, it) }
+
+        /*if(filePath != null){
             // UUID.randomUUID().toString() change to user-email.
             //val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
             val ref = storageReference?.child("uploads/" + MainController.getcurrent().getusername().toString())
@@ -124,7 +126,7 @@ class UserProfile : AppCompatActivity() {
             }
         }else{
             Toast.makeText(this, "Please Upload an Image", Toast.LENGTH_SHORT).show()
-        }
+        }*/
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -132,7 +134,7 @@ class UserProfile : AppCompatActivity() {
             if(data == null || data.data == null){
                 return
             }
-            
+
             filePath = data.data
             try {
                 val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
@@ -144,5 +146,14 @@ class UserProfile : AppCompatActivity() {
     }
     fun addUploadRecordToDb(uri: String){
        MainController.addUploadRecordToDb(uri, this)
+    }
+    fun loadImg(){
+        if(MainController.getcurrent().getimgState()){
+            MainController.loadImg(this)
+        }else{
+            //   android:src="@drawable/user_angel"
+           user_image.setImageResource(R.drawable.user_angel)
+        }
+
     }
 }

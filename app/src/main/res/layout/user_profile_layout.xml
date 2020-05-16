@@ -16,7 +16,7 @@
         android:layout_weight="15"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/user_angel"
+
         android:onClick="launchGallery"/>
 
     <Button

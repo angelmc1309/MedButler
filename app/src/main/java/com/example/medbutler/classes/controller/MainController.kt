@@ -1,5 +1,6 @@
 package com.example.medbutler.classes.controller
 
+import android.net.Uri
 import android.widget.TextView
 import com.example.medbutler.classes.view.Login
 import com.example.medbutler.R
@@ -190,7 +191,15 @@ object MainController {
         daoUser.launchGallery(context )
     }
     fun addUploadRecordToDb(uri: String, context: UserProfile){
-        daoUser.addUploadRecordToDb(uri, context)
+        daoUser.addUploadRecordToDb(uri,context)
+    }
+    fun loadImg(context: UserProfile){
+        daoUser.loadImg(context)
+    }
+    fun uploadImg(context: UserProfile,filePath: Uri){
+        daoUser.uploadImg(context,filePath)
+
+
     }
 }
 
