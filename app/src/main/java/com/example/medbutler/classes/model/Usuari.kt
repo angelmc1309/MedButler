@@ -59,11 +59,11 @@ class Usuari
         return this.fullname
     }
 
-    fun getReminderMinute(): String {
-     return this.username
+    fun getReminderMinute(): Int {
+     return this.reminderTimeMinute
     }
-    fun getReminderHours(): String {
-     return this.fullname
+    fun getReminderHours(): Int {
+     return this.remindertTimeHour
     }
 
      fun setReminderMinute(minute:Int) {
