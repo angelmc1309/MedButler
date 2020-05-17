@@ -20,11 +20,16 @@ class Calendar {
     }
 
     fun setFood(date:String,order: Int, name: String) {
-        find(date)?.setFood(order,name)
+        find(date)?.setFood(date,order,name)
     }
+
+    fun deleteFood(date:String, number:Int){
+        find(date)?.deleteFood(date,number)
+    }
+
     fun find(date: String): Day? {
         for(day in list){
-            if(day.getDate() ==date){
+            if(day.getDate().equals(date)){
                 return day
             }
         }
@@ -47,4 +52,40 @@ class Calendar {
         }
     }
 
+    fun getFoodArray(date:String): ArrayList<Food>? {
+        if(find(date) != null) {
+            return find(date)?.getFoodArray()
+        }else{
+            return null
+        }
+    }
+
+    fun getReminderArray(date:String): ArrayList<Reminder>? {
+        if(find(date) != null) {
+            return find(date)?.getReminderArray()
+        }else{
+            return null
+        }
+    }
+
+    fun getTaskArray(date:String): ArrayList<Task>? {
+        if(find(date) != null) {
+            return find(date)?.getTaskArray()
+        }else{
+            return null
+        }
+    }
+
+    fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
+        find(reminderDate)?.addReminder(id,reminderDate,reminderName,importance,allowNotification)
+    }
+    fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
+        find(taskDate)?.addTask(id,taskDate,taskName,taskStartTimeMinute,taskStartTimeHour,allowNotification)
+    }
+    fun removeReminder(reminderDate: String, id: String) {
+        find(reminderDate)?.removeReminder(id)
+    }
+    fun removeTask(taskDate: String, id: String) {
+        find(taskDate)?.removeTask(id)
+    }
 }

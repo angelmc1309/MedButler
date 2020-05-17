@@ -99,7 +99,9 @@ class MedListActivity : AppCompatActivity() {
         calendarButt.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         settingsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
         medsBut.setBackgroundColor(MainController.getcurrent().getappearanceInfo().gettoolbarColor())
+
         addMedBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
+        addMedBut.setBackgroundResource(R.drawable.rounded_button)
         addMedBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
 
         val array_exemple = MainController.getMedListArray()
@@ -114,7 +116,7 @@ class MedListActivity : AppCompatActivity() {
         listViewMedList.setOnItemClickListener { parent, view, position, id ->
             var listItemId:Med = array_exemple.get(position)
             val intentModifMed= Intent(this, ModifMedActivity::class.java)
-            intentModifMed.putExtra("extra_object_med", listItemId as Serializable);
+            intentModifMed.putExtra("extra_object_med", listItemId as Serializable)
             startActivity(intentModifMed)
         }
 
@@ -124,7 +126,7 @@ class MedListActivity : AppCompatActivity() {
             true
         })
 
-        justifyListViewHeightBasedOnChildren(listViewMedList);
+        justifyListViewHeightBasedOnChildren(listViewMedList)
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -137,7 +139,7 @@ class MedListActivity : AppCompatActivity() {
         }
         val modifButtonClick = { dialog: DialogInterface, which: Int ->
             val intentModifMed= Intent(this, ModifMedActivity::class.java)
-            intentModifMed.putExtra("extra_object_med", listItemId as Serializable);
+            intentModifMed.putExtra("extra_object_med", listItemId as Serializable)
             startActivity(intentModifMed)
         }
 

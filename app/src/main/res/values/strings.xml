@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">MedButler</string>
-    <string name="labelFerLog">Ja estic enregistrat, vull fer login</string>
-    <string name="butRegist">Enregistrar</string>
+    <string name="labelLog">I am already registered, I want to login</string>
+    <string name="butRegist">Register</string>
     <string name="greeting">Welcome %1$s!</string>
-    <string name="crearNouUsuariLabel">Crear un nou usuari</string>
-    <string name="selecHome">Home</string>
-    <string name="selecDona">Dona</string>
+    <string name="create_a_new_user">Create a new user</string>
+    <string name="selecMan">Man</string>
+    <string name="selecWoman">Woman</string>
     <string name="loginBut">Log in</string>
-    <string name="vullEnregistrarLabel">Vull crear un nou usuari</string>
+    <string name="createNewUser">I want to create a new user</string>
     <string name="key_full_name" translatable="false">key_full_name</string>
     <string name="key_email" translatable="false">key_email</string>
     <string name="key_sleep_timer" translatable="false">key_sleep_timer</string>
@@ -36,18 +36,32 @@
     <string name="change_color_toolbar" translatable="false">change_color_toolbar</string>key_toolbar_color
     <string name="key_toolbar_color" translatable="false">key_toolbar_color</string>
     <string name="action_gohome" translatable="false">Go Home</string>
+    <string name="action_gocalendar" translatable="false">Go Calendar</string>
     <string name="disease_information">Disease Information</string>
     <string name="list_medicines">List of medicines</string>
     <string name="add">Add</string>
     <string name="enter_the_required_information_about_your_medicine">Enter the required information about your medicine</string>
+    <string name="enter_the_required_information_about_your_task">Enter the required information about your task</string>
+    <string name="enter_the_required_information_about_your_reminder">Enter the required information about your reminder</string>
     <string name="discard">Discard</string>
     <string name="turn_on_notifications_for_this_medicine">Turn on notifications for this medicine</string>
+    <string name="turn_on_notifications_for_this_task">Turn on notifications for this task</string>
+    <string name="turn_on_notifications_for_this_reminder">Turn on notifications for this reminder</string>
     <string name="select_start_time">Select Start Time</string>
     <string name="medicine_s_name">Medicine\'s name</string>
+    <string name="reminder_s_name">Reminder\'s name</string>
+    <string name="meal_information">Meal complete information</string>
+    <string name="task_s_name">Task\'s name</string>
     <string name="medication_frequency">Medication frequency</string>
+    <string name="reminder_importance">Reminder importance</string>
+    <string name="select_meal">Select which meal of the day is:</string>
     <string name="treatment_duration">Treatment duration</string>
     <string name="click_here_to_select_the_time">click here to select the time</string>
+    <string name="click_here">click here</string>
     <string name="modify_anything_about_your_medicine">Modify anything about your medicine</string>
+    <string name="modify_anything_about_your_task">Modify anything about your task</string>
+    <string name="modify_anything_about_your_reminder">Modify anything about your reminder</string>
+    <string name="modify_anything_about_your_meal">Modify anything about your meal</string>
     <string name="save_changes">Save Changes</string>
     <string name="discard_changes">Discard changes</string>
     <string name="email">Email: %1$s</string>
@@ -67,6 +81,9 @@
     <string name="cancel">CANCEL</string>
     <string name="yes">YES</string>
     <string name="modif">Modify Medicine</string>
+    <string name="modif_task">Modify Task</string>
+    <string name="modif_reminder">Modify Reminder</string>
+    <string name="modif_food">Modify Meal</string>
     <string name="que_es_hipertension_arterial">Qué es\n\nLa hipertensión arterial es una patología crónica en la que los vasos sanguíneos tienen una tensión persistentemente alta, lo que puede dañarlos. La tensión arterial es la fuerza que ejerce la sangre contra las paredes de los vasos (arterias) al ser bombeada por el corazón. Cuanto más alta es la tensión, más esfuerzo tiene que realizar el corazón para bombear.\n\nUna de las características de esta enfermedad es que no presenta unos síntomas claros y estos pueden tardar mucho tiempo en manifestarse. Sin embargo, constituye el factor de riesgo cardiovascular más prevalente.\n\nEn la actualidad, las enfermedades cardiovasculares son la primera causa de mortalidad en España. La hipertensión es una patología tratable, pero su falta de control puede desencadenar complicaciones graves, como infarto de miocardio, insuficiencia cardiaca o ictus.\n\nLas primeras consecuencias de la hipertensión las sufren las arterias, que se endurecen a medida que soportan la presión arterial alta de forma continua, se hacen más gruesas y puede verse dificultado al paso de sangre a través de ellas. Este daño en las paredes de los  vasos sanguíneos favorece que se depositen colesterol y triglicéridos en ellas, por eso lo que hace que la hipertensió sea un de riesgo muy importante para el desarrollo de arterioesclerosis.</string>
     <string name="causas_hipertension_arterial">Aunque todavía no se conocen las causas específicas que provocan la hipertensión arterial, sí se ha relacionado con una serie de factores que suelen estar presentes en la mayoría de las personas que la sufren. Conviene separar aquellos relacionados con la herencia genética, el sexo, la edad y la raza, y por tanto poco modificables, de aquellos otros que se podrían cambiar al variar los hábitos y el ambiente en el que viven las personas, como la obesidad, la sensibilidad al sodio, el consumo excesivo de alcohol, el uso de ciertos fármacos y un estilo de vida muy sedentario.</string>
     <string name="prevencion_hipertension_arterial">Tener hábitos de vida saludable y, sobre todo, evitar el sobrepeso y la obesidad, son los principales factores para prevenir la aparición de la hipertensión.\n\nLos especialistas señalan que llevar una dieta sana y practicar ejercicio puede ayudar a que la población general esté exenta de sufrir esta patología. Dejar de fumar también previene esta patología, ya que el tabaco eleva la presión arterial.\n\nEn los casos en los que en la familia haya antecedentes de hipertensión y por tanto haya una predisposición a ser hipertenso a lo largo del tiempo, este factor genético supone una llamada de atención adicional a que el paciente cuide esos hábitos de vida y vigile sus cifras de tensión arterial.</string>
@@ -163,4 +180,23 @@
     <string name="todays_food">Today\'s food</string>
     <string name="reminders">Reminders</string>
     <string name="tasks">Tasks</string>
+    <string name="add_medicine">Add Medicine</string>
+    <string name="enter_information_about_your_meal">Enter information about your meal</string>
+    <string name="notification_on">notification ON</string>
+    <string name="notification_off">notification OFF</string>
+    <string name="not_introduced">not introduced</string>
+    <string name="first_meal">first meal</string>
+    <string name="second_meal">second meal</string>
+    <string name="third_meal">third meal</string>
+    <string name="fourth_meal">fourth meal</string>
+    <string name="fifth_meal">fifth meal</string>
+    <string name="username">Username</string>
+    <string name="real_name">Real name</string>
+    <string name="email_login">Email (Login)</string>
+    <string name="password2">Password</string>
+    <string name="password_repeat">Password (repeat)</string>
+    <string name="date_of_birth2">Date of birth</string>
+    <string name="height_cm">Height (cm)</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="select_your_diseases">Select your diseases</string>
 </resources>

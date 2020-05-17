@@ -2,7 +2,6 @@ package com.example.medbutler.classes.view
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -10,17 +9,36 @@ import android.view.View
 import android.widget.CalendarView
 import android.widget.ImageButton
 import android.widget.LinearLayout
-import com.example.medbutler.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
+import com.example.medbutler.classes.model.Day
+import kotlinx.android.synthetic.main.calendar_layout.*
+import java.io.Serializable
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Calendar : AppCompatActivity(){
 
+    var selectedDate:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.calendar_layout)
         val cal = findViewById<CalendarView>(R.id.calendar_view)
-        cal.setOnDateChangeListener(CalendarView.OnDateChangeListener { view, year, month, dayOfMonth -> calendarClick(cal)})
+        selectedDate = getDateString()
+        cal.setOnDateChangeListener({ view, year, month, dayOfMonth ->
+            //Note that months are indexed from 0. So, 0 means january, 1 means February, 2 means march etc.
+            val formattedDay = String.format("%02d", dayOfMonth)
+            val formattedMonth = String.format("%02d", (month+1))
+            val newDate = formattedDay + "/" + formattedMonth + "/" + year.toString()
+            if (selectedDate.equals(newDate)){
+                calendarClick(cal)
+            }else{
+                selectedDate = newDate
+            }
+        })
+
         updateAppearance()
     }
 
@@ -74,12 +92,24 @@ class Calendar : AppCompatActivity(){
         startActivity(intent)
     }
     fun calendarClick(view: View){
-        val intent= Intent(this, DayActivity::class.java)
-        startActivity(intent)
-
+        val intentDay= Intent(this, DayActivity::class.java)
+        val day: Day
+        if (!MainController.existsThisDay(selectedDate)){
+            MainController.createDay(selectedDate)
+        }
+        day = MainController.getcurrent().calendar.find(selectedDate)!!
+        intentDay.putExtra("extra_object_day", day as Serializable)
+        startActivity(intentDay)
     }
     fun actiongoHome(){
         val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+    fun getDateString(): String{
+        val date = SimpleDateFormat("dd/MM/yyyy")
+        val selectedDate: String = date.format(Date(calendar_view.getDate()))
+
+        return selectedDate
+    }
+
 }

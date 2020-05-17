@@ -1,106 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/dayConstraintLayout"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/titleDay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:layout_marginTop="0dp"
-        android:fontFamily="@font/cinzel_decorative"
-        android:gravity="center"
-        android:text="CURRENT DAY"
-        android:textColor="@android:color/black"
-        android:textSize="30sp">
-
-    </TextView>
-
     <LinearLayout
-        android:id="@+id/linearLayoutDay"
+        android:id="@+id/dayLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="70dp"
-        app:layout_constraintBottom_toBottomOf="@id/my_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolbar_treatment"
-        app:layout_constraintVertical_bias="0.0">
-        <ScrollView
-            android:id="@+id/scrollDay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleDay"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:paddingTop="0dp"
-                android:paddingBottom="30dp"
-                android:id="@+id/linearLayout3Day"
-                android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/brawler"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="CURRENT DAY"
+            android:textColor="@android:color/black"
+            android:textSize="30sp">
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/my_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/toolbar_treatment"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ScrollView
+                android:id="@+id/scrollDay"
                 android:layout_width="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/todays_foodTitle"
+                <LinearLayout
+                    android:id="@+id/linearLayout3Day"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="70dp"
-                    android:paddingTop="25dp"
-                    android:paddingEnd="0dp"
-                    android:paddingBottom="20dp"
-                    android:text="@string/todays_food"
-                    android:textColor="@color/md_black"
-                    android:textSize="21sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="100dp">
 
-                <ListView
-                    android:id="@+id/listViewTodaysFood"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:paddingTop="25dp"
-                    android:paddingBottom="20dp"
-                    android:textStyle="bold"
-                    android:textSize="21sp"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/md_black"
-                    android:id="@+id/remindersTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/reminders">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                </TextView>
-                <ListView
-                    android:id="@+id/listViewReminders"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:paddingTop="25dp"
-                    android:paddingBottom="20dp"
-                    android:textStyle="bold"
-                    android:textSize="21sp"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/md_black"
-                    android:id="@+id/tasksTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tasks">
+                        <TextView
+                            android:id="@+id/todays_foodTitle"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="70dp"
+                            android:paddingTop="25dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="20dp"
+                            android:text="@string/todays_food"
+                            android:textColor="@color/md_black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
 
-                </TextView>
-                <ListView
-                    android:id="@+id/listViewTasks"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-            </LinearLayout>
-        </ScrollView>
+                        <ImageView
+                            android:id="@+id/todays_foodImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/todays_foodTitle"
+                            android:layout_centerVertical="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/food_list_icon" />
+
+                    </RelativeLayout>
+
+
+                    <ListView
+                        android:id="@+id/listViewTodaysFood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/remindersTitle"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="70dp"
+                            android:paddingTop="25dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="20dp"
+                            android:text="@string/reminders"
+                            android:textColor="@color/md_black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/remindersTitleImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/remindersTitle"
+                            android:layout_centerVertical="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/reminder_list_icon" />
+
+                    </RelativeLayout>
+
+                    <ListView
+                        android:id="@+id/listViewReminders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tasksTitle"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="70dp"
+                            android:paddingTop="25dp"
+                            android:paddingEnd="0dp"
+                            android:paddingBottom="20dp"
+                            android:text="@string/tasks"
+                            android:textColor="@color/md_black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/tasksTitleImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/tasksTitle"
+                            android:layout_centerVertical="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/task_list_icon" />
+
+                    </RelativeLayout>
+
+                    <ListView
+                        android:id="@+id/listViewTasks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
 
+    <com.github.clans.fab.FloatingActionMenu
+        android:paddingBottom="40dp"
+        android:paddingRight="20dp"
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorNormal="#DA4336"
+        fab:menu_colorPressed="#E75043"
+        fab:menu_colorRipple="#99FFFFFF"
+        fab:menu_fab_size="normal"
+        fab:menu_icon="@drawable/fab_add"
+        fab:menu_labels_colorNormal="#333333"
+        fab:menu_labels_colorPressed="#444444"
+        fab:menu_labels_colorRipple="#66FFFFFF"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_textColor="#FFFFFF"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_openDirection="up"
+        fab:menu_shadowColor="#66000000"
+        fab:menu_shadowRadius="4dp"
+        fab:menu_shadowXOffset="1dp"
+        fab:menu_shadowYOffset="3dp"
+        fab:menu_showShadow="true">
 
-</LinearLayout>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            android:onClick="actionAddFood"
+            fab:fab_label="Add Food"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            fab:fab_label="Add Reminder"
+            android:onClick="actionAddReminder"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            fab:fab_label="Add Task"
+            android:onClick="actionAddTask"
+            fab:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+</androidx.constraintlayout.widget.ConstraintLayout>

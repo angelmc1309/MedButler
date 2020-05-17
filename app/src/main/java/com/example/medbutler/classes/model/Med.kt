@@ -82,6 +82,6 @@ class Med:Serializable {
         return this.allowNotification
     }
     fun setallowNotification(allowNotification:Boolean){
-        this.allowNotification=allowNotification
+        this.allowNotification = allowNotification
     }
 }

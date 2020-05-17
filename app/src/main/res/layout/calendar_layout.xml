@@ -21,7 +21,7 @@
             android:paddingTop="30dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="0dp"
-            android:fontFamily="@font/cinzel_decorative"
+            android:fontFamily="@font/brawler"
             android:gravity="center"
             android:text="@string/calendar2"
             android:textColor="@android:color/black"
@@ -33,7 +33,7 @@
             android:id="@+id/calendar_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/titleCalendar"
+            android:layout_below="@id/titleCalendar"
             android:layout_marginTop="10dp">
 
         </CalendarView>

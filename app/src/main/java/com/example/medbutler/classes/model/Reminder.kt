@@ -1,8 +1,13 @@
 package com.example.medbutler.classes.model
 
-class Reminder {
-    private var reminderName:String
-    private var importance:Int
+import java.io.Serializable
+
+class Reminder: Serializable {
+    var id: String = ""
+    private var reminderDate:String = ""     // Mateix valor que l'atribut que dia al qual pertanyi, el guardem per si de cas el necessitéssim
+    private var reminderName:String = ""
+    private var importance:Int = 1
+    private var allowNotification:Boolean = false
 
     /*
     Importance -->  0 = indiferente/indifferent
@@ -12,21 +17,21 @@ class Reminder {
     */
 
     constructor(){
-        reminderName = ""
-        importance = 0
     }
 
-    /* No s'hauria d'utilitzar
-
-    constructor(reminderName:String){
-        this.reminderName = reminderName
-        importance = 0
-    }
-     */
-
-    constructor(reminderName: String, importance:Int){
+    constructor(id: String, reminderDate: String, reminderName: String, importance:Int, allowNotification:Boolean){
+        this.id = id
+        this.reminderDate = reminderDate
         this.reminderName = reminderName
         this.importance = importance
+        this.allowNotification = allowNotification
+    }
+
+    fun getreminderDate():String{
+        return reminderDate
+    }
+    fun setreminderDate(reminderDate:String){
+        this.reminderDate = reminderDate
     }
 
     fun getreminderName():String{
@@ -40,5 +45,11 @@ class Reminder {
     }
     fun setimportance(importance:Int){
         this.importance = importance
+    }
+    fun getallowNotification(): Boolean? {
+        return this.allowNotification
+    }
+    fun setallowNotification(allowNotification:Boolean){
+        this.allowNotification = allowNotification
     }
 }

@@ -97,12 +97,14 @@ class AddMedActivity : AppCompatActivity() {
         // val drawable = resources.getDrawable(idBack)
         backgroundLay.setBackgroundResource(idBack)
 
-        var addBut: TextView = findViewById(R.id.btnAddMed)
-        var disBut: TextView = findViewById(R.id.btnDiscardMed)
+        val addBut: TextView = findViewById(R.id.btnAddMed)
+        val disBut: TextView = findViewById(R.id.btnDiscardMed)
 
         addBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
+        addBut.setBackgroundResource(R.drawable.rounded_button)
         addBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
         disBut.setBackgroundTintList(ColorStateList.valueOf(MainController.getcurrent().getappearanceInfo().getbrighterToolbarColor()))
+        disBut.setBackgroundResource(R.drawable.rounded_button)
         disBut.setTextColor(MainController.getcurrent().getappearanceInfo().getdarkerToolbarColorText())
         /*
         addBut.setBackgroundColor(MainActivity.brighterToolbarColor)

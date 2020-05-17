@@ -3,13 +3,17 @@ package com.example.medbutler.classes.view
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.util.Patterns
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
@@ -23,10 +27,20 @@ class Sign_up : AppCompatActivity() {
 
     var aux :ArrayList<Disease> = ArrayList<Disease>()
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+        val register: TextView = findViewById(R.id.butRegist)
+        val log: TextView = findViewById(R.id.labelFerLog)
 
+        register.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.grey_clear)))
+        register.setBackgroundResource(R.drawable.rounded_button)
+        //addBut.setTextColor()
+
+        log.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.grey_transp)))
+        log.setBackgroundResource(R.drawable.rounded_button)
+        //addBut.setTextColor()
     }
     fun actionGoToLogin(view: View){
         val intent= Intent(this, Login::class.java)
@@ -37,40 +51,42 @@ class Sign_up : AppCompatActivity() {
         val any=calendari.get(java.util.Calendar.YEAR)
         val mes=calendari.get(java.util.Calendar.MONTH)
         val dia=calendari.get(Calendar.DAY_OF_MONTH)
-        val mostrarDate=DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view, lany, lmes, ldia -> birthdayRegist.setText(""+ldia+"/"+(lmes.toInt()+1).toString()+"/"+lany)} , any, mes, dia)
+        val mostrarDate=DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view, lany, lmes, ldia ->
+            val selectedDate = ldia.toString() + " / " + (lmes + 1) + " / " + lany
+            birthdayRegist.setText(selectedDate)} , any, mes, dia)
         mostrarDate.show()
     }
     fun enregistrar(view: View){
         var genderr:String=""
 
         if (! passwordRegist1.text.toString().equals(passwordRegist2.text.toString())){
-            Toast.makeText(this,"Contresenya diferent", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Different password", Toast.LENGTH_SHORT).show()
         }
         if(passwordRegist1.text.toString().isEmpty()){
-            passwordRegist1.error="Camp obligatori!"
+            passwordRegist1.error="Required field!"
             passwordRegist1.requestFocus()
             return
         }
         if(passwordRegist2.text.toString().isEmpty()){
-            passwordRegist2.error="Camp obligatori!"
+            passwordRegist2.error="Required field!"
             passwordRegist2.requestFocus()
             return
         }
         if(passwordRegist1.length()<6){
-            passwordRegist1.error="Mínim 6 caracters!"
+            passwordRegist1.error="Min 6 characters!"
             passwordRegist1.requestFocus()
             return
         }
         if(birthdayRegist.toString().isEmpty()){
-            birthdayRegist.error="Camp obligatori"
+            birthdayRegist.error="Required field"
             birthdayRegist.requestFocus()
             return
         }
         if(radioGroupGender.checkedRadioButtonId==-1){
-            Toast.makeText(this, "Home o dona?",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Man or woman?",Toast.LENGTH_SHORT).show()
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(usernameRegist.text.toString()).matches()){
-            usernameRegist.error="Ha de ser un email!"
+            usernameRegist.error="It must be an email!"
             usernameRegist.requestFocus()
             return
         }
@@ -82,15 +98,15 @@ class Sign_up : AppCompatActivity() {
             Toast.makeText(this,"Man or Women!!!", Toast.LENGTH_SHORT).show()
         }*/
         if(pesRegist.toString().isEmpty()){
-            pesRegist.error="Camp obligatori"
+            pesRegist.error="Required field"
             pesRegist.requestFocus()
         }
         if(alturaRegist.toString().isEmpty()){
-            alturaRegist.error="Camp obligatori"
+            alturaRegist.error="Required field"
             alturaRegist.requestFocus()
         }
         if(pesRegist.toString().isEmpty()){
-            pesRegist.error="Camp obligatori"
+            pesRegist.error="Required field"
             pesRegist.requestFocus()
         }
 

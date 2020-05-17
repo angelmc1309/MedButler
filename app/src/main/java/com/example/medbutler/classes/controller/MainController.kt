@@ -96,7 +96,9 @@ object MainController {
             user.setFood(date, order, name)
         }
     }
-
+    fun deleteFood(date:String, number:Int){
+        user.deleteFood(date,number)
+    }
 
     fun existsThisDay(date:String):Boolean{
         return user.existsThisDay(date)
@@ -115,6 +117,27 @@ object MainController {
         user.removeDay(date)
     }
 
+    fun getFoodArray(date:String): ArrayList<Food>? {
+        if(existsThisDay(date)){
+            return user.getFoodArray(date)
+        }else{
+            return null
+        }
+    }
+    fun getReminderArray(date:String): ArrayList<Reminder>? {
+        if(existsThisDay(date)){
+            return user.getReminderArray(date)
+        }else{
+            return null
+        }
+    }
+    fun getTaskArray(date:String): ArrayList<Task>? {
+        if(existsThisDay(date)){
+            return user.getTaskArray(date)
+        }else{
+            return null
+        }
+    }
     fun getFood(date:String):String?{
         if(existsThisDay(date)){
             return user.getFood(date)
@@ -150,6 +173,18 @@ object MainController {
     }
     fun afegirNewDisease(disease: Disease){
         daoUser.afegirNewDisease(disease)
+    }
+    fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
+        user.addReminder(id,reminderDate,reminderName,importance,allowNotification)
+    }
+    fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
+        user.addTask(id,taskDate,taskName,taskStartTimeMinute,taskStartTimeHour,allowNotification)
+    }
+    fun removeReminder(reminderDate: String, id: String) {
+        user.removeReminder(reminderDate,id)
+    }
+    fun removeTask(taskDate: String, id: String) {
+        user.removeTask(taskDate,id)
     }
 }
 
