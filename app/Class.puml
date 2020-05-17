@@ -4,41 +4,141 @@
 
 Model.MedList "1"*--"*" Model.Med:"contains"
 Model.User "1"--"1" Model.MedList:"has"
-Model.User "1"--"1" Model.Diet:"has"
-Model.Diet "1"*--"*" Model.Day:"contains"
-Model.Day "1"*--"*" Model.Food:"contains"
-Model.User "1"--"1" Model.UserInfo:"describes"
+Model.User "1"--"1" Model.Calendar:"has"
+Model.Calendar "1"*--"*" Model.Day:"contains"
+Model.Day "1" o-- "*" Model.Food:"contains"
+Model.User "1"--"1" Model.UserAppearenceInfo:"describes"
 
 
-class Model.User{
-    String id
-    String[] getInfo()
-}
+
 Controller - Model:"manipulates and updates"
 Controller -- DataBase:"gets and updates information"
 package DataBase{}
 package Controller{}
-class Model.Food{
-    String foodId
-    String[] properties
-}
-class Model.Food{
-    String foodId
-    String[] properties
-}
-class Controller.MainController{
-MainController uniqueInstance
-registraUsuari()
-loginUsuari()
+
+Model.Day "1" o-- "*" Model.Reminder : "contains"
+Model.Day "1" o-- "*" Model.Task : "contains"
+Model.User "1" o-- "*" Model.Disease :"has"
+
+DataBase.DAO <|-- DataBase.DAOUser
+DataBase.DAO <|-- DataBase.DAODisease
+
+class Model.User{
+    private var username:String
+    private var passwrd:String
+    private var birthday:String
+    private var gender:String
+    private var medList:MedList
+    private var calendar:Calendar
+    var listOfDisease :List<Disease>
+    fun getId():String
+        fun addMed(id: String,name: String, period: Int,duration: Int,startTimeMinute:Int
+        ,startTimeHour:Int,allowNotification:Boolean)
+        fun getMedList():String
+        fun removeMed(id: String)
+        fun setFood(date: String,order:Int,name: String)
+        fun existsThisDay(date: String): Boolean
+        fun addDay(date: String)
+        fun getDayList():String
+        fun removeDay(date: String)
+        fun getFood(date: String):String?
 }
 interface DataBase.DAO<T>{
-T get(String id)
-List<T> getAll()
-void save(T t)
-void update(T t, String[] params)
-void delete(T t)
-}
-DataBase.DAO <|-- DataBase.DAOUser
-Model.UserInfo "1"--"1" Model.UserAppearenceInfo:"has"
+       fun get(id:String)
+       fun getAll()
+       fun save(obj:T)
+       fun update(obj:T,params:List<String>)
+       fun delete(obj:T)
 
+}
+
+class Controller.MainController{
+    MainController uniqueInstance
+    user:User
+     fun addMed(id: String, name: String, period: Int,
+     duration: Int, startTimeMinute: Int,
+              startTimeHour: Int, allowNotification: Boolean)
+         fun getMedList():String
+         fun removeMed(id: String)
+         fun setFood(date:String,order:Int,name: String)
+         fun existsThisDay(date:String):Boolean
+         fun createDay(date: String)
+         fun getDayList():String
+         fun removeDay(date: String)
+         fun getFood(date:String):String?
+}
+class Model.MedList{
+    val list :List<Med>
+    fun addMed(id: String,name: String, period: Int,duration: Int,
+    startTimeMinute:Int,startTimeHour:Int,allowNotification:Boolean)
+        fun removeMed(id: String)
+    fun getters()
+
+}
+class Model.Med{
+    var id: String,
+    private var name: String,
+    private var period: Int,
+    private var duration: Int,
+    private var startTimeMinute:Int,
+    private var startTimeHour:Int,
+    private var allowNotification:Boolean
+    fun getters()
+}
+class Model.Calendar{
+    var list :List<Day>
+    fun addDay(date:String)
+    fun removeDay(day:String)
+    fun setFood(date:String,order: Int, name: String)
+    fun find(date: String): Day?
+    fun existsThisDay(date: String): Boolean
+    fun getFood(date:String): String?
+}
+
+class Model.Day{
+    private var date:String
+    private val foodList :List<Food>
+
+    fun getDate():String
+    fun setFood(number:Int,name:String)
+    fun setDate(newDate:String)
+    fun getFood():String
+}
+
+class Model.Food{
+     private var name:String
+     private val nutricionalValues:List<String>
+     fun getters()
+     fun setters()
+}
+class Model.UserAppearenceInfo{
+    private var colorsInfo:String
+    private var settingInfo:String
+    ...and more
+}
+
+class Model.Disease{
+
+    var id: String
+    private var name: String
+    fun getname():String
+    fun setname(newName:String)
+}
+
+
+class Model.Reminder{
+ var reminderName:String
+ var importance:Int
+ fun getters()
+      fun setters()
+}
+
+class Model.Task{
+     var taskDate:String
+     var taskName:String
+    var taskStartTimeMinute:Int
+   var taskStartTimeHour:Int
+   fun getters()
+        fun setters()
+}
 @enduml

@@ -1,5 +1,6 @@
 package com.example.medbutler.classes.controller
 
+import android.os.Message
 import android.net.Uri
 import android.widget.TextView
 import com.example.medbutler.classes.view.Login
@@ -9,14 +10,16 @@ import com.example.medbutler.classes.dataBase.DAODiseases
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.*
 import com.example.medbutler.classes.view.Sign_up
+import java.util.Calendar
 
 
 object MainController {
     /*Unique instance of the controller*/
     //object Singleton
-
+    var notMessage: String = ""
     var user:Usuari = Usuari()
     val daoUser = DAOUser()
+    lateinit var  thrower:NotificationThrower
     //var db = FirebaseFirestore.getInstance()
 
     fun setCurrentUser(user:Usuari){
@@ -56,6 +59,13 @@ object MainController {
                startTimeHour: Int, allowNotification: Boolean) {
         user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
             allowNotification)
+
+            val c: Calendar = Calendar.getInstance()
+            c.set(Calendar.HOUR_OF_DAY, startTimeHour)
+            c.set(Calendar.MINUTE, startTimeMinute)
+            c.set(Calendar.SECOND, 0)
+            setGenericNotification(c, name)
+
     }
 
     fun getMedListString():String{
@@ -177,9 +187,17 @@ object MainController {
     }
     fun addReminder(id: String, reminderDate: String, reminderName: String, importance: Int,allowNotification:Boolean){
         user.addReminder(id,reminderDate,reminderName,importance,allowNotification)
+
     }
     fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
         user.addTask(id,taskDate,taskName,taskStartTimeMinute,taskStartTimeHour,allowNotification)
+        if(allowNotification) {
+            val c: Calendar = Calendar.getInstance()
+            c.set(Calendar.HOUR_OF_DAY, taskStartTimeHour)
+            c.set(Calendar.MINUTE, taskStartTimeMinute)
+            c.set(Calendar.SECOND, 0)
+            setGenericNotification(c, taskName)
+        }
     }
     fun removeReminder(reminderDate: String, id: String) {
         user.removeReminder(reminderDate,id)
@@ -199,6 +217,16 @@ object MainController {
     fun uploadImg(context: UserProfile,filePath: Uri){
         daoUser.uploadImg(context,filePath)
 
+
+    }
+    fun setGenericNotification(c:Calendar,message: String){
+        thrower.updateTimeText(message)
+        thrower.startAlarm(c)
+
+    }
+
+    fun setNotificationThrower(n: NotificationThrower) {
+        thrower = n
 
     }
 }
