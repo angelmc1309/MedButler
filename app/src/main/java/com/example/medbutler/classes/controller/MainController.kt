@@ -59,12 +59,13 @@ object MainController {
                startTimeHour: Int, allowNotification: Boolean) {
         user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
             allowNotification)
-
+            if(allowNotification){
             val c: Calendar = Calendar.getInstance()
             c.set(Calendar.HOUR_OF_DAY, startTimeHour)
             c.set(Calendar.MINUTE, startTimeMinute)
             c.set(Calendar.SECOND, 0)
             setGenericNotification(c, name)
+            }
 
     }
 
