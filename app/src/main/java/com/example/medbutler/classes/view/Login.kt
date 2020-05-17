@@ -11,8 +11,24 @@ import androidx.annotation.RequiresApi
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import kotlinx.android.synthetic.main.activity_login.*
+import android.app.AlarmManager
+import android.app.PendingIntent
 
-class Login : AppCompatActivity() {
+import android.content.Context
+import android.media.MediaSession2
+import android.os.Message
+
+
+import android.widget.TimePicker
+import com.example.medbutler.classes.controller.NotificationInterface
+import com.example.medbutler.classes.controller.NotificationThrower
+import java.text.DateFormat
+import java.util.Calendar
+class Login : AppCompatActivity(),NotificationInterface  {
+
+
+
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +45,9 @@ class Login : AppCompatActivity() {
         register.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.grey_transp)))
         register.setBackgroundResource(R.drawable.rounded_button)
         //addBut.setTextColor()
+        val n : NotificationThrower= NotificationThrower(this)
+        MainController.setNotificationThrower(n)
+
     }
 
     fun actionLog(view: View){
@@ -51,6 +70,39 @@ class Login : AppCompatActivity() {
         val intent=Intent(this, Sign_up::class.java)
         startActivity(intent)
     }
+
+
+
+
+
+     override fun updateTimeText(message: String) {
+         MainController.notMessage = "Alarm set for: "
+
+         MainController.notMessage += message
+
+    }
+
+     override fun startAlarm(c: Calendar) {
+        val alarmManager =
+            getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, AlertReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0)
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1)
+        }
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.timeInMillis, pendingIntent)
+    }
+
+     override fun cancelAlarm() {
+        val alarmManager =
+            getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, AlertReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0)
+        alarmManager.cancel(pendingIntent)
+
+    }
+
 
 }
 
