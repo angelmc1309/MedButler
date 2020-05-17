@@ -1,5 +1,7 @@
 package com.example.medbutler.classes.model
 
+import java.util.*
+
 class Usuari
  {
      private var username: String=""
@@ -12,7 +14,7 @@ class Usuari
      var medList:MedList = MedList()
      var userAppearenceInfo:UserAppearenceInfo = UserAppearenceInfo()
      //var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
-     var listOfDisease :ArrayList<Disease> = ArrayList<Disease>()
+     var listOfDisease : ArrayList<Disease> = ArrayList<Disease>()
 
      constructor(){
      }
