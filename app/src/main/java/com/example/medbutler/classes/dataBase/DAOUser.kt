@@ -1,5 +1,6 @@
 package com.example.medbutler.classes.dataBase
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Handler
@@ -13,10 +14,7 @@ import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
 import com.example.medbutler.classes.model.Usuari
-import com.example.medbutler.classes.view.Login
-import com.example.medbutler.classes.view.MainActivity
-import com.example.medbutler.classes.view.Sign_up
-import com.example.medbutler.classes.view.UserProfile
+import com.example.medbutler.classes.view.*
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -180,13 +178,17 @@ class DAOUser : DAO<Usuari> {
     fun afegirNewDisease(disease: Disease){
         diseasedb.document(disease.id).set(disease)
     }
-    fun launchGallery(context: UserProfile){
+    fun launchGallery(context: Context){
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
-        context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+        if (context is UserProfile){
+            context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+        } else if (context is SettingsAccountActivity){
+            context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+        }
     }
-     fun addUploadRecordToDb(uri: String, context: UserProfile){
+     fun addUploadRecordToDb(uri: String, context: Context){
         val data = HashMap<String, Any>()
         data["imageUrl"] = uri
 
@@ -213,7 +215,7 @@ class DAOUser : DAO<Usuari> {
         }
 
     }
-    fun uploadImg(context:UserProfile,filePath: Uri){
+    fun uploadImg(context:Context,filePath: Uri){
         if(filePath != null){
 
             val ref = storageReference?.child("uploads/" + firebase_auth.currentUser!!.email)
@@ -231,7 +233,11 @@ class DAOUser : DAO<Usuari> {
                 if(task.isSuccessful){
                     changeImgState(true)
                     val downloadUri = task.result
-                    addUploadRecordToDb(downloadUri.toString(),context)
+                    if (context is UserProfile){
+                        addUploadRecordToDb(downloadUri.toString(),context)
+                    } else if (context is SettingsAccountActivity){
+                        addUploadRecordToDb(downloadUri.toString(),context)
+                    }
                 }
             }
 

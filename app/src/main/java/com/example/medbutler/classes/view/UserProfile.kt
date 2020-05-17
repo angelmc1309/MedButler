@@ -100,10 +100,6 @@ class UserProfile : AppCompatActivity() {
     fun launchGallery(view: View){
         MainController.launchGallery(this)
     }
-    fun uploadImg(view: View){
-
-        filePath?.let { MainController.uploadImg(this, it) }
-    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
@@ -128,6 +124,5 @@ class UserProfile : AppCompatActivity() {
             //   android:src="@drawable/user_angel"
            user_image.setImageResource(R.drawable.user_angel)
         }
-
     }
 }
