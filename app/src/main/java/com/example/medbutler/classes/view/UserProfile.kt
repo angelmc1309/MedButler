@@ -112,6 +112,7 @@ class UserProfile : AppCompatActivity() {
             }
 
             filePath = data.data
+            filePath?.let { MainController.uploadImg(this, it) }
             try {
                 val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
                 user_image.setImageBitmap(bitmap)
