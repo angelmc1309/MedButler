@@ -49,6 +49,7 @@ class SettingsAccountActivity : AppCompatActivity() {
             bindPreferenceSummaryToValue(findPreference(getString(R.string.date_of_birth)))
 
             findPreference(getString(R.string.date_of_birth)).onPreferenceClickListener = this
+            findPreference(getString(R.string.key_select_user_image)).onPreferenceClickListener = this
             findPreference(getString(R.string.key_logout)).onPreferenceClickListener = this
             findPreference(getString(R.string.key_delete_account)).onPreferenceClickListener = this
 
@@ -142,7 +143,9 @@ class SettingsAccountActivity : AppCompatActivity() {
                 startActivity(intent)
                 onDestroy()
             }else if (preference?.key.equals("key_select_user_image")) {
-                MainController.launchGallery(activity.applicationContext)
+                if (preference != null) {
+                    MainController.launchGallery(context!!)
+                }
             }
             return true
         }
@@ -155,12 +158,13 @@ class SettingsAccountActivity : AppCompatActivity() {
 
                 filePath = data.data
                 filePath?.let { MainController.uploadImg(context!!, it) }
-                try {
-                    val bitmap = MediaStore.Images.Media.getBitmap(context!!.contentResolver, filePath)
-                    user_image.setImageBitmap(bitmap)
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
+                //try {
+                //    val bitmap = MediaStore.Images.Media.getBitmap(context!!.contentResolver, filePath)
+                //    user_image.setImageBitmap(bitmap)
+                //} catch (e: IOException) {
+                //    e.printStackTrace()
+                //    e.printStackTrace()
+                //}
             }
         }
 

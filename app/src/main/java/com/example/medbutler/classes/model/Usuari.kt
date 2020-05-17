@@ -9,6 +9,8 @@ class Usuari
      private var birthday: String=""
      private var height: String=""
      private var weight: String=""
+     private var reminderTimeMinute:Int = 0
+     private var remindertTimeHour:Int = 10
      private var imgState:Boolean=false
      //private var gender: String=""
      var calendar:Calendar = Calendar()
@@ -56,6 +58,20 @@ class Usuari
     fun getfullname(): String {
         return this.fullname
     }
+
+    fun getReminderMinute(): String {
+     return this.username
+    }
+    fun getReminderHours(): String {
+     return this.fullname
+    }
+
+     fun setReminderMinute(minute:Int) {
+         this.reminderTimeMinute = minute
+     }
+     fun setReminderHours(hour:Int) {
+         this.remindertTimeHour = hour
+     }
 
     fun getbirthday(): String? {
         return this.birthday
