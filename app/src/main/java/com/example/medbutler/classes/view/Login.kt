@@ -87,9 +87,9 @@ class Login : AppCompatActivity(),NotificationInterface  {
             getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(this, AlertReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0)
-      /*  if (c.before(Calendar.getInstance())) {
+        if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1)
-        }*/
+        }
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.timeInMillis, pendingIntent)
     }
