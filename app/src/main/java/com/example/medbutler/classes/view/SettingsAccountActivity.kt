@@ -1,16 +1,21 @@
 package com.example.medbutler.classes.view
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.icu.util.Calendar
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
+import kotlinx.android.synthetic.main.user_profile_layout.*
+import java.io.IOException
 
 class SettingsAccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +33,8 @@ class SettingsAccountActivity : AppCompatActivity() {
 
     class AccountSettingsFragment : PreferenceFragmentCompat(),
         Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener { //SharedPreferences.OnSharedPreferenceChangeListener
+        val PICK_IMAGE_REQUEST = 71
+        var filePath: Uri? = null
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
 
             // Load the preferences from an XML resource
@@ -42,6 +49,7 @@ class SettingsAccountActivity : AppCompatActivity() {
             bindPreferenceSummaryToValue(findPreference(getString(R.string.date_of_birth)))
 
             findPreference(getString(R.string.date_of_birth)).onPreferenceClickListener = this
+            findPreference(getString(R.string.key_select_user_image)).onPreferenceClickListener = this
             findPreference(getString(R.string.key_logout)).onPreferenceClickListener = this
             findPreference(getString(R.string.key_delete_account)).onPreferenceClickListener = this
 
@@ -134,9 +142,32 @@ class SettingsAccountActivity : AppCompatActivity() {
                 val intent= Intent(context, Login::class.java)
                 startActivity(intent)
                 onDestroy()
+            }else if (preference?.key.equals("key_select_user_image")) {
+                if (preference != null) {
+                    MainController.launchGallery(context!!)
+                }
             }
             return true
         }
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+                if(data == null || data.data == null){
+                    return
+                }
+
+                filePath = data.data
+                filePath?.let { MainController.uploadImg(context!!, it) }
+                //try {
+                //    val bitmap = MediaStore.Images.Media.getBitmap(context!!.contentResolver, filePath)
+                //    user_image.setImageBitmap(bitmap)
+                //} catch (e: IOException) {
+                //    e.printStackTrace()
+                //    e.printStackTrace()
+                //}
+            }
+        }
+
 
         @RequiresApi(Build.VERSION_CODES.N)
         private fun showDatePickerDialog(preference: Preference?) {

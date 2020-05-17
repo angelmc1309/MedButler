@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "341121430160-98rsn7s03ltvu20sfkrti32jegqhppjt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.medbutler",
-            "certificate_hash": "a8f449622352ebd9b62cd372d5a053669b790250"
-          }
-        },
-        {
           "client_id": "341121430160-oubmpa0upebg261mqh1u5363m3mqid9m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
