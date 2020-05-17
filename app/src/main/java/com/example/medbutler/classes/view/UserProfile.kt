@@ -1,25 +1,38 @@
 package com.example.medbutler.classes.view
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.*
+import com.google.android.gms.tasks.Continuation
+import com.google.android.gms.tasks.Task
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
+import kotlinx.android.synthetic.main.user_profile_layout.*
+import java.io.IOException
 
 class UserProfile : AppCompatActivity() {
-
+    val PICK_IMAGE_REQUEST = 71
+    var filePath: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_layout)
         updateAppearance()
         initProfile()
+        loadImg()
 
     }
 
@@ -84,5 +97,36 @@ class UserProfile : AppCompatActivity() {
     private fun initProfile() {
         MainController.initUserProfer(this)
     }
+    fun launchGallery(view: View){
+        MainController.launchGallery(this)
+    }
+    fun uploadImg(view: View){
 
+        filePath?.let { MainController.uploadImg(this, it) }
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+            if(data == null || data.data == null){
+                return
+            }
+
+            filePath = data.data
+            try {
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
+                user_image.setImageBitmap(bitmap)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+    }
+    fun loadImg(){
+        if(MainController.getcurrent().getimgState()){
+            MainController.loadImg(this)
+        }else{
+            //   android:src="@drawable/user_angel"
+           user_image.setImageResource(R.drawable.user_angel)
+        }
+
+    }
 }
