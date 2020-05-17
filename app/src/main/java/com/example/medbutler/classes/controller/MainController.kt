@@ -1,5 +1,6 @@
 package com.example.medbutler.classes.controller
 
+import android.content.Context
 import android.os.Message
 import android.net.Uri
 import android.widget.TextView
@@ -206,8 +207,8 @@ object MainController {
     fun removeTask(taskDate: String, id: String) {
         user.removeTask(taskDate,id)
     }
-    fun launchGallery(context: UserProfile){
-        daoUser.launchGallery(context )
+    fun launchGallery(context: Context){
+        daoUser.launchGallery(context)
     }
     fun addUploadRecordToDb(uri: String, context: UserProfile){
         daoUser.addUploadRecordToDb(uri,context)
@@ -215,7 +216,7 @@ object MainController {
     fun loadImg(context: UserProfile){
         daoUser.loadImg(context)
     }
-    fun uploadImg(context: UserProfile,filePath: Uri){
+    fun uploadImg(context: Context,filePath: Uri){
         daoUser.uploadImg(context,filePath)
 
 
