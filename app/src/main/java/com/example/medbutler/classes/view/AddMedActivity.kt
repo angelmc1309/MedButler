@@ -117,7 +117,7 @@ class AddMedActivity : AppCompatActivity() {
     fun addMed(view: View) {
 
         if(!medName.text.toString().isEmpty() && resultFrequency != -1 && resultDuration != -1 && startTimeMinute != -1 && startTimeHour != -1){
-            MainController.getcurrent().addMed(medName.text.toString(),medName.text.toString(),resultFrequency,resultDuration,startTimeMinute,startTimeHour,switchNotification.isChecked)
+            MainController.addMed(medName.text.toString(),medName.text.toString(),resultFrequency,resultDuration,startTimeMinute,startTimeHour,switchNotification.isChecked)
             MainController.saveUserAll()
             val intent= Intent(this, MedListActivity::class.java)
             startActivity(intent)

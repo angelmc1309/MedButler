@@ -18,6 +18,7 @@ object MainController {
     //object Singleton
     var notMessage: String = ""
     var user:Usuari = Usuari()
+    var notificationsAllowed : Boolean = true
     val daoUser = DAOUser()
     lateinit var  thrower:NotificationThrower
     //var db = FirebaseFirestore.getInstance()
@@ -59,12 +60,13 @@ object MainController {
                startTimeHour: Int, allowNotification: Boolean) {
         user.addMed(id, name, period, duration, startTimeMinute, startTimeHour,
             allowNotification)
-
+        if(allowNotification and notificationsAllowed){
             val c: Calendar = Calendar.getInstance()
             c.set(Calendar.HOUR_OF_DAY, startTimeHour)
             c.set(Calendar.MINUTE, startTimeMinute)
             c.set(Calendar.SECOND, 0)
             setGenericNotification(c, name)
+        }
 
     }
 
@@ -191,7 +193,7 @@ object MainController {
     }
     fun addTask(id: String, taskDate: String, taskName: String, taskStartTimeMinute: Int,taskStartTimeHour:Int, allowNotification:Boolean){
         user.addTask(id,taskDate,taskName,taskStartTimeMinute,taskStartTimeHour,allowNotification)
-        if(allowNotification) {
+        if(allowNotification and notificationsAllowed) {
             val c: Calendar = Calendar.getInstance()
             c.set(Calendar.HOUR_OF_DAY, taskStartTimeHour)
             c.set(Calendar.MINUTE, taskStartTimeMinute)
@@ -227,6 +229,10 @@ object MainController {
 
     fun setNotificationThrower(n: NotificationThrower) {
         thrower = n
+
+    }
+    fun setNotificationAllowed(boolean: Boolean){
+        notificationsAllowed = boolean
 
     }
 }

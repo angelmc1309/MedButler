@@ -6,8 +6,11 @@
         <SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="enable_notification"
-            android:summary="New notifications will be puched to your phone"
-            android:title="Push notifications" />
+            android:summary="New notifications will be pushed to your phone"
+            android:title="Push notifications"
+
+
+            />
 
         <ListPreference
             android:defaultValue="None"
@@ -18,11 +21,6 @@
             android:summary="Choose notification sound"
             android:title="Notification ringtone" />
 
-        <SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:dependency="enable_notification"
-            android:key="enable_vibrate"
-            android:summary="Vibrate when there is a new notification"
-            android:title="Vibrate" />
+
     </PreferenceCategory>
 </PreferenceScreen>
