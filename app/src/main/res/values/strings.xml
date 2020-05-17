@@ -71,6 +71,7 @@
     <string name="time_select">"    %1$s:%2$s"</string>
     <string name="key_delete_account">key_delete_account</string>
     <string name="key_logout">key_logout</string>
+    <string name="key_select_user_image">key_select_user_image</string>
     <string name="userDiseases">User Diseases</string>
     <string name="allDiseases">All Diseases</string>
     <string name="please_select_option">Please Select an Option</string>
