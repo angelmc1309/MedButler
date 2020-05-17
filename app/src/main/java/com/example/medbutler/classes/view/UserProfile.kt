@@ -103,30 +103,6 @@ class UserProfile : AppCompatActivity() {
     fun uploadImg(view: View){
 
         filePath?.let { MainController.uploadImg(this, it) }
-
-        /*if(filePath != null){
-            // UUID.randomUUID().toString() change to user-email.
-            //val ref = storageReference?.child("uploads/" + UUID.randomUUID().toString())
-            val ref = storageReference?.child("uploads/" + MainController.getcurrent().getusername().toString())
-            val uploadTask = ref?.putFile(filePath!!)
-
-            val urlTask = uploadTask?.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
-                if (!task.isSuccessful) {
-                    task.exception?.let {
-                        throw it
-                    }
-                }
-                return@Continuation ref.downloadUrl
-            })?.addOnCompleteListener{
-                task ->
-                if(task.isSuccessful){
-                    val downloadUri = task.result
-                    addUploadRecordToDb(downloadUri.toString())
-                }
-            }
-        }else{
-            Toast.makeText(this, "Please Upload an Image", Toast.LENGTH_SHORT).show()
-        }*/
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -143,9 +119,6 @@ class UserProfile : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
-    }
-    fun addUploadRecordToDb(uri: String){
-       MainController.addUploadRecordToDb(uri, this)
     }
     fun loadImg(){
         if(MainController.getcurrent().getimgState()){

@@ -6,6 +6,9 @@ import android.os.Handler
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.Target
+import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Disease
@@ -99,7 +102,7 @@ class DAOUser : DAO<Usuari> {
     }
 
     override fun update(obj: Usuari, params: List<String>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //To change body of created functions use File | Settings | File Templates.
     }
     fun login(context: Login, username:String, password: String) {
         this.firebase_auth.signInWithEmailAndPassword(username, password)
@@ -201,11 +204,10 @@ class DAOUser : DAO<Usuari> {
 
         var imageref = storageReference?.child("uploads/"+firebase_auth.currentUser!!.email)
         imageref!!.downloadUrl.addOnSuccessListener {Uri->
-
             val imageURL = Uri.toString()
             var image=context.findViewById<ImageView>(R.id.user_image)
             Glide.with(context)
-                .load(imageURL)
+                .load(imageURL).apply(RequestOptions().override(Target.SIZE_ORIGINAL))
                 .into(image)
 
         }
