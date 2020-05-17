@@ -1,6 +1,7 @@
 package com.example.medbutler.classes.controller
 
 import android.os.Message
+import android.net.Uri
 import android.widget.TextView
 import com.example.medbutler.classes.view.Login
 import com.example.medbutler.R
@@ -203,6 +204,20 @@ object MainController {
     }
     fun removeTask(taskDate: String, id: String) {
         user.removeTask(taskDate,id)
+    }
+    fun launchGallery(context: UserProfile){
+        daoUser.launchGallery(context )
+    }
+    fun addUploadRecordToDb(uri: String, context: UserProfile){
+        daoUser.addUploadRecordToDb(uri,context)
+    }
+    fun loadImg(context: UserProfile){
+        daoUser.loadImg(context)
+    }
+    fun uploadImg(context: UserProfile,filePath: Uri){
+        daoUser.uploadImg(context,filePath)
+
+
     }
     fun setGenericNotification(c:Calendar,message: String){
         thrower.updateTimeText(message)

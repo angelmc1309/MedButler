@@ -16,7 +16,16 @@
         android:layout_weight="15"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/user_angel" />
+
+        android:onClick="launchGallery"/>
+
+    <Button
+        android:id="@+id/uploadBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="up"
+        android:onClick="uploadImg"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
