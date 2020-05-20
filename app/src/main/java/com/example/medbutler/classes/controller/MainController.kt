@@ -208,7 +208,7 @@ object MainController {
     fun removeTask(taskDate: String, id: String) {
         user.removeTask(taskDate,id)
     }
-    fun launchGallery(context: Context){
+    fun launchGallery(context: UserProfile){
         daoUser.launchGallery(context)
     }
     fun addUploadRecordToDb(uri: String, context: UserProfile){
@@ -217,7 +217,7 @@ object MainController {
     fun loadImg(context: UserProfile){
         daoUser.loadImg(context)
     }
-    fun uploadImg(context: Context,filePath: Uri){
+    fun uploadImg(context: UserProfile,filePath: Uri){
         daoUser.uploadImg(context,filePath)
 
 
@@ -228,8 +228,8 @@ object MainController {
 
     }
 
-    fun setNotificationThrower(n: NotificationThrower) {
-        thrower = n
+    fun setNotificationThrower(notification: NotificationThrower) {
+        thrower = notification
 
     }
     fun setNotificationAllowed(boolean: Boolean){

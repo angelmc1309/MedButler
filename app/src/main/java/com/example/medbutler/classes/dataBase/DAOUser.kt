@@ -178,15 +178,11 @@ class DAOUser : DAO<Usuari> {
     fun afegirNewDisease(disease: Disease){
         diseasedb.document(disease.id).set(disease)
     }
-    fun launchGallery(context: Context){
+    fun launchGallery(context: UserProfile){
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
-        if (context is UserProfile){
-            context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
-        } else if (context is SettingsAccountActivity){
-            context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
-        }
+        context.startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
     }
      fun addUploadRecordToDb(uri: String, context: Context){
         val data = HashMap<String, Any>()
@@ -215,7 +211,7 @@ class DAOUser : DAO<Usuari> {
         }
 
     }
-    fun uploadImg(context:Context,filePath: Uri){
+    fun uploadImg(context:UserProfile,filePath: Uri){
         if(filePath != null){
 
             val ref = storageReference?.child("uploads/" + firebase_auth.currentUser!!.email)
@@ -233,11 +229,7 @@ class DAOUser : DAO<Usuari> {
                 if(task.isSuccessful){
                     changeImgState(true)
                     val downloadUri = task.result
-                    if (context is UserProfile){
-                        addUploadRecordToDb(downloadUri.toString(),context)
-                    } else if (context is SettingsAccountActivity){
-                        addUploadRecordToDb(downloadUri.toString(),context)
-                    }
+                    addUploadRecordToDb(downloadUri.toString(),context)
                 }
             }
 

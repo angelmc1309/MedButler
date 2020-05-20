@@ -30,8 +30,6 @@ class SettingsNotificationsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.notifications_preferences, rootKey)
 
             bindPreferenceSummaryToValue(findPreference(getString(R.string.key_notification_ringtone)))
-            
-
         }
 
         private fun bindPreferenceSummaryToValue(preference: Preference) {
@@ -59,7 +57,6 @@ class SettingsNotificationsActivity : AppCompatActivity() {
             } else if (preference is SwitchPreferenceCompat) {
 
                 MainController.setNotificationAllowed(preference.isChecked)
-
             }
             return true
         }
@@ -67,8 +64,6 @@ class SettingsNotificationsActivity : AppCompatActivity() {
         @RequiresApi(Build.VERSION_CODES.N)
         override fun onPreferenceClick(preference: Preference?): Boolean {
             if (preference is SwitchPreferenceCompat) {
-
-
                 MainController.setNotificationAllowed(preference.isChecked)
             }
             return true
