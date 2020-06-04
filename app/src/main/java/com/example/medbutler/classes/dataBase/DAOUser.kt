@@ -107,6 +107,7 @@ class DAOUser : DAO<Usuari> {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     MainController.initFirestore()
+                    MainController.initFAQFacade()
                     Handler().postDelayed(
                         {
                             val intent= Intent(context, MainActivity::class.java)
