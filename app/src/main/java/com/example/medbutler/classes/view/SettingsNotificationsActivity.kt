@@ -2,6 +2,7 @@ package com.example.medbutler.classes.view
 
 import android.os.Build
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.*
@@ -45,6 +46,7 @@ class SettingsNotificationsActivity : AppCompatActivity() {
 
         override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
             val stringValue = value.toString()
+            val previos_summary:String = preference?.summary.toString()
 
             if (preference is ListPreference) {
                 val listPreference = preference
@@ -52,6 +54,9 @@ class SettingsNotificationsActivity : AppCompatActivity() {
                 if (prefIndex >= 0) { // if (prefIndex >= 0) {
                     preference.setSummary(listPreference.entries[prefIndex])
                 } // else preference.setSummary null ??
+                if (previos_summary != "Choose notification sound"){
+                    Toast.makeText(activity, "Functionality not implemented yet", Toast.LENGTH_SHORT).show()
+                }
             } else if (preference is EditTextPreference) {
                 preference?.summary = stringValue
             } else if (preference is SwitchPreferenceCompat) {

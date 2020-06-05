@@ -82,9 +82,9 @@
                             android:id="@+id/todays_foodImage"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_centerVertical="true"
                             android:layout_marginStart="20dp"
                             android:layout_toEndOf="@+id/todays_foodTitle"
-                            android:layout_centerVertical="true"
                             android:adjustViewBounds="true"
                             android:scaleType="fitCenter"
                             android:src="@drawable/food_list_icon" />
@@ -122,9 +122,9 @@
                             android:id="@+id/remindersTitleImage"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_centerVertical="true"
                             android:layout_marginStart="20dp"
                             android:layout_toEndOf="@+id/remindersTitle"
-                            android:layout_centerVertical="true"
                             android:adjustViewBounds="true"
                             android:scaleType="fitCenter"
                             android:src="@drawable/reminder_list_icon" />
@@ -161,9 +161,9 @@
                             android:id="@+id/tasksTitleImage"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_centerVertical="true"
                             android:layout_marginStart="20dp"
                             android:layout_toEndOf="@+id/tasksTitle"
-                            android:layout_centerVertical="true"
                             android:adjustViewBounds="true"
                             android:scaleType="fitCenter"
                             android:src="@drawable/task_list_icon" />
