@@ -245,7 +245,7 @@ object MainController {
     fun setFAQFacade(faqFacade:faqFacade){
         this.faqFacade=faqFacade
     }
-    fun getLisqFAQ():ArrayList<FAQ>{
+    fun getLisqFAQ():ArrayList<String>{
         return this.faqFacade.getListFAQ()
     }
     //Edu, aquest mètode es per tu!
@@ -253,7 +253,7 @@ object MainController {
         for(faq in getLisqFAQ()){
             //Hi ha moltes maneres, jo t'he posat dues, fes servir la que vulguis.
            // context.findViewById<TextView>(R.id.xxxxxxxx).text = faq.getQuestio()+"\n"+faq.getAnswer()
-            
+
             /*context.findViewById<TextView>(R.id.xxxxxxxx).text = faq.getQuestio()
             context.findViewById<TextView>(R.id.xxxxxxxx).text = faq.getAnswer()*/
         }

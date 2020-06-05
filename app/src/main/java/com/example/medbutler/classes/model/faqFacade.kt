@@ -1,23 +1,23 @@
 package com.example.medbutler.classes.model
 
 class faqFacade {
-    var list :ArrayList<FAQ> = ArrayList<FAQ>()
+    var list :ArrayList<String> = ArrayList<String>()
     constructor(){
 
     }
-    constructor(list:ArrayList<FAQ>){
+    constructor(list:ArrayList<String>){
         this.list=list
     }
-    fun addFaq(faq:FAQ){
+    fun addFaq(faq:String){
         list.add(faq)
     }
-    fun removeFaq(faq:FAQ){
+    fun removeFaq(faq:String){
         list.remove(faq)
     }
-    fun setListFAQ(list: ArrayList<FAQ>){
+    fun setListFAQ(list: ArrayList<String>){
         this.list=list
     }
-    fun getListFAQ():ArrayList<FAQ>{
+    fun getListFAQ():ArrayList<String>{
         return this.list
     }
 }

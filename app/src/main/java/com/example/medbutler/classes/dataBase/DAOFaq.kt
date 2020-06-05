@@ -28,8 +28,9 @@ class DAOFaq: DAO<FAQ>  {
         faqdb.get().addOnCompleteListener{ task->
             if(task.isSuccessful){
                 for(document in task.result!!){
-                    var faq=FAQ(document.data["questio"].toString(),document.data["answerr"].toString())
-                    faqFacade.addFaq(faq)
+                   /* var faq=FAQ(document.data["questio"].toString(),document.data["answerr"].toString())
+                    faqFacade.addFaq(faq)*/
+                    faqFacade.addFaq(document.data["QuestAns"].toString())
                 }
                 MainController.setFAQFacade(faqFacade)
             }
