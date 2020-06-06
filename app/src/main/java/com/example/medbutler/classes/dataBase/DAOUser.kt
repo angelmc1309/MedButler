@@ -63,6 +63,11 @@ class DAOUser : DAO<Usuari> {
             user.delete().addOnCompleteListener{
                 if(it.isSuccessful){
                     userdb.document(email).delete()
+                    storageReference?.child("uploads/" + firebase_auth.currentUser!!.email)!!.delete()
+                    if(MainController.getcurrent().getimgState()){
+                        db.collection("img").document(email).delete()
+                    }
+
                 }
             }
         }
@@ -107,7 +112,6 @@ class DAOUser : DAO<Usuari> {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     MainController.initFirestore()
-                    MainController.initFAQFacade()
                     Handler().postDelayed(
                         {
                             val intent= Intent(context, MainActivity::class.java)
@@ -252,4 +256,5 @@ class DAOUser : DAO<Usuari> {
             MainController.getcurrent().setimgState(newState)
         }
     }
+
 }
