@@ -1,16 +1,14 @@
 package com.example.medbutler.classes.controller
 
-import android.content.Context
-import android.os.Message
 import android.net.Uri
 import android.widget.TextView
 import com.example.medbutler.classes.view.Login
 import com.example.medbutler.R
 import com.example.medbutler.classes.view.UserProfile
 import com.example.medbutler.classes.dataBase.DAODiseases
-import com.example.medbutler.classes.dataBase.DAOFaq
 import com.example.medbutler.classes.dataBase.DAOUser
 import com.example.medbutler.classes.model.*
+import com.example.medbutler.classes.view.LoadingAnimation
 import com.example.medbutler.classes.view.Sign_up
 import java.util.Calendar
 
@@ -22,9 +20,8 @@ object MainController {
     var user:Usuari = Usuari()
     var notificationsAllowed : Boolean = true
     val daoUser = DAOUser()
-    val daoFaq=DAOFaq()
     lateinit var  thrower:NotificationThrower
-    var faqFacade:faqFacade= faqFacade()
+
     //var db = FirebaseFirestore.getInstance()
 
     fun setCurrentUser(user:Usuari){
@@ -239,24 +236,8 @@ object MainController {
         notificationsAllowed = boolean
 
     }
-    fun initFAQFacade(){
-        daoFaq.initFAQFacade()
-    }
-    fun setFAQFacade(faqFacade:faqFacade){
-        this.faqFacade=faqFacade
-    }
-    fun getLisqFAQ():ArrayList<String>{
-        return this.faqFacade.getListFAQ()
-    }
-    //Edu, aquest mètode es per tu!
-    fun faqSupportLayout(context: Context){
-        for(faq in getLisqFAQ()){
-            //Hi ha moltes maneres, jo t'he posat dues, fes servir la que vulguis.
-           // context.findViewById<TextView>(R.id.xxxxxxxx).text = faq.getQuestio()+"\n"+faq.getAnswer()
-
-            /*context.findViewById<TextView>(R.id.xxxxxxxx).text = faq.getQuestio()
-            context.findViewById<TextView>(R.id.xxxxxxxx).text = faq.getAnswer()*/
-        }
+    fun getLoading(): LoadingAnimation {
+        return daoUser.getLoading()
     }
 
 }

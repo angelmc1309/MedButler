@@ -38,7 +38,7 @@ class DAOUser : DAO<Usuari> {
      var filePath: Uri? = null
      var firebaseStore: FirebaseStorage? = FirebaseStorage.getInstance()
      var storageReference: StorageReference? = FirebaseStorage.getInstance().reference
-
+     lateinit var loadingAnimation : LoadingAnimation
     override fun get(id: String) {
     }
     fun get(){
@@ -108,6 +108,16 @@ class DAOUser : DAO<Usuari> {
         //To change body of created functions use File | Settings | File Templates.
     }
     fun login(context: Login, username:String, password: String) {
+        Handler().postDelayed(
+            {
+                loadingAnimation = LoadingAnimation(context, "loading.json")
+
+                loadingAnimation.playAnimation(true)
+                LoadingAsync(context).execute()
+            },
+            1000 // value in milliseconds
+        )
+
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -255,6 +265,9 @@ class DAOUser : DAO<Usuari> {
             }
             MainController.getcurrent().setimgState(newState)
         }
+    }
+    fun getLoading(): LoadingAnimation {
+        return this.loadingAnimation
     }
 
 }

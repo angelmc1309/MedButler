@@ -15,19 +15,12 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 
 import android.content.Context
-import android.media.MediaSession2
-import android.os.Message
 
 
-import android.widget.TimePicker
 import com.example.medbutler.classes.controller.NotificationInterface
 import com.example.medbutler.classes.controller.NotificationThrower
-import java.text.DateFormat
 import java.util.Calendar
-class Login : AppCompatActivity(),NotificationInterface  {
-
-
-
+class Login : AppCompatActivity(),NotificationInterface  , LoadingImplementation {
 
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -47,6 +40,7 @@ class Login : AppCompatActivity(),NotificationInterface  {
         //addBut.setTextColor()
         val n : NotificationThrower= NotificationThrower(this)
         MainController.setNotificationThrower(n)
+
 
     }
 
@@ -101,6 +95,10 @@ class Login : AppCompatActivity(),NotificationInterface  {
         val pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0)
         alarmManager.cancel(pendingIntent)
 
+    }
+
+    override fun onFinishedLoading() {
+        MainController.getLoading().stopAnimation(R.layout.activity_login)
     }
 
 
