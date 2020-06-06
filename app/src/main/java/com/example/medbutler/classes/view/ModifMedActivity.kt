@@ -1,5 +1,6 @@
 package com.example.medbutler.classes.view
 
+import android.app.Activity
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
 import com.example.medbutler.classes.model.Med
+import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_modif_med_layout.*
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -129,6 +131,10 @@ class ModifMedActivity: AppCompatActivity() {
             }
             TimePickerDialog(this,timeSetListener,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
         }
+        modifBarcodeMedNameImage.setOnClickListener{
+            val scanner = IntentIntegrator(this)
+            scanner.initiateScan()
+        }
         updateAppearance()
     }
 
@@ -192,5 +198,21 @@ class ModifMedActivity: AppCompatActivity() {
     fun discardChanges(view: View) {
         val intent= Intent(this, MedListActivity::class.java)
         startActivity(intent)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK) {
+            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            if (result != null) {
+                if (result.contents == null) {
+                    Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+                    modifMedName.setText(result.contents)
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
+        }
     }
 }

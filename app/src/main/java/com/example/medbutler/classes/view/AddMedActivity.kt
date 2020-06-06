@@ -81,10 +81,6 @@ class AddMedActivity : AppCompatActivity() {
             }
             TimePickerDialog(this,timeSetListener,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
         }
-        medName.setOnClickListener{
-            val scanner = IntentIntegrator(this)
-            scanner.initiateScan()
-        }
         barcodeMedNameImage.setOnClickListener{
             val scanner = IntentIntegrator(this)
             scanner.initiateScan()

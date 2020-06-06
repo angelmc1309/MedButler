@@ -31,7 +31,7 @@
         android:id="@+id/modifFrequencyText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@id/modifMedName"
+        android:layout_below="@id/ModifNameMedLay"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
@@ -70,27 +70,45 @@
         android:layout_marginEnd="10dp"
         android:gravity="center|start" />
 
-    <EditText
-        android:id="@+id/modifMedName"
+    <RelativeLayout
+        android:id="@+id/ModifNameMedLay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="35dp"
-        android:hint="@string/medicine_s_name"
-        android:importantForAutofill="no"
-        android:inputType="text">
+        android:layout_marginTop="160dp">
 
-    </EditText>
+        <EditText
+            android:id="@+id/modifMedName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="120dp"
+            android:hint="@string/medicine_s_name"
+            android:importantForAutofill="no"
+            android:inputType="text">
+
+        </EditText>
+
+        <ImageView
+            android:id="@+id/modifBarcodeMedNameImage"
+            android:layout_centerVertical="true"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="-100dp"
+            android:layout_toEndOf="@+id/modifMedName"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/barcode_icon" />
+
+    </RelativeLayout>
 
     <Spinner
         android:id="@+id/modifSpinnerFrequency"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/modifMedName"
+        android:layout_below="@id/ModifNameMedLay"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="10dp"/>
