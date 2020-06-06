@@ -1,40 +1,37 @@
 package com.example.medbutler.classes.view
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.medbutler.R
 import com.example.medbutler.classes.controller.MainController
-import kotlinx.android.synthetic.main.activity_login.*
-import android.app.AlarmManager
-import android.app.PendingIntent
-
-import android.content.Context
-import android.media.MediaSession2
-import android.os.Message
-
-
-import android.widget.TimePicker
 import com.example.medbutler.classes.controller.NotificationInterface
 import com.example.medbutler.classes.controller.NotificationThrower
-import java.text.DateFormat
+import kotlinx.android.synthetic.main.activity_login.*
 import java.util.Calendar
+
+
 class Login : AppCompatActivity(),NotificationInterface  {
-
-
-
-
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        loadingPanel.visibility = View.GONE
+        animationViewCheck.visibility = View.GONE
+        animationViewError.visibility = View.GONE
+        disableEnableControls(true, LayPrime)
         val login: TextView = findViewById(R.id.butLogin)
         val register: TextView = findViewById(R.id.newUserLabelLogin)
 
@@ -48,6 +45,14 @@ class Login : AppCompatActivity(),NotificationInterface  {
         val n : NotificationThrower= NotificationThrower(this)
         MainController.setNotificationThrower(n)
 
+    }
+
+    override fun onResume() {
+        loadingPanel.visibility = View.GONE
+        animationViewCheck.visibility = View.GONE
+        animationViewError.visibility = View.GONE
+        disableEnableControls(true, LayPrime)
+        super.onResume()
     }
 
     fun actionLog(view: View){
@@ -103,6 +108,14 @@ class Login : AppCompatActivity(),NotificationInterface  {
 
     }
 
-
+    fun disableEnableControls(enable: Boolean, vg: ViewGroup) {
+        for (i in 0 until vg.childCount) {
+            val child = vg.getChildAt(i)
+            child.isEnabled = enable
+            if (child is ViewGroup) {
+                disableEnableControls(enable, child)
+            }
+        }
+    }
 }
 

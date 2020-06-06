@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Handler
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
@@ -24,6 +25,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
+import kotlinx.android.synthetic.main.activity_login.*
+import java.lang.Exception
 
 class DAOUser : DAO<Usuari> {
     var firebase_auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -103,19 +106,51 @@ class DAOUser : DAO<Usuari> {
         //To change body of created functions use File | Settings | File Templates.
     }
     fun login(context: Login, username:String, password: String) {
+        context.disableEnableControls(false, context.LayPrime)
+        context.loadingPanel.visibility = View.VISIBLE
+        Handler().postDelayed(
+            {
+                context.loadingPanel.visibility = View.GONE
+            },
+            1700 // value in milliseconds
+        )
+
         this.firebase_auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    Handler().postDelayed(
+                        {
+                            context.animationViewCheck.visibility = View.VISIBLE
+                            context.animationViewCheck.playAnimation()
+                        },
+                        1800 // value in milliseconds
+                    )
+
                     MainController.initFirestore()
                     Handler().postDelayed(
                         {
                             val intent= Intent(context, MainActivity::class.java)
                             context.startActivity(intent)
                         },
-                        1000 // value in milliseconds
+                        4100 // value in milliseconds
                     )
                 } else {
-                    var e: FirebaseAuthException = task.exception as FirebaseAuthException
+                    Handler().postDelayed(
+                        {
+                            context.animationViewError.visibility = View.VISIBLE
+                            context.animationViewError.playAnimation()
+                        },
+                        1800 // value in milliseconds
+                    )
+
+                    Handler().postDelayed(
+                        {
+                            context.animationViewError.visibility = View.GONE
+                            context.disableEnableControls(true, context.LayPrime)
+                        },
+                        4100 // value in milliseconds
+                    )
+                    var e: Exception = task.exception as Exception
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
                 }
             }
